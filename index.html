@@ -13,8 +13,8 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0d0d0d 100%);
-            color: #e0e0e0;
+            background: linear-gradient(135deg, #ffe0f0 0%, #ffb6c1 50%, #ffc0cb 100%);
+            color: #333;
             line-height: 1.6;
         }
 
@@ -27,18 +27,18 @@
         header {
             text-align: center;
             padding: 60px 20px;
-            background: rgba(0, 0, 0, 0.85);
+            background: rgba(255, 255, 255, 0.95);
             border-radius: 20px;
             margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            border: 1px solid #e94560;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ff69b4;
         }
 
         .profile-img {
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #16213e, #e94560);
+            background: linear-gradient(135deg, #ff69b4, #ff1493);
             margin: 0 auto 20px;
             display: flex;
             align-items: center;
@@ -49,19 +49,19 @@
 
         h1 {
             font-size: 2.5em;
-            color: #e94560;
+            color: #ff1493;
             margin-bottom: 10px;
         }
 
         .tagline {
             font-size: 1.2em;
-            color: #4a90e2;
+            color: #ff69b4;
             margin-bottom: 20px;
         }
 
         .btn {
             display: inline-block;
-            background: #e94560;
+            background: #ff69b4;
             color: white;
             padding: 12px 30px;
             text-decoration: none;
@@ -72,34 +72,36 @@
         }
 
         .btn:hover {
-            background: #4a90e2;
+            background: #ff1493;
             transform: translateY(-3px);
         }
 
         .btn-outline {
             background: transparent;
-            border: 2px solid #e94560;
+            border: 2px solid #ff69b4;
+            color: #ff69b4;
         }
 
         .btn-outline:hover {
-            background: #e94560;
-            border-color: #e94560;
+            background: #ff69b4;
+            color: white;
+            border-color: #ff69b4;
         }
 
         .section {
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(255, 255, 255, 0.95);
             border-radius: 20px;
             padding: 40px;
             margin-bottom: 30px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-            border: 1px solid #2a2a3e;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid #ffb6c1;
         }
 
         .section h2 {
-            color: #e94560;
+            color: #ff1493;
             margin-bottom: 25px;
             font-size: 1.8em;
-            border-left: 4px solid #4a90e2;
+            border-left: 4px solid #ff69b4;
             padding-left: 15px;
         }
 
@@ -110,16 +112,17 @@
         }
 
         .skill-card {
-            background: #1a1a2e;
+            background: #fff0f5;
             padding: 15px;
             border-radius: 10px;
             text-align: center;
             transition: 0.3s;
-            border: 1px solid #2a2a3e;
+            border: 1px solid #ffb6c1;
+            color: #333;
         }
 
         .skill-card:hover {
-            background: #e94560;
+            background: #ff69b4;
             color: white;
             transform: translateY(-5px);
         }
@@ -127,19 +130,19 @@
         .exp-item {
             margin-bottom: 25px;
             padding: 20px;
-            background: #1a1a2e;
+            background: #fff0f5;
             border-radius: 10px;
-            border-left: 4px solid #e94560;
+            border-left: 4px solid #ff69b4;
         }
 
         .exp-title {
             font-size: 1.3em;
             font-weight: bold;
-            color: #4a90e2;
+            color: #ff1493;
         }
 
         .exp-date {
-            color: #e94560;
+            color: #ff69b4;
             font-size: 0.9em;
             margin: 5px 0;
         }
@@ -153,16 +156,16 @@
         .service-card {
             text-align: center;
             padding: 25px;
-            background: #1a1a2e;
+            background: #fff0f5;
             border-radius: 10px;
             transition: 0.3s;
-            border: 1px solid #2a2a3e;
+            border: 1px solid #ffb6c1;
         }
 
         .service-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(233, 69, 96, 0.3);
-            border-color: #e94560;
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+            border-color: #ff69b4;
         }
 
         .service-icon {
@@ -182,17 +185,17 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background: #1a1a2e;
+            background: #fff0f5;
             padding: 12px 25px;
             border-radius: 30px;
             text-decoration: none;
-            color: #e0e0e0;
+            color: #333;
             transition: 0.3s;
-            border: 1px solid #2a2a3e;
+            border: 1px solid #ffb6c1;
         }
 
         .social-link:hover {
-            background: #e94560;
+            background: #ff69b4;
             color: white;
             transform: translateY(-3px);
         }
@@ -207,22 +210,22 @@
 
         .email-box {
             display: inline-block;
-            background: #1a1a2e;
+            background: #fff0f5;
             padding: 15px 30px;
             border-radius: 50px;
             margin: 20px 0;
-            border: 1px solid #e94560;
+            border: 1px solid #ff69b4;
         }
 
         .email-box a {
-            color: #4a90e2;
+            color: #ff1493;
             text-decoration: none;
             font-size: 1.2em;
             font-weight: bold;
         }
 
         .email-box a:hover {
-            color: #e94560;
+            color: #ff69b4;
         }
 
         footer {
@@ -370,7 +373,7 @@
                 </div>
             </div>
             
-            <p style="text-align: center; margin-top: 30px; padding: 20px; background: #1a1a2e; border-radius: 10px; border: 1px solid #e94560;">
+            <p style="text-align: center; margin-top: 30px; padding: 20px; background: #fff0f5; border-radius: 10px; border: 1px solid #ff69b4;">
                 💬 <strong>Available for freelance projects!</strong> <br>
                 Let's grow your business with my complete digital marketing services.
                 <br><br>
