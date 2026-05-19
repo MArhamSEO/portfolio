@@ -36,6 +36,7 @@
             border: 1px solid #800000;
         }
 
+        /* Clickable Profile Picture */
         .profile-img {
             width: 150px;
             height: 150px;
@@ -46,6 +47,17 @@
             align-items: center;
             justify-content: center;
             overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(192, 64, 64, 0.5);
+        }
+
+        .profile-img:active {
+            transform: scale(0.98);
         }
 
         .profile-img img {
@@ -246,31 +258,6 @@
             color: #e0a0a0;
         }
 
-        /* Form Styles */
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .contact-form input, 
-        .contact-form textarea {
-            padding: 12px;
-            margin: 10px;
-            width: 80%;
-            border-radius: 10px;
-            border: 1px solid #800000;
-            background: #2a1515;
-            color: white;
-            font-family: inherit;
-        }
-
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            outline: none;
-            border-color: #a00000;
-        }
-
         footer {
             text-align: center;
             padding: 30px;
@@ -295,17 +282,14 @@
                 padding: 8px 15px;
                 font-size: 12px;
             }
-            .contact-form input, 
-            .contact-form textarea {
-                width: 90%;
-            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <div class="profile-img">
+            <!-- Clickable Picture - Home Page Open Hoga -->
+            <div class="profile-img" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
                 <img src="profile.jpg.jpg" alt="M Arham" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover; object-position: 50% 75%;">
             </div>
             <h1>M Arham</h1>
@@ -436,22 +420,6 @@
             <p style="margin-top: 10px;">🚀 Let's take your business to the next level!</p>
         </footer>
     </div>
-
-    <!-- reCAPTCHA Script -->
-    <script>
-        const form = document.getElementById('contactForm');
-        if (form) {
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                grecaptcha.ready(function() {
-                    grecaptcha.execute('6LfB3vEsAAAAAMkBL2ir6WAmuh_pptslwle0MteR', {action: 'submit'}).then(function(token) {
-                        document.getElementById('recaptchaResponse').value = token;
-                        form.submit();
-                    });
-                });
-            });
-        }
-    </script>
 
     <!-- Tidio Chatbot -->
     <script src="//code.tidio.co/ndwq0nxyuk73fkqborgmyzzmjrtckfjw.js" async></script>
