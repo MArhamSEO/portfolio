@@ -26,7 +26,6 @@
             padding: 20px;
         }
 
-        /* Navigation Bar */
         .navbar {
             background: rgba(30, 10, 10, 0.95);
             border-radius: 60px;
@@ -55,17 +54,11 @@
             transform: scale(1.05);
         }
 
-        .logo-circle {
+        .logo-img {
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #a03030, #c04040);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 22px;
-            color: white;
+            object-fit: cover;
         }
 
         .logo-text {
@@ -97,7 +90,6 @@
             color: white;
         }
 
-        /* Page Container */
         .page {
             display: none;
             animation: fadeIn 0.5s ease;
@@ -112,7 +104,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Home Page Header */
         header {
             text-align: center;
             padding: 60px 20px;
@@ -126,36 +117,19 @@
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #a03030, #c04040);
             margin: 0 auto 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
+            overflow: hidden;
             cursor: pointer;
+        }
+
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .profile-img:hover {
             transform: scale(1.05);
-        }
-
-        .profile-img span.big {
-            font-size: 48px;
-            font-weight: 800;
-            color: white;
-        }
-
-        .profile-img span.small {
-            font-size: 28px;
-            font-weight: 600;
-            color: #ffcccc;
-        }
-
-        .profile-img .rham {
-            font-size: 16px;
-            font-weight: 500;
-            color: #ffbbbb;
-            margin-top: 5px;
         }
 
         h1 {
@@ -199,7 +173,6 @@
             color: white;
         }
 
-        /* Section Cards */
         .section-card {
             background: rgba(30, 15, 15, 0.95);
             border-radius: 20px;
@@ -218,11 +191,10 @@
 
         .section-card h3 {
             color: #e0a0a0;
-            margin: 20px 0 10px 0;
+            margin: 25px 0 15px 0;
             font-size: 1.3em;
         }
 
-        /* Skills Grid */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -244,18 +216,17 @@
             transform: translateY(-5px);
         }
 
-        /* Services Grid */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            gap: 25px;
         }
 
         .service-card {
             text-align: center;
             padding: 25px;
             background: #2a1515;
-            border-radius: 10px;
+            border-radius: 15px;
             transition: 0.3s;
             border: 1px solid #5c2a2a;
         }
@@ -265,14 +236,23 @@
             border-color: #800000;
         }
 
-        .service-icon {
-            font-size: 50px;
-            margin-bottom: 15px;
+        .service-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            overflow: hidden;
+        }
+
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .service-card h3 {
             color: white;
-            margin: 10px 0;
+            margin: 15px 0 10px;
         }
 
         .service-card p {
@@ -280,7 +260,6 @@
             font-size: 0.95em;
         }
 
-        /* Blog Grid */
         .blog-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -339,7 +318,6 @@
             color: #ff9999;
         }
 
-        /* Contact Form */
         .contact-form {
             max-width: 600px;
             margin: 0 auto;
@@ -376,7 +354,6 @@
             font-weight: bold;
         }
 
-        /* Social Links */
         .social-links-section {
             background: rgba(30, 15, 15, 0.95);
             border-radius: 20px;
@@ -443,10 +420,10 @@
 </head>
 <body>
     <div class="container">
-        <!-- Navigation Bar -->
+        <!-- Navigation Bar - Logo from profile1.jpg.jpg -->
         <nav class="navbar">
             <div class="nav-logo" onclick="showPage('home')">
-                <div class="logo-circle">MA</div>
+                <img src="profile1.jpg.jpg" alt="Logo" class="logo-img">
                 <span class="logo-text">M Arham</span>
             </div>
             <ul class="nav-menu">
@@ -462,11 +439,7 @@
         <div id="home-page" class="page active-page">
             <header>
                 <div class="profile-img" onclick="showPage('home')">
-                    <div>
-                        <span class="big">M</span>
-                        <span class="small">A</span>
-                        <div class="rham">rham</div>
-                    </div>
+                    <img src="profile.jpg.jpg" alt="M Arham">
                 </div>
                 <h1>M Arham</h1>
                 <div class="tagline">Digital Marketing Expert | SEO | SMM | Ads Specialist | Guest Posting</div>
@@ -480,10 +453,6 @@
                     I help businesses grow online with data-driven digital marketing strategies. 
                     With <strong>4+ years of experience</strong>, I've helped <strong>50+ clients</strong> achieve top rankings 
                     on Google and increase their revenue.
-                </p>
-                <p style="margin-top: 20px;">
-                    👉 <a onclick="showPage('about')" style="color: #e0a0a0; cursor: pointer;">Learn more about me</a> | 
-                    👉 <a onclick="showPage('services')" style="color: #e0a0a0; cursor: pointer;">View my services</a>
                 </p>
             </div>
         </div>
@@ -502,16 +471,15 @@
 
             <div class="section-card">
                 <h2>💡 What I Do</h2>
-                <p>As a freelance digital marketing expert, I provide complete online marketing solutions including:</p>
                 
                 <h3>🔍 SEO (Search Engine Optimization)</h3>
                 <ul style="margin-left: 30px; line-height: 1.8;">
-                    <li><strong>Local SEO</strong> - Google My Business optimization, local citations, local keywords</li>
-                    <li><strong>On-Page SEO</strong> - Meta tags, headings, content optimization, internal linking</li>
-                    <li><strong>Off-Page SEO</strong> - Backlink building, guest posting, directory submissions</li>
-                    <li><strong>Technical SEO</strong> - Site speed, mobile optimization, schema markup, crawl errors</li>
-                    <li><strong>Broken Link Building</strong> - Finding and fixing broken links, building quality backlinks</li>
-                    <li><strong>Profile Backlinks</strong> - High authority profile creation for brand building</li>
+                    <li><strong>Local SEO</strong> - Google My Business optimization, local citations</li>
+                    <li><strong>On-Page SEO</strong> - Meta tags, headings, content optimization</li>
+                    <li><strong>Off-Page SEO</strong> - Backlink building, guest posting</li>
+                    <li><strong>Technical SEO</strong> - Site speed, mobile optimization, schema markup</li>
+                    <li><strong>Broken Link Building</strong> - Finding and fixing broken links</li>
+                    <li><strong>Profile Backlinks</strong> - High authority profile creation</li>
                 </ul>
 
                 <h3>📱 SMM & SMO (Social Media Marketing & Optimization)</h3>
@@ -524,9 +492,9 @@
 
                 <h3>💰 Ads Campaign Management</h3>
                 <ul style="margin-left: 30px; line-height: 1.8;">
-                    <li>Facebook Ads - Lead generation, conversion campaigns, retargeting</li>
-                    <li>Google Ads - Search, display, shopping, video ads</li>
-                    <li>Campaign strategy, setup, monitoring, and optimization</li>
+                    <li>Facebook Ads - Lead generation, conversion campaigns</li>
+                    <li>Google Ads - Search, display, shopping ads</li>
+                    <li>Campaign strategy, setup, monitoring, optimization</li>
                     <li>ROI tracking and monthly reporting</li>
                 </ul>
 
@@ -540,15 +508,15 @@
 
             <div class="section-card">
                 <h2>📅 Experience</h2>
-                <div class="exp-item" style="background: #2a1515; padding: 20px; border-left: 4px solid #800000; margin-bottom: 15px;">
-                    <div class="exp-title">Freelance Digital Marketing Expert</div>
-                    <div class="exp-date">2020 - Present | Remote</div>
-                    <p>Providing complete digital marketing services to 50+ clients worldwide. Managed SEO, Social Media, and Ad campaigns with 200%+ ROI.</p>
+                <div style="background: #2a1515; padding: 20px; border-left: 4px solid #800000; margin-bottom: 15px; border-radius: 10px;">
+                    <div style="font-size: 1.3em; font-weight: bold;">Freelance Digital Marketing Expert</div>
+                    <div style="color: #e0a0a0;">2020 - Present | Remote</div>
+                    <p>Providing complete digital marketing services to 50+ clients worldwide.</p>
                 </div>
-                <div class="exp-item" style="background: #2a1515; padding: 20px; border-left: 4px solid #800000;">
-                    <div class="exp-title">SEO & Link Building Specialist</div>
-                    <div class="exp-date">2019 - 2020 | Digital Agency</div>
-                    <p>Specialized in guest posting and high-quality link building. Achieved top rankings for 100+ keywords.</p>
+                <div style="background: #2a1515; padding: 20px; border-left: 4px solid #800000; border-radius: 10px;">
+                    <div style="font-size: 1.3em; font-weight: bold;">SEO & Link Building Specialist</div>
+                    <div style="color: #e0a0a0;">2019 - 2020 | Digital Agency</div>
+                    <p>Specialized in guest posting and high-quality link building.</p>
                 </div>
             </div>
 
@@ -558,8 +526,6 @@
                     <li>✅ Helped 50+ businesses grow online presence</li>
                     <li>✅ 500+ successful guest posts on high DA sites</li>
                     <li>✅ Achieved #1 rankings for 200+ keywords</li>
-                    <li>✅ 50k+ social media followers generated for clients</li>
-                    <li>✅ Managed $100k+ ad spend with 3x average ROAS</li>
                     <li>✅ 100% client satisfaction rate</li>
                 </ul>
             </div>
@@ -571,32 +537,32 @@
                 <h2>🛠️ Services I Offer</h2>
                 <div class="services-grid">
                     <div class="service-card">
-                        <div class="service-icon">🔍</div>
+                        <div class="service-img"><img src="seo-icon.jpg" alt="SEO" onerror="this.src='https://placehold.co/80x80/800000/white?text=SEO'"></div>
                         <h3>SEO Services</h3>
                         <p>Local SEO, On-Page, Off-Page, Technical SEO. Get #1 rankings on Google.</p>
                     </div>
                     <div class="service-card">
-                        <div class="service-icon">📱</div>
+                        <div class="service-img"><img src="smm-icon.jpg" alt="SMM" onerror="this.src='https://placehold.co/80x80/800000/white?text=SMM'"></div>
                         <h3>SMM & SMO</h3>
                         <p>Social Media Marketing & Optimization. Grow your brand on Facebook, Instagram, LinkedIn.</p>
                     </div>
                     <div class="service-card">
-                        <div class="service-icon">💰</div>
+                        <div class="service-img"><img src="ads-icon.jpg" alt="Ads" onerror="this.src='https://placehold.co/80x80/800000/white?text=Ads'"></div>
                         <h3>Ads Campaigns</h3>
                         <p>Facebook Ads, Google Ads, YouTube Ads. Maximize ROI with targeted campaigns.</p>
                     </div>
                     <div class="service-card">
-                        <div class="service-icon">✍️</div>
+                        <div class="service-img"><img src="guestpost-icon.jpg" alt="Guest Posting" onerror="this.src='https://placehold.co/80x80/800000/white?text=GP'"></div>
                         <h3>Guest Posting</h3>
                         <p>High DA guest posts. Build authority and quality backlinks.</p>
                     </div>
                     <div class="service-card">
-                        <div class="service-icon">🔗</div>
+                        <div class="service-img"><img src="linkbuilding-icon.jpg" alt="Link Building" onerror="this.src='https://placehold.co/80x80/800000/white?text=LB'"></div>
                         <h3>Link Building</h3>
                         <p>Profile backlinks, broken link building, quality backlinks from authority sites.</p>
                     </div>
                     <div class="service-card">
-                        <div class="service-icon">📊</div>
+                        <div class="service-img"><img src="audit-icon.jpg" alt="SEO Audit" onerror="this.src='https://placehold.co/80x80/800000/white?text=Audit'"></div>
                         <h3>SEO Audit</h3>
                         <p>Complete website audit with actionable recommendations for improvement.</p>
                     </div>
@@ -631,7 +597,7 @@
                         <div class="blog-img">💰</div>
                         <div class="blog-content">
                             <h3>Facebook Ads vs Google Ads: Which is Better?</h3>
-                            <p>Compare both platforms to find the best advertising strategy for your business...</p>
+                            <p>Compare both platforms to find the best advertising strategy...</p>
                             <span class="blog-date">May 5, 2024</span>
                             <div><a href="#" class="read-more">Read More →</a></div>
                         </div>
@@ -640,7 +606,7 @@
                         <div class="blog-img">🔗</div>
                         <div class="blog-content">
                             <h3>Beginner's Guide to Guest Posting</h3>
-                            <p>Learn how guest posting can boost your website's authority and rankings...</p>
+                            <p>Learn how guest posting can boost your website's authority...</p>
                             <span class="blog-date">April 28, 2024</span>
                             <div><a href="#" class="read-more">Read More →</a></div>
                         </div>
@@ -658,7 +624,7 @@
                         <div class="blog-img">🏷️</div>
                         <div class="blog-content">
                             <h3>Local SEO: Rank #1 in Your Area</h3>
-                            <p>Complete local SEO strategy for small businesses and service providers...</p>
+                            <p>Complete local SEO strategy for small businesses...</p>
                             <span class="blog-date">April 15, 2024</span>
                             <div><a href="#" class="read-more">Read More →</a></div>
                         </div>
@@ -687,17 +653,11 @@
                             <button type="submit" class="btn">Send Message</button>
                         </form>
                     </div>
-
-                    <p style="margin-top: 30px; padding: 20px; background: #2a1515; border-radius: 10px; border: 1px solid #800000;">
-                        💬 <strong>Available for freelance projects!</strong><br>
-                        Let's grow your business with my complete digital marketing services.<br><br>
-                        📧 <strong>Email me:</strong> marham2772@gmail.com
-                    </p>
                 </div>
             </div>
         </div>
 
-        <!-- Social Links Section - Common for All Pages -->
+        <!-- Social Links Section -->
         <div class="social-links-section">
             <h3>🔗 Connect With Me</h3>
             <div class="social-links">
@@ -716,14 +676,17 @@
     <!-- Page Switching Script -->
     <script>
         function showPage(pageName) {
+            // Hide all pages
             document.getElementById('home-page').classList.remove('active-page');
             document.getElementById('about-page').classList.remove('active-page');
             document.getElementById('services-page').classList.remove('active-page');
             document.getElementById('blog-page').classList.remove('active-page');
             document.getElementById('contact-page').classList.remove('active-page');
             
+            // Show selected page
             document.getElementById(pageName + '-page').classList.add('active-page');
             
+            // Update active link
             const links = ['home', 'about', 'services', 'blog', 'contact'];
             links.forEach(link => {
                 const el = document.getElementById(link + '-link');
@@ -731,8 +694,26 @@
             });
             document.getElementById(pageName + '-link').classList.add('active');
             
+            // Update URL hash
+            window.location.hash = pageName;
+            
+            // Scroll to top
             window.scrollTo({top: 0, behavior: 'smooth'});
         }
+
+        // Handle page load from URL hash
+        function loadPageFromHash() {
+            const hash = window.location.hash.substring(1);
+            const validPages = ['home', 'about', 'services', 'blog', 'contact'];
+            if (validPages.includes(hash)) {
+                showPage(hash);
+            } else {
+                showPage('home');
+            }
+        }
+
+        window.addEventListener('load', loadPageFromHash);
+        window.addEventListener('hashchange', loadPageFromHash);
 
         // reCAPTCHA
         const form = document.getElementById('contactForm');
