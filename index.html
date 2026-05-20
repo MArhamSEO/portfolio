@@ -26,7 +26,7 @@
             padding: 20px;
         }
 
-        /* Navigation Bar - Logo Left, Menu Right */
+        /* Navigation Bar */
         .navbar {
             background: rgba(30, 10, 10, 0.95);
             border-radius: 60px;
@@ -43,7 +43,6 @@
             flex-wrap: wrap;
         }
 
-        /* Logo Left Side - Clickable */
         .nav-logo {
             display: flex;
             align-items: center;
@@ -67,7 +66,6 @@
             font-weight: bold;
             font-size: 22px;
             color: white;
-            box-shadow: 0 0 10px rgba(192, 64, 64, 0.5);
         }
 
         .logo-text {
@@ -76,11 +74,11 @@
             color: #e0a0a0;
         }
 
-        /* Navigation Menu Right Side */
         .nav-menu {
             display: flex;
             gap: 15px;
             list-style: none;
+            flex-wrap: wrap;
         }
 
         .nav-menu a {
@@ -91,19 +89,15 @@
             padding: 8px 20px;
             border-radius: 30px;
             transition: 0.3s;
+            cursor: pointer;
         }
 
-        .nav-menu a:hover {
+        .nav-menu a:hover, .nav-menu a.active {
             background: #800000;
             color: white;
         }
 
-        .nav-menu a.active {
-            background: #800000;
-            color: white;
-        }
-
-        /* Page Container - Different Pages Style */
+        /* Page Container */
         .page {
             display: none;
             animation: fadeIn 0.5s ease;
@@ -118,14 +112,13 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Header / Home Page */
+        /* Home Page Header */
         header {
             text-align: center;
             padding: 60px 20px;
             background: rgba(30, 10, 10, 0.95);
             border-radius: 20px;
             margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             border: 1px solid #800000;
         }
 
@@ -140,7 +133,6 @@
             justify-content: center;
             flex-direction: column;
             cursor: pointer;
-            transition: transform 0.3s ease;
         }
 
         .profile-img:hover {
@@ -168,7 +160,6 @@
 
         h1 {
             font-size: 2.5em;
-            color: white;
             margin-bottom: 10px;
         }
 
@@ -208,6 +199,7 @@
             color: white;
         }
 
+        /* Section Cards */
         .section-card {
             background: rgba(30, 15, 15, 0.95);
             border-radius: 20px;
@@ -224,6 +216,13 @@
             padding-left: 15px;
         }
 
+        .section-card h3 {
+            color: #e0a0a0;
+            margin: 20px 0 10px 0;
+            font-size: 1.3em;
+        }
+
+        /* Skills Grid */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -245,29 +244,10 @@
             transform: translateY(-5px);
         }
 
-        .exp-item {
-            margin-bottom: 25px;
-            padding: 20px;
-            background: #2a1515;
-            border-radius: 10px;
-            border-left: 4px solid #800000;
-        }
-
-        .exp-title {
-            font-size: 1.3em;
-            font-weight: bold;
-            color: white;
-        }
-
-        .exp-date {
-            color: #e0a0a0;
-            font-size: 0.9em;
-            margin: 5px 0;
-        }
-
+        /* Services Grid */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
         }
 
@@ -282,24 +262,121 @@
 
         .service-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(128, 0, 0, 0.3);
             border-color: #800000;
         }
 
         .service-icon {
-            font-size: 40px;
+            font-size: 50px;
             margin-bottom: 15px;
         }
 
         .service-card h3 {
             color: white;
+            margin: 10px 0;
         }
 
         .service-card p {
             color: #e0a0a0;
+            font-size: 0.95em;
         }
 
-        /* Social Links - Common for All Pages */
+        /* Blog Grid */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+        }
+
+        .blog-card {
+            background: #2a1515;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: 0.3s;
+            border: 1px solid #5c2a2a;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            border-color: #800000;
+        }
+
+        .blog-img {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #800000, #a03030);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+        }
+
+        .blog-content {
+            padding: 20px;
+        }
+
+        .blog-content h3 {
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .blog-content p {
+            color: #e0a0a0;
+            margin-bottom: 15px;
+        }
+
+        .blog-date {
+            font-size: 0.8em;
+            color: #888;
+        }
+
+        .read-more {
+            color: #e0a0a0;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .read-more:hover {
+            color: #ff9999;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 10px;
+            border: 1px solid #800000;
+            background: #2a1515;
+            color: white;
+            font-family: inherit;
+        }
+
+        .contact-form button {
+            width: 100%;
+        }
+
+        .email-box {
+            display: inline-block;
+            background: #2a1515;
+            padding: 15px 30px;
+            border-radius: 50px;
+            margin: 20px 0;
+            border: 1px solid #800000;
+        }
+
+        .email-box a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        /* Social Links */
         .social-links-section {
             background: rgba(30, 15, 15, 0.95);
             border-radius: 20px;
@@ -309,17 +386,12 @@
             border: 1px solid #800000;
         }
 
-        .social-links-section h3 {
-            color: white;
-            margin-bottom: 20px;
-            font-size: 1.3em;
-        }
-
         .social-links {
             display: flex;
             justify-content: center;
             gap: 20px;
             flex-wrap: wrap;
+            margin-top: 20px;
         }
 
         .social-link {
@@ -344,26 +416,6 @@
         .social-link.facebook:hover { background: #1877f2; }
         .social-link.instagram:hover { background: #e4405f; }
 
-        .email-box {
-            display: inline-block;
-            background: #2a1515;
-            padding: 15px 30px;
-            border-radius: 50px;
-            margin: 20px 0;
-            border: 1px solid #800000;
-        }
-
-        .email-box a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.2em;
-            font-weight: bold;
-        }
-
-        .email-box a:hover {
-            color: #e0a0a0;
-        }
-
         footer {
             text-align: center;
             padding: 30px;
@@ -377,41 +429,36 @@
                 border-radius: 20px;
             }
             .nav-menu {
-                flex-wrap: wrap;
                 justify-content: center;
             }
             .nav-menu a {
                 padding: 5px 12px;
                 font-size: 12px;
             }
-            .logo-text {
-                font-size: 1em;
-            }
-            .logo-circle {
-                width: 40px;
-                height: 40px;
-                font-size: 18px;
+            .services-grid, .blog-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Navbar: Logo Left, Menu Right -->
+        <!-- Navigation Bar -->
         <nav class="navbar">
             <div class="nav-logo" onclick="showPage('home')">
                 <div class="logo-circle">MA</div>
                 <span class="logo-text">M Arham</span>
             </div>
             <ul class="nav-menu">
-                <li><a href="#" onclick="showPage('home'); return false;" class="active" id="home-link">🏠 Home</a></li>
-                <li><a href="#" onclick="showPage('about'); return false;" id="about-link">📌 About</a></li>
-                <li><a href="#" onclick="showPage('services'); return false;" id="services-link">🛠️ Services</a></li>
-                <li><a href="#" onclick="showPage('contact'); return false;" id="contact-link">📞 Contact</a></li>
+                <li><a onclick="showPage('home')" class="active" id="home-link">🏠 Home</a></li>
+                <li><a onclick="showPage('about')" id="about-link">📌 About</a></li>
+                <li><a onclick="showPage('services')" id="services-link">🛠️ Services</a></li>
+                <li><a onclick="showPage('blog')" id="blog-link">📝 Blog</a></li>
+                <li><a onclick="showPage('contact')" id="contact-link">📞 Contact</a></li>
             </ul>
         </nav>
 
-        <!-- Home Page -->
+        <!-- ========== HOME PAGE ========== -->
         <div id="home-page" class="page active-page">
             <header>
                 <div class="profile-img" onclick="showPage('home')">
@@ -423,22 +470,25 @@
                 </div>
                 <h1>M Arham</h1>
                 <div class="tagline">Digital Marketing Expert | SEO | SMM | Ads Specialist | Guest Posting</div>
-                <a href="#" onclick="showPage('contact'); return false;" class="btn">Hire Me</a>
-                <a href="#" onclick="showPage('services'); return false;" class="btn btn-outline">My Services</a>
+                <a onclick="showPage('contact')" class="btn">Hire Me</a>
+                <a onclick="showPage('services')" class="btn btn-outline">My Services</a>
             </header>
 
-            <!-- Featured Content on Home Page -->
             <div class="section-card">
-                <h2>🚀 Welcome to My Portfolio</h2>
+                <h2>🚀 Welcome to My Digital Marketing Portfolio</h2>
                 <p style="font-size: 1.1em; line-height: 1.8;">
                     I help businesses grow online with data-driven digital marketing strategies. 
-                    With 4+ years of experience, I've helped 50+ clients achieve top rankings and 
-                    increase their revenue.
+                    With <strong>4+ years of experience</strong>, I've helped <strong>50+ clients</strong> achieve top rankings 
+                    on Google and increase their revenue.
+                </p>
+                <p style="margin-top: 20px;">
+                    👉 <a onclick="showPage('about')" style="color: #e0a0a0; cursor: pointer;">Learn more about me</a> | 
+                    👉 <a onclick="showPage('services')" style="color: #e0a0a0; cursor: pointer;">View my services</a>
                 </p>
             </div>
         </div>
 
-        <!-- About Page -->
+        <!-- ========== ABOUT PAGE ========== -->
         <div id="about-page" class="page">
             <div class="section-card">
                 <h2>📌 About Me</h2>
@@ -451,34 +501,54 @@
             </div>
 
             <div class="section-card">
-                <h2>💡 My Skills</h2>
-                <div class="skills-grid">
-                    <div class="skill-card">🔍 SEO (On/Off Page)</div>
-                    <div class="skill-card">📱 Social Media Marketing</div>
-                    <div class="skill-card">💰 Facebook Ads</div>
-                    <div class="skill-card">📊 Google Ads</div>
-                    <div class="skill-card">✍️ Guest Posting</div>
-                    <div class="skill-card">🔗 Link Building</div>
-                    <div class="skill-card">📈 Google Analytics</div>
-                    <div class="skill-card">🔎 Keyword Research</div>
-                    <div class="skill-card">📝 Content Strategy</div>
-                    <div class="skill-card">⚙️ Technical SEO</div>
-                    <div class="skill-card">🏷️ Local SEO</div>
-                    <div class="skill-card">📧 Email Marketing</div>
-                </div>
+                <h2>💡 What I Do</h2>
+                <p>As a freelance digital marketing expert, I provide complete online marketing solutions including:</p>
+                
+                <h3>🔍 SEO (Search Engine Optimization)</h3>
+                <ul style="margin-left: 30px; line-height: 1.8;">
+                    <li><strong>Local SEO</strong> - Google My Business optimization, local citations, local keywords</li>
+                    <li><strong>On-Page SEO</strong> - Meta tags, headings, content optimization, internal linking</li>
+                    <li><strong>Off-Page SEO</strong> - Backlink building, guest posting, directory submissions</li>
+                    <li><strong>Technical SEO</strong> - Site speed, mobile optimization, schema markup, crawl errors</li>
+                    <li><strong>Broken Link Building</strong> - Finding and fixing broken links, building quality backlinks</li>
+                    <li><strong>Profile Backlinks</strong> - High authority profile creation for brand building</li>
+                </ul>
+
+                <h3>📱 SMM & SMO (Social Media Marketing & Optimization)</h3>
+                <ul style="margin-left: 30px; line-height: 1.8;">
+                    <li>Facebook, Instagram, LinkedIn, Twitter management</li>
+                    <li>Social media strategy and content creation</li>
+                    <li>Community management and engagement</li>
+                    <li>Social media optimization for better reach</li>
+                </ul>
+
+                <h3>💰 Ads Campaign Management</h3>
+                <ul style="margin-left: 30px; line-height: 1.8;">
+                    <li>Facebook Ads - Lead generation, conversion campaigns, retargeting</li>
+                    <li>Google Ads - Search, display, shopping, video ads</li>
+                    <li>Campaign strategy, setup, monitoring, and optimization</li>
+                    <li>ROI tracking and monthly reporting</li>
+                </ul>
+
+                <h3>✍️ Guest Posting & Link Building</h3>
+                <ul style="margin-left: 30px; line-height: 1.8;">
+                    <li>High DA guest posts on relevant websites</li>
+                    <li>Quality backlinks from authority sites</li>
+                    <li>Content writing for guest posts</li>
+                </ul>
             </div>
 
             <div class="section-card">
                 <h2>📅 Experience</h2>
-                <div class="exp-item">
+                <div class="exp-item" style="background: #2a1515; padding: 20px; border-left: 4px solid #800000; margin-bottom: 15px;">
                     <div class="exp-title">Freelance Digital Marketing Expert</div>
                     <div class="exp-date">2020 - Present | Remote</div>
-                    <p>Providing complete digital marketing services to 50+ clients worldwide.</p>
+                    <p>Providing complete digital marketing services to 50+ clients worldwide. Managed SEO, Social Media, and Ad campaigns with 200%+ ROI.</p>
                 </div>
-                <div class="exp-item">
+                <div class="exp-item" style="background: #2a1515; padding: 20px; border-left: 4px solid #800000;">
                     <div class="exp-title">SEO & Link Building Specialist</div>
                     <div class="exp-date">2019 - 2020 | Digital Agency</div>
-                    <p>Specialized in guest posting and high-quality link building.</p>
+                    <p>Specialized in guest posting and high-quality link building. Achieved top rankings for 100+ keywords.</p>
                 </div>
             </div>
 
@@ -489,12 +559,13 @@
                     <li>✅ 500+ successful guest posts on high DA sites</li>
                     <li>✅ Achieved #1 rankings for 200+ keywords</li>
                     <li>✅ 50k+ social media followers generated for clients</li>
+                    <li>✅ Managed $100k+ ad spend with 3x average ROAS</li>
                     <li>✅ 100% client satisfaction rate</li>
                 </ul>
             </div>
         </div>
 
-        <!-- Services Page -->
+        <!-- ========== SERVICES PAGE ========== -->
         <div id="services-page" class="page">
             <div class="section-card">
                 <h2>🛠️ Services I Offer</h2>
@@ -502,38 +573,101 @@
                     <div class="service-card">
                         <div class="service-icon">🔍</div>
                         <h3>SEO Services</h3>
-                        <p>Complete SEO: On-page, Off-page, Technical SEO. Rank #1 on Google.</p>
+                        <p>Local SEO, On-Page, Off-Page, Technical SEO. Get #1 rankings on Google.</p>
                     </div>
                     <div class="service-card">
                         <div class="service-icon">📱</div>
-                        <h3>Social Media Marketing</h3>
-                        <p>Facebook, Instagram, LinkedIn, Twitter. Grow your brand presence.</p>
+                        <h3>SMM & SMO</h3>
+                        <p>Social Media Marketing & Optimization. Grow your brand on Facebook, Instagram, LinkedIn.</p>
                     </div>
                     <div class="service-card">
                         <div class="service-icon">💰</div>
                         <h3>Ads Campaigns</h3>
-                        <p>Facebook Ads, Google Ads, YouTube Ads. Maximize ROI.</p>
+                        <p>Facebook Ads, Google Ads, YouTube Ads. Maximize ROI with targeted campaigns.</p>
                     </div>
                     <div class="service-card">
                         <div class="service-icon">✍️</div>
                         <h3>Guest Posting</h3>
-                        <p>High DA guest posts. Build authority and backlinks.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">📊</div>
-                        <h3>SEO Audit</h3>
-                        <p>Complete website audit with actionable recommendations.</p>
+                        <p>High DA guest posts. Build authority and quality backlinks.</p>
                     </div>
                     <div class="service-card">
                         <div class="service-icon">🔗</div>
                         <h3>Link Building</h3>
-                        <p>Quality backlinks from high authority websites.</p>
+                        <p>Profile backlinks, broken link building, quality backlinks from authority sites.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">📊</div>
+                        <h3>SEO Audit</h3>
+                        <p>Complete website audit with actionable recommendations for improvement.</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Contact Page -->
+        <!-- ========== BLOG PAGE ========== -->
+        <div id="blog-page" class="page">
+            <div class="section-card">
+                <h2>📝 Latest Articles</h2>
+                <div class="blog-grid">
+                    <div class="blog-card">
+                        <div class="blog-img">📈</div>
+                        <div class="blog-content">
+                            <h3>Top 10 SEO Trends for 2024</h3>
+                            <p>Discover the latest SEO trends that will dominate search rankings this year...</p>
+                            <span class="blog-date">May 15, 2024</span>
+                            <div><a href="#" class="read-more">Read More →</a></div>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <div class="blog-img">📱</div>
+                        <div class="blog-content">
+                            <h3>How to Grow Your Business with Social Media</h3>
+                            <p>Complete guide to social media marketing for small businesses...</p>
+                            <span class="blog-date">May 10, 2024</span>
+                            <div><a href="#" class="read-more">Read More →</a></div>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <div class="blog-img">💰</div>
+                        <div class="blog-content">
+                            <h3>Facebook Ads vs Google Ads: Which is Better?</h3>
+                            <p>Compare both platforms to find the best advertising strategy for your business...</p>
+                            <span class="blog-date">May 5, 2024</span>
+                            <div><a href="#" class="read-more">Read More →</a></div>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <div class="blog-img">🔗</div>
+                        <div class="blog-content">
+                            <h3>Beginner's Guide to Guest Posting</h3>
+                            <p>Learn how guest posting can boost your website's authority and rankings...</p>
+                            <span class="blog-date">April 28, 2024</span>
+                            <div><a href="#" class="read-more">Read More →</a></div>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <div class="blog-img">⚙️</div>
+                        <div class="blog-content">
+                            <h3>Technical SEO Checklist 2024</h3>
+                            <p>Essential technical SEO factors to improve your site's performance...</p>
+                            <span class="blog-date">April 20, 2024</span>
+                            <div><a href="#" class="read-more">Read More →</a></div>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <div class="blog-img">🏷️</div>
+                        <div class="blog-content">
+                            <h3>Local SEO: Rank #1 in Your Area</h3>
+                            <p>Complete local SEO strategy for small businesses and service providers...</p>
+                            <span class="blog-date">April 15, 2024</span>
+                            <div><a href="#" class="read-more">Read More →</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== CONTACT PAGE ========== -->
         <div id="contact-page" class="page">
             <div class="section-card">
                 <h2>📞 Contact Me</h2>
@@ -541,7 +675,20 @@
                     <div class="email-box">
                         📧 <a href="mailto:marham2772@gmail.com">marham2772@gmail.com</a>
                     </div>
-                    <p style="margin-top: 20px; padding: 20px; background: #2a1515; border-radius: 10px; border: 1px solid #800000;">
+                    
+                    <div class="contact-form">
+                        <form action="https://formsubmit.co/marham2772@gmail.com" method="POST" id="contactForm">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_next" value="https://marhamseo.github.io/portfolio/">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                            <input type="email" name="email" placeholder="Your Email" required>
+                            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                            <input type="hidden" name="g-recaptcha-response" id="recaptchaResponse">
+                            <button type="submit" class="btn">Send Message</button>
+                        </form>
+                    </div>
+
+                    <p style="margin-top: 30px; padding: 20px; background: #2a1515; border-radius: 10px; border: 1px solid #800000;">
                         💬 <strong>Available for freelance projects!</strong><br>
                         Let's grow your business with my complete digital marketing services.<br><br>
                         📧 <strong>Email me:</strong> marham2772@gmail.com
@@ -554,48 +701,51 @@
         <div class="social-links-section">
             <h3>🔗 Connect With Me</h3>
             <div class="social-links">
-                <a href="https://www.linkedin.com/in/m-arham-link-builder/" target="_blank" class="social-link linkedin">
-                    🔵 LinkedIn
-                </a>
-                <a href="https://www.instagram.com/marhamseo/" target="_blank" class="social-link instagram">
-                    📷 Instagram
-                </a>
-                <a href="https://www.facebook.com/arhamblogger" target="_blank" class="social-link facebook">
-                    📘 Facebook
-                </a>
+                <a href="https://www.linkedin.com/in/m-arham-link-builder/" target="_blank" class="social-link linkedin">🔵 LinkedIn</a>
+                <a href="https://www.instagram.com/marhamseo/" target="_blank" class="social-link instagram">📷 Instagram</a>
+                <a href="https://www.facebook.com/arhamblogger" target="_blank" class="social-link facebook">📘 Facebook</a>
             </div>
         </div>
 
         <footer>
             <p>&copy; 2024 M Arham - Digital Marketing Expert | SEO | SMM | Ads | Guest Posting</p>
-            <p style="margin-top: 10px;">🚀 Let's take your business to the next level!</p>
+            <p>🚀 Let's take your business to the next level!</p>
         </footer>
     </div>
 
     <!-- Page Switching Script -->
     <script>
         function showPage(pageName) {
-            // Hide all pages
             document.getElementById('home-page').classList.remove('active-page');
             document.getElementById('about-page').classList.remove('active-page');
             document.getElementById('services-page').classList.remove('active-page');
+            document.getElementById('blog-page').classList.remove('active-page');
             document.getElementById('contact-page').classList.remove('active-page');
             
-            // Show selected page
             document.getElementById(pageName + '-page').classList.add('active-page');
             
-            // Update active link in navbar
-            document.querySelectorAll('.nav-menu a').forEach(link => {
-                link.classList.remove('active');
+            const links = ['home', 'about', 'services', 'blog', 'contact'];
+            links.forEach(link => {
+                const el = document.getElementById(link + '-link');
+                if (el) el.classList.remove('active');
             });
+            document.getElementById(pageName + '-link').classList.add('active');
             
-            if (pageName === 'home') document.getElementById('home-link').classList.add('active');
-            if (pageName === 'about') document.getElementById('about-link').classList.add('active');
-            if (pageName === 'services') document.getElementById('services-link').classList.add('active');
-            if (pageName === 'contact') document.getElementById('contact-link').classList.add('active');
-            
-            // Scroll to top
             window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+
+        // reCAPTCHA
+        const form = document.getElementById('contactForm');
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                grecaptcha.ready(function() {
+                    grecaptcha.execute('6LfB3vEsAAAAAMkBL2ir6WAmuh_pptslwle0MteR', {action: 'submit'}).then(function(token) {
+                        document.getElementById('recaptchaResponse').value = token;
+                        form.submit();
+                    });
+                });
+            });
         }
     </script>
 
