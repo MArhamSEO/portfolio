@@ -27,49 +27,9 @@
             padding: 20px;
         }
 
-        /* Scroll Animations - Fade Left/Right Enabled */
-        .fade-up {
-            opacity: 0;
-            transform: translateY(60px);
-            transition: opacity 1s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 1s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-        }
-
-        .fade-up.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .fade-left {
-            opacity: 0;
-            transform: translateX(-60px);
-            transition: opacity 1s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 1s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-        }
-
-        .fade-left.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .fade-right {
-            opacity: 0;
-            transform: translateX(60px);
-            transition: opacity 1s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 1s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-        }
-
-        .fade-right.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .zoom-in {
-            opacity: 0;
-            transform: scale(0.92);
+        /* Continuous Scroll Animations - Will keep triggering on scroll */
+        .fade-up, .fade-left, .fade-right, .zoom-in {
             transition: opacity 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-        }
-
-        .zoom-in.visible {
-            opacity: 1;
-            transform: scale(1);
         }
 
         /* Hero Section */
@@ -104,7 +64,7 @@
         .navbar {
             background: rgba(30, 10, 10, 0.95);
             border-radius: 60px;
-            padding: 12px 30px;
+            padding: 10px 25px;
             margin-bottom: 30px;
             border: 1px solid rgba(128, 0, 0, 0.5);
             position: sticky;
@@ -218,6 +178,13 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
 
+        /* About Text - No Blur */
+        .about-text {
+            font-size: 1.1em;
+            line-height: 1.9;
+            transition: none;
+        }
+
         h1 {
             font-size: 3em;
             margin-bottom: 15px;
@@ -314,11 +281,24 @@
             border-color: rgba(128,0,0,0.5);
         }
 
-        /* Auto Accordion Style */
+        /* Auto Accordion - One at a time */
         .accordion-item {
             margin-bottom: 0;
             border-bottom: 1px solid rgba(128, 0, 0, 0.3);
             transition: all 0.3s ease;
+            position: relative;
+        }
+
+        /* Moving Vertical Line */
+        .moving-line {
+            position: absolute;
+            left: -15px;
+            top: 20px;
+            width: 3px;
+            height: 40px;
+            background: #800000;
+            transition: top 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            border-radius: 3px;
         }
 
         .accordion-header {
@@ -327,18 +307,13 @@
             align-items: center;
             padding: 20px 0;
             cursor: pointer;
+            position: relative;
         }
 
         .accordion-header h3 {
             margin: 0;
             color: white;
             font-size: 1.3em;
-        }
-
-        .accordion-icon {
-            font-size: 1.2em;
-            color: #800000;
-            transition: transform 0.3s ease;
         }
 
         .accordion-content {
@@ -377,6 +352,9 @@
             }
             .accordion-inner img {
                 width: 100%;
+            }
+            .moving-line {
+                left: -10px;
             }
         }
 
@@ -432,11 +410,17 @@
             margin-bottom: 18px;
         }
 
-        /* Experience & Expertise - 2 Columns with Move Effect */
+        /* Experience & Expertise - Line by line */
         .exp-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            display: flex;
+            flex-direction: column;
             gap: 20px;
+        }
+
+        .exp-row {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
         }
 
         .exp-item {
@@ -445,10 +429,9 @@
             border-left: 4px solid #800000;
             border-radius: 12px;
             transition: all 0.5s ease;
-            height: 100%;
+            flex: 1;
             opacity: 0;
             transform: translateX(-30px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
         }
 
         .exp-item.visible-item {
@@ -475,24 +458,29 @@
             font-size: 0.85em;
         }
 
-        /* Achievements - Moveable */
+        /* Achievements - Line by line */
         .achievements-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .achievement-row {
+            display: flex;
             gap: 20px;
-            margin-top: 20px;
+            flex-wrap: wrap;
         }
 
         .achievement-card {
             background: #2a1515;
-            padding: 20px 15px;
+            padding: 18px 20px;
             border-radius: 14px;
             text-align: center;
             transition: all 0.5s ease;
             border: 1px solid rgba(90, 42, 42, 0.6);
+            flex: 1;
             opacity: 0;
             transform: translateX(-30px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
         }
 
         .achievement-card.visible-item {
@@ -505,9 +493,21 @@
             transform: translateY(-5px);
         }
 
-        /* Services Accordion - Auto */
+        /* Services Accordion - Auto one at a time */
         .services-accordion-item {
             border-bottom: 1px solid rgba(128, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .services-moving-line {
+            position: absolute;
+            left: -15px;
+            top: 20px;
+            width: 3px;
+            height: 40px;
+            background: #800000;
+            transition: top 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            border-radius: 3px;
         }
 
         .services-accordion-header {
@@ -554,21 +554,45 @@
             line-height: 1.8;
         }
 
-        /* Contact Page - Moveable */
-        .contact-move {
-            opacity: 0;
-            transform: translateX(-30px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
+        /* Contact Page */
+        .contact-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 40px;
         }
 
-        .contact-move.visible-item {
-            opacity: 1;
-            transform: translateX(0);
+        .contact-left {
+            flex: 1;
+        }
+
+        .contact-right {
+            flex: 1;
+        }
+
+        .contact-email-last {
+            text-align: right;
+        }
+
+        .contact-email-last .email-box {
+            display: inline-block;
+            background: #2a1515;
+            padding: 6px 18px;
+            border-radius: 40px;
+            border: 1px solid #800000;
+            font-size: 0.8em;
+        }
+
+        .contact-email-last .email-box a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
         }
 
         .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
+            max-width: 100%;
+            margin: 0;
         }
 
         .contact-form input, .contact-form textarea {
@@ -589,38 +613,12 @@
             box-shadow: 0 0 12px rgba(128, 0, 0, 0.3);
         }
 
-        .email-container {
-            display: flex;
-            justify-content: flex-start;
-            margin-bottom: 25px;
-        }
-
-        .email-box {
-            display: inline-block;
-            background: #2a1515;
-            padding: 6px 18px;
-            border-radius: 40px;
-            border: 1px solid #800000;
-            font-size: 0.8em;
-            transition: all 0.3s ease;
-        }
-
-        .email-box:hover {
-            border-color: #a00000;
-        }
-
-        .email-box a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        /* Social Links */
+        /* Social Links - Smaller and lower */
         .social-links-section {
             background: rgba(30, 15, 15, 0.95);
             border-radius: 24px;
-            padding: 35px;
-            margin: 35px 0;
+            padding: 25px 35px;
+            margin: 35px 0 20px 0;
             text-align: center;
             border: 1px solid rgba(128,0,0,0.3);
         }
@@ -628,22 +626,23 @@
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 25px;
+            gap: 20px;
             flex-wrap: wrap;
-            margin-top: 25px;
+            margin-top: 15px;
         }
 
         .social-link {
             display: inline-flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             background: #2a1515;
-            padding: 12px 28px;
+            padding: 8px 20px;
             border-radius: 40px;
             text-decoration: none;
             color: white;
             transition: all 0.4s ease;
             border: 1px solid rgba(90, 42, 42, 0.6);
+            font-size: 0.9em;
         }
 
         .social-link:hover {
@@ -657,16 +656,16 @@
 
         footer {
             text-align: center;
-            padding: 35px;
+            padding: 25px;
             color: #888;
             border-top: 1px solid rgba(90, 42, 42, 0.5);
-            margin-top: 25px;
+            margin-top: 20px;
         }
 
         .hashtag {
             color: #e0a0a0;
             font-size: 0.9em;
-            margin-top: 12px;
+            margin-top: 10px;
             letter-spacing: 1px;
         }
 
@@ -679,11 +678,17 @@
             transform: translateX(6px);
         }
 
+        /* Continuous Scroll Classes - Will reset on scroll out */
+        .continuous-move {
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
         @media (max-width: 768px) {
             .navbar {
                 flex-direction: column;
                 gap: 15px;
                 border-radius: 25px;
+                padding: 12px 20px;
             }
             .nav-menu {
                 justify-content: center;
@@ -701,17 +706,27 @@
             .section-card {
                 padding: 30px 20px;
             }
-            .exp-grid {
-                grid-template-columns: 1fr;
+            .exp-row {
+                flex-direction: column;
             }
-            .achievements-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .achievement-row {
+                flex-direction: column;
             }
             .services-accordion-inner {
                 flex-direction: column;
             }
             .services-accordion-inner img {
                 width: 100%;
+            }
+            .moving-line, .services-moving-line {
+                left: -8px;
+            }
+            .contact-wrapper {
+                flex-direction: column;
+            }
+            .contact-email-last {
+                text-align: left;
+                margin-top: 20px;
             }
         }
     </style>
@@ -733,9 +748,9 @@
 
         <!-- ========== HOME PAGE ========== -->
         <div id="home-page" class="page active-page">
-            <div class="hero fade-up visible">
+            <div class="hero">
                 <div class="hero-content">
-                    <div class="profile-img" onclick="showPage('home')">
+                    <div class="profile-img">
                         <img src="profile2.jpg.png" alt="M Arham">
                     </div>
                     <h1>M Arham</h1>
@@ -746,13 +761,13 @@
             </div>
 
             <div class="stats-grid">
-                <div class="stat-card fade-up"><div class="stat-number">4+</div><div class="stat-label">Years Experience</div></div>
-                <div class="stat-card fade-up"><div class="stat-number">50+</div><div class="stat-label">Happy Clients</div></div>
-                <div class="stat-card fade-up"><div class="stat-number">200+</div><div class="stat-label">Keywords Ranked</div></div>
-                <div class="stat-card fade-up"><div class="stat-number">500+</div><div class="stat-label">Projects Done</div></div>
+                <div class="stat-card"><div class="stat-number">4+</div><div class="stat-label">Years Experience</div></div>
+                <div class="stat-card"><div class="stat-number">50+</div><div class="stat-label">Happy Clients</div></div>
+                <div class="stat-card"><div class="stat-number">200+</div><div class="stat-label">Keywords Ranked</div></div>
+                <div class="stat-card"><div class="stat-number">500+</div><div class="stat-label">Projects Done</div></div>
             </div>
 
-            <div class="section-card fade-up">
+            <div class="section-card">
                 <h2>Welcome to My Digital Marketing Portfolio</h2>
                 <p style="font-size: 1.1em; line-height: 1.9;">
                     I'm <strong>M Arham</strong>, a passionate <strong>Digital Marketing Expert</strong> with over <strong>4+ years</strong> 
@@ -761,17 +776,17 @@
                 </p>
             </div>
 
-            <div class="section-card fade-left">
+            <div class="section-card">
                 <h2>Featured Services</h2>
                 <div class="featured-grid">
-                    <div class="featured-card zoom-in"><div class="featured-icon">🔍</div><h3>SEO Services</h3><p>On-Page & Off-Page SEO, Technical SEO, Local SEO, SEO Audit</p></div>
-                    <div class="featured-card zoom-in"><div class="featured-icon">📱</div><h3>SMM & SMO</h3><p>Social Media Marketing & Optimization for all platforms</p></div>
-                    <div class="featured-card zoom-in"><div class="featured-icon">💰</div><h3>Ads Campaigns</h3><p>Facebook Ads, Google Ads, YouTube Ads that maximize ROI</p></div>
+                    <div class="featured-card"><div class="featured-icon">🔍</div><h3>SEO Services</h3><p>On-Page & Off-Page SEO, Technical SEO, Local SEO, SEO Audit</p></div>
+                    <div class="featured-card"><div class="featured-icon">📱</div><h3>SMM & SMO</h3><p>Social Media Marketing & Optimization for all platforms</p></div>
+                    <div class="featured-card"><div class="featured-icon">💰</div><h3>Ads Campaigns</h3><p>Facebook Ads, Google Ads, YouTube Ads that maximize ROI</p></div>
                 </div>
                 <div style="text-align: center; margin-top: 25px;"><a onclick="showPage('services')" class="btn btn-outline">View All Services <span class="arrow">→</span></a></div>
             </div>
 
-            <div class="section-card fade-right">
+            <div class="section-card">
                 <h2>Why Choose Me</h2>
                 <div class="why-grid">
                     <div class="why-card"><div class="why-icon">📊</div><h3>Data-Driven Results</h3><p>Every strategy is backed by data and analytics</p></div>
@@ -781,7 +796,7 @@
                 </div>
             </div>
 
-            <div class="section-card zoom-in" style="text-align: center; background: linear-gradient(135deg, #2a1515, #3d1a1a);">
+            <div class="section-card" style="text-align: center; background: linear-gradient(135deg, #2a1515, #3d1a1a);">
                 <h2>Ready to Grow Your Business</h2>
                 <p style="margin-bottom: 25px;">Let's discuss how I can help you achieve your digital marketing goals.</p>
                 <a onclick="showPage('contact')" class="btn">Get a Free Consultation</a>
@@ -790,172 +805,178 @@
 
         <!-- ========== ABOUT PAGE ========== -->
         <div id="about-page" class="page">
-            <div class="section-card fade-up">
+            <div class="section-card">
                 <h2>About Me</h2>
                 <div style="display: flex; flex-wrap: wrap; gap: 45px; align-items: center;">
                     <div style="flex: 1;"><img src="profile2.jpg.png" alt="M Arham" class="about-img"></div>
-                    <div style="flex: 2;"><p style="font-size: 1.1em; line-height: 1.9;">I am a passionate <strong>Digital Marketing Expert</strong> with <strong>4+ years of experience</strong> helping businesses grow online. I specialize in <strong>SEO (On-Page & Off-Page), SMM, SMO, Ads Campaigns</strong>. I have helped 50+ clients achieve their business goals through data-driven digital marketing strategies.</p></div>
+                    <div style="flex: 2;"><p class="about-text">I am a passionate <strong>Digital Marketing Expert</strong> with <strong>4+ years of experience</strong> helping businesses grow online. I specialize in <strong>SEO (On-Page & Off-Page), SMM, SMO, Ads Campaigns</strong>. I have helped 50+ clients achieve their business goals through data-driven digital marketing strategies.</p></div>
                 </div>
             </div>
 
-            <div class="section-card fade-left">
+            <div class="section-card">
                 <h2>What I Do</h2>
-                
-                <div class="accordion-item" id="acc1">
-                    <div class="accordion-header" onclick="toggleAccordion('content1')">
-                        <h3>🔍 Search Engine Optimization (SEO)</h3>
-                        <span class="accordion-icon" id="icon1">▼</span>
-                    </div>
-                    <div class="accordion-content" id="content1">
-                        <div class="accordion-inner">
-                            <img src="SEO.jpg" alt="SEO Expert">
-                            <ul>
-                                <li>Complete SEO Audit and Analysis</li>
-                                <li>On-Page & Off-Page SEO</li>
-                                <li>Technical SEO Optimization</li>
-                                <li>Local SEO & Google My Business</li>
-                                <li>Keyword Research & Strategy</li>
-                                <li>Rankings & Traffic Growth</li>
-                            </ul>
+                <div style="position: relative;">
+                    <div class="moving-line" id="movingLine"></div>
+                    
+                    <div class="accordion-item" data-index="0">
+                        <div class="accordion-header" onclick="toggleAccordion('content1')">
+                            <h3>🔍 Search Engine Optimization (SEO)</h3>
+                        </div>
+                        <div class="accordion-content" id="content1">
+                            <div class="accordion-inner">
+                                <img src="SEO.jpg" alt="SEO Expert">
+                                <ul>
+                                    <li>Complete SEO Audit and Analysis</li>
+                                    <li>On-Page & Off-Page SEO</li>
+                                    <li>Technical SEO Optimization</li>
+                                    <li>Local SEO & Google My Business</li>
+                                    <li>Keyword Research & Strategy</li>
+                                    <li>Rankings & Traffic Growth</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="accordion-item" id="acc2">
-                    <div class="accordion-header" onclick="toggleAccordion('content2')">
-                        <h3>🔗 Link Building & Guest Posting</h3>
-                        <span class="accordion-icon" id="icon2">▼</span>
-                    </div>
-                    <div class="accordion-content" id="content2">
-                        <div class="accordion-inner">
-                            <img src="linkbuilding.jpg" alt="Link Building">
-                            <ul>
-                                <li>Hero Broken Link Building</li>
-                                <li>High Authority Link Building</li>
-                                <li>Guest Posting on DA 50+ Sites</li>
-                                <li>Profile Backlinks Creation</li>
-                                <li>Niche Edits & Contextual Links</li>
-                                <li>Competitor Backlink Analysis</li>
-                            </ul>
+                    <div class="accordion-item" data-index="1">
+                        <div class="accordion-header" onclick="toggleAccordion('content2')">
+                            <h3>🔗 Link Building & Guest Posting</h3>
+                        </div>
+                        <div class="accordion-content" id="content2">
+                            <div class="accordion-inner">
+                                <img src="linkbuilding.jpg" alt="Link Building">
+                                <ul>
+                                    <li>Hero Broken Link Building</li>
+                                    <li>High Authority Link Building</li>
+                                    <li>Guest Posting on DA 50+ Sites</li>
+                                    <li>Profile Backlinks Creation</li>
+                                    <li>Niche Edits & Contextual Links</li>
+                                    <li>Competitor Backlink Analysis</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="accordion-item" id="acc3">
-                    <div class="accordion-header" onclick="toggleAccordion('content3')">
-                        <h3>📱 Social Media Marketing & Optimization (SMM & SMO)</h3>
-                        <span class="accordion-icon" id="icon3">▼</span>
-                    </div>
-                    <div class="accordion-content" id="content3">
-                        <div class="accordion-inner">
-                            <img src="social.jpg" alt="Social Media">
-                            <ul>
-                                <li>Social Media Strategy & Management</li>
-                                <li>Content Creation & Scheduling</li>
-                                <li>Community Engagement</li>
-                                <li>Social Media Optimization (SMO)</li>
-                                <li>Paid Social Campaigns</li>
-                                <li>Analytics & Reporting</li>
-                            </ul>
+                    <div class="accordion-item" data-index="2">
+                        <div class="accordion-header" onclick="toggleAccordion('content3')">
+                            <h3>📱 Social Media Marketing & Optimization (SMM & SMO)</h3>
+                        </div>
+                        <div class="accordion-content" id="content3">
+                            <div class="accordion-inner">
+                                <img src="social.jpg" alt="Social Media">
+                                <ul>
+                                    <li>Social Media Strategy & Management</li>
+                                    <li>Content Creation & Scheduling</li>
+                                    <li>Community Engagement</li>
+                                    <li>Social Media Optimization (SMO)</li>
+                                    <li>Paid Social Campaigns</li>
+                                    <li>Analytics & Reporting</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="accordion-item" id="acc4">
-                    <div class="accordion-header" onclick="toggleAccordion('content4')">
-                        <h3>💰 Ads Campaign Management</h3>
-                        <span class="accordion-icon" id="icon4">▼</span>
-                    </div>
-                    <div class="accordion-content" id="content4">
-                        <div class="accordion-inner">
-                            <img src="adds.jpg" alt="Ads Campaign">
-                            <ul>
-                                <li>Facebook Ads Campaign Setup & Management</li>
-                                <li>Google Ads (Search, Display, Shopping)</li>
-                                <li>YouTube Ads & Retargeting</li>
-                                <li>Campaign Optimization for ROI</li>
-                                <li>A/B Testing & Audience Targeting</li>
-                                <li>Monthly Performance Reporting</li>
-                            </ul>
+                    <div class="accordion-item" data-index="3">
+                        <div class="accordion-header" onclick="toggleAccordion('content4')">
+                            <h3>💰 Ads Campaign Management</h3>
+                        </div>
+                        <div class="accordion-content" id="content4">
+                            <div class="accordion-inner">
+                                <img src="adds.jpg" alt="Ads Campaign">
+                                <ul>
+                                    <li>Facebook Ads Campaign Setup & Management</li>
+                                    <li>Google Ads (Search, Display, Shopping)</li>
+                                    <li>YouTube Ads & Retargeting</li>
+                                    <li>Campaign Optimization for ROI</li>
+                                    <li>A/B Testing & Audience Targeting</li>
+                                    <li>Monthly Performance Reporting</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="section-card fade-right">
+            <div class="section-card">
                 <h2>Experience & Expertise</h2>
                 <div class="exp-grid">
-                    <div class="exp-item" id="exp1"><div class="exp-title">🔍 Complete SEO Solutions</div><div class="exp-desc">SEO Audit | On-Page Optimization | Off-Page Link Building | Technical SEO | Local SEO | Keyword Research | Rank Tracking</div></div>
-                    <div class="exp-item" id="exp2"><div class="exp-title">🔗 Link Building & Guest Posting</div><div class="exp-desc">Hero Broken Link Building | High DA Guest Posts | Profile Backlinks | Niche Edits | Competitor Analysis</div></div>
-                    <div class="exp-item" id="exp3"><div class="exp-title">📱 Social Media Marketing & SMO</div><div class="exp-desc">Strategy Development | Content Creation | Community Management | Social Media Optimization | Paid Social | Analytics</div></div>
-                    <div class="exp-item" id="exp4"><div class="exp-title">💰 Ads Campaign Management</div><div class="exp-desc">Facebook Ads | Google Ads | YouTube Ads | Campaign Setup | ROI Optimization | A/B Testing | Reporting</div></div>
+                    <div class="exp-row">
+                        <div class="exp-item" data-delay="0"><div class="exp-title">🔍 Complete SEO Solutions</div><div class="exp-desc">SEO Audit | On-Page Optimization | Off-Page Link Building | Technical SEO | Local SEO | Keyword Research | Rank Tracking</div></div>
+                        <div class="exp-item" data-delay="0"><div class="exp-title">🔗 Link Building & Guest Posting</div><div class="exp-desc">Hero Broken Link Building | High DA Guest Posts | Profile Backlinks | Niche Edits | Competitor Analysis</div></div>
+                    </div>
+                    <div class="exp-row">
+                        <div class="exp-item" data-delay="0"><div class="exp-title">📱 Social Media Marketing & SMO</div><div class="exp-desc">Strategy Development | Content Creation | Community Management | Social Media Optimization | Paid Social | Analytics</div></div>
+                        <div class="exp-item" data-delay="0"><div class="exp-title">💰 Ads Campaign Management</div><div class="exp-desc">Facebook Ads | Google Ads | YouTube Ads | Campaign Setup | ROI Optimization | A/B Testing | Reporting</div></div>
+                    </div>
                 </div>
             </div>
 
-            <div class="section-card zoom-in">
+            <div class="section-card">
                 <h2>Achievements</h2>
                 <div class="achievements-grid">
-                    <div class="achievement-card" id="ach1">50+ Businesses Grow Online</div>
-                    <div class="achievement-card" id="ach2">500+ Guest Posts Published</div>
-                    <div class="achievement-card" id="ach3">200+ Keywords Ranked #1</div>
-                    <div class="achievement-card" id="ach4">100% Client Satisfaction</div>
+                    <div class="achievement-row">
+                        <div class="achievement-card" data-delay="0">50+ Businesses Grow Online</div>
+                        <div class="achievement-card" data-delay="0">500+ Guest Posts Published</div>
+                    </div>
+                    <div class="achievement-row">
+                        <div class="achievement-card" data-delay="0">200+ Keywords Ranked #1</div>
+                        <div class="achievement-card" data-delay="0">100% Client Satisfaction</div>
+                    </div>
                 </div>
             </div>
         </div>
 
         <!-- ========== SERVICES PAGE ========== -->
         <div id="services-page" class="page">
-            <div class="section-card fade-up">
+            <div class="section-card">
                 <h2>Services I Offer</h2>
+                <div style="position: relative;">
+                    <div class="services-moving-line" id="servicesMovingLine"></div>
 
-                <div class="services-accordion-item" id="serv1">
-                    <div class="services-accordion-header" onclick="toggleServicesAccordion('serv-content1')">
-                        <h3>🔍 Search Engine Optimization (SEO)</h3>
-                        <span class="accordion-icon" id="serv-icon1">▼</span>
-                    </div>
-                    <div class="services-accordion-content" id="serv-content1">
-                        <div class="services-accordion-inner">
-                            <img src="SEO.jpg" alt="SEO Services">
-                            <p>I provide complete SEO solutions including website audit, on-page optimization, off-page SEO, technical SEO, local SEO, and keyword research. My strategies are data-driven and focused on getting your website to the top of Google search results. I've helped 50+ clients achieve top 3 rankings for competitive keywords, resulting in significant organic traffic growth and increased revenue.</p>
+                    <div class="services-accordion-item" data-serv-index="0">
+                        <div class="services-accordion-header" onclick="toggleServicesAccordion('serv-content1')">
+                            <h3>🔍 Search Engine Optimization (SEO)</h3>
+                        </div>
+                        <div class="services-accordion-content" id="serv-content1">
+                            <div class="services-accordion-inner">
+                                <img src="SEO.jpg" alt="SEO Services">
+                                <p>I provide complete SEO solutions including website audit, on-page optimization, off-page SEO, technical SEO, local SEO, and keyword research. My strategies are data-driven and focused on getting your website to the top of Google search results. I've helped 50+ clients achieve top 3 rankings for competitive keywords, resulting in significant organic traffic growth and increased revenue.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="services-accordion-item" id="serv2">
-                    <div class="services-accordion-header" onclick="toggleServicesAccordion('serv-content2')">
-                        <h3>🔗 Link Building & Guest Posting</h3>
-                        <span class="accordion-icon" id="serv-icon2">▼</span>
-                    </div>
-                    <div class="services-accordion-content" id="serv-content2">
-                        <div class="services-accordion-inner">
-                            <img src="linkbuilding.jpg" alt="Link Building">
-                            <p>I specialize in hero broken link building, high-quality guest posting on DA 50+ sites, profile backlinks creation, and niche edits. My link building strategies focus on building natural, authoritative backlinks that boost your domain authority and search rankings. I've successfully published 500+ guest posts on high-authority websites, helping clients build strong backlink profiles.</p>
+                    <div class="services-accordion-item" data-serv-index="1">
+                        <div class="services-accordion-header" onclick="toggleServicesAccordion('serv-content2')">
+                            <h3>🔗 Link Building & Guest Posting</h3>
+                        </div>
+                        <div class="services-accordion-content" id="serv-content2">
+                            <div class="services-accordion-inner">
+                                <img src="linkbuilding.jpg" alt="Link Building">
+                                <p>I specialize in hero broken link building, high-quality guest posting on DA 50+ sites, profile backlinks creation, and niche edits. My link building strategies focus on building natural, authoritative backlinks that boost your domain authority and search rankings. I've successfully published 500+ guest posts on high-authority websites, helping clients build strong backlink profiles.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="services-accordion-item" id="serv3">
-                    <div class="services-accordion-header" onclick="toggleServicesAccordion('serv-content3')">
-                        <h3>📱 Social Media Marketing & Optimization (SMM & SMO)</h3>
-                        <span class="accordion-icon" id="serv-icon3">▼</span>
-                    </div>
-                    <div class="services-accordion-content" id="serv-content3">
-                        <div class="services-accordion-inner">
-                            <img src="social.jpg" alt="SMM Services">
-                            <p>I create data-driven social media strategies that build brand awareness, engage audiences, and drive conversions. From content creation to community management, I manage your social presence across Facebook, Instagram, LinkedIn, and Twitter. My Social Media Optimization (SMO) techniques ensure your profiles are fully optimized for maximum reach and engagement.</p>
+                    <div class="services-accordion-item" data-serv-index="2">
+                        <div class="services-accordion-header" onclick="toggleServicesAccordion('serv-content3')">
+                            <h3>📱 Social Media Marketing & Optimization (SMM & SMO)</h3>
+                        </div>
+                        <div class="services-accordion-content" id="serv-content3">
+                            <div class="services-accordion-inner">
+                                <img src="social.jpg" alt="SMM Services">
+                                <p>I create data-driven social media strategies that build brand awareness, engage audiences, and drive conversions. From content creation to community management, I manage your social presence across Facebook, Instagram, LinkedIn, and Twitter. My Social Media Optimization (SMO) techniques ensure your profiles are fully optimized for maximum reach and engagement.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="services-accordion-item" id="serv4">
-                    <div class="services-accordion-header" onclick="toggleServicesAccordion('serv-content4')">
-                        <h3>💰 Ads Campaign Management</h3>
-                        <span class="accordion-icon" id="serv-icon4">▼</span>
-                    </div>
-                    <div class="services-accordion-content" id="serv-content4">
-                        <div class="services-accordion-inner">
-                            <img src="adds.jpg" alt="Ads Services">
-                            <p>I plan, create, and optimize high-performing ad campaigns on Facebook and Google. My focus is on maximizing your return on investment (ROI) through targeted audience segmentation, A/B testing, and continuous monitoring. From lead generation to conversion campaigns, I ensure your ad budget is spent wisely to bring you the best results with detailed monthly reporting.</p>
+                    <div class="services-accordion-item" data-serv-index="3">
+                        <div class="services-accordion-header" onclick="toggleServicesAccordion('serv-content4')">
+                            <h3>💰 Ads Campaign Management</h3>
+                        </div>
+                        <div class="services-accordion-content" id="serv-content4">
+                            <div class="services-accordion-inner">
+                                <img src="adds.jpg" alt="Ads Services">
+                                <p>I plan, create, and optimize high-performing ad campaigns on Facebook and Google. My focus is on maximizing your return on investment (ROI) through targeted audience segmentation, A/B testing, and continuous monitoring. From lead generation to conversion campaigns, I ensure your ad budget is spent wisely to bring you the best results with detailed monthly reporting.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -964,33 +985,31 @@
 
         <!-- ========== CONTACT PAGE ========== -->
         <div id="contact-page" class="page">
-            <div class="section-card fade-up">
+            <div class="section-card">
                 <h2>Contact Me</h2>
-                
-                <div class="email-container contact-move" id="contactEmail">
-                    <div class="email-box">
-                        📧 <a href="mailto:marham2772@gmail.com">marham2772@gmail.com</a>
+                <div class="contact-wrapper">
+                    <div class="contact-left">
+                        <p style="line-height: 1.9;">Feel free to reach out if you have any questions or need any information about my services. I'm always happy to discuss how I can help grow your business online. Whether you need a complete SEO audit, want to start a social media campaign, or just want to learn more about digital marketing - I'm here to help.</p>
                     </div>
-                </div>
-
-                <p class="contact-move" id="contactText" style="margin: 25px 0; line-height: 1.9;">Feel free to reach out if you have any questions or need any information about my services. I'm always happy to discuss how I can help grow your business online. Whether you need a complete SEO audit, want to start a social media campaign, or just want to learn more about digital marketing - I'm here to help.</p>
-                
-                <div class="contact-form contact-move" id="contactFormDiv">
-                    <form action="https://formsubmit.co/marham2772@gmail.com" method="POST" id="contactForm">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_next" value="https://marhamseo.github.io/portfolio/">
-                        <input type="text" name="name" placeholder="Your Name" required>
-                        <input type="email" name="email" placeholder="Your Email" required>
-                        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-                        <input type="hidden" name="g-recaptcha-response" id="recaptchaResponse">
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
+                    <div class="contact-right">
+                        <div class="contact-form">
+                            <form action="https://formsubmit.co/marham2772@gmail.com" method="POST" id="contactForm">
+                                <input type="hidden" name="_captcha" value="false">
+                                <input type="hidden" name="_next" value="https://marhamseo.github.io/portfolio/">
+                                <input type="text" name="name" placeholder="Your Name" required>
+                                <input type="email" name="email" placeholder="Your Email" required>
+                                <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+                                <input type="hidden" name="g-recaptcha-response" id="recaptchaResponse">
+                                <button type="submit" class="btn">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Social Links Section -->
-        <div class="social-links-section fade-up">
+        <!-- Social Links Section - Smaller -->
+        <div class="social-links-section">
             <h3>Connect With Me</h3>
             <div class="social-links">
                 <a href="https://www.linkedin.com/in/m-arham-link-builder/" target="_blank" class="social-link linkedin">🔵 LinkedIn</a>
@@ -999,7 +1018,14 @@
             </div>
         </div>
 
-        <footer class="zoom-in">
+        <!-- Email at the end - right side -->
+        <div class="contact-email-last" style="text-align: right; margin-bottom: 20px;">
+            <div class="email-box">
+                📧 <a href="mailto:marham2772@gmail.com">marham2772@gmail.com</a>
+            </div>
+        </div>
+
+        <footer>
             <p>&copy; 2022 M Arham - Digital Marketing Expert | SEO | SMM | SMO | Ads</p>
             <p>🚀 Let's take your business to the next level!</p>
             <div class="hashtag">#ArhamSEO</div>
@@ -1024,12 +1050,10 @@
             window.location.hash = pageName;
             window.scrollTo({top: 0, behavior: 'smooth'});
             
-            // Reset scroll position visibility checker
             setTimeout(() => {
-                checkVisibility();
-                checkExpAchievements();
-                checkContactMove();
                 updateAccordionOnScroll();
+                updateServicesAccordionOnScroll();
+                checkExpAchievements();
             }, 100);
         }
 
@@ -1040,167 +1064,211 @@
             else showPage('home');
         }
 
-        // Accordion Toggle (Manual - but auto on scroll)
+        // Manual Toggle
         function toggleAccordion(contentId) {
             const content = document.getElementById(contentId);
-            const icon = document.getElementById(contentId.replace('content', 'icon'));
-            
             if (content.classList.contains('active')) {
                 content.classList.remove('active');
-                icon.style.transform = 'rotate(0deg)';
-                icon.innerHTML = '▼';
             } else {
                 content.classList.add('active');
-                icon.style.transform = 'rotate(180deg)';
-                icon.innerHTML = '▲';
             }
+            updateMovingLine();
         }
 
         function toggleServicesAccordion(contentId) {
             const content = document.getElementById(contentId);
-            const icon = document.getElementById(contentId.replace('content', 'icon'));
-            
             if (content.classList.contains('active')) {
                 content.classList.remove('active');
-                icon.style.transform = 'rotate(0deg)';
-                icon.innerHTML = '▼';
             } else {
                 content.classList.add('active');
-                icon.style.transform = 'rotate(180deg)';
-                icon.innerHTML = '▲';
             }
+            updateServicesMovingLine();
         }
 
-        // Auto Accordion on Scroll - 1 by 1
+        // Auto Accordion on Scroll - One at a time with moving line
         function updateAccordionOnScroll() {
-            const accordions = ['acc1', 'acc2', 'acc3', 'acc4'];
-            const servicesAccordions = ['serv1', 'serv2', 'serv3', 'serv4'];
+            const accordions = document.querySelectorAll('#about-page .accordion-item');
+            const whatIdoSection = document.querySelector('#about-page .section-card');
             
-            // Get scroll position relative to the section
-            const whatIdoSection = document.querySelector('#about-page .section-card.fade-left');
-            if (whatIdoSection) {
-                const sectionTop = whatIdoSection.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
+            if (!whatIdoSection) return;
+            
+            const sectionTop = whatIdoSection.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+            
+            let activeIndex = -1;
+            
+            for (let i = 0; i < accordions.length; i++) {
+                const accordion = accordions[i];
+                const accordionTop = accordion.getBoundingClientRect().top;
                 
-                // Calculate which accordion should be open based on scroll
-                for (let i = 0; i < accordions.length; i++) {
-                    const accordion = document.getElementById(accordions[i]);
-                    if (accordion) {
-                        const accordionTop = accordion.getBoundingClientRect().top;
-                        const contentId = 'content' + (i + 1);
-                        const iconId = 'icon' + (i + 1);
-                        const content = document.getElementById(contentId);
-                        const icon = document.getElementById(iconId);
-                        
-                        // If this accordion is in view
-                        if (accordionTop < windowHeight - 100 && accordionTop > -100) {
-                            if (content && !content.classList.contains('active')) {
-                                // Close all first
-                                for (let j = 0; j < accordions.length; j++) {
-                                    const otherContent = document.getElementById('content' + (j + 1));
-                                    const otherIcon = document.getElementById('icon' + (j + 1));
-                                    if (otherContent && otherContent !== content) {
-                                        otherContent.classList.remove('active');
-                                        if (otherIcon) {
-                                            otherIcon.style.transform = 'rotate(0deg)';
-                                            otherIcon.innerHTML = '▼';
-                                        }
-                                    }
-                                }
-                                // Open this one
-                                content.classList.add('active');
-                                if (icon) {
-                                    icon.style.transform = 'rotate(180deg)';
-                                    icon.innerHTML = '▲';
-                                }
-                            }
+                if (accordionTop < windowHeight - 100 && accordionTop > -100) {
+                    activeIndex = i;
+                    break;
+                }
+            }
+            
+            // Close all, open the active one
+            for (let i = 0; i < accordions.length; i++) {
+                const content = document.getElementById('content' + (i + 1));
+                if (content) {
+                    if (i === activeIndex) {
+                        if (!content.classList.contains('active')) {
+                            content.classList.add('active');
+                        }
+                    } else {
+                        if (content.classList.contains('active')) {
+                            content.classList.remove('active');
                         }
                     }
                 }
             }
             
-            // Services page auto accordion
-            const servicesSection = document.querySelector('#services-page .section-card');
-            if (servicesSection && document.getElementById('services-page').classList.contains('active-page')) {
-                for (let i = 0; i < servicesAccordions.length; i++) {
-                    const accordion = document.getElementById(servicesAccordions[i]);
-                    if (accordion) {
-                        const accordionTop = accordion.getBoundingClientRect().top;
-                        const contentId = 'serv-content' + (i + 1);
-                        const iconId = 'serv-icon' + (i + 1);
-                        const content = document.getElementById(contentId);
-                        const icon = document.getElementById(iconId);
-                        
-                        if (accordionTop < windowHeight - 100 && accordionTop > -100) {
-                            if (content && !content.classList.contains('active')) {
-                                for (let j = 0; j < servicesAccordions.length; j++) {
-                                    const otherContent = document.getElementById('serv-content' + (j + 1));
-                                    const otherIcon = document.getElementById('serv-icon' + (j + 1));
-                                    if (otherContent && otherContent !== content) {
-                                        otherContent.classList.remove('active');
-                                        if (otherIcon) {
-                                            otherIcon.style.transform = 'rotate(0deg)';
-                                            otherIcon.innerHTML = '▼';
-                                        }
-                                    }
-                                }
-                                content.classList.add('active');
-                                if (icon) {
-                                    icon.style.transform = 'rotate(180deg)';
-                                    icon.innerHTML = '▲';
-                                }
-                            }
-                        }
+            updateMovingLine();
+        }
+        
+        function updateMovingLine() {
+            const movingLine = document.getElementById('movingLine');
+            const accordions = document.querySelectorAll('#about-page .accordion-item');
+            
+            for (let i = 0; i < accordions.length; i++) {
+                const content = document.getElementById('content' + (i + 1));
+                if (content && content.classList.contains('active')) {
+                    const header = accordions[i].querySelector('.accordion-header');
+                    const headerRect = header.getBoundingClientRect();
+                    const sectionRect = document.querySelector('#about-page .section-card').getBoundingClientRect();
+                    const relativeTop = headerRect.top - sectionRect.top + 20;
+                    
+                    if (movingLine) {
+                        movingLine.style.top = relativeTop + 'px';
+                        // Change color based on index
+                        const colors = ['#800000', '#a03030', '#c04040', '#e05050'];
+                        movingLine.style.background = colors[i % colors.length];
                     }
+                    break;
                 }
             }
         }
+        
+        function updateServicesMovingLine() {
+            const movingLine = document.getElementById('servicesMovingLine');
+            const accordions = document.querySelectorAll('#services-page .services-accordion-item');
+            
+            for (let i = 0; i < accordions.length; i++) {
+                const content = document.getElementById('serv-content' + (i + 1));
+                if (content && content.classList.contains('active')) {
+                    const header = accordions[i].querySelector('.services-accordion-header');
+                    const headerRect = header.getBoundingClientRect();
+                    const sectionRect = document.querySelector('#services-page .section-card').getBoundingClientRect();
+                    const relativeTop = headerRect.top - sectionRect.top + 20;
+                    
+                    if (movingLine) {
+                        movingLine.style.top = relativeTop + 'px';
+                        const colors = ['#800000', '#a03030', '#c04040', '#e05050'];
+                        movingLine.style.background = colors[i % colors.length];
+                    }
+                    break;
+                }
+            }
+        }
+        
+        function updateServicesAccordionOnScroll() {
+            const accordions = document.querySelectorAll('#services-page .services-accordion-item');
+            const servicesSection = document.querySelector('#services-page .section-card');
+            
+            if (!servicesSection) return;
+            
+            const windowHeight = window.innerHeight;
+            let activeIndex = -1;
+            
+            for (let i = 0; i < accordions.length; i++) {
+                const accordion = accordions[i];
+                const accordionTop = accordion.getBoundingClientRect().top;
+                
+                if (accordionTop < windowHeight - 100 && accordionTop > -100) {
+                    activeIndex = i;
+                    break;
+                }
+            }
+            
+            for (let i = 0; i < accordions.length; i++) {
+                const content = document.getElementById('serv-content' + (i + 1));
+                if (content) {
+                    if (i === activeIndex) {
+                        if (!content.classList.contains('active')) {
+                            content.classList.add('active');
+                        }
+                    } else {
+                        if (content.classList.contains('active')) {
+                            content.classList.remove('active');
+                        }
+                    }
+                }
+            }
+            
+            updateServicesMovingLine();
+        }
 
-        // Experience & Achievements - Move from left to right
+        // Experience & Achievements - Line by line with continuous scroll
         function checkExpAchievements() {
             const expItems = document.querySelectorAll('.exp-item');
             const achievementItems = document.querySelectorAll('.achievement-card');
             
+            // Reset all first (to allow continuous move)
+            expItems.forEach(item => {
+                item.classList.remove('visible-item');
+            });
+            achievementItems.forEach(item => {
+                item.classList.remove('visible-item');
+            });
+            
+            // Show items that are in view
             expItems.forEach(item => {
                 const rect = item.getBoundingClientRect();
                 const windowHeight = window.innerHeight;
-                if (rect.top < windowHeight - 50) {
-                    item.classList.add('visible-item');
+                if (rect.top < windowHeight - 50 && rect.bottom > 0) {
+                    setTimeout(() => {
+                        item.classList.add('visible-item');
+                    }, parseInt(item.getAttribute('data-delay') || '0'));
                 }
             });
             
             achievementItems.forEach(item => {
                 const rect = item.getBoundingClientRect();
                 const windowHeight = window.innerHeight;
-                if (rect.top < windowHeight - 50) {
-                    item.classList.add('visible-item');
+                if (rect.top < windowHeight - 50 && rect.bottom > 0) {
+                    setTimeout(() => {
+                        item.classList.add('visible-item');
+                    }, parseInt(item.getAttribute('data-delay') || '0'));
                 }
             });
         }
 
-        // Contact page move effect
-        function checkContactMove() {
-            const contactElements = document.querySelectorAll('.contact-move');
-            contactElements.forEach(el => {
+        // Continuous Scroll - Reset and re-trigger animations
+        function checkContinuousScroll() {
+            // Elements that should move continuously
+            const continuousElements = document.querySelectorAll('.stat-card, .featured-card, .why-card, .section-card');
+            
+            continuousElements.forEach(el => {
                 const rect = el.getBoundingClientRect();
                 const windowHeight = window.innerHeight;
-                if (rect.top < windowHeight - 50) {
-                    el.classList.add('visible-item');
+                const windowWidth = window.innerWidth;
+                
+                // For fade-left/right effect based on position
+                if (rect.left < windowWidth / 2) {
+                    el.style.opacity = Math.min(1, (rect.top - 100) / 200 + 0.5);
+                    el.style.transform = `translateX(${Math.max(0, 30 - (windowHeight - rect.top) / 10)}px)`;
                 }
             });
         }
 
-        // General Scroll Visibility
-        function checkVisibility() {
-            const elements = document.querySelectorAll('.fade-up, .fade-left, .fade-right, .zoom-in');
-            elements.forEach(element => {
-                const rect = element.getBoundingClientRect();
-                const windowHeight = window.innerHeight;
-                if (rect.top < windowHeight - 80) {
-                    element.classList.add('visible');
-                }
-            });
-        }
+        // Main scroll handler - Continuous trigger
+        window.addEventListener('scroll', () => {
+            navbarScrollEffect();
+            updateAccordionOnScroll();
+            updateServicesAccordionOnScroll();
+            checkExpAchievements();
+            checkContinuousScroll();
+        });
 
         function navbarScrollEffect() {
             const navbar = document.getElementById('navbar');
@@ -1211,22 +1279,14 @@
             }
         }
 
-        // Main scroll handler
-        window.addEventListener('scroll', () => {
-            checkVisibility();
-            navbarScrollEffect();
-            updateAccordionOnScroll();
-            checkExpAchievements();
-            checkContactMove();
-        });
-
         window.addEventListener('load', () => {
             loadPageFromHash();
             setTimeout(() => {
-                checkVisibility();
-                checkExpAchievements();
-                checkContactMove();
                 updateAccordionOnScroll();
+                updateServicesAccordionOnScroll();
+                checkExpAchievements();
+                updateMovingLine();
+                updateServicesMovingLine();
             }, 200);
         });
 
