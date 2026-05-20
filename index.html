@@ -382,14 +382,19 @@
             width: 100%;
         }
 
+        .email-container {
+            display: flex;
+            justify-content: flex-start;
+            margin-bottom: 20px;
+        }
+
         .email-box {
             display: inline-block;
             background: #2a1515;
-            padding: 8px 20px;
+            padding: 6px 15px;
             border-radius: 50px;
-            margin: 20px 0;
             border: 1px solid #800000;
-            font-size: 0.85em;
+            font-size: 0.8em;
         }
 
         .email-box a {
@@ -503,7 +508,7 @@
         <div id="home-page" class="page active-page">
             <div class="hero">
                 <div class="profile-img" onclick="showPage('home')">
-                    <img src="profile.jpg.jpg" alt="M Arham">
+                    <img src="profile2.jpg.png" alt="M Arham">
                 </div>
                 <h1>M Arham</h1>
                 <div class="tagline">Digital Marketing Expert | SEO | SMM | SMO | Ads Specialist</div>
@@ -559,7 +564,7 @@
             <div class="section-card">
                 <h2>About Me</h2>
                 <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center;">
-                    <div style="flex: 1;"><img src="profile.jpg.jpg" alt="M Arham" style="width: 100%; max-width: 300px; border-radius: 15px; border: 1px solid #800000;"></div>
+                    <div style="flex: 1;"><img src="profile2.jpg.png" alt="M Arham" style="width: 100%; max-width: 300px; border-radius: 15px; border: 1px solid #800000;"></div>
                     <div style="flex: 2;"><p style="font-size: 1.1em; line-height: 1.8;">I am a passionate <strong>Digital Marketing Expert</strong> with <strong>4+ years of experience</strong> helping businesses grow online. I specialize in <strong>SEO (On-Page & Off-Page), SMM, SMO, Ads Campaigns</strong>. I have helped 50+ clients achieve their business goals through data-driven digital marketing strategies.</p></div>
                 </div>
             </div>
@@ -569,7 +574,7 @@
                 
                 <h3>🔍 Search Engine Optimization (SEO)</h3>
                 <div style="display: flex; flex-wrap: wrap; gap: 30px; margin-bottom: 40px; align-items: center;">
-                    <div style="flex: 1;"><img src="seo.jpg" alt="SEO Expert working" style="width: 100%; border-radius: 15px; border: 1px solid #800000;"></div>
+                    <div style="flex: 1;"><img src="SEO.jpg" alt="SEO Expert working" style="width: 100%; border-radius: 15px; border: 1px solid #800000;"></div>
                     <div style="flex: 1;"><ul style="margin-left: 20px; line-height: 1.8;"><li>Complete SEO Audit and Analysis</li><li>On-Page & Off-Page SEO</li><li>Technical SEO Optimization</li><li>Local SEO & Google My Business</li><li>Keyword Research & Strategy</li><li>Rankings & Traffic Growth</li></ul></div>
                 </div>
 
@@ -617,7 +622,7 @@
                 <h2>Services I Offer</h2>
 
                 <div class="service-block">
-                    <div class="service-image"><img src="seo.jpg" alt="SEO Services"></div>
+                    <div class="service-image"><img src="SEO.jpg" alt="SEO Services"></div>
                     <div class="service-content"><h3>Search Engine Optimization (SEO)</h3><p>I provide complete SEO solutions including website audit, on-page optimization, off-page SEO, technical SEO, local SEO, and keyword research. My strategies are data-driven and focused on getting your website to the top of Google search results. I've helped 50+ clients achieve top 3 rankings for competitive keywords, resulting in significant organic traffic growth and increased revenue.</p></div>
                 </div>
 
@@ -653,20 +658,26 @@
         <div id="contact-page" class="page">
             <div class="section-card">
                 <h2>Contact Me</h2>
-                <div style="text-align: center;">
-                    <div class="email-box">📧 <a href="mailto:marham2772@gmail.com">marham2772@gmail.com</a></div>
-                    <p style="margin: 20px 0; line-height: 1.8;">Feel free to reach out if you have any questions or need any information about my services. I'm always happy to discuss how I can help grow your business online. Whether you need a complete SEO audit, want to start a social media campaign, or just want to learn more about digital marketing - I'm here to help.</p>
-                    <div class="contact-form">
-                        <form action="https://formsubmit.co/marham2772@gmail.com" method="POST" id="contactForm">
-                            <input type="hidden" name="_captcha" value="false">
-                            <input type="hidden" name="_next" value="https://marhamseo.github.io/portfolio/">
-                            <input type="text" name="name" placeholder="Your Name" required>
-                            <input type="email" name="email" placeholder="Your Email" required>
-                            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-                            <input type="hidden" name="g-recaptcha-response" id="recaptchaResponse">
-                            <button type="submit" class="btn">Send Message</button>
-                        </form>
+                
+                <!-- Email - Left Side Small -->
+                <div class="email-container">
+                    <div class="email-box">
+                        📧 <a href="mailto:marham2772@gmail.com">marham2772@gmail.com</a>
                     </div>
+                </div>
+
+                <p style="margin: 20px 0; line-height: 1.8;">Feel free to reach out if you have any questions or need any information about my services. I'm always happy to discuss how I can help grow your business online. Whether you need a complete SEO audit, want to start a social media campaign, or just want to learn more about digital marketing - I'm here to help.</p>
+                
+                <div class="contact-form">
+                    <form action="https://formsubmit.co/marham2772@gmail.com" method="POST" id="contactForm">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="https://marhamseo.github.io/portfolio/">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                        <input type="hidden" name="g-recaptcha-response" id="recaptchaResponse">
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
                 </div>
             </div>
         </div>
