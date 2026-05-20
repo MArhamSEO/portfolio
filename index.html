@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>M Arham - Digital Marketing Expert</title>
+    <!-- Favicon - Browser Tab Icon -->
+    <link rel="icon" type="image/png" href="profile1.png">
     <!-- Google reCAPTCHA -->
     <script src="https://www.google.com/recaptcha/api.js?render=6LfB3vEsAAAAAMkBL2ir6WAmuh_pptslwle0MteR"></script>
     <style>
@@ -27,7 +29,6 @@
             padding: 20px;
         }
 
-        /* Scroll Animation Classes */
         .fade-up {
             opacity: 0;
             transform: translateY(50px);
@@ -72,7 +73,6 @@
             transform: scale(1);
         }
 
-        /* Parallax Hero Section */
         .hero {
             text-align: center;
             padding: 80px 20px;
@@ -87,7 +87,6 @@
         .hero-content {
             position: relative;
             z-index: 2;
-            transition: transform 0.3s ease-out;
         }
 
         .navbar {
@@ -585,7 +584,7 @@
     <div class="container">
         <nav class="navbar" id="navbar">
             <div class="nav-logo" onclick="showPage('home')">
-                <img src="profile1.jpg.jpg" alt="Logo" class="logo-img">
+                <img src="profile1.png" alt="Logo" class="logo-img">
                 <span class="logo-text">M Arham</span>
             </div>
             <ul class="nav-menu">
@@ -794,7 +793,6 @@
     </div>
 
     <script>
-        // Page Switching Function
         function showPage(pageName) {
             document.getElementById('home-page').classList.remove('active-page');
             document.getElementById('about-page').classList.remove('active-page');
@@ -816,7 +814,6 @@
             else showPage('home');
         }
 
-        // Scroll Animation - Elements fade in when they come into view
         function checkVisibility() {
             const elements = document.querySelectorAll('.fade-up, .fade-left, .fade-right, .zoom-in');
             elements.forEach(element => {
@@ -828,7 +825,6 @@
             });
         }
 
-        // Navbar scroll effect
         function navbarScrollEffect() {
             const navbar = document.getElementById('navbar');
             if (window.scrollY > 50) {
@@ -838,29 +834,6 @@
             }
         }
 
-        // Parallax effect on hero section
-        function parallaxEffect() {
-            const hero = document.getElementById('heroSection');
-            if (hero) {
-                const scrollPosition = window.scrollY;
-                hero.style.backgroundPosition = `center ${scrollPosition * 0.3}px`;
-            }
-        }
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                const href = this.getAttribute('href');
-                if (href && href !== '#' && href !== '#home' && href !== '#about' && href !== '#services' && href !== '#blog' && href !== '#contact') {
-                    e.preventDefault();
-                    const element = document.querySelector(href);
-                    if (element) {
-                        element.scrollIntoView({ behavior: 'smooth' });
-                    }
-                }
-            });
-        });
-
         window.addEventListener('load', () => {
             loadPageFromHash();
             checkVisibility();
@@ -869,13 +842,8 @@
         window.addEventListener('scroll', () => {
             checkVisibility();
             navbarScrollEffect();
-            parallaxEffect();
         });
-        
-        window.addEventListener('resize', checkVisibility);
-        window.addEventListener('hashchange', loadPageFromHash);
 
-        // reCAPTCHA
         const form = document.getElementById('contactForm');
         if (form) {
             form.addEventListener('submit', function(e) {
