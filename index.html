@@ -18,12 +18,76 @@
             background: linear-gradient(135deg, #3d1a1a 0%, #5c2a2a 50%, #4a2020 100%);
             color: white;
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+        }
+
+        /* Scroll Animation Classes */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .fade-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .fade-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .zoom-in {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .zoom-in.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Parallax Hero Section */
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            background: rgba(30, 10, 10, 0.95);
+            border-radius: 20px;
+            margin-bottom: 30px;
+            border: 1px solid #800000;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            transition: transform 0.3s ease-out;
         }
 
         .navbar {
@@ -40,6 +104,12 @@
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            background: rgba(30, 10, 10, 0.98);
+            border-color: #a00000;
         }
 
         .nav-logo {
@@ -104,15 +174,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .hero {
-            text-align: center;
-            padding: 60px 20px;
-            background: rgba(30, 10, 10, 0.95);
-            border-radius: 20px;
-            margin-bottom: 30px;
-            border: 1px solid #800000;
-        }
-
         .profile-img {
             width: 150px;
             height: 150px;
@@ -120,6 +181,7 @@
             margin: 0 auto 20px;
             overflow: hidden;
             cursor: pointer;
+            transition: transform 0.3s ease;
         }
 
         .profile-img img {
@@ -199,11 +261,12 @@
             padding: 30px 20px;
             border-radius: 15px;
             border: 1px solid #800000;
-            transition: 0.3s;
+            transition: all 0.4s ease;
         }
 
         .stat-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+            border-color: #a00000;
         }
 
         .stat-number {
@@ -218,6 +281,11 @@
             padding: 40px;
             margin-bottom: 30px;
             border: 1px solid #5c2a2a;
+            transition: all 0.3s ease;
+        }
+
+        .section-card:hover {
+            border-color: #800000;
         }
 
         .service-block {
@@ -235,17 +303,19 @@
         .service-image {
             flex: 1;
             min-width: 250px;
+            overflow: hidden;
+            border-radius: 15px;
         }
 
         .service-image img {
             width: 100%;
             border-radius: 15px;
             border: 1px solid #800000;
-            transition: 0.3s;
+            transition: transform 0.5s ease;
         }
 
         .service-image img:hover {
-            transform: scale(1.02);
+            transform: scale(1.05);
         }
 
         .service-content {
@@ -275,12 +345,12 @@
             padding: 25px;
             border-radius: 15px;
             text-align: center;
-            transition: 0.3s;
+            transition: all 0.4s ease;
             border: 1px solid #5c2a2a;
         }
 
         .featured-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
             border-color: #800000;
         }
 
@@ -300,11 +370,12 @@
             padding: 25px;
             border-radius: 15px;
             text-align: center;
-            transition: 0.3s;
+            transition: all 0.4s ease;
         }
 
         .why-card:hover {
             background: #800000;
+            transform: translateY(-5px);
         }
 
         .why-icon {
@@ -318,6 +389,12 @@
             border-left: 4px solid #800000;
             margin-bottom: 20px;
             border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .exp-item:hover {
+            transform: translateX(5px);
+            border-left-color: #a00000;
         }
 
         .exp-title {
@@ -344,7 +421,7 @@
             padding: 15px;
             border-radius: 10px;
             text-align: center;
-            transition: 0.3s;
+            transition: all 0.4s ease;
             border: 1px solid #5c2a2a;
             color: white;
         }
@@ -376,6 +453,13 @@
             background: #2a1515;
             color: white;
             font-family: inherit;
+            transition: all 0.3s ease;
+        }
+
+        .contact-form input:focus, .contact-form textarea:focus {
+            outline: none;
+            border-color: #a00000;
+            box-shadow: 0 0 10px rgba(128, 0, 0, 0.3);
         }
 
         .contact-form button {
@@ -395,6 +479,12 @@
             border-radius: 50px;
             border: 1px solid #800000;
             font-size: 0.8em;
+            transition: all 0.3s ease;
+        }
+
+        .email-box:hover {
+            border-color: #a00000;
+            transform: scale(1.02);
         }
 
         .email-box a {
@@ -429,7 +519,7 @@
             border-radius: 30px;
             text-decoration: none;
             color: white;
-            transition: 0.3s;
+            transition: all 0.3s ease;
             border: 1px solid #5c2a2a;
         }
 
@@ -485,12 +575,15 @@
             h1 {
                 font-size: 1.8em;
             }
+            .hero {
+                padding: 40px 20px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <nav class="navbar">
+        <nav class="navbar" id="navbar">
             <div class="nav-logo" onclick="showPage('home')">
                 <img src="profile1.jpg.jpg" alt="Logo" class="logo-img">
                 <span class="logo-text">M Arham</span>
@@ -506,24 +599,26 @@
 
         <!-- ========== HOME PAGE ========== -->
         <div id="home-page" class="page active-page">
-            <div class="hero">
-                <div class="profile-img" onclick="showPage('home')">
-                    <img src="profile2.jpg.png" alt="M Arham">
+            <div class="hero" id="heroSection">
+                <div class="hero-content">
+                    <div class="profile-img" onclick="showPage('home')">
+                        <img src="profile2.jpg.png" alt="M Arham">
+                    </div>
+                    <h1>M Arham</h1>
+                    <div class="tagline">Digital Marketing Expert | SEO | SMM | SMO | Ads Specialist</div>
+                    <a onclick="showPage('contact')" class="btn">Hire Me</a>
+                    <a onclick="showPage('services')" class="btn btn-outline">View Services <span class="arrow">→</span></a>
                 </div>
-                <h1>M Arham</h1>
-                <div class="tagline">Digital Marketing Expert | SEO | SMM | SMO | Ads Specialist</div>
-                <a onclick="showPage('contact')" class="btn">Hire Me</a>
-                <a onclick="showPage('services')" class="btn btn-outline">View Services <span class="arrow">→</span></a>
             </div>
 
             <div class="stats-grid">
-                <div class="stat-card"><div class="stat-number">4+</div><div class="stat-label">Years Experience</div></div>
-                <div class="stat-card"><div class="stat-number">50+</div><div class="stat-label">Happy Clients</div></div>
-                <div class="stat-card"><div class="stat-number">200+</div><div class="stat-label">Keywords Ranked</div></div>
-                <div class="stat-card"><div class="stat-number">500+</div><div class="stat-label">Projects Done</div></div>
+                <div class="stat-card fade-up"><div class="stat-number">4+</div><div class="stat-label">Years Experience</div></div>
+                <div class="stat-card fade-up"><div class="stat-number">50+</div><div class="stat-label">Happy Clients</div></div>
+                <div class="stat-card fade-up"><div class="stat-number">200+</div><div class="stat-label">Keywords Ranked</div></div>
+                <div class="stat-card fade-up"><div class="stat-number">500+</div><div class="stat-label">Projects Done</div></div>
             </div>
 
-            <div class="section-card">
+            <div class="section-card fade-up">
                 <h2>Welcome to My Digital Marketing Portfolio</h2>
                 <p style="font-size: 1.1em; line-height: 1.8;">
                     I'm <strong>M Arham</strong>, a passionate <strong>Digital Marketing Expert</strong> with over <strong>4+</strong> 
@@ -532,17 +627,17 @@
                 </p>
             </div>
 
-            <div class="section-card">
+            <div class="section-card fade-left">
                 <h2>Featured Services</h2>
                 <div class="featured-grid">
-                    <div class="featured-card"><div class="featured-icon">🔍</div><h3>SEO Services</h3><p>On-Page & Off-Page SEO, Technical SEO, Local SEO, SEO Audit</p></div>
-                    <div class="featured-card"><div class="featured-icon">📱</div><h3>SMM & SMO</h3><p>Social Media Marketing & Optimization for all platforms</p></div>
-                    <div class="featured-card"><div class="featured-icon">💰</div><h3>Ads Campaigns</h3><p>Facebook Ads, Google Ads, YouTube Ads that maximize ROI</p></div>
+                    <div class="featured-card zoom-in"><div class="featured-icon">🔍</div><h3>SEO Services</h3><p>On-Page & Off-Page SEO, Technical SEO, Local SEO, SEO Audit</p></div>
+                    <div class="featured-card zoom-in"><div class="featured-icon">📱</div><h3>SMM & SMO</h3><p>Social Media Marketing & Optimization for all platforms</p></div>
+                    <div class="featured-card zoom-in"><div class="featured-icon">💰</div><h3>Ads Campaigns</h3><p>Facebook Ads, Google Ads, YouTube Ads that maximize ROI</p></div>
                 </div>
                 <div style="text-align: center; margin-top: 20px;"><a onclick="showPage('services')" class="btn btn-outline">View All Services <span class="arrow">→</span></a></div>
             </div>
 
-            <div class="section-card">
+            <div class="section-card fade-right">
                 <h2>Why Choose Me</h2>
                 <div class="why-grid">
                     <div class="why-card"><div class="why-icon">📊</div><h3>Data-Driven Results</h3><p>Every strategy is backed by data and analytics</p></div>
@@ -552,7 +647,7 @@
                 </div>
             </div>
 
-            <div class="section-card" style="text-align: center; background: linear-gradient(135deg, #2a1515, #3d1a1a);">
+            <div class="section-card zoom-in" style="text-align: center; background: linear-gradient(135deg, #2a1515, #3d1a1a);">
                 <h2>Ready to Grow Your Business</h2>
                 <p style="margin-bottom: 20px;">Let's discuss how I can help you achieve your digital marketing goals.</p>
                 <a onclick="showPage('contact')" class="btn">Get a Free Consultation</a>
@@ -561,7 +656,7 @@
 
         <!-- ========== ABOUT PAGE ========== -->
         <div id="about-page" class="page">
-            <div class="section-card">
+            <div class="section-card fade-up">
                 <h2>About Me</h2>
                 <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center;">
                     <div style="flex: 1;"><img src="profile2.jpg.png" alt="M Arham" style="width: 100%; max-width: 300px; border-radius: 15px; border: 1px solid #800000;"></div>
@@ -569,7 +664,7 @@
                 </div>
             </div>
 
-            <div class="section-card">
+            <div class="section-card fade-left">
                 <h2>What I Do</h2>
                 
                 <h3>🔍 Search Engine Optimization (SEO)</h3>
@@ -597,7 +692,7 @@
                 </div>
             </div>
 
-            <div class="section-card">
+            <div class="section-card fade-right">
                 <h2>Experience & Expertise</h2>
                 <div class="exp-item"><div class="exp-title">🔍 Complete SEO Solutions</div><div class="exp-desc">SEO Audit | On-Page Optimization | Off-Page Link Building | Technical SEO | Local SEO | Keyword Research | Rank Tracking</div></div>
                 <div class="exp-item"><div class="exp-title">🔗 Link Building & Guest Posting</div><div class="exp-desc">Hero Broken Link Building | High DA Guest Posts | Profile Backlinks | Niche Edits | Competitor Analysis | Authority Building</div></div>
@@ -605,7 +700,7 @@
                 <div class="exp-item"><div class="exp-title">💰 Ads Campaign Management</div><div class="exp-desc">Facebook Ads | Google Ads | YouTube Ads | Campaign Setup | ROI Optimization | A/B Testing | Performance Reporting</div></div>
             </div>
 
-            <div class="section-card">
+            <div class="section-card zoom-in">
                 <h2>Achievements</h2>
                 <div class="skills-grid">
                     <div class="skill-card">50+ Businesses Grow Online</div>
@@ -618,25 +713,25 @@
 
         <!-- ========== SERVICES PAGE ========== -->
         <div id="services-page" class="page">
-            <div class="section-card">
+            <div class="section-card fade-up">
                 <h2>Services I Offer</h2>
 
-                <div class="service-block">
+                <div class="service-block fade-left">
                     <div class="service-image"><img src="SEO.jpg" alt="SEO Services"></div>
                     <div class="service-content"><h3>Search Engine Optimization (SEO)</h3><p>I provide complete SEO solutions including website audit, on-page optimization, off-page SEO, technical SEO, local SEO, and keyword research. My strategies are data-driven and focused on getting your website to the top of Google search results. I've helped 50+ clients achieve top 3 rankings for competitive keywords, resulting in significant organic traffic growth and increased revenue.</p></div>
                 </div>
 
-                <div class="service-block reverse">
+                <div class="service-block reverse fade-right">
                     <div class="service-image"><img src="linkbuilding.jpg" alt="Link Building Services"></div>
                     <div class="service-content"><h3>Link Building & Guest Posting</h3><p>I specialize in hero broken link building, high-quality guest posting on DA 50+ sites, profile backlinks creation, and niche edits. My link building strategies focus on building natural, authoritative backlinks that boost your domain authority and search rankings. I've successfully published 500+ guest posts on high-authority websites, helping clients build strong backlink profiles.</p></div>
                 </div>
 
-                <div class="service-block">
+                <div class="service-block fade-left">
                     <div class="service-image"><img src="social.jpg" alt="Social Media Marketing"></div>
                     <div class="service-content"><h3>Social Media Marketing & Optimization (SMM & SMO)</h3><p>I create data-driven social media strategies that build brand awareness, engage audiences, and drive conversions. From content creation to community management, I manage your social presence across Facebook, Instagram, LinkedIn, and Twitter. My Social Media Optimization (SMO) techniques ensure your profiles are fully optimized for maximum reach and engagement.</p></div>
                 </div>
 
-                <div class="service-block reverse">
+                <div class="service-block reverse fade-right">
                     <div class="service-image"><img src="adds.jpg" alt="Ads Campaign Management"></div>
                     <div class="service-content"><h3>Ads Campaign Management</h3><p>I plan, create, and optimize high-performing ad campaigns on Facebook and Google. My focus is on maximizing your return on investment (ROI) through targeted audience segmentation, A/B testing, and continuous monitoring. From lead generation to conversion campaigns, I ensure your ad budget is spent wisely to bring you the best results with detailed monthly reporting.</p></div>
                 </div>
@@ -645,7 +740,7 @@
 
         <!-- ========== BLOG PAGE ========== -->
         <div id="blog-page" class="page">
-            <div class="section-card">
+            <div class="section-card fade-up">
                 <h2>Blog</h2>
                 <div class="blog-placeholder">
                     <p>📝 Coming Soon</p>
@@ -656,10 +751,9 @@
 
         <!-- ========== CONTACT PAGE ========== -->
         <div id="contact-page" class="page">
-            <div class="section-card">
+            <div class="section-card fade-up">
                 <h2>Contact Me</h2>
                 
-                <!-- Email - Left Side Small -->
                 <div class="email-container">
                     <div class="email-box">
                         📧 <a href="mailto:marham2772@gmail.com">marham2772@gmail.com</a>
@@ -683,7 +777,7 @@
         </div>
 
         <!-- Social Links Section -->
-        <div class="social-links-section">
+        <div class="social-links-section fade-up">
             <h3>Connect With Me</h3>
             <div class="social-links">
                 <a href="https://www.linkedin.com/in/m-arham-link-builder/" target="_blank" class="social-link linkedin">🔵 LinkedIn</a>
@@ -692,7 +786,7 @@
             </div>
         </div>
 
-        <footer>
+        <footer class="zoom-in">
             <p>&copy; 2022 M Arham - Digital Marketing Expert | SEO | SMM | SMO | Ads</p>
             <p>🚀 Let's take your business to the next level!</p>
             <div class="hashtag">#ArhamSEO</div>
@@ -700,6 +794,7 @@
     </div>
 
     <script>
+        // Page Switching Function
         function showPage(pageName) {
             document.getElementById('home-page').classList.remove('active-page');
             document.getElementById('about-page').classList.remove('active-page');
@@ -721,9 +816,66 @@
             else showPage('home');
         }
 
-        window.addEventListener('load', loadPageFromHash);
+        // Scroll Animation - Elements fade in when they come into view
+        function checkVisibility() {
+            const elements = document.querySelectorAll('.fade-up, .fade-left, .fade-right, .zoom-in');
+            elements.forEach(element => {
+                const rect = element.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+                if (rect.top < windowHeight - 100) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        // Navbar scroll effect
+        function navbarScrollEffect() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        }
+
+        // Parallax effect on hero section
+        function parallaxEffect() {
+            const hero = document.getElementById('heroSection');
+            if (hero) {
+                const scrollPosition = window.scrollY;
+                hero.style.backgroundPosition = `center ${scrollPosition * 0.3}px`;
+            }
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href && href !== '#' && href !== '#home' && href !== '#about' && href !== '#services' && href !== '#blog' && href !== '#contact') {
+                    e.preventDefault();
+                    const element = document.querySelector(href);
+                    if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+
+        window.addEventListener('load', () => {
+            loadPageFromHash();
+            checkVisibility();
+        });
+        
+        window.addEventListener('scroll', () => {
+            checkVisibility();
+            navbarScrollEffect();
+            parallaxEffect();
+        });
+        
+        window.addEventListener('resize', checkVisibility);
         window.addEventListener('hashchange', loadPageFromHash);
 
+        // reCAPTCHA
         const form = document.getElementById('contactForm');
         if (form) {
             form.addEventListener('submit', function(e) {
