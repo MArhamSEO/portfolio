@@ -104,7 +104,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Hero Section */
         .hero {
             text-align: center;
             padding: 60px 20px;
@@ -136,6 +135,19 @@
         h1 {
             font-size: 2.5em;
             margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            border-left: 4px solid #800000;
+            padding-left: 15px;
+        }
+
+        h3 {
+            font-size: 1.3em;
+            color: #e0a0a0;
+            margin-bottom: 15px;
         }
 
         .tagline {
@@ -174,7 +186,6 @@
             color: white;
         }
 
-        /* Statistics Section */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -193,7 +204,6 @@
 
         .stat-card:hover {
             transform: translateY(-5px);
-            border-color: #a00000;
         }
 
         .stat-number {
@@ -202,13 +212,6 @@
             color: #e0a0a0;
         }
 
-        .stat-label {
-            font-size: 1em;
-            color: white;
-            margin-top: 10px;
-        }
-
-        /* Section Cards */
         .section-card {
             background: rgba(30, 15, 15, 0.95);
             border-radius: 20px;
@@ -217,21 +220,50 @@
             border: 1px solid #5c2a2a;
         }
 
-        .section-card h2 {
+        /* Service Layout - Left Image Right Text */
+        .service-block {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .service-block.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .service-image {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .service-image img {
+            width: 100%;
+            border-radius: 15px;
+            border: 1px solid #800000;
+            transition: 0.3s;
+        }
+
+        .service-image img:hover {
+            transform: scale(1.02);
+        }
+
+        .service-content {
+            flex: 1;
+        }
+
+        .service-content h3 {
             color: white;
-            margin-bottom: 25px;
-            font-size: 1.8em;
-            border-left: 4px solid #800000;
-            padding-left: 15px;
+            font-size: 1.5em;
+            margin-bottom: 15px;
         }
 
-        .section-card h3 {
+        .service-content p {
             color: #e0a0a0;
-            margin: 25px 0 15px 0;
-            font-size: 1.3em;
+            line-height: 1.8;
         }
 
-        /* Featured Services Grid */
         .featured-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -258,16 +290,6 @@
             margin-bottom: 15px;
         }
 
-        .featured-card h3 {
-            color: white;
-            margin: 10px 0;
-        }
-
-        .featured-card p {
-            color: #e0a0a0;
-        }
-
-        /* Why Choose Me */
         .why-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -286,15 +308,20 @@
             background: #800000;
         }
 
-        .why-icon {
-            font-size: 40px;
-            margin-bottom: 15px;
+        .about-image {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 15px;
+            margin: 20px auto;
+            display: block;
+            border: 1px solid #800000;
         }
 
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 15px;
+            margin-top: 20px;
         }
 
         .skill-card {
@@ -312,106 +339,17 @@
             transform: translateY(-5px);
         }
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
-
-        .service-card {
+        .blog-placeholder {
             text-align: center;
-            padding: 25px;
+            padding: 60px 20px;
             background: #2a1515;
             border-radius: 15px;
-            transition: 0.3s;
-            border: 1px solid #5c2a2a;
+            border: 1px dashed #800000;
         }
 
-        .service-card:hover {
-            transform: translateY(-5px);
-            border-color: #800000;
-        }
-
-        .service-img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            margin: 0 auto 15px;
-            overflow: hidden;
-        }
-
-        .service-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .service-card h3 {
-            color: white;
-            margin: 15px 0 10px;
-        }
-
-        .service-card p {
+        .blog-placeholder p {
             color: #e0a0a0;
-            font-size: 0.95em;
-        }
-
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 25px;
-        }
-
-        .blog-card {
-            background: #2a1515;
-            border-radius: 15px;
-            overflow: hidden;
-            transition: 0.3s;
-            border: 1px solid #5c2a2a;
-        }
-
-        .blog-card:hover {
-            transform: translateY(-5px);
-            border-color: #800000;
-        }
-
-        .blog-img {
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(135deg, #800000, #a03030);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 60px;
-        }
-
-        .blog-content {
-            padding: 20px;
-        }
-
-        .blog-content h3 {
-            color: white;
-            margin-bottom: 10px;
-        }
-
-        .blog-content p {
-            color: #e0a0a0;
-            margin-bottom: 15px;
-        }
-
-        .blog-date {
-            font-size: 0.8em;
-            color: #888;
-        }
-
-        .read-more {
-            color: #e0a0a0;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .read-more:hover {
-            color: #ff9999;
+            font-size: 1.2em;
         }
 
         .contact-form {
@@ -508,8 +446,8 @@
                 padding: 5px 12px;
                 font-size: 12px;
             }
-            .stats-grid, .featured-grid, .why-grid, .services-grid, .blog-grid {
-                grid-template-columns: 1fr;
+            .service-block, .service-block.reverse {
+                flex-direction: column;
             }
             h1 {
                 font-size: 1.8em;
@@ -526,17 +464,16 @@
                 <span class="logo-text">M Arham</span>
             </div>
             <ul class="nav-menu">
-                <li><a onclick="showPage('home')" class="active" id="home-link">🏠 Home</a></li>
-                <li><a onclick="showPage('about')" id="about-link">📌 About</a></li>
-                <li><a onclick="showPage('services')" id="services-link">🛠️ Services</a></li>
-                <li><a onclick="showPage('blog')" id="blog-link">📝 Blog</a></li>
-                <li><a onclick="showPage('contact')" id="contact-link">📞 Contact</a></li>
+                <li><a onclick="showPage('home')" class="active" id="home-link">Home</a></li>
+                <li><a onclick="showPage('about')" id="about-link">About</a></li>
+                <li><a onclick="showPage('services')" id="services-link">Services</a></li>
+                <li><a onclick="showPage('blog')" id="blog-link">Blog</a></li>
+                <li><a onclick="showPage('contact')" id="contact-link">Contact</a></li>
             </ul>
         </nav>
 
         <!-- ========== HOME PAGE ========== -->
         <div id="home-page" class="page active-page">
-            <!-- Hero Section -->
             <div class="hero">
                 <div class="profile-img" onclick="showPage('home')">
                     <img src="profile.jpg.jpg" alt="M Arham">
@@ -547,7 +484,6 @@
                 <a onclick="showPage('services')" class="btn btn-outline">View Services</a>
             </div>
 
-            <!-- Statistics Section -->
             <div class="stats-grid">
                 <div class="stat-card">
                     <div class="stat-number">4+</div>
@@ -559,7 +495,7 @@
                 </div>
                 <div class="stat-card">
                     <div class="stat-number">200+</div>
-                    <div class="stat-label">Keywords Ranked #1</div>
+                    <div class="stat-label">Keywords Ranked</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number">500+</div>
@@ -567,9 +503,8 @@
                 </div>
             </div>
 
-            <!-- Welcome Section -->
             <div class="section-card">
-                <h2>🚀 Welcome to My Digital Marketing Portfolio</h2>
+                <h2>Welcome to My Digital Marketing Portfolio</h2>
                 <p style="font-size: 1.1em; line-height: 1.8;">
                     I'm <strong>M Arham</strong>, a passionate <strong>Digital Marketing Expert</strong> with over 4 years of experience 
                     helping businesses grow online. I specialize in <strong>SEO, Social Media Marketing, Ads Campaigns, 
@@ -579,18 +514,17 @@
                 <p style="margin-top: 20px;">
                     Whether you're a small business owner looking to rank locally or an e-commerce brand 
                     wanting to scale with ads, I've got you covered. Let's work together to take your 
-                    business to the next level!
+                    business to the next level.
                 </p>
             </div>
 
-            <!-- Featured Services -->
             <div class="section-card">
-                <h2>⭐ Featured Services</h2>
+                <h2>Featured Services</h2>
                 <div class="featured-grid">
                     <div class="featured-card">
                         <div class="featured-icon">🔍</div>
                         <h3>SEO Services</h3>
-                        <p>Local SEO, On-Page, Off-Page, Technical SEO. Get #1 rankings on Google.</p>
+                        <p>Local SEO, On-Page, Off-Page, Technical SEO. Get top rankings on Google.</p>
                     </div>
                     <div class="featured-card">
                         <div class="featured-icon">📱</div>
@@ -604,16 +538,15 @@
                     </div>
                 </div>
                 <div style="text-align: center; margin-top: 20px;">
-                    <a onclick="showPage('services')" class="btn btn-outline">View All Services →</a>
+                    <a onclick="showPage('services')" class="btn btn-outline">View All Services</a>
                 </div>
             </div>
 
-            <!-- Why Choose Me -->
             <div class="section-card">
-                <h2>✅ Why Choose Me?</h2>
+                <h2>Why Choose Me</h2>
                 <div class="why-grid">
                     <div class="why-card">
-                        <div class="why-icon">🎯</div>
+                        <div class="why-icon">📊</div>
                         <h3>Data-Driven Results</h3>
                         <p>Every strategy is backed by data and analytics to ensure maximum ROI.</p>
                     </div>
@@ -623,21 +556,20 @@
                         <p>I'm always available to answer your questions and provide updates.</p>
                     </div>
                     <div class="why-card">
-                        <div class="why-icon">📊</div>
+                        <div class="why-icon">📈</div>
                         <h3>Monthly Reporting</h3>
                         <p>Detailed reports every month so you know exactly what's working.</p>
                     </div>
                     <div class="why-card">
                         <div class="why-icon">🏆</div>
                         <h3>Proven Track Record</h3>
-                        <p>50+ satisfied clients and 200+ #1 rankings achieved.</p>
+                        <p>50+ satisfied clients and 200+ top rankings achieved.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Call to Action -->
             <div class="section-card" style="text-align: center; background: linear-gradient(135deg, #2a1515, #3d1a1a);">
-                <h2>📞 Ready to Grow Your Business?</h2>
+                <h2>Ready to Grow Your Business</h2>
                 <p style="font-size: 1.1em; margin-bottom: 20px;">
                     Let's discuss how I can help you achieve your digital marketing goals.
                 </p>
@@ -648,54 +580,89 @@
         <!-- ========== ABOUT PAGE ========== -->
         <div id="about-page" class="page">
             <div class="section-card">
-                <h2>📌 About Me</h2>
-                <p style="font-size: 1.1em; line-height: 1.8;">
-                    I am a passionate <strong>Digital Marketing Expert</strong> with <strong>4+ years of experience</strong> 
-                    helping businesses grow online. I specialize in <strong>SEO, Social Media Marketing, Ads Running, 
-                    and Guest Posting</strong>. I have helped 50+ clients achieve their business goals through 
-                    data-driven digital marketing strategies.
-                </p>
+                <h2>About Me</h2>
+                <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center;">
+                    <div style="flex: 1;">
+                        <img src="profile.jpg.jpg" alt="M Arham" style="width: 100%; max-width: 300px; border-radius: 15px; border: 1px solid #800000;">
+                    </div>
+                    <div style="flex: 2;">
+                        <p style="font-size: 1.1em; line-height: 1.8;">
+                            I am a passionate <strong>Digital Marketing Expert</strong> with <strong>4+ years of experience</strong> 
+                            helping businesses grow online. I specialize in <strong>SEO, Social Media Marketing, Ads Running, 
+                            and Guest Posting</strong>. I have helped 50+ clients achieve their business goals through 
+                            data-driven digital marketing strategies.
+                        </p>
+                    </div>
+                </div>
             </div>
 
             <div class="section-card">
-                <h2>💡 What I Do</h2>
+                <h2>What I Do</h2>
                 
-                <h3>🔍 SEO (Search Engine Optimization)</h3>
-                <ul style="margin-left: 30px; line-height: 1.8;">
-                    <li><strong>Local SEO</strong> - Google My Business optimization, local citations</li>
-                    <li><strong>On-Page SEO</strong> - Meta tags, headings, content optimization</li>
-                    <li><strong>Off-Page SEO</strong> - Backlink building, guest posting</li>
-                    <li><strong>Technical SEO</strong> - Site speed, mobile optimization, schema markup</li>
-                    <li><strong>Broken Link Building</strong> - Finding and fixing broken links</li>
-                    <li><strong>Profile Backlinks</strong> - High authority profile creation</li>
-                </ul>
+                <h3>Search Engine Optimization (SEO)</h3>
+                <div style="display: flex; flex-wrap: wrap; gap: 30px; margin-bottom: 40px; align-items: center;">
+                    <div style="flex: 1;">
+                        <img src="seo-person.jpg" alt="SEO Expert Working" style="width: 100%; border-radius: 15px; border: 1px solid #800000;" onerror="this.src='https://placehold.co/400x250/800000/white?text=SEO+Expert'">
+                    </div>
+                    <div style="flex: 1;">
+                        <ul style="margin-left: 20px; line-height: 1.8;">
+                            <li>Local SEO - Google My Business optimization, local citations</li>
+                            <li>On-Page SEO - Meta tags, headings, content optimization</li>
+                            <li>Off-Page SEO - Backlink building, guest posting</li>
+                            <li>Technical SEO - Site speed, mobile optimization, schema markup</li>
+                            <li>Broken Link Building - Finding and fixing broken links</li>
+                            <li>Profile Backlinks - High authority profile creation</li>
+                        </ul>
+                    </div>
+                </div>
 
-                <h3>📱 SMM & SMO (Social Media Marketing & Optimization)</h3>
-                <ul style="margin-left: 30px; line-height: 1.8;">
-                    <li>Facebook, Instagram, LinkedIn, Twitter management</li>
-                    <li>Social media strategy and content creation</li>
-                    <li>Community management and engagement</li>
-                    <li>Social media optimization for better reach</li>
-                </ul>
+                <h3>Social Media Marketing & Optimization (SMM & SMO)</h3>
+                <div style="display: flex; flex-wrap: wrap; gap: 30px; margin-bottom: 40px; align-items: center;">
+                    <div style="flex: 1;">
+                        <ul style="margin-left: 20px; line-height: 1.8;">
+                            <li>Facebook, Instagram, LinkedIn, Twitter management</li>
+                            <li>Social media strategy and content creation</li>
+                            <li>Community management and engagement</li>
+                            <li>Social media optimization for better reach</li>
+                        </ul>
+                    </div>
+                    <div style="flex: 1;">
+                        <img src="smm-team.jpg" alt="Social Media Team" style="width: 100%; border-radius: 15px; border: 1px solid #800000;" onerror="this.src='https://placehold.co/400x250/800000/white?text=SMM+Team'">
+                    </div>
+                </div>
 
-                <h3>💰 Ads Campaign Management</h3>
-                <ul style="margin-left: 30px; line-height: 1.8;">
-                    <li>Facebook Ads - Lead generation, conversion campaigns</li>
-                    <li>Google Ads - Search, display, shopping ads</li>
-                    <li>Campaign strategy, setup, monitoring, optimization</li>
-                    <li>ROI tracking and monthly reporting</li>
-                </ul>
+                <h3>Ads Campaign Management</h3>
+                <div style="display: flex; flex-wrap: wrap; gap: 30px; margin-bottom: 40px; align-items: center;">
+                    <div style="flex: 1;">
+                        <img src="ads-campaign.jpg" alt="Ads Campaign" style="width: 100%; border-radius: 15px; border: 1px solid #800000;" onerror="this.src='https://placehold.co/400x250/800000/white?text=Ads+Campaign'">
+                    </div>
+                    <div style="flex: 1;">
+                        <ul style="margin-left: 20px; line-height: 1.8;">
+                            <li>Facebook Ads - Lead generation, conversion campaigns</li>
+                            <li>Google Ads - Search, display, shopping ads</li>
+                            <li>Campaign strategy, setup, monitoring, optimization</li>
+                            <li>ROI tracking and monthly reporting</li>
+                        </ul>
+                    </div>
+                </div>
 
-                <h3>✍️ Guest Posting & Link Building</h3>
-                <ul style="margin-left: 30px; line-height: 1.8;">
-                    <li>High DA guest posts on relevant websites</li>
-                    <li>Quality backlinks from authority sites</li>
-                    <li>Content writing for guest posts</li>
-                </ul>
+                <h3>Guest Posting & Link Building</h3>
+                <div style="display: flex; flex-wrap: wrap; gap: 30px; align-items: center;">
+                    <div style="flex: 1;">
+                        <ul style="margin-left: 20px; line-height: 1.8;">
+                            <li>High DA guest posts on relevant websites</li>
+                            <li>Quality backlinks from authority sites</li>
+                            <li>Content writing for guest posts</li>
+                        </ul>
+                    </div>
+                    <div style="flex: 1;">
+                        <img src="linkbuilding.jpg" alt="Link Building" style="width: 100%; border-radius: 15px; border: 1px solid #800000;" onerror="this.src='https://placehold.co/400x250/800000/white?text=Link+Building'">
+                    </div>
+                </div>
             </div>
 
             <div class="section-card">
-                <h2>📅 Experience</h2>
+                <h2>Experience</h2>
                 <div style="background: #2a1515; padding: 20px; border-left: 4px solid #800000; margin-bottom: 15px; border-radius: 10px;">
                     <div style="font-size: 1.3em; font-weight: bold;">Freelance Digital Marketing Expert</div>
                     <div style="color: #e0a0a0;">2020 - Present | Remote</div>
@@ -709,50 +676,62 @@
             </div>
 
             <div class="section-card">
-                <h2>🏆 Achievements</h2>
-                <ul style="margin-left: 30px; line-height: 2;">
-                    <li>✅ Helped 50+ businesses grow online presence</li>
-                    <li>✅ 500+ successful guest posts on high DA sites</li>
-                    <li>✅ Achieved #1 rankings for 200+ keywords</li>
-                    <li>✅ 100% client satisfaction rate</li>
-                </ul>
+                <h2>Achievements</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">50+ Businesses Grow Online</div>
+                    <div class="skill-card">500+ Guest Posts Published</div>
+                    <div class="skill-card">200+ Keywords Ranked #1</div>
+                    <div class="skill-card">100% Client Satisfaction</div>
+                </div>
             </div>
         </div>
 
         <!-- ========== SERVICES PAGE ========== -->
         <div id="services-page" class="page">
             <div class="section-card">
-                <h2>🛠️ Services I Offer</h2>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-img"><img src="seo-icon.jpg" alt="SEO" onerror="this.src='https://placehold.co/80x80/800000/white?text=SEO'"></div>
-                        <h3>SEO Services</h3>
-                        <p>Local SEO, On-Page, Off-Page, Technical SEO. Get #1 rankings on Google.</p>
+                <h2>Services I Offer</h2>
+
+                <!-- SEO Service - Image Left, Text Right -->
+                <div class="service-block">
+                    <div class="service-image">
+                        <img src="seo-expert.jpg" alt="SEO Expert at work - Laptop with SEO tools" onerror="this.src='https://placehold.co/500x350/800000/white?text=SEO+Expert'">
                     </div>
-                    <div class="service-card">
-                        <div class="service-img"><img src="smm-icon.jpg" alt="SMM" onerror="this.src='https://placehold.co/80x80/800000/white?text=SMM'"></div>
-                        <h3>SMM & SMO</h3>
-                        <p>Social Media Marketing & Optimization. Grow your brand on Facebook, Instagram, LinkedIn.</p>
+                    <div class="service-content">
+                        <h3>Search Engine Optimization (SEO)</h3>
+                        <p>I help businesses rank higher on Google through comprehensive SEO strategies. From keyword research to technical audits, I ensure your website gets the organic traffic it deserves. My services include Local SEO, On-Page optimization, Off-Page link building, Technical SEO, broken link building, and high-quality profile backlinks. With my proven methods, I've helped 50+ clients achieve top 3 rankings for competitive keywords.</p>
                     </div>
-                    <div class="service-card">
-                        <div class="service-img"><img src="ads-icon.jpg" alt="Ads" onerror="this.src='https://placehold.co/80x80/800000/white?text=Ads'"></div>
-                        <h3>Ads Campaigns</h3>
-                        <p>Facebook Ads, Google Ads, YouTube Ads. Maximize ROI with targeted campaigns.</p>
+                </div>
+
+                <!-- SMM Service - Image Right, Text Left -->
+                <div class="service-block reverse">
+                    <div class="service-image">
+                        <img src="smm-strategy.jpg" alt="Social Media Marketing Team meeting" onerror="this.src='https://placehold.co/500x350/800000/white?text=SMM+Strategy'">
                     </div>
-                    <div class="service-card">
-                        <div class="service-img"><img src="guestpost-icon.jpg" alt="Guest Posting" onerror="this.src='https://placehold.co/80x80/800000/white?text=GP'"></div>
-                        <h3>Guest Posting</h3>
-                        <p>High DA guest posts. Build authority and quality backlinks.</p>
+                    <div class="service-content">
+                        <h3>Social Media Marketing (SMM & SMO)</h3>
+                        <p>I create data-driven social media strategies that build brand awareness, engage audiences, and drive conversions. Whether it's Facebook, Instagram, LinkedIn, or Twitter, I manage your social presence with creative content, community management, and performance tracking. My Social Media Optimization (SMO) techniques ensure your profiles are fully optimized for maximum reach and engagement, helping you connect with your target audience effectively.</p>
                     </div>
-                    <div class="service-card">
-                        <div class="service-img"><img src="linkbuilding-icon.jpg" alt="Link Building" onerror="this.src='https://placehold.co/80x80/800000/white?text=LB'"></div>
-                        <h3>Link Building</h3>
-                        <p>Profile backlinks, broken link building, quality backlinks from authority sites.</p>
+                </div>
+
+                <!-- Ads Campaign - Image Left, Text Right -->
+                <div class="service-block">
+                    <div class="service-image">
+                        <img src="ads-management.jpg" alt="Running Facebook and Google Ads campaigns" onerror="this.src='https://placehold.co/500x350/800000/white?text=Ads+Management'">
                     </div>
-                    <div class="service-card">
-                        <div class="service-img"><img src="audit-icon.jpg" alt="SEO Audit" onerror="this.src='https://placehold.co/80x80/800000/white?text=Audit'"></div>
-                        <h3>SEO Audit</h3>
-                        <p>Complete website audit with actionable recommendations for improvement.</p>
+                    <div class="service-content">
+                        <h3>Ads Campaign Management</h3>
+                        <p>I plan, create, and optimize high-performing ad campaigns on Facebook and Google. My focus is on maximizing your return on investment (ROI) through targeted audience segmentation, A/B testing, and continuous monitoring. From lead generation to conversion campaigns, I ensure your ad budget is spent wisely to bring you the best results. I also provide detailed monthly reports so you can track every penny spent.</p>
+                    </div>
+                </div>
+
+                <!-- Guest Posting - Image Right, Text Left -->
+                <div class="service-block reverse">
+                    <div class="service-image">
+                        <img src="guest-posting.jpg" alt="Guest posting on high authority websites" onerror="this.src='https://placehold.co/500x350/800000/white?text=Guest+Posting'">
+                    </div>
+                    <div class="service-content">
+                        <h3>Guest Posting & Link Building</h3>
+                        <p>I secure high-quality guest posts on authoritative websites to build your site's backlink profile. This not only drives referral traffic but also boosts your domain authority, helping you rank higher on Google. I focus on relevant, high DA sites with genuine traffic. Additionally, I offer comprehensive link building services including profile backlinks, broken link building, and niche edits to strengthen your website's authority.</p>
                     </div>
                 </div>
             </div>
@@ -761,62 +740,10 @@
         <!-- ========== BLOG PAGE ========== -->
         <div id="blog-page" class="page">
             <div class="section-card">
-                <h2>📝 Latest Articles</h2>
-                <div class="blog-grid">
-                    <div class="blog-card">
-                        <div class="blog-img">📈</div>
-                        <div class="blog-content">
-                            <h3>Top 10 SEO Trends for 2024</h3>
-                            <p>Discover the latest SEO trends that will dominate search rankings this year...</p>
-                            <span class="blog-date">May 15, 2024</span>
-                            <div><a href="#" class="read-more">Read More →</a></div>
-                        </div>
-                    </div>
-                    <div class="blog-card">
-                        <div class="blog-img">📱</div>
-                        <div class="blog-content">
-                            <h3>How to Grow Your Business with Social Media</h3>
-                            <p>Complete guide to social media marketing for small businesses...</p>
-                            <span class="blog-date">May 10, 2024</span>
-                            <div><a href="#" class="read-more">Read More →</a></div>
-                        </div>
-                    </div>
-                    <div class="blog-card">
-                        <div class="blog-img">💰</div>
-                        <div class="blog-content">
-                            <h3>Facebook Ads vs Google Ads: Which is Better?</h3>
-                            <p>Compare both platforms to find the best advertising strategy...</p>
-                            <span class="blog-date">May 5, 2024</span>
-                            <div><a href="#" class="read-more">Read More →</a></div>
-                        </div>
-                    </div>
-                    <div class="blog-card">
-                        <div class="blog-img">🔗</div>
-                        <div class="blog-content">
-                            <h3>Beginner's Guide to Guest Posting</h3>
-                            <p>Learn how guest posting can boost your website's authority...</p>
-                            <span class="blog-date">April 28, 2024</span>
-                            <div><a href="#" class="read-more">Read More →</a></div>
-                        </div>
-                    </div>
-                    <div class="blog-card">
-                        <div class="blog-img">⚙️</div>
-                        <div class="blog-content">
-                            <h3>Technical SEO Checklist 2024</h3>
-                            <p>Essential technical SEO factors to improve your site's performance...</p>
-                            <span class="blog-date">April 20, 2024</span>
-                            <div><a href="#" class="read-more">Read More →</a></div>
-                        </div>
-                    </div>
-                    <div class="blog-card">
-                        <div class="blog-img">🏷️</div>
-                        <div class="blog-content">
-                            <h3>Local SEO: Rank #1 in Your Area</h3>
-                            <p>Complete local SEO strategy for small businesses...</p>
-                            <span class="blog-date">April 15, 2024</span>
-                            <div><a href="#" class="read-more">Read More →</a></div>
-                        </div>
-                    </div>
+                <h2>Blog</h2>
+                <div class="blog-placeholder">
+                    <p>📝 Coming Soon</p>
+                    <p style="margin-top: 15px; font-size: 0.9em;">I'll be publishing articles about SEO, Social Media Marketing, Ads, and Guest Posting here soon. Stay tuned!</p>
                 </div>
             </div>
         </div>
@@ -824,12 +751,19 @@
         <!-- ========== CONTACT PAGE ========== -->
         <div id="contact-page" class="page">
             <div class="section-card">
-                <h2>📞 Contact Me</h2>
+                <h2>Contact Me</h2>
                 <div style="text-align: center;">
                     <div class="email-box">
                         📧 <a href="mailto:marham2772@gmail.com">marham2772@gmail.com</a>
                     </div>
                     
+                    <p style="margin: 20px 0; line-height: 1.8;">
+                        Feel free to reach out if you have any questions or need any information about my services. 
+                        I'm always happy to discuss how I can help grow your business online. Whether you need a 
+                        complete SEO audit, want to start a social media campaign, or just want to learn more about 
+                        digital marketing - I'm here to help.
+                    </p>
+
                     <div class="contact-form">
                         <form action="https://formsubmit.co/marham2772@gmail.com" method="POST" id="contactForm">
                             <input type="hidden" name="_captcha" value="false">
@@ -847,7 +781,7 @@
 
         <!-- Social Links Section -->
         <div class="social-links-section">
-            <h3>🔗 Connect With Me</h3>
+            <h3>Connect With Me</h3>
             <div class="social-links">
                 <a href="https://www.linkedin.com/in/m-arham-link-builder/" target="_blank" class="social-link linkedin">🔵 LinkedIn</a>
                 <a href="https://www.instagram.com/marhamseo/" target="_blank" class="social-link instagram">📷 Instagram</a>
@@ -857,7 +791,7 @@
 
         <footer>
             <p>&copy; 2024 M Arham - Digital Marketing Expert | SEO | SMM | Ads | Guest Posting</p>
-            <p>🚀 Let's take your business to the next level!</p>
+            <p>Let's take your business to the next level</p>
         </footer>
     </div>
 
