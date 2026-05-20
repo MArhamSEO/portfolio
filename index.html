@@ -142,7 +142,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Profile Image */
+        /* Profile Image - Only on Home Page */
         .profile-img {
             width: 150px;
             height: 150px;
@@ -165,17 +165,12 @@
             box-shadow: 0 15px 40px rgba(128,0,0,0.4);
         }
 
-        .about-img {
-            width: 100%;
-            max-width: 300px;
-            border-radius: 20px;
-            border: 1px solid #800000;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
-
         .about-text {
             font-size: 1.1em;
             line-height: 1.9;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         h1 {
@@ -247,8 +242,9 @@
             border-radius: 20px;
             border: 1px solid rgba(128,0,0,0.3);
             transition: all 0.4s ease;
-            transform: translateY(0);
+            transform: translateX(0);
             opacity: 1;
+            will-change: transform, opacity;
         }
 
         .stat-card:hover {
@@ -291,8 +287,9 @@
             text-align: center;
             transition: all 0.4s ease;
             border: 1px solid rgba(90, 42, 42, 0.6);
-            transform: translateY(0);
+            transform: translateX(0);
             opacity: 1;
+            will-change: transform, opacity;
         }
 
         .featured-card:hover {
@@ -318,8 +315,9 @@
             border-radius: 20px;
             text-align: center;
             transition: all 0.4s ease;
-            transform: translateY(0);
+            transform: translateX(0);
             opacity: 1;
+            will-change: transform, opacity;
         }
 
         .why-card:hover {
@@ -332,20 +330,12 @@
             margin-bottom: 18px;
         }
 
-        /* What I Do - Snap Scroll (Page Stop Effect) */
-        .whatido-wrapper {
-            scroll-snap-type: y mandatory;
-            height: 100vh;
-            overflow-y: auto;
-            border-radius: 20px;
-        }
-
+        /* What I Do */
         .overlap-container {
             position: relative;
         }
 
         .overlap-item {
-            scroll-snap-align: start;
             background: #2a1515;
             border-radius: 20px;
             border: 1px solid #800000;
@@ -387,7 +377,7 @@
             line-height: 1.9;
         }
 
-        /* Experience & Expertise - 4 Separate Lines */
+        /* Experience & Expertise */
         .exp-list {
             display: flex;
             flex-direction: column;
@@ -441,16 +431,12 @@
             transform: translateY(-5px);
         }
 
-        /* Services Overlap - Snap Scroll */
-        .services-wrapper {
-            scroll-snap-type: y mandatory;
-            height: 100vh;
-            overflow-y: auto;
-            border-radius: 20px;
+        /* Services */
+        .services-overlap-container {
+            position: relative;
         }
 
         .services-overlap-item {
-            scroll-snap-align: start;
             background: #2a1515;
             border-radius: 20px;
             border: 1px solid #800000;
@@ -531,7 +517,7 @@
             box-shadow: 0 0 12px rgba(128, 0, 0, 0.3);
         }
 
-        /* Email - Left Side, Above Social Links */
+        /* Email */
         .email-section {
             margin: 20px 0;
         }
@@ -616,22 +602,6 @@
             transform: translateX(6px);
         }
 
-        /* Continuous Scroll Movement for Home Page */
-        @keyframes floatIn {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .animate-on-scroll {
-            animation: floatIn 0.6s ease forwards;
-        }
-
         @media (max-width: 768px) {
             .navbar {
                 flex-direction: column;
@@ -666,10 +636,6 @@
             }
             .contact-wrapper {
                 flex-direction: column;
-            }
-            .whatido-wrapper, .services-wrapper {
-                height: auto;
-                scroll-snap-type: none;
             }
         }
     </style>
@@ -746,83 +712,78 @@
             </div>
         </div>
 
-        <!-- ========== ABOUT PAGE ========== -->
+        <!-- ========== ABOUT PAGE (No Picture) ========== -->
         <div id="about-page" class="page">
             <div class="section-card">
                 <h2>About Me</h2>
-                <div style="display: flex; flex-wrap: wrap; gap: 45px; align-items: center;">
-                    <div style="flex: 1;"><img src="profile2.jpg.png" alt="M Arham" class="about-img"></div>
-                    <div style="flex: 2;"><p class="about-text">I am a passionate <strong>Digital Marketing Expert</strong> with <strong>4+ years of experience</strong> helping businesses grow online. I specialize in <strong>SEO (On-Page & Off-Page), SMM, SMO, Ads Campaigns</strong>. I have helped 50+ clients achieve their business goals through data-driven digital marketing strategies.</p></div>
-                </div>
+                <p class="about-text">I am a passionate <strong>Digital Marketing Expert</strong> with <strong>4+ years of experience</strong> helping businesses grow online. I specialize in <strong>SEO (On-Page & Off-Page), SMM, SMO, Ads Campaigns</strong>. I have helped 50+ clients achieve their business goals through data-driven digital marketing strategies.</p>
             </div>
 
             <div class="section-card">
                 <h2>What I Do</h2>
-                <div class="whatido-wrapper" id="whatidoWrapper">
-                    <div class="overlap-container">
-                        <div class="overlap-item" data-index="0">
-                            <div class="overlap-header" onclick="toggleOverlap(this)">
-                                <h3>🔍 Search Engine Optimization (SEO)</h3>
-                            </div>
-                            <div class="overlap-content">
-                                <img src="SEO.jpg" alt="SEO Expert">
-                                <ul>
-                                    <li>Complete SEO Audit and Analysis</li>
-                                    <li>On-Page & Off-Page SEO</li>
-                                    <li>Technical SEO Optimization</li>
-                                    <li>Local SEO & Google My Business</li>
-                                    <li>Keyword Research & Strategy</li>
-                                    <li>Rankings & Traffic Growth</li>
-                                </ul>
-                            </div>
+                <div class="overlap-container">
+                    <div class="overlap-item">
+                        <div class="overlap-header" onclick="toggleOverlap(this)">
+                            <h3>🔍 Search Engine Optimization (SEO)</h3>
                         </div>
-                        <div class="overlap-item" data-index="1">
-                            <div class="overlap-header" onclick="toggleOverlap(this)">
-                                <h3>🔗 Link Building & Guest Posting</h3>
-                            </div>
-                            <div class="overlap-content">
-                                <img src="linkbuilding.jpg" alt="Link Building">
-                                <ul>
-                                    <li>Hero Broken Link Building</li>
-                                    <li>High Authority Link Building</li>
-                                    <li>Guest Posting on DA 50+ Sites</li>
-                                    <li>Profile Backlinks Creation</li>
-                                    <li>Niche Edits & Contextual Links</li>
-                                    <li>Competitor Backlink Analysis</li>
-                                </ul>
-                            </div>
+                        <div class="overlap-content">
+                            <img src="SEO.jpg" alt="SEO Expert">
+                            <ul>
+                                <li>Complete SEO Audit and Analysis</li>
+                                <li>On-Page & Off-Page SEO</li>
+                                <li>Technical SEO Optimization</li>
+                                <li>Local SEO & Google My Business</li>
+                                <li>Keyword Research & Strategy</li>
+                                <li>Rankings & Traffic Growth</li>
+                            </ul>
                         </div>
-                        <div class="overlap-item" data-index="2">
-                            <div class="overlap-header" onclick="toggleOverlap(this)">
-                                <h3>📱 Social Media Marketing & Optimization (SMM & SMO)</h3>
-                            </div>
-                            <div class="overlap-content">
-                                <img src="social.jpg" alt="Social Media">
-                                <ul>
-                                    <li>Social Media Strategy & Management</li>
-                                    <li>Content Creation & Scheduling</li>
-                                    <li>Community Engagement</li>
-                                    <li>Social Media Optimization (SMO)</li>
-                                    <li>Paid Social Campaigns</li>
-                                    <li>Analytics & Reporting</li>
-                                </ul>
-                            </div>
+                    </div>
+                    <div class="overlap-item">
+                        <div class="overlap-header" onclick="toggleOverlap(this)">
+                            <h3>🔗 Link Building & Guest Posting</h3>
                         </div>
-                        <div class="overlap-item" data-index="3">
-                            <div class="overlap-header" onclick="toggleOverlap(this)">
-                                <h3>💰 Ads Campaign Management</h3>
-                            </div>
-                            <div class="overlap-content">
-                                <img src="adds.jpg" alt="Ads Campaign">
-                                <ul>
-                                    <li>Facebook Ads Campaign Setup & Management</li>
-                                    <li>Google Ads (Search, Display, Shopping)</li>
-                                    <li>YouTube Ads & Retargeting</li>
-                                    <li>Campaign Optimization for ROI</li>
-                                    <li>A/B Testing & Audience Targeting</li>
-                                    <li>Monthly Performance Reporting</li>
-                                </ul>
-                            </div>
+                        <div class="overlap-content">
+                            <img src="linkbuilding.jpg" alt="Link Building">
+                            <ul>
+                                <li>Hero Broken Link Building</li>
+                                <li>High Authority Link Building</li>
+                                <li>Guest Posting on DA 50+ Sites</li>
+                                <li>Profile Backlinks Creation</li>
+                                <li>Niche Edits & Contextual Links</li>
+                                <li>Competitor Backlink Analysis</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="overlap-item">
+                        <div class="overlap-header" onclick="toggleOverlap(this)">
+                            <h3>📱 Social Media Marketing & Optimization (SMM & SMO)</h3>
+                        </div>
+                        <div class="overlap-content">
+                            <img src="social.jpg" alt="Social Media">
+                            <ul>
+                                <li>Social Media Strategy & Management</li>
+                                <li>Content Creation & Scheduling</li>
+                                <li>Community Engagement</li>
+                                <li>Social Media Optimization (SMO)</li>
+                                <li>Paid Social Campaigns</li>
+                                <li>Analytics & Reporting</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="overlap-item">
+                        <div class="overlap-header" onclick="toggleOverlap(this)">
+                            <h3>💰 Ads Campaign Management</h3>
+                        </div>
+                        <div class="overlap-content">
+                            <img src="adds.jpg" alt="Ads Campaign">
+                            <ul>
+                                <li>Facebook Ads Campaign Setup & Management</li>
+                                <li>Google Ads (Search, Display, Shopping)</li>
+                                <li>YouTube Ads & Retargeting</li>
+                                <li>Campaign Optimization for ROI</li>
+                                <li>A/B Testing & Audience Targeting</li>
+                                <li>Monthly Performance Reporting</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -865,8 +826,8 @@
         <div id="services-page" class="page">
             <div class="section-card">
                 <h2>Services I Offer</h2>
-                <div class="services-wrapper" id="servicesWrapper">
-                    <div class="services-overlap-item" data-serv-index="0">
+                <div class="services-overlap-container">
+                    <div class="services-overlap-item">
                         <div class="services-overlap-header" onclick="toggleServicesOverlap(this)">
                             <h3>🔍 Search Engine Optimization (SEO)</h3>
                         </div>
@@ -875,7 +836,7 @@
                             <p>I provide complete SEO solutions including website audit, on-page optimization, off-page SEO, technical SEO, local SEO, and keyword research. My strategies are data-driven and focused on getting your website to the top of Google search results. I've helped 50+ clients achieve top 3 rankings for competitive keywords, resulting in significant organic traffic growth and increased revenue.</p>
                         </div>
                     </div>
-                    <div class="services-overlap-item" data-serv-index="1">
+                    <div class="services-overlap-item">
                         <div class="services-overlap-header" onclick="toggleServicesOverlap(this)">
                             <h3>🔗 Link Building & Guest Posting</h3>
                         </div>
@@ -884,7 +845,7 @@
                             <p>I specialize in hero broken link building, high-quality guest posting on DA 50+ sites, profile backlinks creation, and niche edits. My link building strategies focus on building natural, authoritative backlinks that boost your domain authority and search rankings. I've successfully published 500+ guest posts on high-authority websites, helping clients build strong backlink profiles.</p>
                         </div>
                     </div>
-                    <div class="services-overlap-item" data-serv-index="2">
+                    <div class="services-overlap-item">
                         <div class="services-overlap-header" onclick="toggleServicesOverlap(this)">
                             <h3>📱 Social Media Marketing & Optimization (SMM & SMO)</h3>
                         </div>
@@ -893,7 +854,7 @@
                             <p>I create data-driven social media strategies that build brand awareness, engage audiences, and drive conversions. From content creation to community management, I manage your social presence across Facebook, Instagram, LinkedIn, and Twitter. My Social Media Optimization (SMO) techniques ensure your profiles are fully optimized for maximum reach and engagement.</p>
                         </div>
                     </div>
-                    <div class="services-overlap-item" data-serv-index="3">
+                    <div class="services-overlap-item">
                         <div class="services-overlap-header" onclick="toggleServicesOverlap(this)">
                             <h3>💰 Ads Campaign Management</h3>
                         </div>
@@ -930,7 +891,6 @@
                     </div>
                 </div>
 
-                <!-- Email - Left Side, Above Social Links -->
                 <div class="email-section">
                     <div class="email-box">
                         📧 <a href="mailto:marham2772@gmail.com">marham2772@gmail.com</a>
@@ -1003,7 +963,7 @@
             }
         }
 
-        // Continuous scroll animation for Home Page (like before)
+        // Continuous scroll animation for Home Page
         function animateHomePage() {
             const statCards = document.querySelectorAll('.stat-card');
             const featuredCards = document.querySelectorAll('.featured-card');
@@ -1014,32 +974,32 @@
             allElements.forEach(el => {
                 const rect = el.getBoundingClientRect();
                 const windowHeight = window.innerHeight;
+                const windowWidth = window.innerWidth;
+                
                 if (rect.top < windowHeight - 50 && rect.bottom > 0) {
-                    el.style.opacity = '1';
-                    el.style.transform = 'translateY(0)';
+                    // Element is visible - move from left to right based on scroll position
+                    const scrollPercent = Math.min(1, Math.max(0, (window.scrollY - 100) / 500));
+                    const moveX = scrollPercent * 20;
+                    el.style.opacity = Math.min(1, 0.5 + scrollPercent * 0.5);
+                    el.style.transform = `translateX(${moveX}px)`;
                 } else {
-                    el.style.opacity = '0.4';
-                    el.style.transform = 'translateY(20px)';
+                    el.style.opacity = '0.3';
+                    el.style.transform = 'translateX(0px)';
                 }
             });
         }
 
-        // What I Do - Snap scroll effect
-        function setupSnapScroll() {
-            const whatidoWrapper = document.getElementById('whatidoWrapper');
-            const servicesWrapper = document.getElementById('servicesWrapper');
+        // Initialize all overlap contents as hidden
+        function initOverlapContents() {
+            const allOverlapContents = document.querySelectorAll('.overlap-content');
+            allOverlapContents.forEach(content => {
+                content.style.display = 'none';
+            });
             
-            if (whatidoWrapper) {
-                whatidoWrapper.style.scrollSnapType = 'y mandatory';
-                whatidoWrapper.style.height = '100vh';
-                whatidoWrapper.style.overflowY = 'auto';
-            }
-            
-            if (servicesWrapper) {
-                servicesWrapper.style.scrollSnapType = 'y mandatory';
-                servicesWrapper.style.height = '100vh';
-                servicesWrapper.style.overflowY = 'auto';
-            }
+            const allServicesOverlapContents = document.querySelectorAll('.services-overlap-content');
+            allServicesOverlapContents.forEach(content => {
+                content.style.display = 'none';
+            });
         }
 
         function navbarScrollEffect() {
@@ -1051,7 +1011,6 @@
             }
         }
 
-        // Main scroll handler
         window.addEventListener('scroll', () => {
             navbarScrollEffect();
             animateHomePage();
@@ -1061,7 +1020,7 @@
             loadPageFromHash();
             setTimeout(() => {
                 animateHomePage();
-                setupSnapScroll();
+                initOverlapContents();
             }, 200);
         });
 
