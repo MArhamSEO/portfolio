@@ -165,7 +165,6 @@
             box-shadow: 0 15px 40px rgba(128,0,0,0.4);
         }
 
-        /* About Image - Same as Home Page (No Blur) */
         .about-img {
             width: 100%;
             max-width: 300px;
@@ -233,7 +232,7 @@
             color: white;
         }
 
-        /* Statistics */
+        /* Statistics - Continuous Scroll Movement */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -247,15 +246,9 @@
             padding: 35px 20px;
             border-radius: 20px;
             border: 1px solid rgba(128,0,0,0.3);
-            transition: all 0.5s ease;
-            opacity: 0.6;
-            transform: scale(0.95);
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-
-        .stat-card.visible-card {
+            transition: all 0.4s ease;
+            transform: translateY(0);
             opacity: 1;
-            transform: scale(1);
         }
 
         .stat-card:hover {
@@ -283,39 +276,82 @@
             border-color: rgba(128,0,0,0.5);
         }
 
-        /* Overlap Accordion - What I Do */
+        /* Featured Services */
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .featured-card {
+            background: #2a1515;
+            padding: 30px 25px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(90, 42, 42, 0.6);
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .featured-card:hover {
+            transform: translateY(-8px);
+            border-color: #800000;
+        }
+
+        .featured-icon {
+            font-size: 55px;
+            margin-bottom: 18px;
+        }
+
+        /* Why Choose Me */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .why-card {
+            background: #2a1515;
+            padding: 30px 25px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.4s ease;
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .why-card:hover {
+            background: #800000;
+            transform: translateY(-5px);
+        }
+
+        .why-icon {
+            font-size: 45px;
+            margin-bottom: 18px;
+        }
+
+        /* What I Do - Snap Scroll (Page Stop Effect) */
+        .whatido-wrapper {
+            scroll-snap-type: y mandatory;
+            height: 100vh;
+            overflow-y: auto;
+            border-radius: 20px;
+        }
+
         .overlap-container {
             position: relative;
-            min-height: 400px;
         }
 
         .overlap-item {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
+            scroll-snap-align: start;
             background: #2a1515;
-            border-radius: 16px;
+            border-radius: 20px;
             border: 1px solid #800000;
-            padding: 25px;
-            transition: all 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-            opacity: 0;
-            transform: translateY(20px);
-            pointer-events: none;
-        }
-
-        .overlap-item.active {
-            position: relative;
-            opacity: 1;
-            transform: translateY(0);
-            pointer-events: auto;
+            padding: 30px;
             margin-bottom: 20px;
-        }
-
-        .overlap-item.previous {
-            opacity: 0.3;
-            transform: translateY(-30px) scale(0.95);
-            pointer-events: none;
+            transition: all 0.3s ease;
         }
 
         .overlap-header {
@@ -323,7 +359,6 @@
             justify-content: space-between;
             align-items: center;
             cursor: pointer;
-            padding: 10px 0;
         }
 
         .overlap-header h3 {
@@ -352,114 +387,37 @@
             line-height: 1.9;
         }
 
-        /* Featured Services */
-        .featured-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 25px;
-        }
-
-        .featured-card {
-            background: #2a1515;
-            padding: 30px 25px;
-            border-radius: 20px;
-            text-align: center;
-            transition: all 0.5s ease;
-            border: 1px solid rgba(90, 42, 42, 0.6);
-            opacity: 0.6;
-            transform: scale(0.95);
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-
-        .featured-card.visible-card {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        .featured-card:hover {
-            transform: translateY(-8px);
-            border-color: #800000;
-        }
-
-        .featured-icon {
-            font-size: 55px;
-            margin-bottom: 18px;
-        }
-
-        /* Why Choose Me */
-        .why-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-        }
-
-        .why-card {
-            background: #2a1515;
-            padding: 30px 25px;
-            border-radius: 20px;
-            text-align: center;
-            transition: all 0.5s ease;
-            opacity: 0.6;
-            transform: scale(0.95);
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-
-        .why-card.visible-card {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        .why-card:hover {
-            background: #800000;
-            transform: translateY(-5px);
-        }
-
-        .why-icon {
-            font-size: 45px;
-            margin-bottom: 18px;
-        }
-
-        /* Experience & Expertise - Full 4 Lines */
-        .exp-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
+        /* Experience & Expertise - 4 Separate Lines */
+        .exp-list {
+            display: flex;
+            flex-direction: column;
             gap: 20px;
         }
 
-        .exp-item {
+        .exp-single-item {
             background: #2a1515;
-            padding: 22px 20px;
+            padding: 20px 25px;
             border-left: 4px solid #800000;
             border-radius: 12px;
-            transition: all 0.5s ease;
-            opacity: 0.6;
-            transform: translateX(-20px);
-            transition: opacity 0.3s ease, transform 0.3s ease;
+            transition: all 0.3s ease;
         }
 
-        .exp-item.visible-item {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .exp-item:hover {
+        .exp-single-item:hover {
             transform: translateX(5px);
             border-left-color: #a00000;
             background: #351818;
         }
 
-        .exp-title {
-            font-size: 1.15em;
+        .exp-single-title {
+            font-size: 1.2em;
             font-weight: bold;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
-        .exp-desc {
+        .exp-single-desc {
             color: #e0a0a0;
-            margin-top: 8px;
             line-height: 1.6;
-            font-size: 0.85em;
+            font-size: 0.9em;
         }
 
         /* Achievements */
@@ -474,16 +432,8 @@
             padding: 18px 20px;
             border-radius: 14px;
             text-align: center;
-            transition: all 0.5s ease;
+            transition: all 0.3s ease;
             border: 1px solid rgba(90, 42, 42, 0.6);
-            opacity: 0.6;
-            transform: translateX(-20px);
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-
-        .achievement-card.visible-item {
-            opacity: 1;
-            transform: translateX(0);
         }
 
         .achievement-card:hover {
@@ -491,32 +441,20 @@
             transform: translateY(-5px);
         }
 
-        /* Services Overlap */
-        .services-overlap-container {
-            position: relative;
-            min-height: 400px;
+        /* Services Overlap - Snap Scroll */
+        .services-wrapper {
+            scroll-snap-type: y mandatory;
+            height: 100vh;
+            overflow-y: auto;
+            border-radius: 20px;
         }
 
         .services-overlap-item {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
+            scroll-snap-align: start;
             background: #2a1515;
-            border-radius: 16px;
+            border-radius: 20px;
             border: 1px solid #800000;
-            padding: 25px;
-            transition: all 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-            opacity: 0;
-            transform: translateY(20px);
-            pointer-events: none;
-        }
-
-        .services-overlap-item.active {
-            position: relative;
-            opacity: 1;
-            transform: translateY(0);
-            pointer-events: auto;
+            padding: 30px;
             margin-bottom: 20px;
         }
 
@@ -525,7 +463,6 @@
             justify-content: space-between;
             align-items: center;
             cursor: pointer;
-            padding: 10px 0;
         }
 
         .services-overlap-header h3 {
@@ -594,19 +531,18 @@
             box-shadow: 0 0 12px rgba(128, 0, 0, 0.3);
         }
 
-        /* Email - Left Side */
-        .email-left {
-            text-align: left;
-            margin-bottom: 20px;
+        /* Email - Left Side, Above Social Links */
+        .email-section {
+            margin: 20px 0;
         }
 
         .email-box {
             display: inline-block;
             background: #2a1515;
-            padding: 6px 18px;
+            padding: 8px 20px;
             border-radius: 40px;
             border: 1px solid #800000;
-            font-size: 0.85em;
+            font-size: 0.9em;
         }
 
         .email-box a {
@@ -620,7 +556,7 @@
             background: rgba(30, 15, 15, 0.95);
             border-radius: 24px;
             padding: 25px 35px;
-            margin: 35px 0 20px 0;
+            margin: 20px 0;
             text-align: center;
             border: 1px solid rgba(128,0,0,0.3);
         }
@@ -680,6 +616,22 @@
             transform: translateX(6px);
         }
 
+        /* Continuous Scroll Movement for Home Page */
+        @keyframes floatIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-on-scroll {
+            animation: floatIn 0.6s ease forwards;
+        }
+
         @media (max-width: 768px) {
             .navbar {
                 flex-direction: column;
@@ -703,7 +655,7 @@
             .section-card {
                 padding: 30px 20px;
             }
-            .exp-grid, .achievements-grid {
+            .achievements-grid {
                 grid-template-columns: 1fr;
             }
             .overlap-content, .services-overlap-content {
@@ -714,6 +666,10 @@
             }
             .contact-wrapper {
                 flex-direction: column;
+            }
+            .whatido-wrapper, .services-wrapper {
+                height: auto;
+                scroll-snap-type: none;
             }
         }
     </style>
@@ -747,7 +703,7 @@
                 </div>
             </div>
 
-            <div class="stats-grid">
+            <div class="stats-grid" id="statsGrid">
                 <div class="stat-card"><div class="stat-number">4+</div><div class="stat-label">Years Experience</div></div>
                 <div class="stat-card"><div class="stat-number">50+</div><div class="stat-label">Happy Clients</div></div>
                 <div class="stat-card"><div class="stat-number">200+</div><div class="stat-label">Keywords Ranked</div></div>
@@ -765,7 +721,7 @@
 
             <div class="section-card">
                 <h2>Featured Services</h2>
-                <div class="featured-grid">
+                <div class="featured-grid" id="featuredGrid">
                     <div class="featured-card"><div class="featured-icon">🔍</div><h3>SEO Services</h3><p>On-Page & Off-Page SEO, Technical SEO, Local SEO, SEO Audit</p></div>
                     <div class="featured-card"><div class="featured-icon">📱</div><h3>SMM & SMO</h3><p>Social Media Marketing & Optimization for all platforms</p></div>
                     <div class="featured-card"><div class="featured-icon">💰</div><h3>Ads Campaigns</h3><p>Facebook Ads, Google Ads, YouTube Ads that maximize ROI</p></div>
@@ -775,7 +731,7 @@
 
             <div class="section-card">
                 <h2>Why Choose Me</h2>
-                <div class="why-grid">
+                <div class="why-grid" id="whyGrid">
                     <div class="why-card"><div class="why-icon">📊</div><h3>Data-Driven Results</h3><p>Every strategy is backed by data and analytics</p></div>
                     <div class="why-card"><div class="why-icon">💬</div><h3>24/7 Support</h3><p>Always available to answer your questions</p></div>
                     <div class="why-card"><div class="why-icon">📈</div><h3>Monthly Reporting</h3><p>Detailed reports every month</p></div>
@@ -802,69 +758,71 @@
 
             <div class="section-card">
                 <h2>What I Do</h2>
-                <div class="overlap-container" id="overlapContainer">
-                    <div class="overlap-item" data-index="0" id="overlap1">
-                        <div class="overlap-header" onclick="toggleOverlap(0)">
-                            <h3>🔍 Search Engine Optimization (SEO)</h3>
+                <div class="whatido-wrapper" id="whatidoWrapper">
+                    <div class="overlap-container">
+                        <div class="overlap-item" data-index="0">
+                            <div class="overlap-header" onclick="toggleOverlap(this)">
+                                <h3>🔍 Search Engine Optimization (SEO)</h3>
+                            </div>
+                            <div class="overlap-content">
+                                <img src="SEO.jpg" alt="SEO Expert">
+                                <ul>
+                                    <li>Complete SEO Audit and Analysis</li>
+                                    <li>On-Page & Off-Page SEO</li>
+                                    <li>Technical SEO Optimization</li>
+                                    <li>Local SEO & Google My Business</li>
+                                    <li>Keyword Research & Strategy</li>
+                                    <li>Rankings & Traffic Growth</li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="overlap-content">
-                            <img src="SEO.jpg" alt="SEO Expert">
-                            <ul>
-                                <li>Complete SEO Audit and Analysis</li>
-                                <li>On-Page & Off-Page SEO</li>
-                                <li>Technical SEO Optimization</li>
-                                <li>Local SEO & Google My Business</li>
-                                <li>Keyword Research & Strategy</li>
-                                <li>Rankings & Traffic Growth</li>
-                            </ul>
+                        <div class="overlap-item" data-index="1">
+                            <div class="overlap-header" onclick="toggleOverlap(this)">
+                                <h3>🔗 Link Building & Guest Posting</h3>
+                            </div>
+                            <div class="overlap-content">
+                                <img src="linkbuilding.jpg" alt="Link Building">
+                                <ul>
+                                    <li>Hero Broken Link Building</li>
+                                    <li>High Authority Link Building</li>
+                                    <li>Guest Posting on DA 50+ Sites</li>
+                                    <li>Profile Backlinks Creation</li>
+                                    <li>Niche Edits & Contextual Links</li>
+                                    <li>Competitor Backlink Analysis</li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                    <div class="overlap-item" data-index="1" id="overlap2">
-                        <div class="overlap-header" onclick="toggleOverlap(1)">
-                            <h3>🔗 Link Building & Guest Posting</h3>
+                        <div class="overlap-item" data-index="2">
+                            <div class="overlap-header" onclick="toggleOverlap(this)">
+                                <h3>📱 Social Media Marketing & Optimization (SMM & SMO)</h3>
+                            </div>
+                            <div class="overlap-content">
+                                <img src="social.jpg" alt="Social Media">
+                                <ul>
+                                    <li>Social Media Strategy & Management</li>
+                                    <li>Content Creation & Scheduling</li>
+                                    <li>Community Engagement</li>
+                                    <li>Social Media Optimization (SMO)</li>
+                                    <li>Paid Social Campaigns</li>
+                                    <li>Analytics & Reporting</li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="overlap-content">
-                            <img src="linkbuilding.jpg" alt="Link Building">
-                            <ul>
-                                <li>Hero Broken Link Building</li>
-                                <li>High Authority Link Building</li>
-                                <li>Guest Posting on DA 50+ Sites</li>
-                                <li>Profile Backlinks Creation</li>
-                                <li>Niche Edits & Contextual Links</li>
-                                <li>Competitor Backlink Analysis</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="overlap-item" data-index="2" id="overlap3">
-                        <div class="overlap-header" onclick="toggleOverlap(2)">
-                            <h3>📱 Social Media Marketing & Optimization (SMM & SMO)</h3>
-                        </div>
-                        <div class="overlap-content">
-                            <img src="social.jpg" alt="Social Media">
-                            <ul>
-                                <li>Social Media Strategy & Management</li>
-                                <li>Content Creation & Scheduling</li>
-                                <li>Community Engagement</li>
-                                <li>Social Media Optimization (SMO)</li>
-                                <li>Paid Social Campaigns</li>
-                                <li>Analytics & Reporting</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="overlap-item" data-index="3" id="overlap4">
-                        <div class="overlap-header" onclick="toggleOverlap(3)">
-                            <h3>💰 Ads Campaign Management</h3>
-                        </div>
-                        <div class="overlap-content">
-                            <img src="adds.jpg" alt="Ads Campaign">
-                            <ul>
-                                <li>Facebook Ads Campaign Setup & Management</li>
-                                <li>Google Ads (Search, Display, Shopping)</li>
-                                <li>YouTube Ads & Retargeting</li>
-                                <li>Campaign Optimization for ROI</li>
-                                <li>A/B Testing & Audience Targeting</li>
-                                <li>Monthly Performance Reporting</li>
-                            </ul>
+                        <div class="overlap-item" data-index="3">
+                            <div class="overlap-header" onclick="toggleOverlap(this)">
+                                <h3>💰 Ads Campaign Management</h3>
+                            </div>
+                            <div class="overlap-content">
+                                <img src="adds.jpg" alt="Ads Campaign">
+                                <ul>
+                                    <li>Facebook Ads Campaign Setup & Management</li>
+                                    <li>Google Ads (Search, Display, Shopping)</li>
+                                    <li>YouTube Ads & Retargeting</li>
+                                    <li>Campaign Optimization for ROI</li>
+                                    <li>A/B Testing & Audience Targeting</li>
+                                    <li>Monthly Performance Reporting</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -872,11 +830,23 @@
 
             <div class="section-card">
                 <h2>Experience & Expertise</h2>
-                <div class="exp-grid">
-                    <div class="exp-item"><div class="exp-title">🔍 Complete SEO Solutions</div><div class="exp-desc">SEO Audit | On-Page Optimization | Off-Page Link Building | Technical SEO | Local SEO | Keyword Research | Rank Tracking</div></div>
-                    <div class="exp-item"><div class="exp-title">🔗 Link Building & Guest Posting</div><div class="exp-desc">Hero Broken Link Building | High DA Guest Posts | Profile Backlinks | Niche Edits | Competitor Analysis</div></div>
-                    <div class="exp-item"><div class="exp-title">📱 Social Media Marketing & SMO</div><div class="exp-desc">Strategy Development | Content Creation | Community Management | Social Media Optimization | Paid Social | Analytics</div></div>
-                    <div class="exp-item"><div class="exp-title">💰 Ads Campaign Management</div><div class="exp-desc">Facebook Ads | Google Ads | YouTube Ads | Campaign Setup | ROI Optimization | A/B Testing | Reporting</div></div>
+                <div class="exp-list">
+                    <div class="exp-single-item">
+                        <div class="exp-single-title">🔍 Complete SEO Solutions</div>
+                        <div class="exp-single-desc">SEO Audit | On-Page Optimization | Off-Page Link Building | Technical SEO | Local SEO | Keyword Research | Rank Tracking</div>
+                    </div>
+                    <div class="exp-single-item">
+                        <div class="exp-single-title">🔗 Link Building & Guest Posting</div>
+                        <div class="exp-single-desc">Hero Broken Link Building | High DA Guest Posts | Profile Backlinks | Niche Edits | Competitor Analysis</div>
+                    </div>
+                    <div class="exp-single-item">
+                        <div class="exp-single-title">📱 Social Media Marketing & SMO</div>
+                        <div class="exp-single-desc">Strategy Development | Content Creation | Community Management | Social Media Optimization | Paid Social | Analytics</div>
+                    </div>
+                    <div class="exp-single-item">
+                        <div class="exp-single-title">💰 Ads Campaign Management</div>
+                        <div class="exp-single-desc">Facebook Ads | Google Ads | YouTube Ads | Campaign Setup | ROI Optimization | A/B Testing | Reporting</div>
+                    </div>
                 </div>
             </div>
 
@@ -895,9 +865,9 @@
         <div id="services-page" class="page">
             <div class="section-card">
                 <h2>Services I Offer</h2>
-                <div class="services-overlap-container" id="servicesOverlapContainer">
-                    <div class="services-overlap-item" data-serv-index="0" id="servOverlap1">
-                        <div class="services-overlap-header" onclick="toggleServicesOverlap(0)">
+                <div class="services-wrapper" id="servicesWrapper">
+                    <div class="services-overlap-item" data-serv-index="0">
+                        <div class="services-overlap-header" onclick="toggleServicesOverlap(this)">
                             <h3>🔍 Search Engine Optimization (SEO)</h3>
                         </div>
                         <div class="services-overlap-content">
@@ -905,8 +875,8 @@
                             <p>I provide complete SEO solutions including website audit, on-page optimization, off-page SEO, technical SEO, local SEO, and keyword research. My strategies are data-driven and focused on getting your website to the top of Google search results. I've helped 50+ clients achieve top 3 rankings for competitive keywords, resulting in significant organic traffic growth and increased revenue.</p>
                         </div>
                     </div>
-                    <div class="services-overlap-item" data-serv-index="1" id="servOverlap2">
-                        <div class="services-overlap-header" onclick="toggleServicesOverlap(1)">
+                    <div class="services-overlap-item" data-serv-index="1">
+                        <div class="services-overlap-header" onclick="toggleServicesOverlap(this)">
                             <h3>🔗 Link Building & Guest Posting</h3>
                         </div>
                         <div class="services-overlap-content">
@@ -914,8 +884,8 @@
                             <p>I specialize in hero broken link building, high-quality guest posting on DA 50+ sites, profile backlinks creation, and niche edits. My link building strategies focus on building natural, authoritative backlinks that boost your domain authority and search rankings. I've successfully published 500+ guest posts on high-authority websites, helping clients build strong backlink profiles.</p>
                         </div>
                     </div>
-                    <div class="services-overlap-item" data-serv-index="2" id="servOverlap3">
-                        <div class="services-overlap-header" onclick="toggleServicesOverlap(2)">
+                    <div class="services-overlap-item" data-serv-index="2">
+                        <div class="services-overlap-header" onclick="toggleServicesOverlap(this)">
                             <h3>📱 Social Media Marketing & Optimization (SMM & SMO)</h3>
                         </div>
                         <div class="services-overlap-content">
@@ -923,8 +893,8 @@
                             <p>I create data-driven social media strategies that build brand awareness, engage audiences, and drive conversions. From content creation to community management, I manage your social presence across Facebook, Instagram, LinkedIn, and Twitter. My Social Media Optimization (SMO) techniques ensure your profiles are fully optimized for maximum reach and engagement.</p>
                         </div>
                     </div>
-                    <div class="services-overlap-item" data-serv-index="3" id="servOverlap4">
-                        <div class="services-overlap-header" onclick="toggleServicesOverlap(3)">
+                    <div class="services-overlap-item" data-serv-index="3">
+                        <div class="services-overlap-header" onclick="toggleServicesOverlap(this)">
                             <h3>💰 Ads Campaign Management</h3>
                         </div>
                         <div class="services-overlap-content">
@@ -940,13 +910,6 @@
         <div id="contact-page" class="page">
             <div class="section-card">
                 <h2>Contact Me</h2>
-                
-                <!-- Email - Left Side -->
-                <div class="email-left">
-                    <div class="email-box">
-                        📧 <a href="mailto:marham2772@gmail.com">marham2772@gmail.com</a>
-                    </div>
-                </div>
 
                 <div class="contact-wrapper">
                     <div class="contact-left">
@@ -964,6 +927,13 @@
                                 <button type="submit" class="btn">Send Message</button>
                             </form>
                         </div>
+                    </div>
+                </div>
+
+                <!-- Email - Left Side, Above Social Links -->
+                <div class="email-section">
+                    <div class="email-box">
+                        📧 <a href="mailto:marham2772@gmail.com">marham2772@gmail.com</a>
                     </div>
                 </div>
             </div>
@@ -1003,12 +973,6 @@
             document.getElementById(pageName + '-link').classList.add('active');
             window.location.hash = pageName;
             window.scrollTo({top: 0, behavior: 'smooth'});
-            
-            setTimeout(() => {
-                updateOverlapOnScroll();
-                updateServicesOverlapOnScroll();
-                updateVisibility();
-            }, 100);
         }
 
         function loadPageFromHash() {
@@ -1018,169 +982,64 @@
             else showPage('home');
         }
 
-        // Overlap Functions - What I Do
-        let currentActiveIndex = 0;
-        
-        function updateOverlapOnScroll() {
-            const overlapItems = document.querySelectorAll('.overlap-item');
-            const container = document.getElementById('overlapContainer');
-            
-            if (!container || overlapItems.length === 0) return;
-            
-            const containerTop = container.getBoundingClientRect().top;
-            const windowHeight = window.innerHeight;
-            const scrollPercentage = Math.max(0, Math.min(1, (windowHeight - containerTop) / (windowHeight + 300)));
-            
-            let activeIndex = Math.floor(scrollPercentage * overlapItems.length);
-            activeIndex = Math.min(overlapItems.length - 1, Math.max(0, activeIndex));
-            
-            if (activeIndex !== currentActiveIndex) {
-                currentActiveIndex = activeIndex;
-                
-                overlapItems.forEach((item, idx) => {
-                    if (idx === activeIndex) {
-                        item.classList.add('active');
-                        item.classList.remove('previous');
-                    } else if (idx < activeIndex) {
-                        item.classList.remove('active');
-                        item.classList.add('previous');
-                    } else {
-                        item.classList.remove('active');
-                        item.classList.remove('previous');
-                    }
-                });
+        // Toggle overlap content
+        function toggleOverlap(element) {
+            const parent = element.closest('.overlap-item');
+            const content = parent.querySelector('.overlap-content');
+            if (content.style.display === 'none' || !content.style.display) {
+                content.style.display = 'flex';
+            } else {
+                content.style.display = 'none';
             }
         }
-        
-        function toggleOverlap(index) {
-            currentActiveIndex = index;
-            const overlapItems = document.querySelectorAll('.overlap-item');
-            overlapItems.forEach((item, idx) => {
-                if (idx === index) {
-                    item.classList.add('active');
-                    item.classList.remove('previous');
-                } else if (idx < index) {
-                    item.classList.remove('active');
-                    item.classList.add('previous');
-                } else {
-                    item.classList.remove('active');
-                    item.classList.remove('previous');
-                }
-            });
-        }
-        
-        // Services Overlap Functions
-        let currentServicesActiveIndex = 0;
-        
-        function updateServicesOverlapOnScroll() {
-            const overlapItems = document.querySelectorAll('.services-overlap-item');
-            const container = document.getElementById('servicesOverlapContainer');
-            
-            if (!container || overlapItems.length === 0) return;
-            
-            const containerTop = container.getBoundingClientRect().top;
-            const windowHeight = window.innerHeight;
-            const scrollPercentage = Math.max(0, Math.min(1, (windowHeight - containerTop) / (windowHeight + 300)));
-            
-            let activeIndex = Math.floor(scrollPercentage * overlapItems.length);
-            activeIndex = Math.min(overlapItems.length - 1, Math.max(0, activeIndex));
-            
-            if (activeIndex !== currentServicesActiveIndex) {
-                currentServicesActiveIndex = activeIndex;
-                
-                overlapItems.forEach((item, idx) => {
-                    if (idx === activeIndex) {
-                        item.classList.add('active');
-                        item.classList.remove('previous');
-                    } else if (idx < activeIndex) {
-                        item.classList.remove('active');
-                        item.classList.add('previous');
-                    } else {
-                        item.classList.remove('active');
-                        item.classList.remove('previous');
-                    }
-                });
+
+        function toggleServicesOverlap(element) {
+            const parent = element.closest('.services-overlap-item');
+            const content = parent.querySelector('.services-overlap-content');
+            if (content.style.display === 'none' || !content.style.display) {
+                content.style.display = 'flex';
+            } else {
+                content.style.display = 'none';
             }
         }
-        
-        function toggleServicesOverlap(index) {
-            currentServicesActiveIndex = index;
-            const overlapItems = document.querySelectorAll('.services-overlap-item');
-            overlapItems.forEach((item, idx) => {
-                if (idx === index) {
-                    item.classList.add('active');
-                    item.classList.remove('previous');
-                } else if (idx < index) {
-                    item.classList.remove('active');
-                    item.classList.add('previous');
+
+        // Continuous scroll animation for Home Page (like before)
+        function animateHomePage() {
+            const statCards = document.querySelectorAll('.stat-card');
+            const featuredCards = document.querySelectorAll('.featured-card');
+            const whyCards = document.querySelectorAll('.why-card');
+            
+            const allElements = [...statCards, ...featuredCards, ...whyCards];
+            
+            allElements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+                if (rect.top < windowHeight - 50 && rect.bottom > 0) {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
                 } else {
-                    item.classList.remove('active');
-                    item.classList.remove('previous');
+                    el.style.opacity = '0.4';
+                    el.style.transform = 'translateY(20px)';
                 }
             });
         }
 
-        // Update visibility for all elements (60% hide/show)
-        function updateVisibility() {
-            // Statistics cards
-            const statCards = document.querySelectorAll('.stat-card');
-            statCards.forEach(card => {
-                const rect = card.getBoundingClientRect();
-                const windowHeight = window.innerHeight;
-                if (rect.top < windowHeight - 50 && rect.bottom > 0) {
-                    card.classList.add('visible-card');
-                } else {
-                    card.classList.remove('visible-card');
-                }
-            });
+        // What I Do - Snap scroll effect
+        function setupSnapScroll() {
+            const whatidoWrapper = document.getElementById('whatidoWrapper');
+            const servicesWrapper = document.getElementById('servicesWrapper');
             
-            // Featured cards
-            const featuredCards = document.querySelectorAll('.featured-card');
-            featuredCards.forEach(card => {
-                const rect = card.getBoundingClientRect();
-                const windowHeight = window.innerHeight;
-                if (rect.top < windowHeight - 50 && rect.bottom > 0) {
-                    card.classList.add('visible-card');
-                } else {
-                    card.classList.remove('visible-card');
-                }
-            });
+            if (whatidoWrapper) {
+                whatidoWrapper.style.scrollSnapType = 'y mandatory';
+                whatidoWrapper.style.height = '100vh';
+                whatidoWrapper.style.overflowY = 'auto';
+            }
             
-            // Why cards
-            const whyCards = document.querySelectorAll('.why-card');
-            whyCards.forEach(card => {
-                const rect = card.getBoundingClientRect();
-                const windowHeight = window.innerHeight;
-                if (rect.top < windowHeight - 50 && rect.bottom > 0) {
-                    card.classList.add('visible-card');
-                } else {
-                    card.classList.remove('visible-card');
-                }
-            });
-            
-            // Experience items - full lines (no half)
-            const expItems = document.querySelectorAll('.exp-item');
-            expItems.forEach(item => {
-                const rect = item.getBoundingClientRect();
-                const windowHeight = window.innerHeight;
-                if (rect.top < windowHeight - 50 && rect.bottom > 0) {
-                    item.classList.add('visible-item');
-                } else {
-                    item.classList.remove('visible-item');
-                }
-            });
-            
-            // Achievement cards - full
-            const achievementCards = document.querySelectorAll('.achievement-card');
-            achievementCards.forEach(card => {
-                const rect = card.getBoundingClientRect();
-                const windowHeight = window.innerHeight;
-                if (rect.top < windowHeight - 50 && rect.bottom > 0) {
-                    card.classList.add('visible-item');
-                } else {
-                    card.classList.remove('visible-item');
-                }
-            });
+            if (servicesWrapper) {
+                servicesWrapper.style.scrollSnapType = 'y mandatory';
+                servicesWrapper.style.height = '100vh';
+                servicesWrapper.style.overflowY = 'auto';
+            }
         }
 
         function navbarScrollEffect() {
@@ -1195,22 +1054,14 @@
         // Main scroll handler
         window.addEventListener('scroll', () => {
             navbarScrollEffect();
-            updateOverlapOnScroll();
-            updateServicesOverlapOnScroll();
-            updateVisibility();
+            animateHomePage();
         });
 
         window.addEventListener('load', () => {
             loadPageFromHash();
             setTimeout(() => {
-                updateOverlapOnScroll();
-                updateServicesOverlapOnScroll();
-                updateVisibility();
-                // Initialize first overlap item as active
-                const firstOverlap = document.querySelector('.overlap-item');
-                if (firstOverlap) firstOverlap.classList.add('active');
-                const firstServiceOverlap = document.querySelector('.services-overlap-item');
-                if (firstServiceOverlap) firstServiceOverlap.classList.add('active');
+                animateHomePage();
+                setupSnapScroll();
             }, 200);
         });
 
