@@ -30,7 +30,7 @@
         .navbar {
             background: rgba(30, 10, 10, 0.95);
             border-radius: 50px;
-            padding: 15px 25px;
+            padding: 12px 25px;
             margin-bottom: 30px;
             border: 1px solid #800000;
             position: sticky;
@@ -42,17 +42,50 @@
         .nav-menu {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            align-items: center;
+            gap: 25px;
             flex-wrap: wrap;
             list-style: none;
+        }
+
+        /* Clickable Logo in Navbar */
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-logo:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-logo-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #800000, #a00000);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+            color: white;
+        }
+
+        .nav-logo-text {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #e0a0a0;
         }
 
         .nav-menu a {
             color: #e0a0a0;
             text-decoration: none;
-            font-size: 1.1em;
+            font-size: 1em;
             font-weight: 500;
-            padding: 8px 20px;
+            padding: 8px 18px;
             border-radius: 30px;
             transition: 0.3s;
         }
@@ -77,35 +110,53 @@
             border: 1px solid #800000;
         }
 
-        /* Clickable Profile Picture */
+        /* Clickable Logo in Header */
+        .clickable-logo {
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: inline-block;
+        }
+
+        .clickable-logo:hover {
+            transform: scale(1.05);
+        }
+
         .profile-img {
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #800000, #5c0000);
+            background: linear-gradient(135deg, #a03030, #c04040);
             margin: 0 auto 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            flex-direction: column;
         }
 
-        .profile-img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(192, 64, 64, 0.5);
+        .profile-img div {
+            text-align: center;
         }
 
-        .profile-img:active {
-            transform: scale(0.98);
+        .profile-img span.big {
+            font-size: 48px;
+            font-weight: 800;
+            color: white;
+            letter-spacing: 2px;
         }
 
-        .profile-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: 50% 75%;
+        .profile-img span.small {
+            font-size: 28px;
+            font-weight: 600;
+            color: #ffcccc;
+            letter-spacing: 1px;
+        }
+
+        .profile-img .rham {
+            font-size: 16px;
+            font-weight: 500;
+            color: #ffbbbb;
+            letter-spacing: 2px;
+            margin-top: 5px;
         }
 
         h1 {
@@ -322,24 +373,37 @@
                 font-size: 1.8em;
             }
             .social-link {
-                padding: 8px 15px;
-                font-size: 12px;
+                padding: 8px 12px;
+                font-size: 11px;
             }
             .nav-menu {
-                gap: 10px;
+                gap: 8px;
             }
             .nav-menu a {
-                padding: 6px 12px;
-                font-size: 14px;
+                padding: 5px 10px;
+                font-size: 12px;
+            }
+            .nav-logo-text {
+                display: none;
+            }
+            .profile-img span.big {
+                font-size: 36px;
+            }
+            .profile-img span.small {
+                font-size: 22px;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Navigation Bar -->
+        <!-- Navigation Bar with Clickable Logo -->
         <nav class="navbar">
             <ul class="nav-menu">
+                <li class="nav-logo" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+                    <div class="nav-logo-img">MA</div>
+                    <span class="nav-logo-text">M Arham</span>
+                </li>
                 <li><a href="#home" class="active">🏠 Home</a></li>
                 <li><a href="#about">📌 About</a></li>
                 <li><a href="#services">🛠️ Services</a></li>
@@ -350,8 +414,15 @@
         <!-- Home Section -->
         <section id="home">
             <header>
-                <div class="profile-img" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
-                    <img src="profile.jpg.jpg" alt="M Arham" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover; object-position: 50% 75%;">
+                <!-- Clickable Logo - Home Page -->
+                <div class="clickable-logo" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+                    <div class="profile-img">
+                        <div>
+                            <span class="big">M</span>
+                            <span class="small">A</span>
+                            <div class="rham">rham</div>
+                        </div>
+                    </div>
                 </div>
                 <h1>M Arham</h1>
                 <div class="tagline">Digital Marketing Expert | SEO | SMM | Ads Specialist | Guest Posting</div>
@@ -482,7 +553,6 @@
 
     <!-- Active Tab Highlight Script -->
     <script>
-        // Active link highlight on scroll
         const sections = document.querySelectorAll('section');
         const navLinks = document.querySelectorAll('.nav-menu a');
 
