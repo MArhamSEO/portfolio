@@ -27,7 +27,6 @@
             padding: 20px;
         }
 
-        /* Hero Section */
         .hero {
             text-align: center;
             padding: 100px 20px;
@@ -55,7 +54,6 @@
             z-index: 2;
         }
 
-        /* Navbar */
         .navbar {
             background: rgba(30, 10, 10, 0.95);
             border-radius: 60px;
@@ -127,7 +125,6 @@
             color: white;
         }
 
-        /* Page Transitions */
         .page {
             display: none;
             animation: fadeIn 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1);
@@ -142,7 +139,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Profile Image */
         .profile-img {
             width: 150px;
             height: 150px;
@@ -187,7 +183,6 @@
             margin-bottom: 35px;
         }
 
-        /* Buttons */
         .btn {
             display: inline-block;
             background: #800000;
@@ -219,7 +214,7 @@
             color: white;
         }
 
-        /* Statistics - Only on Home Page */
+        /* Statistics */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -234,8 +229,6 @@
             border-radius: 20px;
             border: 1px solid rgba(128,0,0,0.3);
             transition: all 0.4s ease;
-            transform: translateX(0);
-            opacity: 1;
             will-change: transform, opacity;
         }
 
@@ -251,7 +244,6 @@
             color: #e0a0a0;
         }
 
-        /* Section Cards */
         .section-card {
             background: rgba(30, 15, 15, 0.95);
             border-radius: 24px;
@@ -265,7 +257,14 @@
             border-color: rgba(128,0,0,0.5);
         }
 
-        /* Featured Services - Hover Red */
+        /* Welcome paragraph - move */
+        .welcome-text {
+            font-size: 1.1em;
+            line-height: 1.9;
+            will-change: transform, opacity;
+        }
+
+        /* Featured Services */
         .featured-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -280,8 +279,6 @@
             text-align: center;
             transition: all 0.4s ease;
             border: 1px solid rgba(90, 42, 42, 0.6);
-            transform: translateX(0);
-            opacity: 1;
             will-change: transform, opacity;
         }
 
@@ -296,7 +293,7 @@
             margin-bottom: 18px;
         }
 
-        /* Why Choose Me - Hover Red */
+        /* Why Choose Me */
         .why-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -309,8 +306,6 @@
             border-radius: 20px;
             text-align: center;
             transition: all 0.4s ease;
-            transform: translateX(0);
-            opacity: 1;
             will-change: transform, opacity;
         }
 
@@ -324,51 +319,61 @@
             margin-bottom: 18px;
         }
 
-        /* About Section - Left to Right Paragraph */
+        /* About paragraph - white color, left to right move */
         .about-paragraph {
             font-size: 1.1em;
             line-height: 1.9;
             text-align: left;
-            transform: translateX(0);
-            transition: transform 0.3s ease;
-        }
-
-        /* What I Do - Simple Points (No click, no overlap) */
-        .whatido-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 20px;
-        }
-
-        .whatido-card {
-            background: #2a1515;
-            padding: 25px;
-            border-radius: 20px;
-            border: 1px solid rgba(90, 42, 42, 0.6);
-            transition: all 0.4s ease;
-            transform: translateX(0);
-            opacity: 1;
+            color: white;
             will-change: transform, opacity;
         }
 
-        .whatido-card:hover {
-            transform: scale(1.02);
-            border-color: #800000;
+        /* What I Do - Alternating Image Left/Right */
+        .whatido-item {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            will-change: transform, opacity;
         }
 
-        .whatido-card h3 {
+        .whatido-item.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .whatido-image {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .whatido-image img {
+            width: 100%;
+            border-radius: 20px;
+            border: 1px solid #800000;
+            transition: transform 0.3s ease;
+        }
+
+        .whatido-image img:hover {
+            transform: scale(1.02);
+        }
+
+        .whatido-content {
+            flex: 1;
+        }
+
+        .whatido-content h3 {
             color: white;
-            font-size: 1.3em;
+            font-size: 1.4em;
             margin-bottom: 15px;
         }
 
-        .whatido-card ul {
+        .whatido-content ul {
             margin-left: 20px;
-            line-height: 1.8;
+            line-height: 1.9;
         }
 
-        .whatido-card li {
+        .whatido-content li {
             color: #e0a0a0;
             margin-bottom: 8px;
         }
@@ -386,8 +391,6 @@
             border-left: 4px solid #800000;
             border-radius: 12px;
             transition: all 0.3s ease;
-            transform: translateX(0);
-            opacity: 1;
             will-change: transform, opacity;
         }
 
@@ -423,8 +426,6 @@
             text-align: center;
             transition: all 0.3s ease;
             border: 1px solid rgba(90, 42, 42, 0.6);
-            transform: translateX(0);
-            opacity: 1;
             will-change: transform, opacity;
         }
 
@@ -433,49 +434,47 @@
             transform: translateY(-5px);
         }
 
-        /* Services - Auto Scroll Points */
-        .services-auto-container {
-            position: relative;
-        }
-
-        .service-auto-item {
-            background: #2a1515;
-            border-radius: 20px;
-            border: 1px solid #800000;
-            padding: 30px;
-            margin-bottom: 20px;
-            transition: all 0.3s ease;
-            transform: translateX(0);
-            opacity: 1;
+        /* Services - Alternating Image Left/Right */
+        .service-item {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
             will-change: transform, opacity;
         }
 
-        .service-auto-item:hover {
-            transform: scale(1.01);
-            border-color: #a00000;
+        .service-item.reverse {
+            flex-direction: row-reverse;
         }
 
-        .service-auto-header h3 {
+        .service-image {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .service-image img {
+            width: 100%;
+            border-radius: 20px;
+            border: 1px solid #800000;
+            transition: transform 0.3s ease;
+        }
+
+        .service-image img:hover {
+            transform: scale(1.02);
+        }
+
+        .service-content {
+            flex: 1;
+        }
+
+        .service-content h3 {
             color: white;
-            font-size: 1.3em;
+            font-size: 1.4em;
             margin-bottom: 15px;
         }
 
-        .service-auto-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            align-items: center;
-        }
-
-        .service-auto-content img {
-            width: 40%;
-            border-radius: 15px;
-            border: 1px solid #800000;
-        }
-
-        .service-auto-content p {
-            flex: 1;
+        .service-content p {
             color: #e0a0a0;
             line-height: 1.8;
         }
@@ -487,13 +486,10 @@
             gap: 30px;
         }
 
-        .contact-top {
-            width: 100%;
-        }
-
         .contact-top p {
             line-height: 1.9;
             text-align: left;
+            color: white;
         }
 
         .contact-form {
@@ -523,7 +519,6 @@
             width: 100%;
         }
 
-        /* Email */
         .email-section {
             margin: 20px 0;
         }
@@ -543,7 +538,6 @@
             font-weight: bold;
         }
 
-        /* Social Links */
         .social-links-section {
             background: rgba(30, 15, 15, 0.95);
             border-radius: 24px;
@@ -631,13 +625,13 @@
             .section-card {
                 padding: 30px 20px;
             }
-            .achievements-grid, .whatido-grid {
+            .achievements-grid {
                 grid-template-columns: 1fr;
             }
-            .service-auto-content {
+            .whatido-item, .whatido-item.reverse, .service-item, .service-item.reverse {
                 flex-direction: column;
             }
-            .service-auto-content img {
+            .whatido-image, .service-image {
                 width: 100%;
             }
         }
@@ -681,7 +675,7 @@
 
             <div class="section-card">
                 <h2>Welcome to My Digital Marketing Portfolio</h2>
-                <p style="font-size: 1.1em; line-height: 1.9;">
+                <p class="welcome-text">
                     I'm <strong>M Arham</strong>, a passionate <strong>Digital Marketing Expert</strong> with over <strong>4+ years</strong> 
                     helping businesses grow online. I specialize in <strong>SEO (On-Page & Off-Page), SMM, SMO, and Ads Campaigns</strong>. 
                     My data-driven strategies have helped 50+ clients achieve top rankings on Google and significantly increase their revenue.
@@ -724,8 +718,13 @@
 
             <div class="section-card">
                 <h2>What I Do</h2>
-                <div class="whatido-grid">
-                    <div class="whatido-card">
+                
+                <!-- SEO - Image Left, Text Right -->
+                <div class="whatido-item">
+                    <div class="whatido-image">
+                        <img src="SEO.jpg" alt="SEO Expert">
+                    </div>
+                    <div class="whatido-content">
                         <h3>🔍 Search Engine Optimization (SEO)</h3>
                         <ul>
                             <li>Complete SEO Audit and Analysis</li>
@@ -736,7 +735,14 @@
                             <li>Rankings & Traffic Growth</li>
                         </ul>
                     </div>
-                    <div class="whatido-card">
+                </div>
+
+                <!-- Link Building - Image Right, Text Left -->
+                <div class="whatido-item reverse">
+                    <div class="whatido-image">
+                        <img src="linkbuilding.jpg" alt="Link Building">
+                    </div>
+                    <div class="whatido-content">
                         <h3>🔗 Link Building & Guest Posting</h3>
                         <ul>
                             <li>Hero Broken Link Building</li>
@@ -747,8 +753,15 @@
                             <li>Competitor Backlink Analysis</li>
                         </ul>
                     </div>
-                    <div class="whatido-card">
-                        <h3>📱 Social Media Marketing & SMO</h3>
+                </div>
+
+                <!-- SMM - Image Left, Text Right -->
+                <div class="whatido-item">
+                    <div class="whatido-image">
+                        <img src="social.jpg" alt="Social Media Marketing">
+                    </div>
+                    <div class="whatido-content">
+                        <h3>📱 Social Media Marketing & Optimization (SMM & SMO)</h3>
                         <ul>
                             <li>Social Media Strategy & Management</li>
                             <li>Content Creation & Scheduling</li>
@@ -758,7 +771,14 @@
                             <li>Analytics & Reporting</li>
                         </ul>
                     </div>
-                    <div class="whatido-card">
+                </div>
+
+                <!-- Ads - Image Right, Text Left -->
+                <div class="whatido-item reverse">
+                    <div class="whatido-image">
+                        <img src="adds.jpg" alt="Ads Campaign">
+                    </div>
+                    <div class="whatido-content">
                         <h3>💰 Ads Campaign Management</h3>
                         <ul>
                             <li>Facebook Ads Campaign Setup & Management</li>
@@ -805,52 +825,58 @@
             </div>
         </div>
 
-        <!-- ========== SERVICES PAGE (Auto Scroll Points) ========== -->
+        <!-- ========== SERVICES PAGE ========== -->
         <div id="services-page" class="page">
             <div class="section-card">
                 <h2>Services I Offer</h2>
-                <div class="services-auto-container">
-                    <div class="service-auto-item">
-                        <div class="service-auto-header">
-                            <h3>🔍 Search Engine Optimization (SEO)</h3>
-                        </div>
-                        <div class="service-auto-content">
-                            <img src="SEO.jpg" alt="SEO Services">
-                            <p>I provide complete SEO solutions including website audit, on-page optimization, off-page SEO, technical SEO, local SEO, and keyword research. My strategies are data-driven and focused on getting your website to the top of Google search results. I've helped 50+ clients achieve top 3 rankings for competitive keywords, resulting in significant organic traffic growth and increased revenue.</p>
-                        </div>
+
+                <!-- SEO - Image Left, Text Right -->
+                <div class="service-item">
+                    <div class="service-image">
+                        <img src="SEO.jpg" alt="SEO Services">
                     </div>
-                    <div class="service-auto-item">
-                        <div class="service-auto-header">
-                            <h3>🔗 Link Building & Guest Posting</h3>
-                        </div>
-                        <div class="service-auto-content">
-                            <img src="linkbuilding.jpg" alt="Link Building">
-                            <p>I specialize in hero broken link building, high-quality guest posting on DA 50+ sites, profile backlinks creation, and niche edits. My link building strategies focus on building natural, authoritative backlinks that boost your domain authority and search rankings. I've successfully published 500+ guest posts on high-authority websites, helping clients build strong backlink profiles.</p>
-                        </div>
+                    <div class="service-content">
+                        <h3>🔍 Search Engine Optimization (SEO)</h3>
+                        <p>I provide complete SEO solutions including website audit, on-page optimization, off-page SEO, technical SEO, local SEO, and keyword research. My strategies are data-driven and focused on getting your website to the top of Google search results. I've helped 50+ clients achieve top 3 rankings for competitive keywords, resulting in significant organic traffic growth and increased revenue.</p>
                     </div>
-                    <div class="service-auto-item">
-                        <div class="service-auto-header">
-                            <h3>📱 Social Media Marketing & Optimization (SMM & SMO)</h3>
-                        </div>
-                        <div class="service-auto-content">
-                            <img src="social.jpg" alt="SMM Services">
-                            <p>I create data-driven social media strategies that build brand awareness, engage audiences, and drive conversions. From content creation to community management, I manage your social presence across Facebook, Instagram, LinkedIn, and Twitter. My Social Media Optimization (SMO) techniques ensure your profiles are fully optimized for maximum reach and engagement.</p>
-                        </div>
+                </div>
+
+                <!-- Link Building - Image Right, Text Left -->
+                <div class="service-item reverse">
+                    <div class="service-image">
+                        <img src="linkbuilding.jpg" alt="Link Building Services">
                     </div>
-                    <div class="service-auto-item">
-                        <div class="service-auto-header">
-                            <h3>💰 Ads Campaign Management</h3>
-                        </div>
-                        <div class="service-auto-content">
-                            <img src="adds.jpg" alt="Ads Services">
-                            <p>I plan, create, and optimize high-performing ad campaigns on Facebook and Google. My focus is on maximizing your return on investment (ROI) through targeted audience segmentation, A/B testing, and continuous monitoring. From lead generation to conversion campaigns, I ensure your ad budget is spent wisely to bring you the best results with detailed monthly reporting.</p>
-                        </div>
+                    <div class="service-content">
+                        <h3>🔗 Link Building & Guest Posting</h3>
+                        <p>I specialize in hero broken link building, high-quality guest posting on DA 50+ sites, profile backlinks creation, and niche edits. My link building strategies focus on building natural, authoritative backlinks that boost your domain authority and search rankings. I've successfully published 500+ guest posts on high-authority websites, helping clients build strong backlink profiles.</p>
+                    </div>
+                </div>
+
+                <!-- SMM - Image Left, Text Right -->
+                <div class="service-item">
+                    <div class="service-image">
+                        <img src="social.jpg" alt="SMM Services">
+                    </div>
+                    <div class="service-content">
+                        <h3>📱 Social Media Marketing & Optimization (SMM & SMO)</h3>
+                        <p>I create data-driven social media strategies that build brand awareness, engage audiences, and drive conversions. From content creation to community management, I manage your social presence across Facebook, Instagram, LinkedIn, and Twitter. My Social Media Optimization (SMO) techniques ensure your profiles are fully optimized for maximum reach and engagement.</p>
+                    </div>
+                </div>
+
+                <!-- Ads - Image Right, Text Left -->
+                <div class="service-item reverse">
+                    <div class="service-image">
+                        <img src="adds.jpg" alt="Ads Services">
+                    </div>
+                    <div class="service-content">
+                        <h3>💰 Ads Campaign Management</h3>
+                        <p>I plan, create, and optimize high-performing ad campaigns on Facebook and Google. My focus is on maximizing your return on investment (ROI) through targeted audience segmentation, A/B testing, and continuous monitoring. From lead generation to conversion campaigns, I ensure your ad budget is spent wisely to bring you the best results with detailed monthly reporting.</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- ========== CONTACT PAGE (Paragraph Uper, Form Mid) ========== -->
+        <!-- ========== CONTACT PAGE ========== -->
         <div id="contact-page" class="page">
             <div class="section-card">
                 <h2>Contact Me</h2>
@@ -898,7 +924,6 @@
     </div>
 
     <script>
-        // Page Switching
         function showPage(pageName) {
             document.getElementById('home-page').classList.remove('active-page');
             document.getElementById('about-page').classList.remove('active-page');
@@ -923,23 +948,20 @@
             else showPage('home');
         }
 
-        // Continuous scroll animation for all moving elements (Left to Right + Zoom)
+        // Animation for all moving elements (More movement)
         function animateAllElements() {
-            // All elements that need left-to-right movement
-            const moveElements = document.querySelectorAll('.stat-card, .featured-card, .why-card, .about-paragraph, .whatido-card, .exp-single-item, .achievement-card, .service-auto-item');
+            const moveElements = document.querySelectorAll('.stat-card, .featured-card, .why-card, .welcome-text, .about-paragraph, .whatido-item, .exp-single-item, .achievement-card, .service-item');
             
             moveElements.forEach(el => {
                 const rect = el.getBoundingClientRect();
                 const windowHeight = window.innerHeight;
-                const windowWidth = window.innerWidth;
                 
                 if (rect.top < windowHeight - 50 && rect.bottom > 0) {
-                    // Calculate scroll percentage for movement
-                    const scrollPercent = Math.min(0.8, Math.max(0, (window.scrollY - 100) / 600));
-                    // Left to right movement (normal speed)
-                    const moveX = scrollPercent * 25;
-                    // Zoom effect (slightly faster than movement)
-                    const zoomScale = 1 + (scrollPercent * 0.08);
+                    const scrollPercent = Math.min(0.9, Math.max(0, (window.scrollY - 100) / 500));
+                    // More movement (40px max instead of 25px)
+                    const moveX = scrollPercent * 40;
+                    // Zoom effect
+                    const zoomScale = 1 + (scrollPercent * 0.1);
                     
                     el.style.opacity = Math.min(1, 0.5 + scrollPercent * 0.6);
                     el.style.transform = `translateX(${moveX}px) scale(${zoomScale})`;
@@ -974,7 +996,6 @@
             }, 200);
         });
 
-        // reCAPTCHA
         const form = document.getElementById('contactForm');
         if (form) {
             form.addEventListener('submit', function(e) {
