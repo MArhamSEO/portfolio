@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>M Arham - Digital Marketing Expert</title>
+    <title>M Arham - Digital Marketing Expert | SEO | SMM | SMO | Ads</title>
+    <meta name="description" content="Digital Marketing Expert with 4+ years experience. Specializing in SEO, Local SEO, Social Media Marketing, and Ads Campaign Management. 50+ happy clients.">
+    <meta name="keywords" content="SEO Expert, Digital Marketing, Local SEO, SMM, SMO, Guest Posting, Link Building, Ads Campaign">
+    <meta name="author" content="M Arham">
     <link rel="icon" type="image/png" href="profile1.png">
     <script src="https://www.google.com/recaptcha/api.js?render=6LfB3vEsAAAAAMkBL2ir6WAmuh_pptslwle0MteR"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -14,48 +18,159 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #3d1a1a 0%, #5c2a2a 50%, #4a2020 100%);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a0a;
+            background-image: radial-gradient(circle at 25% 0%, #1a0a0a 0%, #0a0a0a 100%);
             color: #ffffff;
             line-height: 1.6;
             overflow-x: hidden;
         }
 
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #800000;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a00000;
+        }
+
         .container {
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
             padding: 20px;
             width: 100%;
         }
 
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: #800000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 5px 15px rgba(128,0,0,0.3);
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: #a00000;
+            transform: translateY(-3px);
+        }
+
+        .back-to-top i {
+            color: white;
+            font-size: 20px;
+        }
+
+        /* Floating Social Share */
+        .floating-social {
+            position: fixed;
+            left: 20px;
+            bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .floating-social a {
+            width: 40px;
+            height: 40px;
+            background: #1a1a1a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(128,0,0,0.3);
+        }
+
+        .floating-social a:hover {
+            background: #800000;
+            transform: scale(1.1);
+        }
+
         .hero {
             text-align: center;
-            padding: 80px 20px;
-            background: rgba(30, 10, 10, 0.95);
-            border-radius: 30px;
+            padding: 100px 20px;
+            background: rgba(10, 10, 10, 0.8);
+            border-radius: 40px;
             margin-bottom: 40px;
-            border: 1px solid rgba(128, 0, 0, 0.5);
+            border: 1px solid rgba(128, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Typing Animation */
+        .typing-text {
+            font-size: 1.5em;
+            color: #e0a0a0;
+            margin-bottom: 30px;
+            min-height: 80px;
+        }
+
+        .typed-cursor {
+            font-size: 1.5em;
+            color: #e0a0a0;
+            animation: blink 0.7s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
         }
 
         .navbar {
-            background: rgba(30, 10, 10, 0.95);
+            background: rgba(10, 10, 10, 0.9);
             border-radius: 60px;
-            padding: 10px 25px;
+            padding: 12px 30px;
             margin-bottom: 30px;
-            border: 1px solid rgba(128, 0, 0, 0.5);
+            border: 1px solid rgba(128, 0, 0, 0.3);
             position: sticky;
             top: 15px;
             z-index: 1000;
-            backdrop-filter: blur(12px);
+            backdrop-filter: blur(15px);
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
+            transition: all 0.4s ease;
         }
 
         .navbar.scrolled {
-            background: rgba(30, 10, 10, 0.98);
-            border-color: #a00000;
+            background: rgba(10, 10, 10, 0.98);
+            border-color: #800000;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
         .nav-logo {
@@ -66,44 +181,48 @@
         }
 
         .logo-img {
-            width: 50px;
-            height: 50px;
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
             object-fit: cover;
+            border: 2px solid #800000;
         }
 
         .logo-text {
-            font-size: 1.3em;
-            font-weight: bold;
-            color: #ffffff;
+            font-size: 1.3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #fff, #e0a0a0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
 
         .nav-menu {
             display: flex;
-            gap: 15px;
+            gap: 10px;
             list-style: none;
             flex-wrap: wrap;
         }
 
         .nav-menu a {
-            color: #ffffff;
+            color: #e0e0e0;
             text-decoration: none;
-            font-size: 1em;
             font-weight: 500;
-            padding: 8px 20px;
-            border-radius: 30px;
+            padding: 8px 18px;
+            border-radius: 40px;
             transition: all 0.3s ease;
             cursor: pointer;
+            font-size: 0.95rem;
         }
 
         .nav-menu a:hover, .nav-menu a.active {
             background: #800000;
-            color: #ffffff;
+            color: white;
         }
 
         .page {
             display: none;
-            animation: fadeIn 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            animation: fadeIn 0.5s ease;
         }
 
         .page.active-page {
@@ -111,19 +230,20 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(15px); }
+            from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
         .profile-img {
-            width: 150px;
-            height: 150px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
             margin: 0 auto 25px;
             overflow: hidden;
             cursor: pointer;
-            transition: transform 0.5s ease, box-shadow 0.5s ease;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 3px solid #800000;
+            box-shadow: 0 10px 30px rgba(128,0,0,0.3);
+            transition: all 0.3s ease;
         }
 
         .profile-img img {
@@ -134,47 +254,51 @@
 
         .profile-img:hover {
             transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(128,0,0,0.5);
         }
 
         h1 {
-            font-size: 3em;
+            font-size: 3.5rem;
+            font-weight: 700;
             margin-bottom: 15px;
             background: linear-gradient(135deg, #ffffff, #e0a0a0);
             -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
             background-clip: text;
+            color: transparent;
         }
 
         h2 {
-            font-size: 1.8em;
-            margin-bottom: 25px;
+            font-size: 2rem;
+            margin-bottom: 30px;
             border-left: 4px solid #800000;
             padding-left: 15px;
-            color: #ffffff;
+            font-weight: 600;
         }
 
-        .tagline {
-            font-size: 1.2em;
-            color: #e0a0a0;
-            margin-bottom: 35px;
+        h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
         }
 
         .btn {
             display: inline-block;
             background: #800000;
-            color: #ffffff;
+            color: white;
             padding: 12px 32px;
             border-radius: 40px;
-            margin: 10px;
-            transition: all 0.4s ease;
-            font-weight: bold;
+            font-weight: 600;
+            margin: 8px;
+            transition: all 0.3s ease;
             border: none;
             cursor: pointer;
+            text-decoration: none;
         }
 
         .btn:hover {
             background: #a00000;
-            transform: translateY(-3px);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(128,0,0,0.4);
         }
 
         .btn-outline {
@@ -185,145 +309,112 @@
 
         .btn-outline:hover {
             background: #800000;
-            color: #ffffff;
+            color: white;
+        }
+
+        .btn-large {
+            padding: 14px 40px;
+            font-size: 1.1rem;
         }
 
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 25px;
             margin-bottom: 40px;
         }
 
         .stat-card {
-            background: rgba(30, 15, 15, 0.95);
+            background: rgba(20, 15, 15, 0.7);
+            backdrop-filter: blur(10px);
             text-align: center;
-            padding: 30px 15px;
-            border-radius: 20px;
-            border: 1px solid rgba(128,0,0,0.3);
-            transition: all 0.4s ease;
+            padding: 30px 20px;
+            border-radius: 24px;
+            border: 1px solid rgba(128,0,0,0.2);
+            transition: all 0.3s ease;
         }
 
         .stat-card:hover {
-            background: #800000;
             transform: translateY(-5px);
+            border-color: rgba(128,0,0,0.5);
+            background: rgba(30, 20, 20, 0.8);
         }
 
         .stat-number {
-            font-size: 2em;
-            font-weight: bold;
-            color: #ffffff;
-        }
-
-        .stat-label {
-            font-size: 0.9em;
-            color: #ffffff;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #e0a0a0;
         }
 
         .section-card {
-            background: rgba(30, 15, 15, 0.95);
-            border-radius: 24px;
-            padding: 40px;
+            background: rgba(20, 15, 15, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 28px;
+            padding: 45px;
             margin-bottom: 35px;
-            border: 1px solid rgba(90, 42, 42, 0.6);
+            border: 1px solid rgba(128, 0, 0, 0.2);
+            transition: all 0.3s ease;
         }
 
         .section-card:hover {
-            border-color: rgba(128,0,0,0.5);
-        }
-
-        .welcome-text {
-            font-size: 1.05em;
-            line-height: 1.8;
-            color: #ffffff;
+            border-color: rgba(128,0,0,0.4);
         }
 
         .featured-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
-            margin-top: 25px;
+            margin-top: 20px;
         }
 
         .featured-card {
-            background: #2a1515;
-            padding: 25px 20px;
+            background: rgba(30, 20, 20, 0.5);
+            padding: 30px 25px;
             border-radius: 20px;
             text-align: center;
-            transition: all 0.4s ease;
-            border: 1px solid rgba(90, 42, 42, 0.6);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(128, 0, 0, 0.2);
         }
 
         .featured-card:hover {
-            background: #800000;
+            background: rgba(128,0,0,0.2);
             transform: translateY(-5px);
         }
 
         .featured-icon {
-            font-size: 45px;
+            font-size: 3rem;
             margin-bottom: 15px;
-        }
-
-        .featured-card h3 {
-            font-size: 1.2em;
-            margin-bottom: 10px;
-            color: #ffffff;
-        }
-
-        .featured-card p {
-            font-size: 0.9em;
-            color: #ffffff;
         }
 
         .why-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 25px;
         }
 
         .why-card {
-            background: #2a1515;
-            padding: 25px 20px;
+            background: rgba(30, 20, 20, 0.5);
+            padding: 25px;
             border-radius: 20px;
             text-align: center;
-            transition: all 0.4s ease;
+            transition: all 0.3s ease;
         }
 
         .why-card:hover {
-            background: #800000;
+            background: rgba(128,0,0,0.3);
             transform: translateY(-5px);
         }
 
         .why-icon {
-            font-size: 40px;
+            font-size: 2.5rem;
             margin-bottom: 15px;
-        }
-
-        .why-card h3 {
-            font-size: 1.1em;
-            margin-bottom: 10px;
-            color: #ffffff;
-        }
-
-        .why-card p {
-            font-size: 0.85em;
-            color: #ffffff;
-        }
-
-        .about-paragraph {
-            font-size: 1.05em;
-            line-height: 1.8;
-            text-align: center;
-            color: #ffffff;
-            max-width: 800px;
-            margin: 0 auto;
         }
 
         .whatido-item {
             display: flex;
             align-items: center;
-            gap: 40px;
-            margin-bottom: 50px;
+            gap: 50px;
+            margin-bottom: 60px;
             flex-wrap: wrap;
         }
 
@@ -333,14 +424,15 @@
 
         .whatido-image {
             flex: 1;
-            min-width: 250px;
+            min-width: 280px;
+            border-radius: 24px;
+            overflow: hidden;
         }
 
         .whatido-image img {
             width: 100%;
-            border-radius: 20px;
-            border: 1px solid #800000;
-            transition: transform 0.3s ease;
+            border-radius: 24px;
+            transition: transform 0.5s ease;
         }
 
         .whatido-image img:hover {
@@ -352,9 +444,8 @@
         }
 
         .whatido-content h3 {
-            color: #ffffff;
-            font-size: 1.4em;
-            margin-bottom: 15px;
+            font-size: 1.6rem;
+            margin-bottom: 20px;
         }
 
         .whatido-content ul {
@@ -363,68 +454,65 @@
         }
 
         .whatido-content li {
-            color: #ffffff;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
+            color: #d0d0d0;
         }
 
         .exp-list {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 15px;
         }
 
         .exp-single-item {
-            background: #2a1515;
+            background: rgba(30, 20, 20, 0.5);
             padding: 20px 25px;
             border-left: 4px solid #800000;
-            border-radius: 12px;
+            border-radius: 16px;
             transition: all 0.3s ease;
         }
 
         .exp-single-item:hover {
-            background: #800000;
+            background: rgba(128,0,0,0.2);
             transform: translateX(5px);
         }
 
         .exp-single-title {
-            font-size: 1.15em;
-            font-weight: bold;
+            font-size: 1.2rem;
+            font-weight: 700;
             margin-bottom: 8px;
-            color: #ffffff;
         }
 
         .exp-single-desc {
-            color: #ffffff;
-            line-height: 1.6;
-            font-size: 0.9em;
+            color: #c0c0c0;
+            font-size: 0.9rem;
         }
 
         .achievements-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 20px;
         }
 
         .achievement-card {
-            background: #2a1515;
-            padding: 18px 20px;
-            border-radius: 14px;
+            background: rgba(30, 20, 20, 0.5);
+            padding: 20px;
+            border-radius: 16px;
             text-align: center;
             transition: all 0.3s ease;
-            border: 1px solid rgba(90, 42, 42, 0.6);
-            color: #ffffff;
+            border: 1px solid rgba(128, 0, 0, 0.2);
         }
 
         .achievement-card:hover {
-            background: #800000;
-            transform: translateY(-5px);
+            background: rgba(128,0,0,0.3);
+            transform: translateY(-3px);
         }
 
         .service-item {
             display: flex;
             align-items: center;
-            gap: 40px;
-            margin-bottom: 50px;
+            gap: 50px;
+            margin-bottom: 60px;
             flex-wrap: wrap;
         }
 
@@ -434,14 +522,19 @@
 
         .service-image {
             flex: 1;
-            min-width: 250px;
+            min-width: 280px;
+            border-radius: 24px;
+            overflow: hidden;
         }
 
         .service-image img {
             width: 100%;
-            border-radius: 20px;
-            border: 1px solid #800000;
-            transition: transform 0.3s ease;
+            border-radius: 24px;
+            transition: transform 0.5s ease;
+        }
+
+        .service-image img:hover {
+            transform: scale(1.02);
         }
 
         .service-content {
@@ -449,15 +542,35 @@
         }
 
         .service-content h3 {
-            color: #ffffff;
-            font-size: 1.4em;
+            font-size: 1.6rem;
             margin-bottom: 15px;
         }
 
         .service-content p {
-            color: #ffffff;
+            color: #d0d0d0;
             line-height: 1.8;
-            font-size: 1em;
+        }
+
+        .client-work-box {
+            background: linear-gradient(135deg, rgba(30,20,20,0.8), rgba(20,15,15,0.8));
+            border: 1px solid rgba(128,0,0,0.4);
+            border-radius: 20px;
+            padding: 25px;
+            margin-top: 20px;
+        }
+
+        .client-work-box h3 {
+            color: #e0a0a0;
+            margin-bottom: 15px;
+        }
+
+        .client-work-box ul {
+            margin-left: 20px;
+            line-height: 1.9;
+        }
+
+        .client-work-box li {
+            margin-bottom: 8px;
         }
 
         .contact-wrapper {
@@ -465,27 +578,22 @@
             margin: 0 auto;
         }
 
-        .contact-top p {
-            line-height: 1.9;
-            text-align: center;
-            color: #ffffff;
-            font-size: 1.05em;
-        }
-
         .contact-form input, .contact-form textarea {
             width: 100%;
             padding: 14px;
-            margin: 12px 0;
+            margin: 10px 0;
             border-radius: 12px;
             border: 1px solid #800000;
-            background: #2a1515;
-            color: #ffffff;
+            background: rgba(30, 20, 20, 0.8);
+            color: white;
             font-family: inherit;
+            transition: all 0.3s ease;
         }
 
         .contact-form input:focus, .contact-form textarea:focus {
             outline: none;
             border-color: #a00000;
+            box-shadow: 0 0 10px rgba(128,0,0,0.3);
         }
 
         .contact-form button {
@@ -493,88 +601,78 @@
         }
 
         .email-section {
-            margin: 20px 0;
             text-align: center;
+            margin-top: 20px;
         }
 
         .email-box {
             display: inline-block;
-            background: #2a1515;
+            background: rgba(30, 20, 20, 0.8);
             padding: 8px 20px;
             border-radius: 40px;
             border: 1px solid #800000;
-            font-size: 0.9em;
         }
 
-        .email-box a {
-            color: #ffffff;
+        /* Footer */
+        .footer {
+            background: rgba(10, 10, 10, 0.95);
+            border-radius: 30px;
+            padding: 40px;
+            margin-top: 40px;
+            border-top: 1px solid rgba(128,0,0,0.3);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h4 {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: #e0a0a0;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #888;
             text-decoration: none;
-            font-weight: bold;
+            line-height: 1.8;
         }
 
-        /* Social Links - Real Brand Logos */
-        .social-links-section {
-            background: rgba(30, 15, 15, 0.95);
-            border-radius: 24px;
-            padding: 25px 35px;
-            margin: 20px 0;
-            text-align: center;
-            border: 1px solid rgba(128,0,0,0.3);
+        .footer-section a:hover {
+            color: #e0a0a0;
         }
 
-        .social-links {
+        .social-links-footer {
             display: flex;
-            justify-content: center;
-            gap: 25px;
-            flex-wrap: wrap;
+            gap: 15px;
             margin-top: 15px;
         }
 
-        .social-link {
-            display: inline-flex;
+        .social-links-footer a {
+            width: 35px;
+            height: 35px;
+            background: rgba(30, 20, 20, 0.8);
+            border-radius: 50%;
+            display: flex;
             align-items: center;
-            gap: 10px;
-            background: #2a1515;
-            padding: 10px 25px;
-            border-radius: 40px;
-            text-decoration: none;
-            color: #ffffff;
-            transition: all 0.4s ease;
-            border: 1px solid rgba(90, 42, 42, 0.6);
-            font-size: 1em;
+            justify-content: center;
+            transition: all 0.3s ease;
         }
 
-        .social-link:hover {
+        .social-links-footer a:hover {
             background: #800000;
-            transform: translateY(-3px);
+            transform: translateY(-2px);
         }
 
-        .social-link.linkedin:hover { background: #0077b5; }
-        .social-link.facebook:hover { background: #1877f2; }
-        .social-link.instagram:hover { background: #e4405f; }
-
-        footer {
+        .footer-bottom {
             text-align: center;
-            padding: 25px;
-            color: #888;
-            border-top: 1px solid rgba(90, 42, 42, 0.5);
-            margin-top: 20px;
-        }
-
-        .hashtag {
-            color: #ffffff;
-            font-size: 0.9em;
-            margin-top: 10px;
-            letter-spacing: 1px;
-        }
-
-        .arrow {
-            display: inline-block;
-            transition: transform 0.4s ease;
-        }
-
-        .btn-outline:hover .arrow {
-            transform: translateX(6px);
+            padding-top: 25px;
+            border-top: 1px solid rgba(128,0,0,0.2);
+            color: #666;
+            font-size: 0.85rem;
         }
 
         @media (max-width: 768px) {
@@ -585,26 +683,21 @@
                 flex-direction: column;
                 gap: 15px;
                 border-radius: 25px;
-                padding: 12px 20px;
             }
             .nav-menu {
                 justify-content: center;
             }
-            .nav-menu a {
-                padding: 5px 14px;
-                font-size: 12px;
-            }
             h1 {
-                font-size: 2em;
+                font-size: 2.2rem;
             }
             .hero {
-                padding: 40px 15px;
+                padding: 50px 20px;
             }
             .section-card {
                 padding: 25px 20px;
             }
             .achievements-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
             }
             .whatido-item, .whatido-item.reverse, .service-item, .service-item.reverse {
                 flex-direction: column;
@@ -615,14 +708,44 @@
             .featured-grid, .why-grid {
                 grid-template-columns: 1fr;
             }
-            .social-link {
-                padding: 6px 15px;
-                font-size: 0.8em;
+            .floating-social {
+                left: 10px;
+                bottom: 70px;
+            }
+            .floating-social a {
+                width: 35px;
+                height: 35px;
+            }
+            .back-to-top {
+                right: 15px;
+                bottom: 70px;
+                width: 40px;
+                height: 40px;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .social-links-footer {
+                justify-content: center;
             }
         }
     </style>
 </head>
 <body>
+
+    <!-- Floating Social Share -->
+    <div class="floating-social">
+        <a href="https://www.linkedin.com/in/m-arham-link-builder/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/marhamseo/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/arhamblogger" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    </div>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
     <div class="container">
         <nav class="navbar" id="navbar">
             <div class="nav-logo" onclick="showPage('home')">
@@ -643,30 +766,36 @@
                 <div class="hero-content">
                     <div class="profile-img"><img src="profile2.jpg.png" alt="M Arham"></div>
                     <h1>M Arham</h1>
-                    <div class="tagline">Digital Marketing Expert | SEO | SMM | SMO | Ads Specialist</div>
-                    <a onclick="showPage('contact')" class="btn">Hire Me</a>
-                    <a onclick="showPage('services')" class="btn btn-outline">View Services →</a>
+                    <div class="typing-text">
+                        <span id="typed-text"></span><span class="typed-cursor">|</span>
+                    </div>
+                    <a onclick="showPage('contact')" class="btn btn-large">Hire Me</a>
+                    <a onclick="showPage('services')" class="btn btn-outline btn-large">View Services →</a>
                 </div>
             </div>
+
             <div class="stats-grid">
-                <div class="stat-card"><div class="stat-number">4+</div><div class="stat-label">Years Experience</div></div>
-                <div class="stat-card"><div class="stat-number">50+</div><div class="stat-label">Happy Clients</div></div>
-                <div class="stat-card"><div class="stat-number">200+</div><div class="stat-label">Keywords Ranked</div></div>
-                <div class="stat-card"><div class="stat-number">500+</div><div class="stat-label">Projects Done</div></div>
+                <div class="stat-card"><div class="stat-number">4+</div><div>Years Experience</div></div>
+                <div class="stat-card"><div class="stat-number">50+</div><div>Happy Clients</div></div>
+                <div class="stat-card"><div class="stat-number">200+</div><div>Keywords Ranked</div></div>
+                <div class="stat-card"><div class="stat-number">500+</div><div>Guest Posts</div></div>
             </div>
+
             <div class="section-card">
                 <h2>Welcome to My Digital Marketing Portfolio</h2>
-                <p class="welcome-text">I'm <strong>M Arham</strong>, a passionate <strong>Digital Marketing Expert</strong> with over <strong>4+ years</strong> helping businesses grow online. I specialize in <strong>SEO (On-Page & Off-Page), SMM, SMO, and Ads Campaigns</strong>. My data-driven strategies have helped 50+ clients achieve top rankings on Google and significantly increase their revenue.</p>
+                <p style="font-size: 1.1rem; line-height: 1.9;">I'm <strong>M Arham</strong>, a passionate <strong>Digital Marketing Expert</strong> with over <strong>4+ years</strong> helping businesses grow online. I specialize in <strong>SEO (On-Page & Off-Page), SMM, SMO, and Ads Campaigns</strong>. My data-driven strategies have helped 50+ clients achieve top rankings on Google and significantly increase their revenue.</p>
             </div>
+
             <div class="section-card">
                 <h2>Featured Services</h2>
                 <div class="featured-grid">
-                    <div class="featured-card"><div class="featured-icon">🔍</div><h3>SEO & Local SEO</h3><p>On-Page SEO | Technical SEO | Mobile Friendly | Schema Markup | Local SEO | Google Business Profile</p></div>
-                    <div class="featured-card"><div class="featured-icon">🔗</div><h3>Off-Page SEO</h3><p>Link Building | Guest Posting | Profile Backlinks | HARO | Broken Link Building</p></div>
-                    <div class="featured-card"><div class="featured-icon">📱</div><h3>SMM & SMO</h3><p>Organic Growth | Paid Ads | Lead Generation | Retargeting | ROAS</p></div>
+                    <div class="featured-card"><div class="featured-icon">🔍</div><h3>SEO & Local SEO</h3><p>On-Page SEO | Technical SEO | Local SEO | Google Business Profile</p></div>
+                    <div class="featured-card"><div class="featured-icon">🔗</div><h3>Off-Page SEO</h3><p>Link Building | Guest Posting | HARO | Broken Link Building</p></div>
+                    <div class="featured-card"><div class="featured-icon">📱</div><h3>SMM & SMO</h3><p>Organic Growth | Paid Ads | Lead Generation | ROAS Optimization</p></div>
                 </div>
                 <div style="text-align: center; margin-top: 25px;"><a onclick="showPage('services')" class="btn btn-outline">View All Services →</a></div>
             </div>
+
             <div class="section-card">
                 <h2>Why Choose Me</h2>
                 <div class="why-grid">
@@ -676,10 +805,11 @@
                     <div class="why-card"><div class="why-icon">🏆</div><h3>Proven Track</h3><p>50+ satisfied clients</p></div>
                 </div>
             </div>
-            <div class="section-card" style="text-align: center; background: linear-gradient(135deg, #2a1515, #1a0a0a)">
+
+            <div class="section-card" style="text-align: center; background: linear-gradient(135deg, #1a0a0a, #2a1515);">
                 <h2>Ready to Grow Your Business?</h2>
-                <p style="margin-bottom: 25px;">Let's discuss your digital marketing goals.</p>
-                <a onclick="showPage('contact')" class="btn">Free Consultation</a>
+                <p style="margin-bottom: 25px;">Let's discuss how I can help you achieve your digital marketing goals.</p>
+                <a onclick="showPage('contact')" class="btn btn-large">Get Free Consultation</a>
             </div>
         </div>
 
@@ -687,7 +817,7 @@
         <div id="about-page" class="page">
             <div class="section-card">
                 <h2>About Me</h2>
-                <p class="about-paragraph">I am a passionate <strong>Digital Marketing Expert</strong> with <strong>4+ years of experience</strong> helping businesses grow online. I specialize in <strong>SEO (On-Page & Off-Page), SMM, SMO, Ads Campaigns</strong>. I have helped 50+ clients achieve their business goals through data-driven digital marketing strategies.</p>
+                <p style="font-size: 1.1rem; line-height: 1.9; text-align: center;">I am a passionate <strong>Digital Marketing Expert</strong> with <strong>4+ years of experience</strong> helping businesses grow online. I specialize in <strong>SEO (On-Page & Off-Page), SMM, SMO, Ads Campaigns</strong>. I have helped 50+ clients achieve their business goals through data-driven digital marketing strategies.</p>
             </div>
 
             <div class="section-card">
@@ -696,16 +826,14 @@
                 <div class="whatido-item">
                     <div class="whatido-image"><img src="SEO.jpg" alt="SEO Expert"></div>
                     <div class="whatido-content">
-                        <h3>🔍 Search Engine Optimization (On-Page & Technical)</h3>
+                        <h3>🔍 Search Engine Optimization</h3>
                         <ul>
-                            <li><strong>SEO Audit</strong> - Complete website health check</li>
-                            <li><strong>On-Page SEO</strong> - Meta tags, headings, keyword optimization, internal linking</li>
-                            <li><strong>Mobile Friendly Optimization</strong> - Responsive design, Core Web Vitals</li>
-                            <li><strong>Technical SEO</strong> - Site speed, crawlability, indexation, XML sitemaps</li>
-                            <li><strong>Schema Markup</strong> - Rich snippets for better CTR</li>
-                            <li><strong>Content Optimization</strong> - Keyword mapping, topic clusters</li>
-                            <li><strong>Site Structure</strong> - URL optimization, breadcrumbs</li>
-                            <li><strong>Core Web Vitals</strong> - LCP, FID, CLS optimization</li>
+                            <li>Complete SEO Audit & Analysis</li>
+                            <li>On-Page & Off-Page SEO</li>
+                            <li>Technical SEO & Core Web Vitals</li>
+                            <li>Mobile Friendly & Schema Markup</li>
+                            <li>Keyword Research & Content Strategy</li>
+                            <li>Rankings & Traffic Growth</li>
                         </ul>
                     </div>
                 </div>
@@ -713,88 +841,74 @@
                 <div class="whatido-item reverse">
                     <div class="whatido-image"><img src="linkbuilding.jpg" alt="Link Building"></div>
                     <div class="whatido-content">
-                        <h3>🔗 Off-Page SEO & Link Building</h3>
+                        <h3>🔗 Link Building & Guest Posting</h3>
                         <ul>
-                            <li><strong>Guest Posting</strong> - High DA sites for quality backlinks</li>
-                            <li><strong>Profile Backlinks</strong> - Free high authority profile creation</li>
-                            <li><strong>HARO Link Building</strong> - Help a Reporter Out</li>
-                            <li><strong>Broken Link Building</strong> - Finding and replacing broken links</li>
-                            <li><strong>Competitor Backlink Analysis</strong> - Stealing competitor's backlinks</li>
-                            <li><strong>Niche Edits</strong> - Inserting links in existing content</li>
-                            <li><strong>Local Link Building</strong> - Local directories and chambers</li>
+                            <li>Guest Posting on DA 50+ Sites</li>
+                            <li>HARO Link Building (Forbes, Entrepreneur)</li>
+                            <li>Broken Link Building</li>
+                            <li>Profile Backlinks Creation</li>
+                            <li>Competitor Backlink Analysis</li>
+                            <li>Niche Edits & Contextual Links</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="whatido-item">
-                    <div class="whatido-image"><img src="SMO.jpg" alt="Local SEO Expert"></div>
+                    <div class="whatido-image"><img src="SMO.jpg" alt="Local SEO"></div>
                     <div class="whatido-content">
                         <h3>📍 Local SEO & Google Business Profile</h3>
                         <ul>
-                            <li><strong>Google Business Profile Optimization</strong> - Complete setup & verification</li>
-                            <li><strong>Primary & Secondary Categories</strong> - Correct category selection</li>
-                            <li><strong>Services Optimization</strong> - Adding all services with descriptions</li>
-                            <li><strong>Geo-tagged Images</strong> - Location-specific images for trust</li>
-                            <li><strong>Business Description</strong> - Optimized descriptions with keywords</li>
-                            <li><strong>Q&A Section Management</strong> - Answering customer questions</li>
-                            <li><strong>Weekly Posts on GBP</strong> - Offers, updates, events</li>
-                            <li><strong>NAP Consistency & Reviews</strong> - Name, Address, Phone same everywhere</li>
-                            <li><strong>Local Citations</strong> - Yellow Pages, Justdial, Yelp</li>
-                            <li><strong>Proximity vs Authority</strong> - Local ranking factors</li>
-                            <li><strong>Local Metrics</strong> - CTR, calls, direction requests, dwell time</li>
+                            <li>GBP Optimization & Verification</li>
+                            <li>Primary & Secondary Categories</li>
+                            <li>Services & Product Optimization</li>
+                            <li>Geo-tagged Images & Q&A Management</li>
+                            <li>NAP Consistency & Review Management</li>
+                            <li>Local Citations (Yellow Pages, Justdial)</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="whatido-item reverse">
-                    <div class="whatido-image"><img src="social.jpg" alt="Social Media Optimization"></div>
+                    <div class="whatido-image"><img src="social.jpg" alt="SMO"></div>
                     <div class="whatido-content">
-                        <h3>📱 Social Media Optimization (SMO - Organic)</h3>
+                        <h3>📱 Social Media Optimization (SMO)</h3>
                         <ul>
-                            <li><strong>Profile Optimization</strong> - Bio, images, links, username</li>
-                            <li><strong>Organic Reach Growth</strong> - Algorithm-friendly content</li>
-                            <li><strong>Engagement Rate</strong> - Likes, comments, shares improvement</li>
-                            <li><strong>Branding & Consistency</strong> - Visual identity, tone of voice</li>
-                            <li><strong>Content Strategy & Pillars</strong> - 3-5 main content themes</li>
-                            <li><strong>Audience Psychology</strong> - Understanding your audience</li>
-                            <li><strong>Retention & Loyalty</strong> - Keeping followers engaged</li>
-                            <li><strong>Organic Growth Tactics</strong> - Hashtag strategy, collaborations</li>
+                            <li>Profile Optimization & Branding</li>
+                            <li>Organic Reach & Engagement Growth</li>
+                            <li>Content Strategy & Pillars</li>
+                            <li>Audience Psychology & Retention</li>
+                            <li>Hashtag Strategy & Collaborations</li>
+                            <li>Monthly Performance Analytics</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="whatido-item">
-                    <div class="whatido-image"><img src="adds.jpg" alt="Social Media Marketing"></div>
+                    <div class="whatido-image"><img src="adds.jpg" alt="SMM"></div>
                     <div class="whatido-content">
-                        <h3>💰 Social Media Marketing (SMM - Paid Ads)</h3>
+                        <h3>💰 Social Media Marketing (SMM)</h3>
                         <ul>
-                            <li><strong>Paid Ads Strategy</strong> - Facebook, Instagram, LinkedIn, TikTok</li>
-                            <li><strong>Lead Generation Campaigns</strong> - Quality leads at low cost</li>
-                            <li><strong>Sales Funnel Management</strong> - Top, middle, bottom of funnel</li>
-                            <li><strong>Retargeting Campaigns</strong> - Converting warm audience</li>
-                            <li><strong>Conversion Tracking & ROAS</strong> - Pixel setup, event tracking</li>
-                            <li><strong>Audience Targeting</strong> - Lookalike, custom audiences</li>
-                            <li><strong>A/B Testing & Creatives</strong> - Testing ad copy, images, CTAs</li>
-                            <li><strong>Scaling & Bid Strategy</strong> - Increasing budget profitably</li>
+                            <li>Paid Ads Strategy (Facebook, Instagram, LinkedIn)</li>
+                            <li>Lead Generation Campaigns</li>
+                            <li>Sales Funnel Management</li>
+                            <li>Retargeting & Conversion Tracking</li>
+                            <li>Lookalike & Custom Audiences</li>
+                            <li>A/B Testing & Scaling</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="whatido-item reverse">
-                    <div class="whatido-image"><img src="smm.jpg" alt="Ads Campaign Management"></div>
+                    <div class="whatido-image"><img src="smm.jpg" alt="Ads Management"></div>
                     <div class="whatido-content">
-                        <h3>📊 Ads Campaign Management (Google & Meta)</h3>
+                        <h3>📊 Ads Campaign Management</h3>
                         <ul>
-                            <li><strong>Campaign Structure</strong> - Campaigns, Ad Groups, Ads hierarchy</li>
-                            <li><strong>Audience Targeting</strong> - In-market, affinity, custom segments</li>
-                            <li><strong>A/B Testing</strong> - Headlines, descriptions, CTAs, landing pages</li>
-                            <li><strong>CTR Optimization</strong> - Better creatives for higher CTR</li>
-                            <li><strong>CPC Control & Bid Strategy</strong> - Maximize clicks, target CPA</li>
-                            <li><strong>Retargeting & Conversion Tracking</strong> - Pixel, GTM setup</li>
-                            <li><strong>Ad Fatigue Management</strong> - Refreshing creatives</li>
-                            <li><strong>Scaling Strategy & ROAS</strong> - Increasing budget profitably</li>
-                            <li><strong>Campaign Performance Analysis</strong> - Weekly/monthly reporting</li>
-                            <li><strong>Budget Optimization</strong> - Allocating budget to best-performing campaigns</li>
+                            <li>Google Ads (Search, Display, Shopping)</li>
+                            <li>Meta Ads Manager (Facebook & Instagram)</li>
+                            <li>Campaign Structure & Targeting</li>
+                            <li>CTR Optimization & Bid Strategy</li>
+                            <li>Conversion Tracking (GTM, Pixel)</li>
+                            <li>ROAS Scaling & Performance Reporting</li>
                         </ul>
                     </div>
                 </div>
@@ -803,81 +917,89 @@
             <div class="section-card">
                 <h2>Experience & Expertise</h2>
                 <div class="exp-list">
-                    <div class="exp-single-item"><div class="exp-single-title">🔍 On-Page & Technical SEO</div><div>SEO Audit | Meta Tags | Site Speed | Mobile Friendly | Schema Markup | Core Web Vitals</div></div>
-                    <div class="exp-single-item"><div class="exp-single-title">🔗 Off-Page SEO & Link Building</div><div>Guest Posting | HARO | Broken Link Building | Profile Backlinks | Niche Edits</div></div>
-                    <div class="exp-single-item"><div class="exp-single-title">📍 Local SEO & Google Business Profile</div><div>GBP Optimization | NAP Consistency | Reviews | Local Citations | Yellow Pages | Proximity vs Authority</div></div>
-                    <div class="exp-single-item"><div class="exp-single-title">📱 SMO (Organic) & SMM (Paid)</div><div>Profile Optimization | Organic Reach | Engagement Rate | Content Strategy | Lead Generation | ROAS</div></div>
-                    <div class="exp-single-item"><div class="exp-single-title">💰 Ads Campaign Management</div><div>Google Ads | Meta Ads | TikTok Ads | Retargeting | A/B Testing | Scaling | Bid Strategy</div></div>
+                    <div class="exp-single-item"><div class="exp-single-title">🔍 On-Page & Technical SEO</div><div>SEO Audit | Meta Tags | Site Speed | Schema Markup | Core Web Vitals</div></div>
+                    <div class="exp-single-item"><div class="exp-single-title">🔗 Off-Page SEO & Link Building</div><div>Guest Posting | HARO | Broken Links | Profile Backlinks | Niche Edits</div></div>
+                    <div class="exp-single-item"><div class="exp-single-title">📍 Local SEO & Google Business Profile</div><div>GBP | NAP | Reviews | Citations | Yellow Pages | Proximity vs Authority</div></div>
+                    <div class="exp-single-item"><div class="exp-single-title">📱 SMO (Organic) & SMM (Paid)</div><div>Profile Optimization | Engagement | Lead Gen | Retargeting | ROAS</div></div>
+                    <div class="exp-single-item"><div class="exp-single-title">💰 Ads Campaign Management</div><div>Google Ads | Meta Ads | TikTok Ads | A/B Testing | Scaling</div></div>
+                </div>
+            </div>
+
+            <div class="section-card">
+                <h2>Client Work</h2>
+                <div class="client-work-box">
+                    <h3>📋 SEO & Link Building Project (2025)</h3>
+                    <ul>
+                        <li>Successfully completed SEO project for a small business client</li>
+                        <li>Delivered 5 high-quality guest posts on DA 50+ websites</li>
+                        <li>Provided quality dofollow backlinks for SEO improvement</li>
+                        <li>Client satisfaction delivered with measurable results</li>
+                    </ul>
+                    <p style="margin-top: 15px; font-size: 0.9rem; color: #e0a0a0;">(Detailed portfolio available upon request)</p>
                 </div>
             </div>
 
             <div class="section-card">
                 <h2>Achievements</h2>
                 <div class="achievements-grid">
-                    <div class="achievement-card">50+ Businesses Grow Online</div>
-                    <div class="achievement-card">500+ Guest Posts Published</div>
-                    <div class="achievement-card">200+ Keywords Ranked #1</div>
-                    <div class="achievement-card">100% Client Satisfaction</div>
+                    <div class="achievement-card">50+ Businesses</div>
+                    <div class="achievement-card">500+ Guest Posts</div>
+                    <div class="achievement-card">200+ #1 Rankings</div>
+                    <div class="achievement-card">100% Satisfaction</div>
                 </div>
             </div>
         </div>
 
-        <!-- SERVICES PAGE - Big Paragraphs as requested -->
+        <!-- SERVICES PAGE -->
         <div id="services-page" class="page">
             <div class="section-card">
                 <h2>Services I Offer</h2>
 
-                <!-- 1. SEO - Short -->
                 <div class="service-item">
-                    <div class="service-image"><img src="SEO.jpg" alt="SEO Services"></div>
+                    <div class="service-image"><img src="SEO.jpg" alt="SEO"></div>
                     <div class="service-content">
-                        <h3>🔍 Search Engine Optimization (On-Page & Technical)</h3>
-                        <p>I provide complete SEO solutions to help businesses rank higher on Google. My services include website audit, on-page optimization (meta tags, headings, keywords, internal linking), technical SEO (site speed, crawlability, indexation), mobile-friendly optimization, schema markup, content optimization, and Core Web Vitals improvement. I've helped 50+ clients achieve top 3 rankings and significant organic traffic growth.</p>
+                        <h3>🔍 Search Engine Optimization</h3>
+                        <p>I provide complete SEO solutions to help businesses rank higher on Google. Services include website audit, on-page optimization (meta tags, headings, keywords), technical SEO (site speed, crawlability), mobile-friendly optimization, schema markup, content optimization, and Core Web Vitals improvement. I've helped 50+ clients achieve top 3 rankings and significant organic growth.</p>
                     </div>
                 </div>
 
-                <!-- 2. Off-Page SEO - To the point -->
                 <div class="service-item reverse">
-                    <div class="service-image"><img src="linkbuilding.jpg" alt="Link Building Services"></div>
+                    <div class="service-image"><img src="linkbuilding.jpg" alt="Link Building"></div>
                     <div class="service-content">
-                        <h3>🔗 Off-Page SEO & Link Building</h3>
-                        <p>Link building is key to increasing website authority. I specialize in guest posting on DA 50+ sites, profile backlinks, HARO link building (Forbes, Entrepreneur), broken link building, competitor backlink analysis, niche edits, and local link building. I've successfully published 500+ guest posts and helped clients build strong, natural backlink profiles that Google loves.</p>
+                        <h3>🔗 Link Building & Guest Posting</h3>
+                        <p>I specialize in guest posting on DA 50+ sites, HARO link building, broken link building, competitor backlink analysis, niche edits, and local link building. I've successfully published 500+ guest posts and helped clients build strong, natural backlink profiles that Google loves.</p>
                     </div>
                 </div>
 
-                <!-- 3. Local SEO - Big paragraph (restored) -->
                 <div class="service-item">
-                    <div class="service-image"><img src="SMO.jpg" alt="Local SEO Services"></div>
+                    <div class="service-image"><img src="SMO.jpg" alt="Local SEO"></div>
                     <div class="service-content">
                         <h3>📍 Local SEO & Google Business Profile</h3>
-                        <p>For businesses targeting local customers, Local SEO is essential. I help businesses dominate local search results and appear in Google's Local Pack (the top 3 results on Google Maps). My Local SEO services include complete Google Business Profile optimization including profile setup and verification, selection of primary and secondary categories that best represent your business, optimization of your services section with detailed descriptions, uploading geo-tagged images to build trust, managing Q&A section by answering customer questions professionally, posting weekly updates on GBP (offers, events, news, products), ensuring NAP consistency (Name, Address, Phone number) across all online directories like Yellow Pages, Justdial, Yelp, managing review velocity and responding to customer reviews, understanding and optimizing for proximity vs authority (Google's local ranking factors), and tracking local metrics such as CTR, calls, direction requests, dwell time, branded searches, and engagement. I help local businesses rank #1 in their city and dominate their local market.</p>
+                        <p>I help businesses dominate local search results and appear in Google's Local Pack. Services include GBP optimization, NAP consistency across Yellow Pages, Justdial, Yelp, review management, local citations, proximity vs authority optimization, and tracking local metrics (CTR, calls, direction requests).</p>
                     </div>
                 </div>
 
-                <!-- 4. SMO - Small -->
                 <div class="service-item reverse">
-                    <div class="service-image"><img src="social.jpg" alt="SMO Services"></div>
+                    <div class="service-image"><img src="social.jpg" alt="SMO"></div>
                     <div class="service-content">
-                        <h3>📱 Social Media Optimization (SMO - Organic)</h3>
-                        <p>Social Media Optimization helps grow your brand organically without paid ads. I help businesses build a strong social media presence that attracts, engages, and retains followers. Services include profile optimization, organic reach growth, engagement rate improvement, branding consistency, content strategy, audience psychology, retention tactics, and organic growth strategies (hashtags, collaborations).</p>
+                        <h3>📱 Social Media Optimization (SMO)</h3>
+                        <p>Grow your brand organically without paid ads. Services include profile optimization, organic reach growth, engagement rate improvement, branding consistency, content strategy, audience psychology, retention tactics, and organic growth strategies (hashtags, collaborations).</p>
                     </div>
                 </div>
 
-                <!-- 5. SMM - Small -->
                 <div class="service-item">
-                    <div class="service-image"><img src="adds.jpg" alt="SMM Services"></div>
+                    <div class="service-image"><img src="adds.jpg" alt="SMM"></div>
                     <div class="service-content">
-                        <h3>💰 Social Media Marketing (SMM - Paid Ads)</h3>
-                        <p>Social Media Marketing is the fastest way to generate leads and sales. I create high-performing ad campaigns on Facebook, Instagram, LinkedIn, and TikTok. Services include paid ads strategy, lead generation, sales funnel management, retargeting, conversion tracking & ROAS optimization, audience targeting (lookalike, custom), A/B testing, and scaling winning campaigns. I've managed over $50,000+ in ad spend with 3x-5x average ROAS.</p>
+                        <h3>💰 Social Media Marketing (SMM)</h3>
+                        <p>Generate leads and sales through paid ads. Services include paid ads strategy, lead generation, sales funnel management, retargeting, conversion tracking & ROAS optimization, audience targeting (lookalike, custom), A/B testing, and scaling winning campaigns. Managed over $50,000+ ad spend with 3x-5x ROAS.</p>
                     </div>
                 </div>
 
-                <!-- 6. Ads Campaign Management - Big paragraph (restored) -->
                 <div class="service-item reverse">
                     <div class="service-image"><img src="smm.jpg" alt="Ads Management"></div>
                     <div class="service-content">
-                        <h3>📊 Ads Campaign Management (Google & Meta)</h3>
-                        <p>As a professional Ads Campaign Manager, I build complete campaign architectures that drive measurable results. I specialize in Google Ads (Search, Display, Shopping, YouTube) and Meta Ads Manager (Facebook & Instagram). My services include campaign structure setup with proper hierarchy of campaigns, ad groups, ads, and keywords, advanced audience targeting using in-market segments, affinity audiences, custom segments, and lookalike audiences, A/B testing of headlines, descriptions, CTAs, and landing pages, CTR optimization through compelling ad copy and creative design, CPC control and bid strategy management (maximize clicks, target CPA, maximize conversions), retargeting campaign setup for both website visitors and engaged social media users, conversion tracking implementation via Google Tag Manager, Facebook Pixel, and Google Analytics 4, ad fatigue management by regularly refreshing creatives, and scaling strategies that increase budget profitably while maintaining or improving CPA and ROAS. I track key metrics including conversion funnel performance, lookalike audience performance, and overall scaling success.</p>
+                        <h3>📊 Ads Campaign Management</h3>
+                        <p>I build complete campaign architectures on Google Ads and Meta Ads Manager. Services include campaign structure, audience targeting, A/B testing, CTR optimization, bid strategy, retargeting, conversion tracking via GTM & Pixel, ad fatigue management, and scaling strategies that maintain CPA and ROAS.</p>
                     </div>
                 </div>
             </div>
@@ -889,7 +1011,7 @@
                 <h2>Contact Me</h2>
                 <div class="contact-wrapper">
                     <div class="contact-top">
-                        <p>Ready to take your business to the next level? I'm here to help! Whether you need a complete SEO audit, a data-driven social media strategy, high-quality backlinks, or professional ad campaigns that generate positive ROAS — I've got you covered. I offer free 15-minute consultations to understand your business goals. Simply fill out the form below, email me directly, or connect with me on social media.</p>
+                        <p style="text-align: center; margin-bottom: 30px;">Ready to take your business to the next level? I offer free 15-minute consultations to understand your business goals. Fill out the form below or email me directly.</p>
                     </div>
                     <div class="contact-form">
                         <form action="https://formsubmit.co/marham2772@gmail.com" method="POST" id="contactForm">
@@ -897,65 +1019,140 @@
                             <input type="hidden" name="_next" value="https://marhamseo.github.io/portfolio/">
                             <input type="text" name="name" placeholder="Your Name" required>
                             <input type="email" name="email" placeholder="Your Email" required>
-                            <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+                            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
                             <input type="hidden" name="g-recaptcha-response" id="recaptchaResponse">
                             <button type="submit" class="btn">Send Message</button>
                         </form>
                     </div>
                 </div>
-                <div class="email-section"><div class="email-box">📧 <a href="mailto:marham2772@gmail.com">marham2772@gmail.com</a></div></div>
+                <div class="email-section">
+                    <div class="email-box">📧 <a href="mailto:marham2772@gmail.com">marham2772@gmail.com</a></div>
+                </div>
             </div>
         </div>
 
-        <!-- SOCIAL LINKS - Real Brand Logos with Name -->
-        <div class="social-links-section">
-            <h3>Connect With Me</h3>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/m-arham-link-builder/" target="_blank" class="social-link linkedin">
-                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" style="width: 20px; height: 20px;"> LinkedIn
-                </a>
-                <a href="https://www.instagram.com/marhamseo/" target="_blank" class="social-link instagram">
-                    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" style="width: 20px; height: 20px;"> Instagram
-                </a>
-                <a href="https://www.facebook.com/arhamblogger" target="_blank" class="social-link facebook">
-                    <img src="https://cdn-icons-png.flaticon.com/512/145/145802.png" alt="Facebook" style="width: 20px; height: 20px;"> Facebook
-                </a>
+        <!-- FOOTER -->
+        <div class="footer">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>M Arham</h4>
+                    <p>Digital Marketing Expert helping businesses grow online with SEO, SMM, SMO, and Ads campaigns.</p>
+                    <div class="social-links-footer">
+                        <a href="https://www.linkedin.com/in/m-arham-link-builder/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/marhamseo/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/arhamblogger" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <p><a onclick="showPage('home')">Home</a></p>
+                    <p><a onclick="showPage('about')">About</a></p>
+                    <p><a onclick="showPage('services')">Services</a></p>
+                    <p><a onclick="showPage('contact')">Contact</a></p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>📧 <a href="mailto:marham2772@gmail.com">marham2772@gmail.com</a></p>
+                    <p>💬 Available for freelance projects</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 M Arham — Digital Marketing Expert | SEO | Local SEO | SMM | SMO | Ads</p>
+                <p> Let's take your business to the next level</p>
+                <div class="hashtag">#ArhamSEO</div>
             </div>
         </div>
-
-        <footer>
-            <p>&copy; 2025 M Arham — Digital Marketing Expert | SEO | Local SEO | SMM | SMO | Ads</p>
-            <p> Let's take your business to the next level</p>
-            <div class="hashtag">#ArhamSEO</div>
-        </footer>
     </div>
 
     <script>
+        // Typing Animation
+        const words = ["SEO Expert", "Social Media Marketer", "Ads Specialist", "Digital Marketing Consultant"];
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typedTextElement = document.getElementById('typed-text');
+
+        function typeEffect() {
+            const currentWord = words[wordIndex];
+            if (isDeleting) {
+                typedTextElement.textContent = currentWord.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typedTextElement.textContent = currentWord.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            if (!isDeleting && charIndex === currentWord.length) {
+                isDeleting = true;
+                setTimeout(typeEffect, 2000);
+                return;
+            }
+
+            if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % words.length;
+                setTimeout(typeEffect, 500);
+                return;
+            }
+
+            setTimeout(typeEffect, isDeleting ? 80 : 120);
+        }
+
+        typeEffect();
+
+        // Page Switching
         function showPage(pageName) {
             document.getElementById('home-page').classList.remove('active-page');
             document.getElementById('about-page').classList.remove('active-page');
             document.getElementById('services-page').classList.remove('active-page');
             document.getElementById('contact-page').classList.remove('active-page');
             document.getElementById(pageName + '-page').classList.add('active-page');
+            
             const links = ['home', 'about', 'services', 'contact'];
-            links.forEach(link => { const el = document.getElementById(link + '-link'); if (el) el.classList.remove('active'); });
+            links.forEach(link => { 
+                const el = document.getElementById(link + '-link'); 
+                if (el) el.classList.remove('active'); 
+            });
             document.getElementById(pageName + '-link').classList.add('active');
             window.location.hash = pageName;
             window.scrollTo({top: 0, behavior: 'smooth'});
         }
+
         function loadPageFromHash() {
             const hash = window.location.hash.substring(1);
             const validPages = ['home', 'about', 'services', 'contact'];
             if (validPages.includes(hash)) showPage(hash);
             else showPage('home');
         }
+
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+
+        // Navbar Scroll Effect
         function navbarScrollEffect() {
             const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) navbar.classList.add('scrolled');
-            else navbar.classList.remove('scrolled');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
         }
+
         window.addEventListener('scroll', navbarScrollEffect);
         window.addEventListener('load', loadPageFromHash);
+
+        // reCAPTCHA
         const form = document.getElementById('contactForm');
         if (form) {
             form.addEventListener('submit', function(e) {
