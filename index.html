@@ -50,7 +50,6 @@
             width: 100%;
         }
 
-        /* Back to Top Button - Left Side */
         .back-to-top {
             position: fixed;
             bottom: 30px;
@@ -90,7 +89,6 @@
             backdrop-filter: blur(10px);
         }
 
-        /* Typing Animation with Red Box */
         .typing-wrapper {
             margin: 25px 0;
         }
@@ -396,13 +394,7 @@
             transform: scale(1.02);
         }
 
-        /* Reduced height for specific images */
-        .local-seo-img img, .ads-img img {
-            max-height: 220px;
-            object-fit: cover;
-            width: 100%;
-        }
-
+        /* About page images - Normal size (no height restriction) */
         .whatido-content {
             flex: 1;
         }
@@ -501,7 +493,7 @@
             transform: scale(1.02);
         }
 
-        /* Services page - Reduced height images */
+        /* Services page - Small height for Local SEO and Ads images */
         .service-image.local-seo-service img, .service-image.ads-service img {
             max-height: 220px;
             object-fit: cover;
@@ -597,7 +589,6 @@
             color: #e0a0a0;
         }
 
-        /* Footer */
         .footer {
             background: rgba(10, 10, 10, 0.95);
             border-radius: 30px;
@@ -719,7 +710,6 @@
 </head>
 <body>
 
-    <!-- Back to Top Button - Left Side -->
     <div class="back-to-top" id="backToTop">
         <i class="fas fa-arrow-up"></i>
     </div>
@@ -744,7 +734,6 @@
                 <div class="hero-content">
                     <div class="profile-img"><img src="profile2.jpg.png" alt="M Arham"></div>
                     <h1>M Arham</h1>
-                    
                     <div class="typing-wrapper">
                         <div class="typing-container">
                             <div class="typing-text">
@@ -752,7 +741,6 @@
                             </div>
                         </div>
                     </div>
-                    
                     <div>
                         <a onclick="showPage('contact')" class="btn btn-large">Hire Me</a>
                         <a onclick="showPage('services')" class="btn btn-outline btn-large">View Services →</a>
@@ -799,7 +787,7 @@
             </div>
         </div>
 
-        <!-- ABOUT PAGE -->
+        <!-- ABOUT PAGE - Pictures Normal (no height restriction) -->
         <div id="about-page" class="page">
             <div class="section-card">
                 <h2>About Me</h2>
@@ -839,7 +827,8 @@
                     </div>
                 </div>
 
-                <div class="whatido-item local-seo-img">
+                <!-- Local SEO - Normal picture (no height restriction) -->
+                <div class="whatido-item">
                     <div class="whatido-image"><img src="SMO.jpg" alt="Local SEO"></div>
                     <div class="whatido-content">
                         <h3>📍 Local SEO & Google Business Profile</h3>
@@ -884,7 +873,8 @@
                     </div>
                 </div>
 
-                <div class="whatido-item reverse ads-img">
+                <!-- Ads Campaign - Normal picture (no height restriction) -->
+                <div class="whatido-item reverse">
                     <div class="whatido-image"><img src="smm.jpg" alt="Ads Management"></div>
                     <div class="whatido-content">
                         <h3>📊 Ads Campaign Management</h3>
@@ -936,7 +926,7 @@
             </div>
         </div>
 
-        <!-- SERVICES PAGE -->
+        <!-- SERVICES PAGE - Small height for Local SEO and Ads images -->
         <div id="services-page" class="page">
             <div class="section-card">
                 <h2>Services I Offer</h2>
@@ -957,7 +947,7 @@
                     </div>
                 </div>
 
-                <!-- Local SEO - Height reduced -->
+                <!-- Local SEO - Small height (max-height: 220px) -->
                 <div class="service-item local-seo-service">
                     <div class="service-image"><img src="SMO.jpg" alt="Local SEO"></div>
                     <div class="service-content">
@@ -982,7 +972,7 @@
                     </div>
                 </div>
 
-                <!-- Ads - Height reduced -->
+                <!-- Ads Campaign - Small height (max-height: 220px) -->
                 <div class="service-item reverse ads-service">
                     <div class="service-image"><img src="smm.jpg" alt="Ads Management"></div>
                     <div class="service-content">
@@ -1045,7 +1035,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2022 M Arham — Digital Marketing Expert | SEO | Local SEO | SMM | SMO | Ads</p>
+                <p>© 2022 M Arham — Digital Marketing Expert | SEO | Local SEO | SMM | SMO | Ads</p>
                 <p> Let's take your business to the next level</p>
                 <div class="hashtag">#ArhamSEO</div>
             </div>
@@ -1072,18 +1062,17 @@
 
             if (!isDeleting && charIndex === currentWord.length) {
                 isDeleting = true;
-                setTimeout(typeEffect, 2000); // Wait time same rahega (2 seconds)
+                setTimeout(typeEffect, 2000);
                 return;
             }
 
             if (isDeleting && charIndex === 0) {
                 isDeleting = false;
                 wordIndex = (wordIndex + 1) % words.length;
-                setTimeout(typeEffect, 300); // Next word start - thoda fast
+                setTimeout(typeEffect, 300);
                 return;
             }
 
-            // Write and delete speed - FASTER (pehle 80/80 tha, ab 50/40)
             setTimeout(typeEffect, isDeleting ? 40 : 50);
         }
 
