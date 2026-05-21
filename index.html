@@ -90,7 +90,7 @@
             backdrop-filter: blur(10px);
         }
 
-        /* Typing Animation with Red Box - Centered between name and buttons */
+        /* Typing Animation with Red Box */
         .typing-wrapper {
             margin: 25px 0;
         }
@@ -398,7 +398,7 @@
 
         /* Reduced height for specific images */
         .local-seo-img img, .ads-img img {
-            max-height: 260px;
+            max-height: 220px;
             object-fit: cover;
             width: 100%;
         }
@@ -501,9 +501,9 @@
             transform: scale(1.02);
         }
 
-        /* Services page reduced height images */
+        /* Services page - Reduced height images */
         .service-image.local-seo-service img, .service-image.ads-service img {
-            max-height: 260px;
+            max-height: 220px;
             object-fit: cover;
             width: 100%;
         }
@@ -745,7 +745,6 @@
                     <div class="profile-img"><img src="profile2.jpg.png" alt="M Arham"></div>
                     <h1>M Arham</h1>
                     
-                    <!-- Typing Animation - Between Name and Buttons -->
                     <div class="typing-wrapper">
                         <div class="typing-container">
                             <div class="typing-text">
@@ -958,6 +957,7 @@
                     </div>
                 </div>
 
+                <!-- Local SEO - Height reduced -->
                 <div class="service-item local-seo-service">
                     <div class="service-image"><img src="SMO.jpg" alt="Local SEO"></div>
                     <div class="service-content">
@@ -982,6 +982,7 @@
                     </div>
                 </div>
 
+                <!-- Ads - Height reduced -->
                 <div class="service-item reverse ads-service">
                     <div class="service-image"><img src="smm.jpg" alt="Ads Management"></div>
                     <div class="service-content">
@@ -992,7 +993,7 @@
             </div>
         </div>
 
-        <!-- CONTACT PAGE - Improved Paragraph -->
+        <!-- CONTACT PAGE -->
         <div id="contact-page" class="page">
             <div class="section-card">
                 <h2>Contact Me</h2>
@@ -1052,7 +1053,7 @@
     </div>
 
     <script>
-        // Typing Animation
+        // Typing Animation - Faster speed
         const words = ["SEO Expert", "Social Media Marketer", "Ads Specialist", "Digital Marketing Consultant"];
         let wordIndex = 0;
         let charIndex = 0;
@@ -1071,18 +1072,19 @@
 
             if (!isDeleting && charIndex === currentWord.length) {
                 isDeleting = true;
-                setTimeout(typeEffect, 2000);
+                setTimeout(typeEffect, 2000); // Wait time same rahega (2 seconds)
                 return;
             }
 
             if (isDeleting && charIndex === 0) {
                 isDeleting = false;
                 wordIndex = (wordIndex + 1) % words.length;
-                setTimeout(typeEffect, 500);
+                setTimeout(typeEffect, 300); // Next word start - thoda fast
                 return;
             }
 
-            setTimeout(typeEffect, isDeleting ? 80 : 120);
+            // Write and delete speed - FASTER (pehle 80/80 tha, ab 50/40)
+            setTimeout(typeEffect, isDeleting ? 40 : 50);
         }
 
         typeEffect();
