@@ -394,7 +394,14 @@
             transform: scale(1.02);
         }
 
-        /* About page images - Normal size (no height restriction) */
+        /* Both About and Service pages - Same height 190px for Local SEO and Ads images */
+        .whatido-image.local-seo-img img, .whatido-image.ads-img img,
+        .service-image.local-seo-service img, .service-image.ads-service img {
+            max-height: 190px;
+            object-fit: cover;
+            width: 100%;
+        }
+
         .whatido-content {
             flex: 1;
         }
@@ -491,13 +498,6 @@
 
         .service-image img:hover {
             transform: scale(1.02);
-        }
-
-        /* Services page - Small height for Local SEO and Ads images */
-        .service-image.local-seo-service img, .service-image.ads-service img {
-            max-height: 220px;
-            object-fit: cover;
-            width: 100%;
         }
 
         .service-content {
@@ -787,7 +787,7 @@
             </div>
         </div>
 
-        <!-- ABOUT PAGE - Pictures Normal (no height restriction) -->
+        <!-- ABOUT PAGE - Same height 190px for Local SEO and Ads images -->
         <div id="about-page" class="page">
             <div class="section-card">
                 <h2>About Me</h2>
@@ -827,8 +827,7 @@
                     </div>
                 </div>
 
-                <!-- Local SEO - Normal picture (no height restriction) -->
-                <div class="whatido-item">
+                <div class="whatido-item local-seo-img">
                     <div class="whatido-image"><img src="SMO.jpg" alt="Local SEO"></div>
                     <div class="whatido-content">
                         <h3>📍 Local SEO & Google Business Profile</h3>
@@ -873,8 +872,7 @@
                     </div>
                 </div>
 
-                <!-- Ads Campaign - Normal picture (no height restriction) -->
-                <div class="whatido-item reverse">
+                <div class="whatido-item reverse ads-img">
                     <div class="whatido-image"><img src="smm.jpg" alt="Ads Management"></div>
                     <div class="whatido-content">
                         <h3>📊 Ads Campaign Management</h3>
@@ -926,7 +924,7 @@
             </div>
         </div>
 
-        <!-- SERVICES PAGE - Small height for Local SEO and Ads images -->
+        <!-- SERVICES PAGE - Same height 190px for Local SEO and Ads images -->
         <div id="services-page" class="page">
             <div class="section-card">
                 <h2>Services I Offer</h2>
@@ -947,7 +945,6 @@
                     </div>
                 </div>
 
-                <!-- Local SEO - Small height (max-height: 220px) -->
                 <div class="service-item local-seo-service">
                     <div class="service-image"><img src="SMO.jpg" alt="Local SEO"></div>
                     <div class="service-content">
@@ -972,7 +969,6 @@
                     </div>
                 </div>
 
-                <!-- Ads Campaign - Small height (max-height: 220px) -->
                 <div class="service-item reverse ads-service">
                     <div class="service-image"><img src="smm.jpg" alt="Ads Management"></div>
                     <div class="service-content">
@@ -1009,7 +1005,7 @@
             </div>
         </div>
 
-        <!-- FOOTER -->
+        <!-- FOOTER - No emojis -->
         <div class="footer">
             <div class="footer-grid">
                 <div class="footer-section">
@@ -1030,20 +1026,20 @@
                 </div>
                 <div class="footer-section">
                     <h4>Contact</h4>
-                    <p>📧 <a href="mailto:marham2772@gmail.com">marham2772@gmail.com</a></p>
-                    <p>💬 Available for freelance projects</p>
+                    <p><a href="mailto:marham2772@gmail.com">marham2772@gmail.com</a></p>
+                    <p>Available for freelance projects</p>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>© 2022 M Arham — Digital Marketing Expert | SEO | Local SEO | SMM | SMO | Ads</p>
-                <p> Let's take your business to the next level</p>
+                <p>Let's take your business to the next level</p>
                 <div class="hashtag">#ArhamSEO</div>
             </div>
         </div>
     </div>
 
     <script>
-        // Typing Animation - Faster speed
+        // Typing Animation - Wait time 1 second (1000ms)
         const words = ["SEO Expert", "Social Media Marketer", "Ads Specialist", "Digital Marketing Consultant"];
         let wordIndex = 0;
         let charIndex = 0;
@@ -1062,7 +1058,7 @@
 
             if (!isDeleting && charIndex === currentWord.length) {
                 isDeleting = true;
-                setTimeout(typeEffect, 2000);
+                setTimeout(typeEffect, 1000); // Wait time 1 second (pehle 2000 tha)
                 return;
             }
 
