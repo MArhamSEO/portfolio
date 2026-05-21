@@ -21,7 +21,6 @@
             overflow-x: hidden;
         }
 
-        /* Container - Centers content with equal sides */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -29,7 +28,6 @@
             width: 100%;
         }
 
-        /* Hero Section */
         .hero {
             text-align: center;
             padding: 80px 20px;
@@ -44,7 +42,6 @@
             z-index: 2;
         }
 
-        /* Navbar */
         .navbar {
             background: rgba(30, 10, 10, 0.95);
             border-radius: 60px;
@@ -116,7 +113,6 @@
             color: #ffffff;
         }
 
-        /* Page Transitions */
         .page {
             display: none;
             animation: fadeIn 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1);
@@ -131,7 +127,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Profile Image */
         .profile-img {
             width: 150px;
             height: 150px;
@@ -177,7 +172,6 @@
             margin-bottom: 35px;
         }
 
-        /* Buttons */
         .btn {
             display: inline-block;
             background: #800000;
@@ -209,7 +203,6 @@
             color: #ffffff;
         }
 
-        /* Statistics */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -243,7 +236,6 @@
             color: #ffffff;
         }
 
-        /* Section Cards */
         .section-card {
             background: rgba(30, 15, 15, 0.95);
             border-radius: 24px;
@@ -257,14 +249,12 @@
             border-color: rgba(128,0,0,0.5);
         }
 
-        /* Welcome text */
         .welcome-text {
             font-size: 1.05em;
             line-height: 1.8;
             color: #ffffff;
         }
 
-        /* Featured Services */
         .featured-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -303,7 +293,6 @@
             color: #ffffff;
         }
 
-        /* Why Choose Me */
         .why-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -339,7 +328,6 @@
             color: #ffffff;
         }
 
-        /* About paragraph */
         .about-paragraph {
             font-size: 1.05em;
             line-height: 1.8;
@@ -349,7 +337,6 @@
             margin: 0 auto;
         }
 
-        /* What I Do */
         .whatido-item {
             display: flex;
             align-items: center;
@@ -398,7 +385,7 @@
             margin-bottom: 8px;
         }
 
-        /* Experience & Expertise */
+        /* Experience & Expertise - RED HOVER (Same as Achievements) */
         .exp-list {
             display: flex;
             flex-direction: column;
@@ -414,9 +401,9 @@
         }
 
         .exp-single-item:hover {
+            background: #800000;
             transform: translateX(5px);
             border-left-color: #a00000;
-            background: #351818;
         }
 
         .exp-single-title {
@@ -432,7 +419,6 @@
             font-size: 0.9em;
         }
 
-        /* Achievements */
         .achievements-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -454,7 +440,6 @@
             transform: translateY(-5px);
         }
 
-        /* Services */
         .service-item {
             display: flex;
             align-items: center;
@@ -498,7 +483,6 @@
             line-height: 1.8;
         }
 
-        /* Contact Page */
         .contact-wrapper {
             max-width: 700px;
             margin: 0 auto;
@@ -557,7 +541,6 @@
             font-weight: bold;
         }
 
-        /* Social Links */
         .social-links-section {
             background: rgba(30, 15, 15, 0.95);
             border-radius: 24px;
@@ -622,7 +605,6 @@
             transform: translateX(6px);
         }
 
-        /* Mobile Friendly - Equal Sides on All Pages */
         @media (max-width: 768px) {
             .container {
                 padding: 15px;
