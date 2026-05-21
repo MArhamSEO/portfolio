@@ -394,10 +394,10 @@
             transform: scale(1.02);
         }
 
-        /* Both About and Service pages - Same height 190px for Local SEO and Ads images */
+        /* Images height 160px (About + Service both) */
         .whatido-image.local-seo-img img, .whatido-image.ads-img img,
         .service-image.local-seo-service img, .service-image.ads-service img {
-            max-height: 190px;
+            max-height: 160px;
             object-fit: cover;
             width: 100%;
         }
@@ -787,7 +787,7 @@
             </div>
         </div>
 
-        <!-- ABOUT PAGE - Same height 190px for Local SEO and Ads images -->
+        <!-- ABOUT PAGE -->
         <div id="about-page" class="page">
             <div class="section-card">
                 <h2>About Me</h2>
@@ -924,7 +924,7 @@
             </div>
         </div>
 
-        <!-- SERVICES PAGE - Same height 190px for Local SEO and Ads images -->
+        <!-- SERVICES PAGE -->
         <div id="services-page" class="page">
             <div class="section-card">
                 <h2>Services I Offer</h2>
@@ -1005,7 +1005,7 @@
             </div>
         </div>
 
-        <!-- FOOTER - No emojis -->
+        <!-- FOOTER -->
         <div class="footer">
             <div class="footer-grid">
                 <div class="footer-section">
@@ -1058,7 +1058,7 @@
 
             if (!isDeleting && charIndex === currentWord.length) {
                 isDeleting = true;
-                setTimeout(typeEffect, 1000); // Wait time 1 second (pehle 2000 tha)
+                setTimeout(typeEffect, 1000);
                 return;
             }
 
