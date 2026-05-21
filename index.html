@@ -512,6 +512,7 @@
             font-weight: bold;
         }
 
+        /* Social Links - Only Icons */
         .social-links-section {
             background: rgba(30, 15, 15, 0.95);
             border-radius: 24px;
@@ -524,7 +525,7 @@
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 30px;
             flex-wrap: wrap;
             margin-top: 15px;
         }
@@ -532,20 +533,21 @@
         .social-link {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
             background: #2a1515;
-            padding: 8px 20px;
-            border-radius: 40px;
+            border-radius: 50%;
             text-decoration: none;
             color: #ffffff;
             transition: all 0.4s ease;
             border: 1px solid rgba(90, 42, 42, 0.6);
-            font-size: 0.9em;
+            font-size: 1.5em;
         }
 
         .social-link:hover {
             background: #800000;
-            transform: translateY(-3px);
+            transform: translateY(-3px) scale(1.1);
         }
 
         .social-link.linkedin:hover { background: #0077b5; }
@@ -614,6 +616,11 @@
             .featured-grid, .why-grid {
                 grid-template-columns: 1fr;
             }
+            .social-link {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2em;
+            }
         }
     </style>
 </head>
@@ -678,7 +685,7 @@
             </div>
         </div>
 
-        <!-- ABOUT PAGE (Pictures Swapped as per request) -->
+        <!-- ABOUT PAGE -->
         <div id="about-page" class="page">
             <div class="section-card">
                 <h2>About Me</h2>
@@ -688,7 +695,6 @@
             <div class="section-card">
                 <h2>What I Do</h2>
                 
-                <!-- 1. SEO - 8 points (Same picture) -->
                 <div class="whatido-item">
                     <div class="whatido-image"><img src="SEO.jpg" alt="SEO Expert"></div>
                     <div class="whatido-content">
@@ -698,15 +704,14 @@
                             <li><strong>On-Page SEO</strong> - Meta tags, headings, keyword optimization, internal linking</li>
                             <li><strong>Mobile Friendly Optimization</strong> - Responsive design, Core Web Vitals</li>
                             <li><strong>Technical SEO</strong> - Site speed, crawlability, indexation, XML sitemaps</li>
-                            <li><strong>Schema Markup</strong> - Rich snippets for better CTR (FAQ, LocalBusiness, Article)</li>
-                            <li><strong>Content Optimization</strong> - Keyword mapping, topic clusters, semantic SEO</li>
-                            <li><strong>Site Structure</strong> - URL optimization, breadcrumbs, silo structure</li>
-                            <li><strong>Core Web Vitals</strong> - LCP, FID, CLS optimization for better rankings</li>
+                            <li><strong>Schema Markup</strong> - Rich snippets for better CTR</li>
+                            <li><strong>Content Optimization</strong> - Keyword mapping, topic clusters</li>
+                            <li><strong>Site Structure</strong> - URL optimization, breadcrumbs</li>
+                            <li><strong>Core Web Vitals</strong> - LCP, FID, CLS optimization</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- 2. Link Building - 7 points (Same picture) -->
                 <div class="whatido-item reverse">
                     <div class="whatido-image"><img src="linkbuilding.jpg" alt="Link Building"></div>
                     <div class="whatido-content">
@@ -714,86 +719,82 @@
                         <ul>
                             <li><strong>Guest Posting</strong> - High DA sites for quality backlinks</li>
                             <li><strong>Profile Backlinks</strong> - Free high authority profile creation</li>
-                            <li><strong>HARO Link Building</strong> - Help a Reporter Out for journalist backlinks</li>
-                            <li><strong>Broken Link Building</strong> - Finding broken links and replacing with your content</li>
+                            <li><strong>HARO Link Building</strong> - Help a Reporter Out</li>
+                            <li><strong>Broken Link Building</strong> - Finding and replacing broken links</li>
                             <li><strong>Competitor Backlink Analysis</strong> - Stealing competitor's backlinks</li>
-                            <li><strong>Niche Edits & Contextual Links</strong> - Inserting links in existing content</li>
-                            <li><strong>Local Link Building</strong> - Getting links from local directories and chambers</li>
+                            <li><strong>Niche Edits</strong> - Inserting links in existing content</li>
+                            <li><strong>Local Link Building</strong> - Local directories and chambers</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- 3. Local SEO - Now using SMO.jpg (swapped) -->
                 <div class="whatido-item">
                     <div class="whatido-image"><img src="SMO.jpg" alt="Local SEO Expert"></div>
                     <div class="whatido-content">
                         <h3>📍 Local SEO & Google Business Profile</h3>
                         <ul>
-                            <li><strong>Google Business Profile Optimization</strong> - Complete profile setup & verification</li>
-                            <li><strong>Primary & Secondary Categories</strong> - Correct category selection for better relevance</li>
+                            <li><strong>Google Business Profile Optimization</strong> - Complete setup & verification</li>
+                            <li><strong>Primary & Secondary Categories</strong> - Correct category selection</li>
                             <li><strong>Services Optimization</strong> - Adding all services with descriptions</li>
-                            <li><strong>Geo-tagged Images</strong> - Upload location-specific images for trust</li>
-                            <li><strong>Business Description & Products/Services</strong> - Optimized descriptions with keywords</li>
-                            <li><strong>Q&A Section Management</strong> - Answering customer questions professionally</li>
-                            <li><strong>Weekly Posts on GBP</strong> - Offers, updates, events to keep profile active</li>
-                            <li><strong>NAP Consistency & Reviews</strong> - Name, Address, Phone same across all platforms. Review velocity & response management</li>
-                            <li><strong>Local Citations</strong> - Yellow Pages, Justdial, Yelp, and other local directories</li>
-                            <li><strong>Proximity vs Authority</strong> - Understanding local ranking factors</li>
-                            <li><strong>CTR, Calls, Direction Requests, Dwell Time, Branded Searches, Engagement</strong> - Tracking local metrics</li>
+                            <li><strong>Geo-tagged Images</strong> - Location-specific images for trust</li>
+                            <li><strong>Business Description</strong> - Optimized descriptions with keywords</li>
+                            <li><strong>Q&A Section Management</strong> - Answering customer questions</li>
+                            <li><strong>Weekly Posts on GBP</strong> - Offers, updates, events</li>
+                            <li><strong>NAP Consistency & Reviews</strong> - Name, Address, Phone same everywhere</li>
+                            <li><strong>Local Citations</strong> - Yellow Pages, Justdial, Yelp</li>
+                            <li><strong>Proximity vs Authority</strong> - Local ranking factors</li>
+                            <li><strong>Local Metrics</strong> - CTR, calls, direction requests, dwell time</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- 4. SMO (Organic) - Now using social.jpg (swapped) -->
                 <div class="whatido-item reverse">
                     <div class="whatido-image"><img src="social.jpg" alt="Social Media Optimization"></div>
                     <div class="whatido-content">
                         <h3>📱 Social Media Optimization (SMO - Organic)</h3>
                         <ul>
-                            <li><strong>Profile Optimization</strong> - Bio, images, links, username optimization</li>
-                            <li><strong>Organic Reach Growth</strong> - Algorithm-friendly content strategy</li>
-                            <li><strong>Engagement Rate</strong> - Likes, comments, shares, saves improvement</li>
-                            <li><strong>Branding & Consistency</strong> - Visual identity, tone of voice, brand colors</li>
-                            <li><strong>Content Strategy & Pillars</strong> - 3-5 main content themes for your brand</li>
-                            <li><strong>Audience Psychology</strong> - Understanding what makes your audience engage</li>
-                            <li><strong>Retention & Loyalty</strong> - Keeping followers engaged over time</li>
-                            <li><strong>Organic Growth Tactics</strong> - Hashtag strategy, trending audio, collaborations</li>
+                            <li><strong>Profile Optimization</strong> - Bio, images, links, username</li>
+                            <li><strong>Organic Reach Growth</strong> - Algorithm-friendly content</li>
+                            <li><strong>Engagement Rate</strong> - Likes, comments, shares improvement</li>
+                            <li><strong>Branding & Consistency</strong> - Visual identity, tone of voice</li>
+                            <li><strong>Content Strategy & Pillars</strong> - 3-5 main content themes</li>
+                            <li><strong>Audience Psychology</strong> - Understanding your audience</li>
+                            <li><strong>Retention & Loyalty</strong> - Keeping followers engaged</li>
+                            <li><strong>Organic Growth Tactics</strong> - Hashtag strategy, collaborations</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- 5. SMM (Paid) - Now using adds.jpg (swapped from smm.jpg) -->
                 <div class="whatido-item">
                     <div class="whatido-image"><img src="adds.jpg" alt="Social Media Marketing"></div>
                     <div class="whatido-content">
                         <h3>💰 Social Media Marketing (SMM - Paid Ads)</h3>
                         <ul>
-                            <li><strong>Paid Ads Strategy</strong> - Facebook, Instagram, LinkedIn, TikTok Ads</li>
-                            <li><strong>Lead Generation Campaigns</strong> - Capturing quality leads at low cost</li>
-                            <li><strong>Sales Funnel Management</strong> - Top, middle, bottom of funnel optimization</li>
-                            <li><strong>Retargeting Campaigns</strong> - Converting warm audience who didn't buy</li>
-                            <li><strong>Conversion Tracking & ROAS</strong> - Pixel setup, event tracking, return on ad spend</li>
-                            <li><strong>Audience Targeting</strong> - Lookalike audiences, custom audiences, interests</li>
-                            <li><strong>A/B Testing & Creatives</strong> - Testing ad copy, images, videos, CTAs</li>
-                            <li><strong>Scaling & Bid Strategy</strong> - Increasing budget without losing ROAS</li>
+                            <li><strong>Paid Ads Strategy</strong> - Facebook, Instagram, LinkedIn, TikTok</li>
+                            <li><strong>Lead Generation Campaigns</strong> - Quality leads at low cost</li>
+                            <li><strong>Sales Funnel Management</strong> - Top, middle, bottom of funnel</li>
+                            <li><strong>Retargeting Campaigns</strong> - Converting warm audience</li>
+                            <li><strong>Conversion Tracking & ROAS</strong> - Pixel setup, event tracking</li>
+                            <li><strong>Audience Targeting</strong> - Lookalike, custom audiences</li>
+                            <li><strong>A/B Testing & Creatives</strong> - Testing ad copy, images, CTAs</li>
+                            <li><strong>Scaling & Bid Strategy</strong> - Increasing budget profitably</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- 6. Ads Campaign Management - Now using smm.jpg (swapped from adds.jpg) -->
                 <div class="whatido-item reverse">
                     <div class="whatido-image"><img src="smm.jpg" alt="Ads Campaign Management"></div>
                     <div class="whatido-content">
                         <h3>📊 Ads Campaign Management (Google & Meta)</h3>
                         <ul>
-                            <li><strong>Campaign Structure</strong> - Campaigns, Ad Groups, Ads, Keywords proper hierarchy</li>
-                            <li><strong>Audience Targeting</strong> - In-market, affinity, custom segments, lookalike audiences</li>
-                            <li><strong>A/B Testing</strong> - Testing headlines, descriptions, CTAs, landing pages</li>
-                            <li><strong>CTR Optimization</strong> - Increasing click-through rate with better creatives</li>
-                            <li><strong>CPC Control & Bid Strategy</strong> - Maximize clicks, target CPA, maximize conversions</li>
-                            <li><strong>Retargeting & Conversion Tracking</strong> - Pixel setup, Google Tag Manager, event tracking</li>
-                            <li><strong>Ad Fatigue Management</strong> - Refreshing creatives to avoid audience burnout</li>
-                            <li><strong>Scaling Strategy & ROAS</strong> - Increasing budget profitably, CPA, ROAS, scaling winning campaigns</li>
+                            <li><strong>Campaign Structure</strong> - Campaigns, Ad Groups, Ads hierarchy</li>
+                            <li><strong>Audience Targeting</strong> - In-market, affinity, custom segments</li>
+                            <li><strong>A/B Testing</strong> - Headlines, descriptions, CTAs, landing pages</li>
+                            <li><strong>CTR Optimization</strong> - Better creatives for higher CTR</li>
+                            <li><strong>CPC Control & Bid Strategy</strong> - Maximize clicks, target CPA</li>
+                            <li><strong>Retargeting & Conversion Tracking</strong> - Pixel, GTM setup</li>
+                            <li><strong>Ad Fatigue Management</strong> - Refreshing creatives</li>
+                            <li><strong>Scaling Strategy & ROAS</strong> - Increasing budget profitably</li>
                         </ul>
                     </div>
                 </div>
@@ -821,7 +822,7 @@
             </div>
         </div>
 
-        <!-- SERVICES PAGE (Same order with swapped pictures) -->
+        <!-- SERVICES PAGE - Big Paragraphs -->
         <div id="services-page" class="page">
             <div class="section-card">
                 <h2>Services I Offer</h2>
@@ -831,7 +832,7 @@
                     <div class="service-image"><img src="SEO.jpg" alt="SEO Services"></div>
                     <div class="service-content">
                         <h3>🔍 Search Engine Optimization (On-Page & Technical)</h3>
-                        <p>I provide complete SEO solutions that help businesses rank higher on Google and drive organic traffic. My services include comprehensive website audit, on-page optimization (meta tags, headings, keyword research, internal linking), technical SEO (site speed, crawlability, indexation, XML sitemaps), mobile-friendly optimization to ensure your site passes Core Web Vitals, schema markup implementation for rich snippets, content optimization with keyword mapping and topic clusters, site structure improvement with URL optimization and breadcrumbs, and Core Web Vitals optimization (LCP, FID, CLS). I've helped 50+ clients achieve top 3 rankings for competitive keywords, resulting in significant organic traffic growth and increased revenue.</p>
+                        <p>I provide complete SEO solutions that help businesses rank higher on Google and drive organic traffic. My services include comprehensive website audit, on-page optimization (meta tags, headings, keyword research, internal linking), technical SEO (site speed, crawlability, indexation, XML sitemaps), mobile-friendly optimization to ensure your site passes Core Web Vitals, schema markup implementation for rich snippets, content optimization with keyword mapping and topic clusters, site structure improvement with URL optimization and breadcrumbs, and Core Web Vitals optimization (LCP, FID, CLS). I've helped 50+ clients achieve top 3 rankings for competitive keywords, resulting in significant organic traffic growth and increased revenue. Whether you have a small business website or a large e-commerce store, my data-driven SEO strategies are tailored to your specific goals and industry.</p>
                     </div>
                 </div>
 
@@ -840,43 +841,43 @@
                     <div class="service-image"><img src="linkbuilding.jpg" alt="Link Building Services"></div>
                     <div class="service-content">
                         <h3>🔗 Off-Page SEO & Link Building</h3>
-                        <p>Link building is one of the most powerful ways to increase your website's authority and rankings. I specialize in white-hat link building strategies that deliver long-term results. My services include guest posting on high DA (Domain Authority) 50+ websites to earn quality backlinks, profile backlinks creation on high-authority platforms like Medium, Quora, and Reddit, HARO (Help a Reporter Out) link building to get featured on top news sites, broken link building where I find broken links on relevant websites and replace them with your content, competitor backlink analysis to steal your competitor's best links, niche edits and contextual links by inserting your links into existing high-quality content, and local link building from local directories. I've successfully published 500+ guest posts and helped clients build strong, natural backlink profiles that Google loves.</p>
+                        <p>Link building is one of the most powerful ways to increase your website's authority and rankings. I specialize in white-hat link building strategies that deliver long-term results. My services include guest posting on high DA (Domain Authority) 50+ websites to earn quality backlinks, profile backlinks creation on high-authority platforms like Medium, Quora, and Reddit, HARO (Help a Reporter Out) link building to get featured on top news sites like Forbes, Entrepreneur, and Business Insider, broken link building where I find broken links on relevant websites and replace them with your content, competitor backlink analysis to steal your competitor's best links, niche edits and contextual links by inserting your links into existing high-quality content, and local link building from local directories, chambers of commerce, and community websites. I've successfully published 500+ guest posts on high-authority websites and helped clients build strong, natural backlink profiles that Google loves. My approach focuses on quality over quantity, ensuring every backlink adds real value to your SEO campaign and helps you outrank your competition.</p>
                     </div>
                 </div>
 
-                <!-- 3. Local SEO - Now using SMO.jpg -->
+                <!-- 3. Local SEO - Big Paragraph -->
                 <div class="service-item">
                     <div class="service-image"><img src="SMO.jpg" alt="Local SEO Services"></div>
                     <div class="service-content">
                         <h3>📍 Local SEO & Google Business Profile</h3>
-                        <p>For businesses targeting local customers, Local SEO is essential. I help businesses dominate local search results and appear in Google's Local Pack. My Local SEO services include complete Google Business Profile optimization, category selection, services optimization, geo-tagged images, business description optimization, Q&A management, weekly posts, NAP consistency, review velocity management, local citations on Yellow Pages and other directories, proximity vs authority optimization, and tracking local metrics like CTR, calls, direction requests, dwell time, branded searches, and engagement. I help local businesses rank #1 in their city.</p>
+                        <p>For businesses targeting local customers, Local SEO is essential. I help businesses dominate local search results and appear in Google's Local Pack (the top 3 results on Google Maps). My Local SEO services include complete Google Business Profile (GBP) optimization including profile setup and verification, selection of primary and secondary categories that best represent your business, optimization of your services section with detailed descriptions, uploading geo-tagged images to build trust with potential customers, crafting compelling business descriptions and optimizing your products/services section, managing Q&A section by answering customer questions professionally, posting weekly updates on GBP (offers, events, news, products), ensuring NAP consistency (Name, Address, Phone number) across all online directories like Yellow Pages, Justdial, Yelp, and other local platforms, managing review velocity and responding to customer reviews (both positive and negative) to build social proof, understanding and optimizing for proximity vs authority (Google's local ranking factors), and tracking local metrics such as CTR, calls, direction requests, dwell time, branded searches, and engagement. I help local businesses like restaurants, salons, plumbers, electricians, lawyers, doctors, dentists, real estate agents, and home service providers rank #1 in their city and dominate their local market. My local SEO strategies are designed to bring you more foot traffic, phone calls, and customers from your target area.</p>
                     </div>
                 </div>
 
-                <!-- 4. SMO (Organic) - Now using social.jpg -->
+                <!-- 4. SMO -->
                 <div class="service-item reverse">
                     <div class="service-image"><img src="social.jpg" alt="SMO Services"></div>
                     <div class="service-content">
                         <h3>📱 Social Media Optimization (SMO - Organic)</h3>
-                        <p>Social Media Optimization is about growing your brand organically without paid ads. I help businesses build a strong social media presence that attracts, engages, and retains followers. My SMO services include complete profile optimization, organic reach growth using algorithm-friendly strategies, improving engagement rate, building consistent brand identity, developing content strategy with 3-5 main content pillars, understanding audience psychology, implementing retention and loyalty tactics, and using organic growth tactics like hashtag strategy and collaborations. I specialize in growing brands on Facebook, Instagram, LinkedIn, Twitter, and TikTok.</p>
+                        <p>Social Media Optimization is about growing your brand organically without paid ads. I help businesses build a strong social media presence that attracts, engages, and retains followers. My SMO services include complete profile optimization (bio, profile images, cover photos, links, username optimization for better discoverability), organic reach growth using algorithm-friendly content strategies that work with platform algorithms (not against them), improving engagement rate (likes, comments, shares, saves, mentions, and DMs), building a consistent brand identity (visual elements, tone of voice, brand colors, and posting schedule), developing a content strategy with 3-5 main content pillars that align with your brand and resonate with your target audience, understanding audience psychology to create content that triggers emotional responses and drives action, implementing retention and loyalty tactics to keep followers engaged over time and reduce unfollows, and using organic growth tactics such as hashtag strategy (researching and using the right hashtags), trending audio (for Reels and TikTok), collaborations with complementary brands, and user-generated content campaigns. I specialize in growing brands on Facebook, Instagram, LinkedIn, Twitter (X), and TikTok. My focus is on building an authentic community around your brand that leads to long-term customer loyalty, repeat business, and word-of-mouth referrals — all without spending a single dollar on ads.</p>
                     </div>
                 </div>
 
-                <!-- 5. SMM (Paid) - Now using adds.jpg -->
+                <!-- 5. SMM -->
                 <div class="service-item">
                     <div class="service-image"><img src="adds.jpg" alt="SMM Services"></div>
                     <div class="service-content">
                         <h3>💰 Social Media Marketing (SMM - Paid Ads)</h3>
-                        <p>Social Media Marketing (paid ads) is the fastest way to generate leads, sales, and brand awareness. I create and manage high-performing ad campaigns on Facebook, Instagram, LinkedIn, and TikTok. My SMM services include paid ads strategy, lead generation campaigns, sales funnel management, retargeting campaigns, conversion tracking and ROAS optimization, advanced audience targeting (lookalike audiences, custom audiences), A/B testing of ad copy and creatives, and scaling winning campaigns with proper bid strategies. I have managed over $50,000+ in ad spend with an average ROAS of 3x-5x.</p>
+                        <p>Social Media Marketing (paid ads) is the fastest way to generate leads, sales, and brand awareness. I create and manage high-performing ad campaigns on Facebook, Instagram, LinkedIn, and TikTok. My SMM services include developing a paid ads strategy tailored to your business goals and target audience, running lead generation campaigns to capture quality leads at the lowest possible cost per lead (CPL), sales funnel management (top-of-funnel awareness campaigns, middle-of-funnel consideration campaigns, bottom-of-funnel conversion campaigns), retargeting campaigns to convert warm audiences who have already visited your website or engaged with your content but haven't purchased yet, conversion tracking and ROAS optimization using Facebook Pixel, Google Tag Manager, and event tracking to measure exactly what's working, advanced audience targeting including lookalike audiences (1%, 2%, 3% lookalikes based on your best customers), custom audiences (website visitors, email lists, video viewers), and interest-based targeting, A/B testing of ad copy, images, videos, headlines, CTAs, and landing pages to find winning combinations that maximize your return on ad spend, and scaling winning campaigns with proper bid strategies (lowest cost, target CPA, max conversions, target ROAS) without losing profitability. I have managed over $50,000+ in ad spend with an average ROAS of 3x-5x for my clients across e-commerce stores, lead generation businesses, local service providers, and brand awareness campaigns. My goal is to turn your ad budget into a profit-generating machine.</p>
                     </div>
                 </div>
 
-                <!-- 6. Ads Campaign Management - Now using smm.jpg -->
+                <!-- 6. Ads Campaign Management - Big Paragraph -->
                 <div class="service-item reverse">
                     <div class="service-image"><img src="smm.jpg" alt="Ads Management"></div>
                     <div class="service-content">
                         <h3>📊 Ads Campaign Management (Google & Meta)</h3>
-                        <p>As a professional Ads Campaign Manager, I build complete campaign architectures that drive measurable results. I specialize in Google Ads (Search, Display, Shopping, YouTube) and Meta Ads Manager. My services include campaign structure setup, advanced audience targeting, A/B testing, CTR optimization, CPC control and bid strategy management, retargeting campaign setup, conversion tracking via Google Tag Manager and Facebook Pixel, ad fatigue management, and scaling strategies that increase budget profitably while maintaining CPA and ROAS. I track key metrics including conversion funnel performance, lookalike audience performance, and overall scaling success.</p>
+                        <p>As a professional Ads Campaign Manager, I don't just "run ads" — I build complete campaign architectures that drive measurable results. I specialize in Google Ads (Search, Display, Shopping, YouTube, Performance Max) and Meta Ads Manager (Facebook & Instagram). My services include campaign structure setup with proper hierarchy of campaigns, ad groups, ads, and keywords for maximum organization and performance, advanced audience targeting using in-market segments, affinity audiences, custom segments, detailed demographics, and lookalike audiences to reach the right people at the right time, A/B testing of headlines, descriptions, CTAs, display paths, and landing pages to continuously improve performance, CTR optimization through compelling ad copy and creative design that stops the scroll and drives clicks, CPC control and bid strategy management (maximize clicks, target CPA, maximize conversions, target ROAS, enhanced CPC) to ensure you're never overpaying for clicks, retargeting campaign setup for both website visitors and engaged social media users to bring back warm traffic that didn't convert the first time, conversion tracking implementation via Google Tag Manager, Facebook Pixel, and Google Analytics 4 to accurately measure every conversion and attribute it to the right campaign, ad fatigue management by regularly refreshing creatives to prevent audience burnout and maintain performance, and scaling strategies that increase budget profitably while maintaining or improving CPA and ROAS. I track key metrics including conversion funnel performance (impressions to clicks to conversions), lookalike audience performance vs interest-based targeting, retargeting effectiveness (frequency, CTR, conversion rate), bid strategy efficiency, pixel tracking accuracy, and overall scaling strategy success. Whether you're an e-commerce store wanting to scale sales profitably, a B2B company seeking qualified leads, or a local business wanting more phone calls and direction requests — I build campaigns that deliver positive ROI and help you grow sustainably.</p>
                     </div>
                 </div>
             </div>
@@ -906,13 +907,13 @@
             </div>
         </div>
 
-        <!-- SOCIAL LINKS -->
+        <!-- SOCIAL LINKS - Only Icons -->
         <div class="social-links-section">
             <h3>Connect With Me</h3>
             <div class="social-links">
-                <a href="https://www.linkedin.com/in/m-arham-link-builder/" class="social-link linkedin">🔵 LinkedIn</a>
-                <a href="https://www.instagram.com/marhamseo/" class="social-link instagram">📷 Instagram</a>
-                <a href="https://www.facebook.com/arhamblogger" class="social-link facebook">📘 Facebook</a>
+                <a href="https://www.linkedin.com/in/m-arham-link-builder/" target="_blank" class="social-link linkedin">🔵</a>
+                <a href="https://www.instagram.com/marhamseo/" target="_blank" class="social-link instagram">📷</a>
+                <a href="https://www.facebook.com/arhamblogger" target="_blank" class="social-link facebook">📘</a>
             </div>
         </div>
 
