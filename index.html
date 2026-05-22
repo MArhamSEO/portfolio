@@ -24,11 +24,22 @@
             color: #ffffff;
             line-height: 1.6;
             overflow-x: hidden;
+            cursor: default;
         }
 
-        /* Custom Cursor */
+        /* Normal cursor - no hand shape */
         a, button, .btn, .social-link, .nav-menu a, .stat-card, .featured-card, .why-card, .achievement-card, .exp-single-item, .service-item, .whatido-item {
+            cursor: default;
+        }
+
+        /* Only back to top button has pointer */
+        .back-to-top {
             cursor: pointer;
+        }
+
+        /* Red color on hover for interactive elements */
+        a:hover, .btn:hover, .social-link:hover, .nav-menu a:hover, .stat-card:hover, .featured-card:hover, .why-card:hover, .achievement-card:hover, .exp-single-item:hover {
+            cursor: default;
         }
 
         /* Smooth Scroll Animation */
@@ -166,7 +177,7 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            cursor: pointer;
+            cursor: default;
         }
 
         .logo-img {
@@ -200,7 +211,7 @@
             padding: 8px 18px;
             border-radius: 40px;
             transition: all 0.3s ease;
-            cursor: pointer;
+            cursor: default;
             font-size: 0.95rem;
         }
 
@@ -229,7 +240,7 @@
             border-radius: 50%;
             margin: 0 auto 25px;
             overflow: hidden;
-            cursor: pointer;
+            cursor: default;
             border: 3px solid #800000;
             box-shadow: 0 10px 30px rgba(128,0,0,0.3);
             transition: all 0.3s ease;
@@ -273,7 +284,7 @@
             margin: 8px;
             transition: all 0.3s ease;
             border: none;
-            cursor: pointer;
+            cursor: default;
             text-decoration: none;
         }
 
@@ -309,6 +320,7 @@
             border-radius: 24px;
             border: 1px solid rgba(128,0,0,0.2);
             transition: all 0.3s ease;
+            cursor: default;
         }
 
         .stat-card:hover {
@@ -350,6 +362,7 @@
             text-align: center;
             transition: all 0.3s ease;
             border: 1px solid rgba(128, 0, 0, 0.2);
+            cursor: default;
         }
 
         .featured-card:hover {
@@ -374,6 +387,7 @@
             border-radius: 20px;
             text-align: center;
             transition: all 0.3s ease;
+            cursor: default;
         }
 
         .why-card:hover {
@@ -439,15 +453,23 @@
             transform: scale(1.02);
         }
 
-        /* Picture swaps */
-        .whatido-image.linkbuilding-img img, .service-image.linkbuilding-service img {
+        /* About page - Only Ads image height small */
+        .whatido-image.ads-img img {
             max-height: 80px;
             object-fit: cover;
             width: 100%;
         }
 
-        .whatido-image.local-seo-img img, .service-image.local-seo-service img {
-            max-height: 300px;
+        /* About page - Link Building image normal (no restriction) */
+        .whatido-image.linkbuilding-img img {
+            max-height: none;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        /* Service page - Link Building and Ads images height small */
+        .service-image.linkbuilding-service img, .service-image.ads-service img {
+            max-height: 80px;
             object-fit: cover;
             width: 100%;
         }
@@ -483,6 +505,7 @@
             border-left: 4px solid #800000;
             border-radius: 16px;
             transition: all 0.3s ease;
+            cursor: default;
         }
 
         .exp-single-item:hover {
@@ -514,6 +537,7 @@
             text-align: center;
             transition: all 0.3s ease;
             border: 1px solid rgba(128, 0, 0, 0.2);
+            cursor: default;
         }
 
         .achievement-card:hover {
@@ -865,6 +889,7 @@
                     </div>
                 </div>
 
+                <!-- Link Building - Normal image height -->
                 <div class="whatido-item reverse linkbuilding-img">
                     <div class="whatido-image"><img src="SMO.jpg" alt="Link Building"></div>
                     <div class="whatido-content">
@@ -932,6 +957,7 @@
                     </div>
                 </div>
 
+                <!-- Ads Campaign - Only this image height small on About page -->
                 <div class="whatido-item reverse ads-img">
                     <div class="whatido-image"><img src="smm.jpg" alt="Ads Management"></div>
                     <div class="whatido-content">
@@ -984,7 +1010,7 @@
             </div>
         </div>
 
-        <!-- SERVICES PAGE - Updated with Detailed Link Building Section -->
+        <!-- SERVICES PAGE -->
         <div id="services-page" class="page">
             <div class="section-card fade-on-scroll">
                 <h2>Services I Offer</h2>
@@ -997,7 +1023,7 @@
                     </div>
                 </div>
 
-                <!-- Link Building Section - Detailed Niches -->
+                <!-- Link Building - Small image height -->
                 <div class="service-item reverse linkbuilding-service">
                     <div class="service-image"><img src="SMO.jpg" alt="Link Building"></div>
                     <div class="service-content">
@@ -1042,6 +1068,7 @@
                     </div>
                 </div>
 
+                <!-- Ads Campaign - Small image height -->
                 <div class="service-item reverse ads-service">
                     <div class="service-image"><img src="smm.jpg" alt="Ads Management"></div>
                     <div class="service-content">
@@ -1177,7 +1204,6 @@
             window.location.hash = pageName;
             window.scrollTo({top: 0, behavior: 'smooth'});
             
-            // Re-observe fade elements on page change
             setTimeout(() => {
                 document.querySelectorAll('.fade-on-scroll').forEach(el => {
                     observer.observe(el);
