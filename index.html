@@ -13,11 +13,18 @@
     
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:Arial,Helvetica,sans-serif;background:#1a1a1a;color:#f5f5f5;line-height:1.5}
+        body{font-family:Arial,Helvetica,sans-serif;background:#1a1a1a;color:#f5f5f5;line-height:1.5;cursor:default}
         .container{max-width:100%;margin:0 auto;padding:12px;width:100%}
         @media (min-width:768px){.container{max-width:1200px;padding:20px}}
         
-        /* Optimized - No heavy animations */
+        /* All clickable elements - Hand Cursor */
+        .nav-menu a, .nav-logo, .btn, .social-links-footer a, .stat-card, 
+        .featured-card, .why-card, .achievement-card, .exp-single-item, 
+        .service-item, .whatido-item, .faq-item, .niche-tag, .whatsapp-btn,
+        .footer-section a, .email-box a, .back-to-top, .profile-img {
+            cursor: pointer;
+        }
+        
         .hero{text-align:center;padding:40px 15px;background:rgba(50,45,45,0.85);border-radius:24px;margin-bottom:25px;border:1px solid rgba(139,0,0,0.4)}
         @media (min-width:768px){.hero{padding:60px 20px;margin-bottom:40px;border-radius:40px}}
         
@@ -30,14 +37,14 @@
         
         .navbar{background:rgba(30,30,30,0.95);border-radius:50px;padding:10px 15px;margin-bottom:20px;border:1px solid rgba(139,0,0,0.4);position:sticky;top:10px;z-index:1000;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
         @media (min-width:768px){.navbar{padding:12px 25px;margin-bottom:30px;border-radius:60px}}
-        .nav-logo{display:flex;align-items:center;gap:8px;cursor:pointer}
+        .nav-logo{display:flex;align-items:center;gap:8px}
         .logo-img{width:35px;height:35px;border-radius:50%;object-fit:cover;border:2px solid #8B0000}
         @media (min-width:768px){.logo-img{width:45px;height:45px}}
         .logo-text{font-size:1rem;font-weight:700;background:linear-gradient(135deg,#fff,#c0a0a0);-webkit-background-clip:text;background-clip:text;color:transparent}
         @media (min-width:768px){.logo-text{font-size:1.3rem}}
         .nav-menu{display:flex;gap:5px;list-style:none;flex-wrap:wrap}
         @media (min-width:768px){.nav-menu{gap:8px}}
-        .nav-menu a{color:#e0e0e0;text-decoration:none;font-weight:500;padding:6px 12px;border-radius:30px;transition:.2s;cursor:pointer;font-size:.75rem}
+        .nav-menu a{color:#e0e0e0;text-decoration:none;font-weight:500;padding:6px 12px;border-radius:30px;transition:.2s;font-size:.75rem}
         @media (min-width:768px){.nav-menu a{padding:8px 18px;font-size:.9rem}}
         .nav-menu a:hover,.nav-menu a.active{background:#8B0000;color:#fff}
         
@@ -45,7 +52,7 @@
         .page.active-page{display:block}
         @keyframes fadeIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
         
-        .profile-img{width:110px;height:110px;border-radius:50%;margin:0 auto 15px;overflow:hidden;cursor:pointer;border:3px solid #8B0000}
+        .profile-img{width:110px;height:110px;border-radius:50%;margin:0 auto 15px;overflow:hidden;border:3px solid #8B0000}
         @media (min-width:768px){.profile-img{width:140px;height:140px;margin:0 auto 25px}}
         .profile-img img{width:100%;height:100%;object-fit:cover}
         
@@ -54,7 +61,7 @@
         h2{font-size:1.3rem;margin-bottom:15px;border-left:4px solid #8B0000;padding-left:12px;font-weight:600}
         @media (min-width:768px){h2{font-size:1.6rem;margin-bottom:20px;padding-left:15px}}
         
-        .btn{display:inline-block;background:#8B0000;color:#fff;padding:8px 20px;border-radius:40px;font-weight:600;margin:5px;transition:.2s;border:none;cursor:pointer;text-decoration:none;font-size:.85rem}
+        .btn{display:inline-block;background:#8B0000;color:#fff;padding:8px 20px;border-radius:40px;font-weight:600;margin:5px;transition:.2s;border:none;text-decoration:none;font-size:.85rem}
         @media (min-width:768px){.btn{padding:10px 28px;margin:6px;font-size:1rem}}
         .btn:hover{background:#a01010;transform:translateY(-2px)}
         .btn-outline{background:0 0;border:2px solid #8B0000;color:#c0a0a0}
@@ -62,7 +69,7 @@
         
         .stats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:25px}
         @media (min-width:500px){.stats-grid{grid-template-columns:repeat(4,1fr)}}
-        .stat-card{background:rgba(60,55,55,0.85);text-align:center;padding:12px 8px;border-radius:16px;border:1px solid rgba(139,0,0,0.3);transition:.2s;cursor:pointer}
+        .stat-card{background:rgba(60,55,55,0.85);text-align:center;padding:12px 8px;border-radius:16px;border:1px solid rgba(139,0,0,0.3);transition:.2s}
         .stat-card:hover{background:#8B0000;transform:translateY(-3px)}
         .stat-number{font-size:1.4rem;font-weight:800;color:#c0a0a0}
         .stat-card:hover .stat-number{color:#fff}
@@ -73,14 +80,14 @@
         
         .featured-grid{display:grid;grid-template-columns:1fr;gap:12px;margin-top:10px}
         @media (min-width:500px){.featured-grid{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}}
-        .featured-card{background:rgba(70,60,60,0.7);padding:15px 12px;border-radius:16px;text-align:center;border:1px solid rgba(139,0,0,0.3);transition:.2s;cursor:pointer}
+        .featured-card{background:rgba(70,60,60,0.7);padding:15px 12px;border-radius:16px;text-align:center;border:1px solid rgba(139,0,0,0.3);transition:.2s}
         .featured-card:hover{background:#8B0000;transform:translateY(-3px)}
         .featured-icon{font-size:1.8rem;margin-bottom:8px}
         @media (min-width:768px){.featured-icon{font-size:2.2rem;margin-bottom:12px}}
         
         .why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
         @media (min-width:500px){.why-grid{grid-template-columns:repeat(4,1fr)}}
-        .why-card{background:rgba(70,60,60,0.7);padding:12px;border-radius:16px;text-align:center;transition:.2s;cursor:pointer}
+        .why-card{background:rgba(70,60,60,0.7);padding:12px;border-radius:16px;text-align:center;transition:.2s}
         .why-card:hover{background:#8B0000;transform:translateY(-3px)}
         .why-icon{font-size:1.5rem;margin-bottom:8px}
         @media (min-width:768px){.why-icon{font-size:2rem;margin-bottom:12px}}
@@ -101,7 +108,6 @@
         .faq-answer{color:#d0d0d0;line-height:1.5;font-size:.75rem}
         @media (min-width:768px){.faq-question{font-size:1rem}.faq-answer{font-size:.85rem}}
         
-        /* Images - Fast loading */
         .whatido-item{display:flex;flex-direction:column;gap:15px;margin-bottom:30px}
         @media (min-width:768px){.whatido-item{flex-direction:row;align-items:center;gap:30px;margin-bottom:40px}.whatido-item.reverse{flex-direction:row-reverse}}
         .whatido-image{width:100%;border-radius:16px;overflow:hidden}
@@ -120,7 +126,7 @@
         .niche-tag:hover{background:#8B0000;color:#fff}
         
         .exp-list{display:flex;flex-direction:column;gap:10px}
-        .exp-single-item{background:rgba(70,60,60,0.7);padding:12px;border-left:4px solid #8B0000;border-radius:12px;transition:.2s;cursor:pointer}
+        .exp-single-item{background:rgba(70,60,60,0.7);padding:12px;border-left:4px solid #8B0000;border-radius:12px;transition:.2s}
         .exp-single-item:hover{background:#8B0000;transform:translateX(3px)}
         .exp-single-title{font-size:.85rem;font-weight:700;margin-bottom:4px}
         .exp-single-desc{color:#c0c0c0;font-size:.7rem}
@@ -128,7 +134,7 @@
         
         .achievements-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
         @media (min-width:500px){.achievements-grid{grid-template-columns:repeat(4,1fr)}}
-        .achievement-card{background:rgba(70,60,60,0.7);padding:10px;border-radius:12px;text-align:center;font-size:.7rem;border:1px solid rgba(139,0,0,0.3);transition:.2s;cursor:pointer}
+        .achievement-card{background:rgba(70,60,60,0.7);padding:10px;border-radius:12px;text-align:center;font-size:.7rem;border:1px solid rgba(139,0,0,0.3);transition:.2s}
         .achievement-card:hover{background:#8B0000;transform:translateY(-2px);color:#fff}
         
         .service-item{display:flex;flex-direction:column;gap:15px;margin-bottom:30px}
@@ -171,6 +177,7 @@
         .footer-bottom{text-align:center;padding-top:15px;border-top:1px solid rgba(139,0,0,0.2);color:#777;font-size:.7rem}
         .hashtag{color:#c0a0a0;margin-top:6px}
         
+        /* WhatsApp Button */
         .whatsapp-btn{position:fixed;bottom:30px;right:30px;width:55px;height:55px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:1000;box-shadow:0 4px 12px rgba(37,211,102,0.3);transition:.2s;text-decoration:none}
         .whatsapp-btn:hover{transform:scale(1.08);box-shadow:0 6px 16px rgba(37,211,102,0.4)}
         .whatsapp-btn i{font-size:30px;color:#fff}
