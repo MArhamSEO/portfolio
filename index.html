@@ -5,12 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>M Arham - Digital Marketing Expert | SEO | SMM | SMO | Ads</title>
     <meta name="description" content="Digital Marketing Expert with 4+ years experience. Specializing in SEO, Local SEO, Social Media Marketing, and Ads Campaign Management. 50+ happy clients.">
-    <meta name="keywords" content="SEO Expert, Digital Marketing, Local SEO, SMM, SMO, Guest Posting, Link Building, Ads Campaign, SaaS, Health, Ecommerce, Crypto">
+    <meta name="keywords" content="SEO Expert, Digital Marketing, Local SEO, SMM, SMO, Guest Posting, Link Building, Ads Campaign">
     <meta name="author" content="M Arham">
     <link rel="icon" type="image/png" href="profile1.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -19,20 +16,35 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
             background: #0a0a0a;
             background-image: radial-gradient(circle at 25% 0%, #2a1515 0%, #0a0a0a 100%);
             color: #ffffff;
-            line-height: 1.6;
-            overflow-x: hidden;
+            line-height: 1.5;
+        }
+
+        /* Mobile First Approach */
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 12px;
+            width: 100%;
+        }
+
+        /* Tablet and Desktop */
+        @media (min-width: 768px) {
+            .container {
+                max-width: 1200px;
+                padding: 20px;
+            }
         }
 
         .back-to-top {
             position: fixed;
-            bottom: 30px;
-            left: 30px;
-            width: 45px;
-            height: 45px;
+            bottom: 15px;
+            right: 15px;
+            width: 40px;
+            height: 40px;
             background: #800000;
             border-radius: 50%;
             display: flex;
@@ -43,7 +55,16 @@
             visibility: hidden;
             transition: all 0.3s ease;
             z-index: 1000;
-            box-shadow: 0 5px 15px rgba(128,0,0,0.3);
+            box-shadow: 0 2px 10px rgba(128,0,0,0.3);
+        }
+
+        @media (min-width: 768px) {
+            .back-to-top {
+                bottom: 30px;
+                right: 30px;
+                width: 45px;
+                height: 45px;
+            }
         }
 
         .back-to-top.show {
@@ -51,42 +72,60 @@
             visibility: visible;
         }
 
-        .back-to-top:hover {
-            background: #a00000;
-            transform: translateY(-3px);
-        }
-
         .hero {
             text-align: center;
-            padding: 60px 20px;
+            padding: 40px 15px;
             background: rgba(10, 10, 10, 0.8);
-            border-radius: 40px;
-            margin-bottom: 40px;
+            border-radius: 24px;
+            margin-bottom: 25px;
             border: 1px solid rgba(128, 0, 0, 0.3);
         }
 
+        @media (min-width: 768px) {
+            .hero {
+                padding: 60px 20px;
+                margin-bottom: 40px;
+                border-radius: 40px;
+            }
+        }
+
         .typing-wrapper {
-            margin: 25px 0;
+            margin: 20px 0;
         }
 
         .typing-container {
             display: inline-block;
             background: #800000;
-            padding: 10px 30px;
-            border-radius: 50px;
-            box-shadow: 0 0 20px rgba(128,0,0,0.5);
+            padding: 8px 20px;
+            border-radius: 40px;
+            box-shadow: 0 0 15px rgba(128,0,0,0.4);
         }
 
         .typing-text {
-            font-size: 1.3em;
+            font-size: 1rem;
             color: white;
             font-weight: 500;
         }
 
+        @media (min-width: 768px) {
+            .typing-text {
+                font-size: 1.3rem;
+            }
+            .typing-container {
+                padding: 10px 30px;
+            }
+        }
+
         .typed-cursor {
-            font-size: 1.3em;
+            font-size: 1rem;
             color: white;
             animation: blink 0.7s infinite;
+        }
+
+        @media (min-width: 768px) {
+            .typed-cursor {
+                font-size: 1.3rem;
+            }
         }
 
         @keyframes blink {
@@ -95,44 +134,54 @@
         }
 
         .navbar {
-            background: rgba(10, 10, 10, 0.9);
-            border-radius: 60px;
-            padding: 10px 25px;
-            margin-bottom: 30px;
+            background: rgba(10, 10, 10, 0.95);
+            border-radius: 50px;
+            padding: 10px 15px;
+            margin-bottom: 20px;
             border: 1px solid rgba(128, 0, 0, 0.3);
             position: sticky;
-            top: 15px;
+            top: 10px;
             z-index: 1000;
-            backdrop-filter: blur(15px);
+            backdrop-filter: blur(10px);
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
+            gap: 10px;
         }
 
-        .navbar.scrolled {
-            background: rgba(10, 10, 10, 0.98);
-            border-color: #800000;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        @media (min-width: 768px) {
+            .navbar {
+                padding: 12px 25px;
+                margin-bottom: 30px;
+                border-radius: 60px;
+            }
         }
 
         .nav-logo {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 8px;
             cursor: pointer;
         }
 
         .logo-img {
-            width: 45px;
-            height: 45px;
+            width: 35px;
+            height: 35px;
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid #800000;
         }
 
+        @media (min-width: 768px) {
+            .logo-img {
+                width: 45px;
+                height: 45px;
+            }
+        }
+
         .logo-text {
-            font-size: 1.3rem;
+            font-size: 1rem;
             font-weight: 700;
             background: linear-gradient(135deg, #fff, #e0a0a0);
             -webkit-background-clip: text;
@@ -140,22 +189,41 @@
             color: transparent;
         }
 
+        @media (min-width: 768px) {
+            .logo-text {
+                font-size: 1.3rem;
+            }
+        }
+
         .nav-menu {
             display: flex;
-            gap: 8px;
+            gap: 5px;
             list-style: none;
             flex-wrap: wrap;
+        }
+
+        @media (min-width: 768px) {
+            .nav-menu {
+                gap: 8px;
+            }
         }
 
         .nav-menu a {
             color: #e0e0e0;
             text-decoration: none;
             font-weight: 500;
-            padding: 6px 16px;
-            border-radius: 40px;
+            padding: 6px 12px;
+            border-radius: 30px;
             transition: all 0.2s ease;
             cursor: pointer;
-            font-size: 0.9rem;
+            font-size: 0.75rem;
+        }
+
+        @media (min-width: 768px) {
+            .nav-menu a {
+                padding: 8px 18px;
+                font-size: 0.9rem;
+            }
         }
 
         .nav-menu a:hover, .nav-menu a.active {
@@ -173,20 +241,28 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(8px); }
+            from { opacity: 0; transform: translateY(5px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
         .profile-img {
-            width: 130px;
-            height: 130px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
-            margin: 0 auto 25px;
+            margin: 0 auto 15px;
             overflow: hidden;
             cursor: pointer;
             border: 3px solid #800000;
-            box-shadow: 0 10px 30px rgba(128,0,0,0.3);
+            box-shadow: 0 5px 15px rgba(128,0,0,0.3);
             transition: transform 0.3s ease;
+        }
+
+        @media (min-width: 768px) {
+            .profile-img {
+                width: 130px;
+                height: 130px;
+                margin: 0 auto 25px;
+            }
         }
 
         .profile-img img {
@@ -195,12 +271,8 @@
             object-fit: cover;
         }
 
-        .profile-img:hover {
-            transform: scale(1.03);
-        }
-
         h1 {
-            font-size: 2.8rem;
+            font-size: 2rem;
             font-weight: 700;
             margin-bottom: 0;
             background: linear-gradient(135deg, #ffffff, #e0a0a0);
@@ -209,374 +281,593 @@
             color: transparent;
         }
 
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 2.8rem;
+            }
+        }
+
         h2 {
-            font-size: 1.6rem;
-            margin-bottom: 20px;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
             border-left: 4px solid #800000;
-            padding-left: 15px;
+            padding-left: 12px;
             font-weight: 600;
+        }
+
+        @media (min-width: 768px) {
+            h2 {
+                font-size: 1.6rem;
+                margin-bottom: 20px;
+                padding-left: 15px;
+            }
         }
 
         .btn {
             display: inline-block;
             background: #800000;
             color: white;
-            padding: 10px 28px;
+            padding: 8px 20px;
             border-radius: 40px;
             font-weight: 600;
-            margin: 6px;
+            margin: 5px;
             transition: all 0.2s ease;
             border: none;
             cursor: pointer;
             text-decoration: none;
+            font-size: 0.85rem;
         }
 
-        .btn:hover {
-            background: #a00000;
-            transform: translateY(-2px);
+        @media (min-width: 768px) {
+            .btn {
+                padding: 10px 28px;
+                margin: 6px;
+                font-size: 1rem;
+            }
         }
 
-        .btn-outline {
-            background: transparent;
-            border: 2px solid #800000;
-            color: #e0a0a0;
+        .btn-large {
+            padding: 8px 20px;
         }
 
-        .btn-outline:hover {
-            background: #800000;
-            color: white;
+        @media (min-width: 768px) {
+            .btn-large {
+                padding: 12px 32px;
+            }
         }
 
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 15px;
-            margin-bottom: 35px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        @media (min-width: 500px) {
+            .stats-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 12px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .stats-grid {
+                gap: 15px;
+                margin-bottom: 35px;
+            }
         }
 
         .stat-card {
             background: rgba(20, 15, 15, 0.7);
             backdrop-filter: blur(10px);
             text-align: center;
-            padding: 20px 12px;
-            border-radius: 20px;
+            padding: 12px 8px;
+            border-radius: 16px;
             border: 1px solid rgba(128,0,0,0.2);
-            transition: all 0.2s ease;
         }
 
-        .stat-card:hover {
-            transform: translateY(-3px);
-            border-color: rgba(128,0,0,0.5);
+        @media (min-width: 768px) {
+            .stat-card {
+                padding: 20px 15px;
+                border-radius: 20px;
+            }
         }
 
         .stat-number {
-            font-size: 2rem;
+            font-size: 1.4rem;
             font-weight: 800;
             color: #e0a0a0;
+        }
+
+        @media (min-width: 768px) {
+            .stat-number {
+                font-size: 2rem;
+            }
         }
 
         .section-card {
             background: rgba(20, 15, 15, 0.7);
             backdrop-filter: blur(10px);
-            border-radius: 24px;
-            padding: 35px;
-            margin-bottom: 25px;
+            border-radius: 20px;
+            padding: 20px 15px;
+            margin-bottom: 20px;
             border: 1px solid rgba(128, 0, 0, 0.2);
-            transition: all 0.2s ease;
         }
 
-        .section-card:hover {
-            border-color: rgba(128,0,0,0.4);
+        @media (min-width: 768px) {
+            .section-card {
+                padding: 35px 30px;
+                border-radius: 24px;
+                margin-bottom: 25px;
+            }
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        @media (min-width: 500px) {
+            .featured-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 15px;
+            }
+        }
+
+        .featured-card {
+            background: rgba(30, 20, 20, 0.5);
+            padding: 15px 12px;
+            border-radius: 16px;
+            text-align: center;
+            border: 1px solid rgba(128, 0, 0, 0.2);
+        }
+
+        @media (min-width: 768px) {
+            .featured-card {
+                padding: 25px 20px;
+                border-radius: 20px;
+            }
+        }
+
+        .featured-icon {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+        }
+
+        @media (min-width: 768px) {
+            .featured-icon {
+                font-size: 2.2rem;
+                margin-bottom: 12px;
+            }
+        }
+
+        .featured-card h3 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        @media (min-width: 768px) {
+            .featured-card h3 {
+                font-size: 1.2rem;
+            }
+        }
+
+        .featured-card p {
+            font-size: 0.75rem;
+        }
+
+        @media (min-width: 768px) {
+            .featured-card p {
+                font-size: 0.85rem;
+            }
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        @media (min-width: 500px) {
+            .why-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .why-card {
+            background: rgba(30, 20, 20, 0.5);
+            padding: 12px;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .why-card {
+                padding: 20px;
+                border-radius: 20px;
+            }
+        }
+
+        .why-icon {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+
+        @media (min-width: 768px) {
+            .why-icon {
+                font-size: 2rem;
+                margin-bottom: 12px;
+            }
+        }
+
+        .why-card h3 {
+            font-size: 0.8rem;
+        }
+
+        @media (min-width: 768px) {
+            .why-card h3 {
+                font-size: 1rem;
+            }
+        }
+
+        .why-card p {
+            font-size: 0.65rem;
+        }
+
+        @media (min-width: 768px) {
+            .why-card p {
+                font-size: 0.8rem;
+            }
         }
 
         .testimonial-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 10px;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        @media (min-width: 600px) {
+            .testimonial-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         .testimonial-box {
             background: rgba(30, 20, 20, 0.5);
-            padding: 20px;
-            border-radius: 16px;
+            padding: 15px;
+            border-radius: 14px;
             border: 1px solid rgba(128, 0, 0, 0.3);
-            transition: all 0.2s ease;
         }
 
-        .testimonial-box:hover {
-            border-color: rgba(128,0,0,0.6);
-            transform: translateY(-2px);
+        @media (min-width: 768px) {
+            .testimonial-box {
+                padding: 20px;
+                border-radius: 16px;
+            }
         }
 
         .testimonial-text {
             font-style: italic;
             color: #e0e0e0;
-            line-height: 1.7;
-            margin-bottom: 12px;
-            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 8px;
+            font-size: 0.8rem;
+        }
+
+        @media (min-width: 768px) {
+            .testimonial-text {
+                font-size: 0.9rem;
+                margin-bottom: 12px;
+            }
         }
 
         .testimonial-author {
             color: #e0a0a0;
-            font-size: 0.8rem;
+            font-size: 0.7rem;
             font-weight: 600;
         }
 
         .faq-item {
             background: rgba(30, 20, 20, 0.5);
-            padding: 18px 20px;
-            border-radius: 14px;
-            margin-bottom: 12px;
+            padding: 12px;
+            border-radius: 12px;
+            margin-bottom: 10px;
             border-left: 3px solid #800000;
+        }
+
+        @media (min-width: 768px) {
+            .faq-item {
+                padding: 18px 20px;
+                border-radius: 14px;
+                margin-bottom: 12px;
+            }
         }
 
         .faq-question {
             font-weight: 700;
             color: #e0a0a0;
-            margin-bottom: 8px;
-            font-size: 1rem;
+            margin-bottom: 5px;
+            font-size: 0.85rem;
+        }
+
+        @media (min-width: 768px) {
+            .faq-question {
+                font-size: 1rem;
+                margin-bottom: 8px;
+            }
         }
 
         .faq-answer {
             color: #c0c0c0;
-            line-height: 1.6;
-            font-size: 0.9rem;
+            line-height: 1.5;
+            font-size: 0.75rem;
         }
 
-        .featured-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        .featured-card {
-            background: rgba(30, 20, 20, 0.5);
-            padding: 20px 15px;
-            border-radius: 18px;
-            text-align: center;
-            transition: all 0.2s ease;
-            border: 1px solid rgba(128, 0, 0, 0.2);
-        }
-
-        .featured-card:hover {
-            background: rgba(128,0,0,0.2);
-            transform: translateY(-3px);
-        }
-
-        .featured-icon {
-            font-size: 2.2rem;
-            margin-bottom: 12px;
-        }
-
-        .why-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-            gap: 15px;
-        }
-
-        .why-card {
-            background: rgba(30, 20, 20, 0.5);
-            padding: 20px;
-            border-radius: 18px;
-            text-align: center;
-            transition: all 0.2s ease;
-        }
-
-        .why-card:hover {
-            background: rgba(128,0,0,0.3);
-            transform: translateY(-3px);
-        }
-
-        .why-icon {
-            font-size: 2rem;
-            margin-bottom: 12px;
-        }
-
-        .niches-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 12px;
-            padding-top: 12px;
-            border-top: 1px solid rgba(128,0,0,0.3);
-        }
-
-        .niche-tag {
-            background: rgba(128,0,0,0.2);
-            padding: 4px 10px;
-            border-radius: 30px;
-            font-size: 0.7rem;
-            color: #e0a0a0;
-            border: 1px solid rgba(128,0,0,0.3);
+        @media (min-width: 768px) {
+            .faq-answer {
+                font-size: 0.9rem;
+            }
         }
 
         .whatido-item {
             display: flex;
-            align-items: center;
-            gap: 30px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
         }
 
-        .whatido-item.reverse {
-            flex-direction: row-reverse;
+        @media (min-width: 768px) {
+            .whatido-item {
+                flex-direction: row;
+                align-items: center;
+                gap: 30px;
+                margin-bottom: 40px;
+            }
+            .whatido-item.reverse {
+                flex-direction: row-reverse;
+            }
         }
 
         .whatido-image {
-            flex: 1;
-            min-width: 250px;
-            border-radius: 18px;
+            width: 100%;
+            border-radius: 16px;
             overflow: hidden;
+        }
+
+        @media (min-width: 768px) {
+            .whatido-image {
+                flex: 1;
+                min-width: 280px;
+            }
         }
 
         .whatido-image img {
             width: 100%;
-            height: 300px;
+            height: auto;
+            max-height: 200px;
             object-fit: cover;
-            border-radius: 18px;
-            transition: transform 0.3s ease;
+            border-radius: 16px;
         }
 
-        .whatido-image img:hover {
-            transform: scale(1.02);
+        @media (min-width: 768px) {
+            .whatido-image img {
+                height: 260px;
+            }
         }
 
         .whatido-content {
-            flex: 1;
+            width: 100%;
+        }
+
+        @media (min-width: 768px) {
+            .whatido-content {
+                flex: 1;
+            }
         }
 
         .whatido-content h3 {
-            font-size: 1.3rem;
-            margin-bottom: 12px;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        @media (min-width: 768px) {
+            .whatido-content h3 {
+                font-size: 1.3rem;
+                margin-bottom: 12px;
+            }
         }
 
         .whatido-content ul {
-            margin-left: 20px;
-            line-height: 1.7;
+            margin-left: 18px;
+            line-height: 1.6;
         }
 
         .whatido-content li {
-            margin-bottom: 6px;
+            margin-bottom: 5px;
             color: #d0d0d0;
+            font-size: 0.8rem;
+        }
+
+        @media (min-width: 768px) {
+            .whatido-content li {
+                font-size: 0.9rem;
+                margin-bottom: 6px;
+            }
         }
 
         .exp-list {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
         }
 
         .exp-single-item {
             background: rgba(30, 20, 20, 0.5);
-            padding: 15px 20px;
+            padding: 12px;
             border-left: 4px solid #800000;
-            border-radius: 14px;
-            transition: all 0.2s ease;
+            border-radius: 12px;
         }
 
-        .exp-single-item:hover {
-            background: rgba(128,0,0,0.2);
-            transform: translateX(3px);
+        @media (min-width: 768px) {
+            .exp-single-item {
+                padding: 15px 20px;
+            }
         }
 
         .exp-single-title {
-            font-size: 1rem;
+            font-size: 0.85rem;
             font-weight: 700;
-            margin-bottom: 5px;
+            margin-bottom: 4px;
+        }
+
+        @media (min-width: 768px) {
+            .exp-single-title {
+                font-size: 1rem;
+            }
         }
 
         .exp-single-desc {
             color: #c0c0c0;
-            font-size: 0.8rem;
+            font-size: 0.7rem;
+        }
+
+        @media (min-width: 768px) {
+            .exp-single-desc {
+                font-size: 0.8rem;
+            }
         }
 
         .achievements-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 12px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        @media (min-width: 500px) {
+            .achievements-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
         }
 
         .achievement-card {
             background: rgba(30, 20, 20, 0.5);
-            padding: 12px;
-            border-radius: 14px;
+            padding: 10px;
+            border-radius: 12px;
             text-align: center;
-            transition: all 0.2s ease;
-            border: 1px solid rgba(128, 0, 0, 0.2);
-            font-size: 0.85rem;
+            font-size: 0.7rem;
         }
 
-        .achievement-card:hover {
-            background: rgba(128,0,0,0.3);
-            transform: translateY(-2px);
+        @media (min-width: 768px) {
+            .achievement-card {
+                padding: 12px;
+                font-size: 0.85rem;
+            }
         }
 
         .service-item {
             display: flex;
-            align-items: center;
-            gap: 30px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
         }
 
-        .service-item.reverse {
-            flex-direction: row-reverse;
+        @media (min-width: 768px) {
+            .service-item {
+                flex-direction: row;
+                align-items: center;
+                gap: 30px;
+                margin-bottom: 40px;
+            }
+            .service-item.reverse {
+                flex-direction: row-reverse;
+            }
         }
 
         .service-image {
-            flex: 1;
-            min-width: 250px;
-            border-radius: 18px;
+            width: 100%;
+            border-radius: 16px;
             overflow: hidden;
+        }
+
+        @media (min-width: 768px) {
+            .service-image {
+                flex: 1;
+                min-width: 280px;
+            }
         }
 
         .service-image img {
             width: 100%;
-            height: 300px;
+            height: auto;
+            max-height: 200px;
             object-fit: cover;
-            border-radius: 18px;
-            transition: transform 0.3s ease;
+            border-radius: 16px;
         }
 
-        .service-item.linkbuilding-service .service-image img {
-            height: 380px;
+        @media (min-width: 768px) {
+            .service-image img {
+                height: 280px;
+            }
         }
 
         .service-content {
-            flex: 1;
+            width: 100%;
+        }
+
+        @media (min-width: 768px) {
+            .service-content {
+                flex: 1;
+            }
         }
 
         .service-content h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        @media (min-width: 768px) {
+            .service-content h3 {
+                font-size: 1.3rem;
+                margin-bottom: 10px;
+            }
         }
 
         .service-content p {
             color: #d0d0d0;
-            line-height: 1.6;
-            font-size: 0.9rem;
+            line-height: 1.5;
+            font-size: 0.8rem;
+        }
+
+        @media (min-width: 768px) {
+            .service-content p {
+                font-size: 0.9rem;
+            }
         }
 
         .client-work-box {
             background: linear-gradient(135deg, rgba(30,20,20,0.8), rgba(20,15,15,0.8));
             border: 1px solid rgba(128,0,0,0.4);
-            border-radius: 18px;
-            padding: 18px;
-            margin-top: 15px;
+            border-radius: 16px;
+            padding: 15px;
+        }
+
+        @media (min-width: 768px) {
+            .client-work-box {
+                padding: 18px;
+            }
         }
 
         .contact-wrapper {
-            max-width: 650px;
-            margin: 0 auto;
+            max-width: 100%;
         }
 
-        .contact-top p {
-            text-align: center;
-            margin-bottom: 20px;
-            line-height: 1.7;
-            font-size: 0.95rem;
+        @media (min-width: 768px) {
+            .contact-wrapper {
+                max-width: 650px;
+                margin: 0 auto;
+            }
         }
 
         .contact-form input, .contact-form textarea {
@@ -588,15 +879,13 @@
             background: rgba(30, 20, 20, 0.8);
             color: white;
             font-family: inherit;
+            font-size: 0.85rem;
         }
 
-        .contact-form input:focus, .contact-form textarea:focus {
-            outline: none;
-            border-color: #a00000;
-        }
-
-        .contact-form button {
-            width: 100%;
+        @media (min-width: 768px) {
+            .contact-form input, .contact-form textarea {
+                padding: 12px;
+            }
         }
 
         .email-section {
@@ -610,44 +899,57 @@
             padding: 5px 15px;
             border-radius: 40px;
             border: 1px solid #800000;
+            font-size: 0.75rem;
         }
 
-        .email-box a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
+        @media (min-width: 768px) {
+            .email-box {
+                padding: 6px 18px;
+                font-size: 0.85rem;
+            }
         }
 
         .footer {
             background: rgba(10, 10, 10, 0.95);
-            border-radius: 25px;
-            padding: 30px;
-            margin-top: 30px;
-            border-top: 1px solid rgba(128,0,0,0.3);
+            border-radius: 20px;
+            padding: 20px;
+            margin-top: 25px;
+        }
+
+        @media (min-width: 768px) {
+            .footer {
+                padding: 35px;
+                margin-top: 35px;
+                border-radius: 30px;
+            }
         }
 
         .footer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin-bottom: 20px;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            text-align: center;
+        }
+
+        @media (min-width: 600px) {
+            .footer-grid {
+                grid-template-columns: repeat(3, 1fr);
+                text-align: left;
+                gap: 30px;
+            }
         }
 
         .footer-section h4 {
-            font-size: 0.95rem;
-            margin-bottom: 10px;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
             color: #e0a0a0;
         }
 
         .footer-section p, .footer-section a {
             color: #888;
             text-decoration: none;
-            line-height: 1.6;
-            font-size: 0.8rem;
-        }
-
-        .footer-section a:hover {
-            color: #e0a0a0;
+            line-height: 1.5;
+            font-size: 0.75rem;
         }
 
         .social-links-footer {
@@ -655,6 +957,12 @@
             gap: 10px;
             margin-top: 10px;
             justify-content: center;
+        }
+
+        @media (min-width: 600px) {
+            .social-links-footer {
+                justify-content: flex-start;
+            }
         }
 
         .social-links-footer a {
@@ -668,17 +976,12 @@
             transition: all 0.2s ease;
         }
 
-        .social-links-footer a:hover {
-            background: #800000;
-            transform: translateY(-2px);
-        }
-
         .footer-bottom {
             text-align: center;
             padding-top: 15px;
             border-top: 1px solid rgba(128,0,0,0.2);
             color: #666;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
         }
 
         .hashtag {
@@ -686,65 +989,21 @@
             margin-top: 6px;
         }
 
-        @media (max-width: 768px) {
-            .container {
-                padding: 12px;
-            }
-            .navbar {
-                flex-direction: column;
-                gap: 10px;
-                border-radius: 25px;
-                padding: 10px 15px;
-            }
-            .nav-menu a {
-                padding: 4px 10px;
-                font-size: 0.8rem;
-            }
-            h1 {
-                font-size: 2rem;
-            }
-            .hero {
-                padding: 35px 15px;
-            }
-            .section-card {
-                padding: 20px 15px;
-            }
-            .achievements-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .whatido-item, .whatido-item.reverse, .service-item, .service-item.reverse {
-                flex-direction: column;
-                gap: 15px;
-            }
-            .whatido-image img, .service-image img {
-                height: 220px;
-            }
-            .service-item.linkbuilding-service .service-image img {
-                height: 280px;
-            }
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 10px;
-            }
-            .featured-grid, .why-grid {
-                grid-template-columns: 1fr;
-                gap: 10px;
-            }
-            .testimonial-grid {
-                grid-template-columns: 1fr;
-            }
-            .back-to-top {
-                left: 15px;
-                bottom: 15px;
-                width: 38px;
-                height: 38px;
-            }
-            .typing-text {
-                font-size: 0.9rem;
-            }
-            .typing-container {
-                padding: 5px 15px;
-            }
+        .niches-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid rgba(128,0,0,0.3);
+        }
+
+        .niche-tag {
+            background: rgba(128,0,0,0.2);
+            padding: 3px 8px;
+            border-radius: 20px;
+            font-size: 0.65rem;
+            color: #e0a0a0;
         }
     </style>
     <script src="https://www.google.com/recaptcha/api.js?render=6LfB3vEsAAAAAMkBL2ir6WAmuh_pptslwle0MteR"></script>
@@ -769,7 +1028,7 @@
             </ul>
         </nav>
 
-        <!-- HOME PAGE (With Testimonials) -->
+        <!-- HOME PAGE -->
         <div id="home-page" class="page active-page">
             <div class="hero">
                 <div class="hero-content">
@@ -790,56 +1049,56 @@
             </div>
 
             <div class="stats-grid">
-                <div class="stat-card"><div class="stat-number">4+</div><div>Years Experience</div></div>
+                <div class="stat-card"><div class="stat-number">4+</div><div>Years Exp</div></div>
                 <div class="stat-card"><div class="stat-number">50+</div><div>Happy Clients</div></div>
-                <div class="stat-card"><div class="stat-number">200+</div><div>Keywords Ranked</div></div>
+                <div class="stat-card"><div class="stat-number">200+</div><div>Keywords</div></div>
                 <div class="stat-card"><div class="stat-number">500+</div><div>Guest Posts</div></div>
             </div>
 
             <div class="section-card">
                 <h2>Welcome to My Digital Marketing Portfolio</h2>
-                <p>I'm M Arham, a passionate Digital Marketing Expert with over 4+ years helping businesses grow online. I specialize in SEO, SMM, SMO, and Ads Campaigns. My data-driven strategies have helped 50+ clients achieve top rankings on Google and significantly increase their revenue.</p>
+                <p style="font-size: 0.85rem; line-height: 1.5;">I'm M Arham, a passionate Digital Marketing Expert with over 4+ years helping businesses grow online. I specialize in SEO, SMM, SMO, and Ads Campaigns. My data-driven strategies have helped 50+ clients achieve top rankings on Google.</p>
             </div>
 
             <div class="section-card">
                 <h2>Featured Services</h2>
                 <div class="featured-grid">
-                    <div class="featured-card"><div class="featured-icon">🔍</div><h3>SEO and Local SEO</h3><p>On-Page SEO | Technical SEO | Local SEO | Google Business Profile</p></div>
-                    <div class="featured-card"><div class="featured-icon">🔗</div><h3>Off-Page SEO</h3><p>Link Building | Guest Posting | HARO | Broken Link Building</p></div>
-                    <div class="featured-card"><div class="featured-icon">📱</div><h3>SMM and SMO</h3><p>Organic Growth | Paid Ads | Lead Generation | ROAS Optimization</p></div>
+                    <div class="featured-card"><div class="featured-icon">🔍</div><h3>SEO and Local SEO</h3><p>On-Page | Technical | Local SEO | GBP</p></div>
+                    <div class="featured-card"><div class="featured-icon">🔗</div><h3>Off-Page SEO</h3><p>Link Building | Guest Posting | HARO</p></div>
+                    <div class="featured-card"><div class="featured-icon">📱</div><h3>SMM and SMO</h3><p>Organic Growth | Paid Ads | ROAS</p></div>
                 </div>
-                <div style="text-align: center; margin-top: 15px;"><a onclick="showPage('services')" class="btn btn-outline">View All Services →</a></div>
+                <div style="text-align: center; margin-top: 12px;"><a onclick="showPage('services')" class="btn btn-outline">View All →</a></div>
             </div>
 
             <div class="section-card">
                 <h2>Why Choose Me</h2>
                 <div class="why-grid">
-                    <div class="why-card"><div class="why-icon">📊</div><h3>Data-Driven</h3><p>Analytics based strategies</p></div>
+                    <div class="why-card"><div class="why-icon">📊</div><h3>Data-Driven</h3><p>Analytics based</p></div>
                     <div class="why-card"><div class="why-icon">💬</div><h3>24/7 Support</h3><p>Always available</p></div>
-                    <div class="why-card"><div class="why-icon">📈</div><h3>Monthly Reporting</h3><p>Detailed reports</p></div>
-                    <div class="why-card"><div class="why-icon">🏆</div><h3>Proven Track</h3><p>50+ satisfied clients</p></div>
+                    <div class="why-card"><div class="why-icon">📈</div><h3>Reports</h3><p>Monthly detailed</p></div>
+                    <div class="why-card"><div class="why-icon">🏆</div><h3>Proven Track</h3><p>50+ clients</p></div>
                 </div>
             </div>
 
-            <!-- TESTIMONIALS - Only on Home Page -->
+            <!-- TESTIMONIALS -->
             <div class="section-card">
                 <h2>Client Testimonials</h2>
                 <div class="testimonial-grid">
                     <div class="testimonial-box">
-                        <div class="testimonial-text">"Successfully completed an SEO project for my small business. Delivered 5 high-quality guest posts on DA 50+ websites with dofollow backlinks. Professional work, clear communication, and delivered on time. Will definitely work again."</div>
-                        <div class="testimonial-author">— SEO & Link Building Project, Fiverr Client (2025)</div>
+                        <div class="testimonial-text">"Successfully completed SEO project. Delivered 5 high-quality guest posts on DA 50+ websites. Professional work."</div>
+                        <div class="testimonial-author">— Fiverr Client (2025)</div>
                     </div>
                     <div class="testimonial-box">
-                        <div class="testimonial-text">"Professional digital marketing services. The guest posts provided were on relevant, high-authority sites. Good value for money. Client was satisfied with the results and the impact on search rankings."</div>
-                        <div class="testimonial-author">— Digital Marketing Campaign, Anonymous Client</div>
+                        <div class="testimonial-text">"Professional digital marketing services. Client was satisfied with the results and impact on rankings."</div>
+                        <div class="testimonial-author">— Anonymous Client</div>
                     </div>
                 </div>
             </div>
 
             <div class="section-card" style="text-align: center; background: linear-gradient(135deg, #1a0a0a, #2a1515);">
                 <h2>Ready to Grow Your Business?</h2>
-                <p style="margin-bottom: 15px;">Let's discuss how I can help you achieve your digital marketing goals.</p>
-                <a onclick="showPage('contact')" class="btn btn-large">Get Free Consultation</a>
+                <p style="margin-bottom: 12px; font-size: 0.85rem;">Let's discuss your digital marketing goals.</p>
+                <a onclick="showPage('contact')" class="btn">Free Consultation</a>
             </div>
         </div>
 
@@ -847,14 +1106,14 @@
         <div id="about-page" class="page">
             <div class="section-card">
                 <h2>About Me</h2>
-                <p style="text-align: center;">I am a passionate Digital Marketing Expert with 4+ years of experience helping businesses grow online. I specialize in SEO, SMM, SMO, Ads Campaigns. I have helped 50+ clients achieve their business goals through data-driven digital marketing strategies.</p>
+                <p style="text-align: center; font-size: 0.85rem;">I am a passionate Digital Marketing Expert with 4+ years of experience helping businesses grow online. I specialize in SEO, SMM, SMO, Ads Campaigns. I have helped 50+ clients achieve their business goals.</p>
             </div>
 
             <div class="section-card">
                 <h2>What I Do</h2>
                 
                 <div class="whatido-item">
-                    <div class="whatido-image"><img src="SEO.jpg" alt="SEO Expert" loading="lazy"></div>
+                    <div class="whatido-image"><img src="SEO.jpg" alt="SEO" loading="lazy"></div>
                     <div class="whatido-content">
                         <h3>Search Engine Optimization</h3>
                         <ul>
@@ -863,7 +1122,6 @@
                             <li>Technical SEO and Core Web Vitals</li>
                             <li>Mobile Friendly and Schema Markup</li>
                             <li>Keyword Research and Content Strategy</li>
-                            <li>Rankings and Traffic Growth</li>
                         </ul>
                     </div>
                 </div>
@@ -878,13 +1136,12 @@
                             <li>Broken Link Building</li>
                             <li>Profile Backlinks Creation</li>
                             <li>Competitor Backlink Analysis</li>
-                            <li>Niche Edits and Contextual Links</li>
                         </ul>
                         <div class="niches-list">
                             <span class="niche-tag">SaaS</span>
                             <span class="niche-tag">Health</span>
                             <span class="niche-tag">Tech</span>
-                            <span class="niche-tag">E-commerce</span>
+                            <span class="niche-tag">E-com</span>
                             <span class="niche-tag">Crypto</span>
                         </div>
                     </div>
@@ -900,7 +1157,6 @@
                             <li>Services and Product Optimization</li>
                             <li>Geo-tagged Images and Q&A Management</li>
                             <li>NAP Consistency and Review Management</li>
-                            <li>Local Citations on Yellow Pages, Justdial</li>
                         </ul>
                     </div>
                 </div>
@@ -915,7 +1171,6 @@
                             <li>Content Strategy and Pillars</li>
                             <li>Audience Psychology and Retention</li>
                             <li>Hashtag Strategy and Collaborations</li>
-                            <li>Monthly Performance Analytics</li>
                         </ul>
                     </div>
                 </div>
@@ -930,7 +1185,6 @@
                             <li>Sales Funnel Management</li>
                             <li>Retargeting and Conversion Tracking</li>
                             <li>Lookalike and Custom Audiences</li>
-                            <li>A/B Testing and Scaling</li>
                         </ul>
                     </div>
                 </div>
@@ -945,7 +1199,6 @@
                             <li>Campaign Structure and Targeting</li>
                             <li>CTR Optimization and Bid Strategy</li>
                             <li>Conversion Tracking via GTM and Pixel</li>
-                            <li>ROAS Scaling and Performance Reporting</li>
                         </ul>
                     </div>
                 </div>
@@ -954,10 +1207,10 @@
             <div class="section-card">
                 <h2>Experience and Expertise</h2>
                 <div class="exp-list">
-                    <div class="exp-single-item"><div class="exp-single-title">On-Page and Technical SEO</div><div>SEO Audit | Meta Tags | Site Speed | Schema Markup | Core Web Vitals</div></div>
-                    <div class="exp-single-item"><div class="exp-single-title">Off-Page SEO and Link Building</div><div>Guest Posting | HARO | Broken Links | Profile Backlinks | Niche Edits</div></div>
-                    <div class="exp-single-item"><div class="exp-single-title">Local SEO and Google Business Profile</div><div>GBP | NAP | Reviews | Citations | Yellow Pages</div></div>
-                    <div class="exp-single-item"><div class="exp-single-title">Social Media and Ads</div><div>Profile Optimization | Lead Gen | Retargeting | ROAS | Scaling</div></div>
+                    <div class="exp-single-item"><div class="exp-single-title">On-Page and Technical SEO</div><div>SEO Audit | Meta Tags | Site Speed | Schema Markup</div></div>
+                    <div class="exp-single-item"><div class="exp-single-title">Off-Page SEO and Link Building</div><div>Guest Posting | HARO | Broken Links | Profile Backlinks</div></div>
+                    <div class="exp-single-item"><div class="exp-single-title">Local SEO and Google Business Profile</div><div>GBP | NAP | Reviews | Citations</div></div>
+                    <div class="exp-single-item"><div class="exp-single-title">Social Media and Ads</div><div>Profile Optimization | Lead Gen | Retargeting | ROAS</div></div>
                 </div>
             </div>
 
@@ -965,13 +1218,11 @@
                 <h2>Client Work</h2>
                 <div class="client-work-box">
                     <h3>SEO and Link Building Project (2025)</h3>
-                    <ul>
-                        <li>Successfully completed SEO project for a small business client</li>
-                        <li>Delivered 5 high-quality guest posts on DA 50+ websites</li>
-                        <li>Provided quality dofollow backlinks for SEO improvement</li>
-                        <li>Client satisfaction delivered with measurable results</li>
+                    <ul style="margin-left: 18px;">
+                        <li>Completed SEO project for a small business client</li>
+                        <li>Delivered 5 guest posts on DA 50+ websites</li>
+                        <li>Provided quality dofollow backlinks</li>
                     </ul>
-                    <p style="margin-top: 10px; font-size: 0.8rem; color: #e0a0a0;">(Detailed portfolio available upon request)</p>
                 </div>
             </div>
 
@@ -986,7 +1237,7 @@
             </div>
         </div>
 
-        <!-- SERVICES PAGE (Removed $50,000 line) -->
+        <!-- SERVICES PAGE -->
         <div id="services-page" class="page">
             <div class="section-card">
                 <h2>Services I Offer</h2>
@@ -995,17 +1246,15 @@
                     <div class="service-image"><img src="SEO.jpg" alt="SEO" loading="lazy"></div>
                     <div class="service-content">
                         <h3>Search Engine Optimization</h3>
-                        <p>I provide complete SEO solutions to help businesses rank higher on Google. Services include website audit, on-page optimization, technical SEO, mobile-friendly optimization, schema markup, content optimization, and Core Web Vitals improvement. I focus on sustainable white-hat SEO strategies that deliver long-term results.</p>
+                        <p>Complete SEO solutions including website audit, on-page optimization, technical SEO, mobile-friendly optimization, schema markup, content optimization, and Core Web Vitals improvement. White-hat strategies for long-term results.</p>
                     </div>
                 </div>
 
-                <div class="service-item reverse linkbuilding-service">
+                <div class="service-item reverse">
                     <div class="service-image"><img src="SMO.jpg" alt="Link Building" loading="lazy"></div>
                     <div class="service-content">
                         <h3>Link Building and Guest Posting</h3>
-                        <p>Link building is essential for increasing website authority. I specialize in guest posting on websites with DA 50+ and strong Domain Rating (DR), HARO link building, broken link building, competitor analysis, niche edits, and local link building.</p>
-                        <p><strong>Industries:</strong> Health, SaaS, Technology, E-commerce, Crypto</p>
-                        <p>I have successfully published over 500 guest posts on high-quality, relevant websites that drive real traffic and improve rankings. All placements are on sites with good domain rating (DR 50+) and genuine organic traffic. I do not use black hat techniques or PBNs.</p>
+                        <p>Guest posting on DA 50+ sites, HARO link building, broken link building, competitor analysis, and niche edits. Industries: Health, SaaS, Technology, E-commerce, Crypto. Over 500 guest posts published. No black hat techniques.</p>
                     </div>
                 </div>
 
@@ -1013,7 +1262,7 @@
                     <div class="service-image"><img src="linkbuilding.jpg" alt="Local SEO" loading="lazy"></div>
                     <div class="service-content">
                         <h3>Local SEO and Google Business Profile</h3>
-                        <p>I help businesses dominate local search results and appear in Google's Local Pack. Services include Google Business Profile optimization, NAP consistency, review management, local citations, and tracking local metrics including CTR, calls, direction requests, and engagement.</p>
+                        <p>Help businesses dominate local search results. Services include GBP optimization, NAP consistency, review management, local citations, and tracking CTR, calls, and direction requests.</p>
                     </div>
                 </div>
 
@@ -1021,7 +1270,7 @@
                     <div class="service-image"><img src="social.jpg" alt="SMO" loading="lazy"></div>
                     <div class="service-content">
                         <h3>Social Media Optimization</h3>
-                        <p>Grow your brand organically without paid ads. Services include profile optimization, organic reach growth, engagement rate improvement, branding consistency, content strategy, audience psychology, and organic growth strategies including hashtag strategy and collaborations.</p>
+                        <p>Grow your brand organically. Services include profile optimization, organic reach growth, engagement rate improvement, content strategy, audience psychology, and hashtag strategy.</p>
                     </div>
                 </div>
 
@@ -1029,7 +1278,7 @@
                     <div class="service-image"><img src="adds.jpg" alt="SMM" loading="lazy"></div>
                     <div class="service-content">
                         <h3>Social Media Marketing</h3>
-                        <p>Generate leads and sales through paid ads. Services include paid ads strategy, lead generation, sales funnel management, retargeting, conversion tracking and ROAS optimization, audience targeting, A/B testing, and scaling winning campaigns.</p>
+                        <p>Generate leads and sales through paid ads. Services include paid ads strategy, lead generation, sales funnel management, retargeting, conversion tracking, ROAS optimization, and A/B testing.</p>
                     </div>
                 </div>
 
@@ -1037,19 +1286,19 @@
                     <div class="service-image"><img src="smm.jpg" alt="Ads Management" loading="lazy"></div>
                     <div class="service-content">
                         <h3>Ads Campaign Management</h3>
-                        <p>I build complete campaign architectures on Google Ads and Meta Ads Manager. Services include campaign structure, audience targeting, A/B testing, CTR optimization, bid strategy, retargeting, conversion tracking, ad fatigue management, and scaling strategies that maintain CPA and ROAS.</p>
+                        <p>Campaign architecture on Google Ads and Meta Ads Manager. Services include campaign structure, audience targeting, A/B testing, CTR optimization, bid strategy, retargeting, and conversion tracking.</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- CONTACT PAGE (With FAQ Section - Only Here) -->
+        <!-- CONTACT PAGE WITH FAQ -->
         <div id="contact-page" class="page">
             <div class="section-card">
                 <h2>Contact Me</h2>
                 <div class="contact-wrapper">
                     <div class="contact-top">
-                        <p>Ready to take your business to the next level? I offer free 15-minute consultations to understand your business goals. Whether you need SEO, social media strategy, backlinks, or ad campaigns — I have you covered. Fill out the form below or email me directly.</p>
+                        <p style="font-size: 0.85rem;">Ready to take your business to the next level? I offer free 15-minute consultations. Fill out the form below or email me directly.</p>
                     </div>
                     <div class="contact-form">
                         <form action="https://formsubmit.co/marham2772@gmail.com" method="POST" id="contactForm">
@@ -1068,53 +1317,48 @@
                 </div>
             </div>
 
-            <!-- FAQ SECTION - Only on Contact Page -->
+            <!-- FAQ SECTION -->
             <div class="section-card">
                 <h2>Frequently Asked Questions</h2>
                 
                 <div class="faq-item">
                     <div class="faq-question">How long does SEO take to show results?</div>
-                    <div class="faq-answer">Domain Rating (DR) can increase within 2-3 months through quality backlinks and guest posting. However, significant ranking improvements and organic traffic growth typically take 4-6 months. I focus on sustainable white-hat SEO strategies that deliver long-term results, not quick shortcuts that risk Google penalties.</div>
+                    <div class="faq-answer">DR can increase within 2-3 months. Significant ranking improvements take 4-6 months. I use white-hat strategies for long-term results.</div>
                 </div>
                 
                 <div class="faq-item">
                     <div class="faq-question">Do you use black hat SEO techniques?</div>
-                    <div class="faq-answer">No, absolutely not. I strictly follow white hat SEO practices recommended by Google. I do not use PBNs, link farms, keyword stuffing, or any other black hat techniques. All my strategies are sustainable and risk-free.</div>
+                    <div class="faq-answer">No. I strictly follow white-hat SEO practices recommended by Google. No PBNs, link farms, or keyword stuffing.</div>
                 </div>
                 
                 <div class="faq-item">
                     <div class="faq-question">How does Local SEO work for my business?</div>
-                    <div class="faq-answer">Local SEO helps your business appear in Google's Local Pack and Maps results. I optimize your Google Business Profile, manage NAP consistency across directories like Yellow Pages and Justdial, build local citations, and track metrics like calls, direction requests, and CTR to improve local visibility.</div>
+                    <div class="faq-answer">I optimize your Google Business Profile, manage NAP consistency, build local citations, and track calls and direction requests.</div>
                 </div>
                 
                 <div class="faq-item">
                     <div class="faq-question">What social media platforms do you specialize in?</div>
-                    <div class="faq-answer">For organic growth (SMO), I specialize in Facebook, Instagram, LinkedIn, Twitter, and TikTok. For paid ads (SMM), I focus on Facebook, Instagram, LinkedIn, and TikTok. Each platform strategy is tailored to your specific audience and business goals.</div>
+                    <div class="faq-answer">For organic: Facebook, Instagram, LinkedIn, Twitter. For paid ads: Facebook, Instagram, LinkedIn, TikTok.</div>
                 </div>
                 
                 <div class="faq-item">
                     <div class="faq-question">Do you offer free revisions?</div>
-                    <div class="faq-answer">Yes, two rounds of revisions are included free of charge for every project. Additional revisions may incur extra charges depending on the scope of changes requested.</div>
+                    <div class="faq-answer">Yes, two rounds of revisions are included free of charge.</div>
                 </div>
                 
                 <div class="faq-item">
-                    <div class="faq-question">Can you sign a Non-Disclosure Agreement (NDA)?</div>
-                    <div class="faq-answer">Absolutely. I respect client confidentiality and am happy to sign an NDA before starting any project. Client data and project details are never shared without permission.</div>
+                    <div class="faq-question">Can you sign an NDA?</div>
+                    <div class="faq-answer">Absolutely. Client confidentiality is respected.</div>
                 </div>
                 
                 <div class="faq-item">
-                    <div class="faq-question">What kind of reporting do you provide?</div>
-                    <div class="faq-answer">I provide detailed monthly reports including keyword rankings, organic traffic analysis, backlink profiles, conversion data, and ROI analysis. All reports are customized based on your specific goals and KPIs.</div>
+                    <div class="faq-question">What reporting do you provide?</div>
+                    <div class="faq-answer">Monthly reports including keyword rankings, traffic analysis, backlink profiles, and ROI analysis.</div>
                 </div>
                 
                 <div class="faq-item">
-                    <div class="faq-question">Do you take urgent or rush orders?</div>
-                    <div class="faq-answer">Yes, depending on my current workload. Rush orders may incur an additional fee of 25-50% depending on the urgency and complexity of the project.</div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">What is your refund policy?</div>
-                    <div class="faq-answer">Once work has commenced, refunds are not available. However, I am committed to client satisfaction and will work with you until the agreed-upon deliverables are met.</div>
+                    <div class="faq-question">Do you take rush orders?</div>
+                    <div class="faq-answer">Yes, depending on workload. Rush fees may apply.</div>
                 </div>
             </div>
         </div>
@@ -1124,7 +1368,7 @@
             <div class="footer-grid">
                 <div class="footer-section">
                     <h4>M Arham</h4>
-                    <p>Digital Marketing Expert helping businesses grow online with SEO, SMM, SMO, and Ads campaigns.</p>
+                    <p>Digital Marketing Expert helping businesses grow online.</p>
                     <div class="social-links-footer">
                         <a href="https://www.linkedin.com/in/m-arham-link-builder/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                         <a href="https://www.instagram.com/marhamseo/" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -1145,8 +1389,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2022 M Arham — Digital Marketing Expert | SEO | Local SEO | SMM | SMO | Ads</p>
-                <p>Let's take your business to the next level</p>
+                <p>© 2022 M Arham — Digital Marketing Expert</p>
                 <div class="hashtag">ArhamSEO</div>
             </div>
         </div>
@@ -1161,6 +1404,7 @@
         const typedTextElement = document.getElementById('typed-text');
 
         function typeEffect() {
+            if (!typedTextElement) return;
             const currentWord = words[wordIndex];
             if (isDeleting) {
                 typedTextElement.textContent = currentWord.substring(0, charIndex - 1);
@@ -1186,7 +1430,7 @@
             setTimeout(typeEffect, isDeleting ? 40 : 50);
         }
 
-        typeEffect();
+        setTimeout(typeEffect, 100);
 
         // Page Switching
         function showPage(pageName) {
@@ -1216,7 +1460,7 @@
         // Back to Top Button
         const backToTop = document.getElementById('backToTop');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
+            if (window.scrollY > 200) {
                 backToTop.classList.add('show');
             } else {
                 backToTop.classList.remove('show');
@@ -1254,6 +1498,7 @@
             });
         }
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
     <script src="//code.tidio.co/ndwq0nxyuk73fkqborgmyzzmjrtckfjw.js" async></script>
 </body>
 </html>
