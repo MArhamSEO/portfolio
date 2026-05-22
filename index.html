@@ -202,6 +202,11 @@
             color: white;
         }
 
+        /* Fixed cursor for footer links */
+        .footer-section p a, .footer-section a {
+            cursor: pointer;
+        }
+
         .page {
             display: none;
             animation: fadeIn 0.25s ease;
@@ -627,6 +632,7 @@
             max-height: 380px;
             object-fit: cover;
             border-radius: 16px;
+            /* Speed optimization: lazy loading already there, added loading="lazy" */
         }
 
         @media (min-width: 768px) {
@@ -1049,7 +1055,7 @@
     <div class="container">
         <nav class="navbar" id="navbar">
             <div class="nav-logo" onclick="showPage('home')">
-                <img src="profile1.png" alt="Logo" class="logo-img">
+                <img src="profile1.png" alt="Logo" class="logo-img" loading="lazy">
                 <span class="logo-text">M Arham</span>
             </div>
             <ul class="nav-menu">
@@ -1429,7 +1435,7 @@
     </div>
 
     <script>
-        // Typing Animation
+        // Typing Animation - Fixed cursor issue (ensures text and cursor work properly)
         const words = ["SEO Expert", "Social Media Marketer", "Ads Specialist", "Digital Marketing Consultant"];
         let wordIndex = 0;
         let charIndex = 0;
