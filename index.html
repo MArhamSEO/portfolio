@@ -20,7 +20,7 @@
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: #0a0a0a;
-            background-image: radial-gradient(circle at 25% 0%, #1a0a0a 0%, #0a0a0a 100%);
+            background-image: radial-gradient(circle at 25% 0%, #2a1515 0%, #0a0a0a 100%);
             color: #ffffff;
             line-height: 1.6;
             overflow-x: hidden;
@@ -35,13 +35,14 @@
             cursor: pointer;
         }
 
-        .fade-on-scroll {
+        /* Only for Home page fade effect - About page direct show */
+        .home-fade {
             opacity: 0;
             transform: translateY(25px);
             transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
 
-        .fade-on-scroll.visible {
+        .home-fade.visible {
             opacity: 1;
             transform: translateY(0);
         }
@@ -412,7 +413,7 @@
             transform: translateY(-2px);
         }
 
-        /* Pictures size - 300px height */
+        /* Pictures size - All 350px, Service Link Building 450px */
         .whatido-item {
             display: flex;
             align-items: center;
@@ -434,7 +435,7 @@
 
         .whatido-image img {
             width: 100%;
-            height: 300px;
+            height: 350px;
             object-fit: cover;
             border-radius: 20px;
             transition: transform 0.3s ease;
@@ -516,7 +517,7 @@
             transform: translateY(-3px);
         }
 
-        /* Services page images - 300px height */
+        /* Services page images - 350px for all, 450px for Link Building */
         .service-item {
             display: flex;
             align-items: center;
@@ -538,10 +539,15 @@
 
         .service-image img {
             width: 100%;
-            height: 300px;
+            height: 350px;
             object-fit: cover;
             border-radius: 20px;
             transition: transform 0.3s ease;
+        }
+
+        /* Link Building image on Service page - 450px height */
+        .service-item.linkbuilding-service .service-image img {
+            height: 450px;
         }
 
         .service-image img:hover {
@@ -741,7 +747,10 @@
                 gap: 20px;
             }
             .whatido-image img, .service-image img {
-                height: 220px;
+                height: 280px;
+            }
+            .service-item.linkbuilding-service .service-image img {
+                height: 320px;
             }
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -794,9 +803,9 @@
             </ul>
         </nav>
 
-        <!-- HOME PAGE (Same) -->
+        <!-- HOME PAGE -->
         <div id="home-page" class="page active-page">
-            <div class="hero fade-on-scroll">
+            <div class="hero home-fade">
                 <div class="hero-content">
                     <div class="profile-img"><img src="profile2.jpg.png" alt="M Arham"></div>
                     <h1>M Arham</h1>
@@ -815,18 +824,18 @@
             </div>
 
             <div class="stats-grid">
-                <div class="stat-card fade-on-scroll"><div class="stat-number">4+</div><div>Years Experience</div></div>
-                <div class="stat-card fade-on-scroll"><div class="stat-number">50+</div><div>Happy Clients</div></div>
-                <div class="stat-card fade-on-scroll"><div class="stat-number">200+</div><div>Keywords Ranked</div></div>
-                <div class="stat-card fade-on-scroll"><div class="stat-number">500+</div><div>Guest Posts</div></div>
+                <div class="stat-card home-fade"><div class="stat-number">4+</div><div>Years Experience</div></div>
+                <div class="stat-card home-fade"><div class="stat-number">50+</div><div>Happy Clients</div></div>
+                <div class="stat-card home-fade"><div class="stat-number">200+</div><div>Keywords Ranked</div></div>
+                <div class="stat-card home-fade"><div class="stat-number">500+</div><div>Guest Posts</div></div>
             </div>
 
-            <div class="section-card fade-on-scroll">
+            <div class="section-card home-fade">
                 <h2>Welcome to My Digital Marketing Portfolio</h2>
                 <p style="font-size: 1rem; line-height: 1.8;">I'm M Arham, a passionate Digital Marketing Expert with over 4+ years helping businesses grow online. I specialize in SEO, SMM, SMO, and Ads Campaigns. My data-driven strategies have helped 50+ clients achieve top rankings on Google and significantly increase their revenue.</p>
             </div>
 
-            <div class="section-card fade-on-scroll">
+            <div class="section-card home-fade">
                 <h2>Featured Services</h2>
                 <div class="featured-grid">
                     <div class="featured-card"><div class="featured-icon">🔍</div><h3>SEO and Local SEO</h3><p>On-Page SEO | Technical SEO | Local SEO | Google Business Profile</p></div>
@@ -836,7 +845,7 @@
                 <div style="text-align: center; margin-top: 20px;"><a onclick="showPage('services')" class="btn btn-outline">View All Services →</a></div>
             </div>
 
-            <div class="section-card fade-on-scroll">
+            <div class="section-card home-fade">
                 <h2>Why Choose Me</h2>
                 <div class="why-grid">
                     <div class="why-card"><div class="why-icon">📊</div><h3>Data-Driven</h3><p>Analytics based strategies</p></div>
@@ -846,21 +855,21 @@
                 </div>
             </div>
 
-            <div class="section-card fade-on-scroll" style="text-align: center; background: linear-gradient(135deg, #1a0a0a, #2a1515);">
+            <div class="section-card home-fade" style="text-align: center; background: linear-gradient(135deg, #1a0a0a, #2a1515);">
                 <h2>Ready to Grow Your Business?</h2>
                 <p style="margin-bottom: 20px;">Let's discuss how I can help you achieve your digital marketing goals.</p>
                 <a onclick="showPage('contact')" class="btn btn-large">Get Free Consultation</a>
             </div>
         </div>
 
-        <!-- ABOUT PAGE (Pictures 300px) -->
+        <!-- ABOUT PAGE - Direct show (no scroll animation) -->
         <div id="about-page" class="page">
-            <div class="section-card fade-on-scroll">
+            <div class="section-card">
                 <h2>About Me</h2>
                 <p style="font-size: 1rem; line-height: 1.8; text-align: center;">I am a passionate Digital Marketing Expert with 4+ years of experience helping businesses grow online. I specialize in SEO, SMM, SMO, Ads Campaigns. I have helped 50+ clients achieve their business goals through data-driven digital marketing strategies.</p>
             </div>
 
-            <div class="section-card fade-on-scroll">
+            <div class="section-card">
                 <h2>What I Do</h2>
                 
                 <div class="whatido-item">
@@ -961,7 +970,7 @@
                 </div>
             </div>
 
-            <div class="section-card fade-on-scroll">
+            <div class="section-card">
                 <h2>Experience and Expertise</h2>
                 <div class="exp-list">
                     <div class="exp-single-item"><div class="exp-single-title">On-Page and Technical SEO</div><div>SEO Audit | Meta Tags | Site Speed | Schema Markup | Core Web Vitals</div></div>
@@ -972,7 +981,7 @@
                 </div>
             </div>
 
-            <div class="section-card fade-on-scroll">
+            <div class="section-card">
                 <h2>Client Work</h2>
                 <div class="client-work-box">
                     <h3>SEO and Link Building Project (2025)</h3>
@@ -986,7 +995,7 @@
                 </div>
             </div>
 
-            <div class="section-card fade-on-scroll">
+            <div class="section-card">
                 <h2>Achievements</h2>
                 <div class="achievements-grid">
                     <div class="achievement-card">50+ Businesses</div>
@@ -997,9 +1006,9 @@
             </div>
         </div>
 
-        <!-- SERVICES PAGE (Pictures 300px) -->
+        <!-- SERVICES PAGE -->
         <div id="services-page" class="page">
-            <div class="section-card fade-on-scroll">
+            <div class="section-card">
                 <h2>Services I Offer</h2>
 
                 <div class="service-item">
@@ -1010,7 +1019,8 @@
                     </div>
                 </div>
 
-                <div class="service-item reverse">
+                <!-- Link Building - 450px height -->
+                <div class="service-item reverse linkbuilding-service">
                     <div class="service-image"><img src="SMO.jpg" alt="Link Building"></div>
                     <div class="service-content">
                         <h3>Link Building and Guest Posting</h3>
@@ -1065,7 +1075,7 @@
 
         <!-- CONTACT PAGE -->
         <div id="contact-page" class="page">
-            <div class="section-card fade-on-scroll">
+            <div class="section-card">
                 <h2>Contact Me</h2>
                 <div class="contact-wrapper">
                     <div class="contact-top">
@@ -1090,7 +1100,7 @@
         </div>
 
         <!-- FOOTER -->
-        <div class="footer fade-on-scroll">
+        <div class="footer">
             <div class="footer-grid">
                 <div class="footer-section">
                     <h4>M Arham</h4>
@@ -1158,8 +1168,8 @@
 
         typeEffect();
 
-        // Scroll Animation Observer
-        const fadeElements = document.querySelectorAll('.fade-on-scroll');
+        // Only Home page scroll animation
+        const homeFadeElements = document.querySelectorAll('.home-fade');
         
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -1169,7 +1179,7 @@
             });
         }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
 
-        fadeElements.forEach(el => observer.observe(el));
+        homeFadeElements.forEach(el => observer.observe(el));
 
         // Page Switching
         function showPage(pageName) {
@@ -1188,11 +1198,13 @@
             window.location.hash = pageName;
             window.scrollTo({top: 0, behavior: 'smooth'});
             
-            setTimeout(() => {
-                document.querySelectorAll('.fade-on-scroll').forEach(el => {
-                    observer.observe(el);
-                });
-            }, 100);
+            if (pageName === 'home') {
+                setTimeout(() => {
+                    document.querySelectorAll('.home-fade').forEach(el => {
+                        observer.observe(el);
+                    });
+                }, 100);
+            }
         }
 
         function loadPageFromHash() {
