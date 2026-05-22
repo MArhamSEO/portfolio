@@ -27,7 +27,6 @@
             cursor: default;
         }
 
-        /* Normal cursor */
         a, button, .btn, .social-link, .nav-menu a, .stat-card, .featured-card, .why-card, .achievement-card, .exp-single-item, .service-item, .whatido-item {
             cursor: default;
         }
@@ -36,11 +35,11 @@
             cursor: pointer;
         }
 
-        /* Smooth Scroll Animation - Faster */
+        /* Smooth Scroll Animation - Thora slow */
         .fade-on-scroll {
             opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.4s ease, transform 0.4s ease;
+            transform: translateY(25px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
 
         .fade-on-scroll.visible {
@@ -414,7 +413,7 @@
             transform: translateY(-2px);
         }
 
-        /* Image height reduced by 50% */
+        /* Pictures size - 240px height */
         .whatido-item {
             display: flex;
             align-items: center;
@@ -429,27 +428,21 @@
 
         .whatido-image {
             flex: 1;
-            min-width: 250px;
+            min-width: 280px;
             border-radius: 20px;
             overflow: hidden;
         }
 
         .whatido-image img {
             width: 100%;
+            height: 240px;
+            object-fit: cover;
             border-radius: 20px;
             transition: transform 0.3s ease;
         }
 
-        /* All images height reduced - 50% smaller */
-        .whatido-image img, .service-image img {
-            max-height: 100px;
-            object-fit: cover;
-            width: 100%;
-        }
-
-        /* Featured services images remain normal */
-        .featured-card .featured-icon {
-            font-size: 2.5rem;
+        .whatido-image img:hover {
+            transform: scale(1.02);
         }
 
         .whatido-content {
@@ -524,6 +517,7 @@
             transform: translateY(-3px);
         }
 
+        /* Services page images - 240px height */
         .service-item {
             display: flex;
             align-items: center;
@@ -538,15 +532,21 @@
 
         .service-image {
             flex: 1;
-            min-width: 250px;
+            min-width: 280px;
             border-radius: 20px;
             overflow: hidden;
         }
 
         .service-image img {
             width: 100%;
+            height: 240px;
+            object-fit: cover;
             border-radius: 20px;
             transition: transform 0.3s ease;
+        }
+
+        .service-image img:hover {
+            transform: scale(1.02);
         }
 
         .service-content {
@@ -741,6 +741,9 @@
                 flex-direction: column;
                 gap: 20px;
             }
+            .whatido-image img, .service-image img {
+                height: 200px;
+            }
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 12px;
@@ -851,7 +854,7 @@
             </div>
         </div>
 
-        <!-- ABOUT PAGE - Fast Loading -->
+        <!-- ABOUT PAGE -->
         <div id="about-page" class="page">
             <div class="section-card fade-on-scroll">
                 <h2>About Me</h2>
