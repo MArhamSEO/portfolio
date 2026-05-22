@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>M Arham - Digital Marketing Expert | SEO | SMM | SMO | Ads</title>
-    <meta name="description" content="Digital Marketing Expert with 4+ years experience. Specializing in SEO, Local SEO, Social Media Marketing, and Ads Campaign Management. 50+ happy clients.">
+    <meta name="description" content="Digital Marketing Expert with 4+ years experience. Specializing in SEO, Local SEO, Social Media Marketing, and Ads Campaign Management.">
     <meta name="keywords" content="SEO Expert, Digital Marketing, Local SEO, SMM, SMO, Guest Posting, Link Building, Ads Campaign">
     <meta name="author" content="M Arham">
     <link rel="icon" type="image/png" href="profile1.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -17,9 +20,9 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-            background: #0a0a0a;
-            background-image: radial-gradient(circle at 25% 0%, #2a1515 0%, #0a0a0a 100%);
-            color: #ffffff;
+            background: #0f0f0f;
+            background-image: radial-gradient(circle at 25% 0%, #2a1a1a 0%, #0f0f0f 100%);
+            color: #f0f0f0;
             line-height: 1.5;
         }
 
@@ -31,7 +34,6 @@
             width: 100%;
         }
 
-        /* Tablet and Desktop */
         @media (min-width: 768px) {
             .container {
                 max-width: 1200px;
@@ -39,13 +41,14 @@
             }
         }
 
+        /* Back to Top */
         .back-to-top {
             position: fixed;
             bottom: 15px;
             right: 15px;
             width: 40px;
             height: 40px;
-            background: #800000;
+            background: #8B0000;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -55,7 +58,7 @@
             visibility: hidden;
             transition: all 0.3s ease;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(128,0,0,0.3);
+            box-shadow: 0 2px 10px rgba(139,0,0,0.3);
         }
 
         @media (min-width: 768px) {
@@ -72,13 +75,20 @@
             visibility: visible;
         }
 
+        .back-to-top:hover {
+            background: #a01010;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
         .hero {
             text-align: center;
             padding: 40px 15px;
-            background: rgba(10, 10, 10, 0.8);
+            background: rgba(20, 15, 15, 0.7);
+            backdrop-filter: blur(10px);
             border-radius: 24px;
             margin-bottom: 25px;
-            border: 1px solid rgba(128, 0, 0, 0.3);
+            border: 1px solid rgba(139,0,0,0.3);
         }
 
         @media (min-width: 768px) {
@@ -89,16 +99,17 @@
             }
         }
 
+        /* Typing Animation */
         .typing-wrapper {
             margin: 20px 0;
         }
 
         .typing-container {
             display: inline-block;
-            background: #800000;
+            background: #8B0000;
             padding: 8px 20px;
             border-radius: 40px;
-            box-shadow: 0 0 15px rgba(128,0,0,0.4);
+            box-shadow: 0 0 15px rgba(139,0,0,0.4);
         }
 
         .typing-text {
@@ -122,23 +133,18 @@
             animation: blink 0.7s infinite;
         }
 
-        @media (min-width: 768px) {
-            .typed-cursor {
-                font-size: 1.3rem;
-            }
-        }
-
         @keyframes blink {
             0%, 100% { opacity: 1; }
             50% { opacity: 0; }
         }
 
+        /* Navbar */
         .navbar {
-            background: rgba(10, 10, 10, 0.95);
+            background: rgba(15, 15, 15, 0.95);
             border-radius: 50px;
             padding: 10px 15px;
             margin-bottom: 20px;
-            border: 1px solid rgba(128, 0, 0, 0.3);
+            border: 1px solid rgba(139,0,0,0.3);
             position: sticky;
             top: 10px;
             z-index: 1000;
@@ -170,7 +176,7 @@
             height: 35px;
             border-radius: 50%;
             object-fit: cover;
-            border: 2px solid #800000;
+            border: 2px solid #8B0000;
         }
 
         @media (min-width: 768px) {
@@ -183,7 +189,7 @@
         .logo-text {
             font-size: 1rem;
             font-weight: 700;
-            background: linear-gradient(135deg, #fff, #e0a0a0);
+            background: linear-gradient(135deg, #fff, #c0a0a0);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -209,7 +215,7 @@
         }
 
         .nav-menu a {
-            color: #e0e0e0;
+            color: #d0d0d0;
             text-decoration: none;
             font-weight: 500;
             padding: 6px 12px;
@@ -227,13 +233,14 @@
         }
 
         .nav-menu a:hover, .nav-menu a.active {
-            background: #800000;
+            background: #8B0000;
             color: white;
         }
 
+        /* Page Transitions */
         .page {
             display: none;
-            animation: fadeIn 0.2s ease;
+            animation: fadeIn 0.25s ease;
         }
 
         .page.active-page {
@@ -245,6 +252,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        /* Profile Image */
         .profile-img {
             width: 100px;
             height: 100px;
@@ -252,8 +260,8 @@
             margin: 0 auto 15px;
             overflow: hidden;
             cursor: pointer;
-            border: 3px solid #800000;
-            box-shadow: 0 5px 15px rgba(128,0,0,0.3);
+            border: 3px solid #8B0000;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
             transition: transform 0.3s ease;
         }
 
@@ -271,11 +279,16 @@
             object-fit: cover;
         }
 
+        .profile-img:hover {
+            transform: scale(1.02);
+        }
+
+        /* Typography */
         h1 {
             font-size: 2rem;
             font-weight: 700;
             margin-bottom: 0;
-            background: linear-gradient(135deg, #ffffff, #e0a0a0);
+            background: linear-gradient(135deg, #ffffff, #c0a0a0);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -290,9 +303,10 @@
         h2 {
             font-size: 1.3rem;
             margin-bottom: 15px;
-            border-left: 4px solid #800000;
+            border-left: 4px solid #8B0000;
             padding-left: 12px;
             font-weight: 600;
+            color: #f0f0f0;
         }
 
         @media (min-width: 768px) {
@@ -303,9 +317,10 @@
             }
         }
 
+        /* Buttons */
         .btn {
             display: inline-block;
-            background: #800000;
+            background: #8B0000;
             color: white;
             padding: 8px 20px;
             border-radius: 40px;
@@ -326,16 +341,23 @@
             }
         }
 
-        .btn-large {
-            padding: 8px 20px;
+        .btn:hover {
+            background: #a01010;
+            transform: translateY(-1px);
         }
 
-        @media (min-width: 768px) {
-            .btn-large {
-                padding: 12px 32px;
-            }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #8B0000;
+            color: #e0a0a0;
         }
 
+        .btn-outline:hover {
+            background: #8B0000;
+            color: white;
+        }
+
+        /* Statistics */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -350,27 +372,19 @@
             }
         }
 
-        @media (min-width: 768px) {
-            .stats-grid {
-                gap: 15px;
-                margin-bottom: 35px;
-            }
-        }
-
         .stat-card {
-            background: rgba(20, 15, 15, 0.7);
-            backdrop-filter: blur(10px);
+            background: rgba(25, 20, 20, 0.7);
+            backdrop-filter: blur(8px);
             text-align: center;
             padding: 12px 8px;
             border-radius: 16px;
-            border: 1px solid rgba(128,0,0,0.2);
+            border: 1px solid rgba(139,0,0,0.2);
+            transition: all 0.2s ease;
         }
 
-        @media (min-width: 768px) {
-            .stat-card {
-                padding: 20px 15px;
-                border-radius: 20px;
-            }
+        .stat-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(139,0,0,0.4);
         }
 
         .stat-number {
@@ -385,23 +399,30 @@
             }
         }
 
+        /* Section Cards */
         .section-card {
-            background: rgba(20, 15, 15, 0.7);
-            backdrop-filter: blur(10px);
+            background: rgba(25, 20, 20, 0.7);
+            backdrop-filter: blur(8px);
             border-radius: 20px;
             padding: 20px 15px;
             margin-bottom: 20px;
-            border: 1px solid rgba(128, 0, 0, 0.2);
+            border: 1px solid rgba(139, 0, 0, 0.2);
+            transition: all 0.2s ease;
+        }
+
+        .section-card:hover {
+            border-color: rgba(139,0,0,0.35);
         }
 
         @media (min-width: 768px) {
             .section-card {
-                padding: 35px 30px;
-                border-radius: 24px;
+                padding: 30px 25px;
                 margin-bottom: 25px;
+                border-radius: 24px;
             }
         }
 
+        /* Featured Grid */
         .featured-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -411,24 +432,23 @@
 
         @media (min-width: 500px) {
             .featured-grid {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
                 gap: 15px;
             }
         }
 
         .featured-card {
-            background: rgba(30, 20, 20, 0.5);
+            background: rgba(35, 25, 25, 0.5);
             padding: 15px 12px;
             border-radius: 16px;
             text-align: center;
-            border: 1px solid rgba(128, 0, 0, 0.2);
+            border: 1px solid rgba(139, 0, 0, 0.2);
+            transition: all 0.2s ease;
         }
 
-        @media (min-width: 768px) {
-            .featured-card {
-                padding: 25px 20px;
-                border-radius: 20px;
-            }
+        .featured-card:hover {
+            background: rgba(139,0,0,0.15);
+            transform: translateY(-2px);
         }
 
         .featured-icon {
@@ -443,27 +463,7 @@
             }
         }
 
-        .featured-card h3 {
-            font-size: 1rem;
-            margin-bottom: 8px;
-        }
-
-        @media (min-width: 768px) {
-            .featured-card h3 {
-                font-size: 1.2rem;
-            }
-        }
-
-        .featured-card p {
-            font-size: 0.75rem;
-        }
-
-        @media (min-width: 768px) {
-            .featured-card p {
-                font-size: 0.85rem;
-            }
-        }
-
+        /* Why Grid */
         .why-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -477,17 +477,16 @@
         }
 
         .why-card {
-            background: rgba(30, 20, 20, 0.5);
+            background: rgba(35, 25, 25, 0.5);
             padding: 12px;
             border-radius: 16px;
             text-align: center;
+            transition: all 0.2s ease;
         }
 
-        @media (min-width: 768px) {
-            .why-card {
-                padding: 20px;
-                border-radius: 20px;
-            }
+        .why-card:hover {
+            background: rgba(139,0,0,0.15);
+            transform: translateY(-2px);
         }
 
         .why-icon {
@@ -503,25 +502,26 @@
         }
 
         .why-card h3 {
-            font-size: 0.8rem;
+            font-size: 0.85rem;
+            margin-bottom: 4px;
+        }
+
+        .why-card p {
+            font-size: 0.7rem;
+            color: #c0c0c0;
         }
 
         @media (min-width: 768px) {
             .why-card h3 {
                 font-size: 1rem;
+                margin-bottom: 8px;
             }
-        }
-
-        .why-card p {
-            font-size: 0.65rem;
-        }
-
-        @media (min-width: 768px) {
             .why-card p {
                 font-size: 0.8rem;
             }
         }
 
+        /* Testimonials */
         .testimonial-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -535,17 +535,16 @@
         }
 
         .testimonial-box {
-            background: rgba(30, 20, 20, 0.5);
+            background: rgba(35, 25, 25, 0.5);
             padding: 15px;
             border-radius: 14px;
-            border: 1px solid rgba(128, 0, 0, 0.3);
+            border: 1px solid rgba(139, 0, 0, 0.3);
+            transition: all 0.2s ease;
         }
 
-        @media (min-width: 768px) {
-            .testimonial-box {
-                padding: 20px;
-                border-radius: 16px;
-            }
+        .testimonial-box:hover {
+            border-color: rgba(139,0,0,0.5);
+            transform: translateY(-2px);
         }
 
         .testimonial-text {
@@ -569,18 +568,23 @@
             font-weight: 600;
         }
 
+        /* FAQ */
         .faq-item {
-            background: rgba(30, 20, 20, 0.5);
+            background: rgba(35, 25, 25, 0.5);
             padding: 12px;
             border-radius: 12px;
             margin-bottom: 10px;
-            border-left: 3px solid #800000;
+            border-left: 3px solid #8B0000;
+            transition: all 0.2s ease;
+        }
+
+        .faq-item:hover {
+            background: rgba(35, 25, 25, 0.7);
         }
 
         @media (min-width: 768px) {
             .faq-item {
-                padding: 18px 20px;
-                border-radius: 14px;
+                padding: 15px 18px;
                 margin-bottom: 12px;
             }
         }
@@ -607,10 +611,11 @@
 
         @media (min-width: 768px) {
             .faq-answer {
-                font-size: 0.9rem;
+                font-size: 0.85rem;
             }
         }
 
+        /* What I Do Items */
         .whatido-item {
             display: flex;
             flex-direction: column;
@@ -649,6 +654,11 @@
             max-height: 200px;
             object-fit: cover;
             border-radius: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .whatido-image img:hover {
+            transform: scale(1.02);
         }
 
         @media (min-width: 768px) {
@@ -670,6 +680,7 @@
         .whatido-content h3 {
             font-size: 1.1rem;
             margin-bottom: 10px;
+            color: #f0f0f0;
         }
 
         @media (min-width: 768px) {
@@ -681,12 +692,12 @@
 
         .whatido-content ul {
             margin-left: 18px;
-            line-height: 1.6;
+            line-height: 1.5;
         }
 
         .whatido-content li {
             margin-bottom: 5px;
-            color: #d0d0d0;
+            color: #c0c0c0;
             font-size: 0.8rem;
         }
 
@@ -697,6 +708,30 @@
             }
         }
 
+        /* Niches Tags */
+        .niches-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid rgba(139,0,0,0.3);
+        }
+
+        .niche-tag {
+            background: rgba(139,0,0,0.2);
+            padding: 3px 8px;
+            border-radius: 20px;
+            font-size: 0.65rem;
+            color: #e0a0a0;
+            transition: all 0.2s ease;
+        }
+
+        .niche-tag:hover {
+            background: rgba(139,0,0,0.4);
+        }
+
+        /* Experience List */
         .exp-list {
             display: flex;
             flex-direction: column;
@@ -704,10 +739,16 @@
         }
 
         .exp-single-item {
-            background: rgba(30, 20, 20, 0.5);
+            background: rgba(35, 25, 25, 0.5);
             padding: 12px;
-            border-left: 4px solid #800000;
+            border-left: 4px solid #8B0000;
             border-radius: 12px;
+            transition: all 0.2s ease;
+        }
+
+        .exp-single-item:hover {
+            background: rgba(139,0,0,0.1);
+            transform: translateX(3px);
         }
 
         @media (min-width: 768px) {
@@ -720,6 +761,7 @@
             font-size: 0.85rem;
             font-weight: 700;
             margin-bottom: 4px;
+            color: #f0f0f0;
         }
 
         @media (min-width: 768px) {
@@ -739,6 +781,7 @@
             }
         }
 
+        /* Achievements */
         .achievements-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -752,11 +795,18 @@
         }
 
         .achievement-card {
-            background: rgba(30, 20, 20, 0.5);
+            background: rgba(35, 25, 25, 0.5);
             padding: 10px;
             border-radius: 12px;
             text-align: center;
             font-size: 0.7rem;
+            transition: all 0.2s ease;
+            border: 1px solid rgba(139,0,0,0.2);
+        }
+
+        .achievement-card:hover {
+            background: rgba(139,0,0,0.15);
+            transform: translateY(-2px);
         }
 
         @media (min-width: 768px) {
@@ -766,6 +816,7 @@
             }
         }
 
+        /* Services Items */
         .service-item {
             display: flex;
             flex-direction: column;
@@ -804,11 +855,16 @@
             max-height: 200px;
             object-fit: cover;
             border-radius: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .service-image img:hover {
+            transform: scale(1.02);
         }
 
         @media (min-width: 768px) {
             .service-image img {
-                height: 280px;
+                height: 260px;
             }
         }
 
@@ -825,6 +881,7 @@
         .service-content h3 {
             font-size: 1.1rem;
             margin-bottom: 8px;
+            color: #f0f0f0;
         }
 
         @media (min-width: 768px) {
@@ -835,7 +892,7 @@
         }
 
         .service-content p {
-            color: #d0d0d0;
+            color: #c0c0c0;
             line-height: 1.5;
             font-size: 0.8rem;
         }
@@ -846,19 +903,26 @@
             }
         }
 
+        /* Client Work Box */
         .client-work-box {
-            background: linear-gradient(135deg, rgba(30,20,20,0.8), rgba(20,15,15,0.8));
-            border: 1px solid rgba(128,0,0,0.4);
+            background: linear-gradient(135deg, rgba(35,25,25,0.8), rgba(25,20,20,0.8));
+            border: 1px solid rgba(139,0,0,0.4);
             border-radius: 16px;
             padding: 15px;
         }
 
-        @media (min-width: 768px) {
-            .client-work-box {
-                padding: 18px;
-            }
+        .client-work-box ul {
+            margin-left: 18px;
+            line-height: 1.5;
         }
 
+        .client-work-box li {
+            margin-bottom: 5px;
+            font-size: 0.8rem;
+            color: #c0c0c0;
+        }
+
+        /* Contact Form */
         .contact-wrapper {
             max-width: 100%;
         }
@@ -870,22 +934,31 @@
             }
         }
 
+        .contact-top p {
+            text-align: center;
+            margin-bottom: 15px;
+            line-height: 1.5;
+            font-size: 0.85rem;
+            color: #d0d0d0;
+        }
+
         .contact-form input, .contact-form textarea {
             width: 100%;
             padding: 10px;
             margin: 8px 0;
             border-radius: 10px;
-            border: 1px solid #800000;
-            background: rgba(30, 20, 20, 0.8);
+            border: 1px solid #8B0000;
+            background: rgba(35, 25, 25, 0.8);
             color: white;
             font-family: inherit;
             font-size: 0.85rem;
+            transition: all 0.2s ease;
         }
 
-        @media (min-width: 768px) {
-            .contact-form input, .contact-form textarea {
-                padding: 12px;
-            }
+        .contact-form input:focus, .contact-form textarea:focus {
+            outline: none;
+            border-color: #a01010;
+            box-shadow: 0 0 8px rgba(139,0,0,0.3);
         }
 
         .email-section {
@@ -895,30 +968,30 @@
 
         .email-box {
             display: inline-block;
-            background: rgba(30, 20, 20, 0.8);
+            background: rgba(35, 25, 25, 0.8);
             padding: 5px 15px;
             border-radius: 40px;
-            border: 1px solid #800000;
+            border: 1px solid #8B0000;
             font-size: 0.75rem;
+            transition: all 0.2s ease;
         }
 
-        @media (min-width: 768px) {
-            .email-box {
-                padding: 6px 18px;
-                font-size: 0.85rem;
-            }
+        .email-box:hover {
+            border-color: #a01010;
         }
 
+        /* Footer */
         .footer {
-            background: rgba(10, 10, 10, 0.95);
+            background: rgba(15, 15, 15, 0.95);
             border-radius: 20px;
             padding: 20px;
             margin-top: 25px;
+            border-top: 1px solid rgba(139,0,0,0.3);
         }
 
         @media (min-width: 768px) {
             .footer {
-                padding: 35px;
+                padding: 30px;
                 margin-top: 35px;
                 border-radius: 30px;
             }
@@ -952,6 +1025,10 @@
             font-size: 0.75rem;
         }
 
+        .footer-section a:hover {
+            color: #e0a0a0;
+        }
+
         .social-links-footer {
             display: flex;
             gap: 10px;
@@ -968,7 +1045,7 @@
         .social-links-footer a {
             width: 30px;
             height: 30px;
-            background: rgba(30, 20, 20, 0.8);
+            background: rgba(35, 25, 25, 0.8);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -976,10 +1053,15 @@
             transition: all 0.2s ease;
         }
 
+        .social-links-footer a:hover {
+            background: #8B0000;
+            transform: translateY(-2px);
+        }
+
         .footer-bottom {
             text-align: center;
             padding-top: 15px;
-            border-top: 1px solid rgba(128,0,0,0.2);
+            border-top: 1px solid rgba(139,0,0,0.2);
             color: #666;
             font-size: 0.7rem;
         }
@@ -987,23 +1069,6 @@
         .hashtag {
             color: #e0a0a0;
             margin-top: 6px;
-        }
-
-        .niches-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-top: 10px;
-            padding-top: 10px;
-            border-top: 1px solid rgba(128,0,0,0.3);
-        }
-
-        .niche-tag {
-            background: rgba(128,0,0,0.2);
-            padding: 3px 8px;
-            border-radius: 20px;
-            font-size: 0.65rem;
-            color: #e0a0a0;
         }
     </style>
     <script src="https://www.google.com/recaptcha/api.js?render=6LfB3vEsAAAAAMkBL2ir6WAmuh_pptslwle0MteR"></script>
@@ -1063,9 +1128,9 @@
             <div class="section-card">
                 <h2>Featured Services</h2>
                 <div class="featured-grid">
-                    <div class="featured-card"><div class="featured-icon">🔍</div><h3>SEO and Local SEO</h3><p>On-Page | Technical | Local SEO | GBP</p></div>
+                    <div class="featured-card"><div class="featured-icon">🔍</div><h3>SEO & Local SEO</h3><p>On-Page | Technical | Local SEO | GBP</p></div>
                     <div class="featured-card"><div class="featured-icon">🔗</div><h3>Off-Page SEO</h3><p>Link Building | Guest Posting | HARO</p></div>
-                    <div class="featured-card"><div class="featured-icon">📱</div><h3>SMM and SMO</h3><p>Organic Growth | Paid Ads | ROAS</p></div>
+                    <div class="featured-card"><div class="featured-icon">📱</div><h3>SMM & SMO</h3><p>Organic Growth | Paid Ads | ROAS</p></div>
                 </div>
                 <div style="text-align: center; margin-top: 12px;"><a onclick="showPage('services')" class="btn btn-outline">View All →</a></div>
             </div>
@@ -1095,7 +1160,7 @@
                 </div>
             </div>
 
-            <div class="section-card" style="text-align: center; background: linear-gradient(135deg, #1a0a0a, #2a1515);">
+            <div class="section-card" style="text-align: center; background: linear-gradient(135deg, #1a1515, #201515);">
                 <h2>Ready to Grow Your Business?</h2>
                 <p style="margin-bottom: 12px; font-size: 0.85rem;">Let's discuss your digital marketing goals.</p>
                 <a onclick="showPage('contact')" class="btn">Free Consultation</a>
@@ -1218,7 +1283,7 @@
                 <h2>Client Work</h2>
                 <div class="client-work-box">
                     <h3>SEO and Link Building Project (2025)</h3>
-                    <ul style="margin-left: 18px;">
+                    <ul>
                         <li>Completed SEO project for a small business client</li>
                         <li>Delivered 5 guest posts on DA 50+ websites</li>
                         <li>Provided quality dofollow backlinks</li>
@@ -1298,7 +1363,7 @@
                 <h2>Contact Me</h2>
                 <div class="contact-wrapper">
                     <div class="contact-top">
-                        <p style="font-size: 0.85rem;">Ready to take your business to the next level? I offer free 15-minute consultations. Fill out the form below or email me directly.</p>
+                        <p>Ready to take your business to the next level? I offer free 15-minute consultations. Fill out the form below or email me directly.</p>
                     </div>
                     <div class="contact-form">
                         <form action="https://formsubmit.co/marham2772@gmail.com" method="POST" id="contactForm">
