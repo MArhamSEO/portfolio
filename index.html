@@ -289,29 +289,6 @@
             border-color: rgba(128,0,0,0.4);
         }
 
-        /* FAQ Styles */
-        .faq-item {
-            background: rgba(30, 20, 20, 0.5);
-            padding: 18px 20px;
-            border-radius: 14px;
-            margin-bottom: 12px;
-            border-left: 3px solid #800000;
-        }
-
-        .faq-question {
-            font-weight: 700;
-            color: #e0a0a0;
-            margin-bottom: 8px;
-            font-size: 1rem;
-        }
-
-        .faq-answer {
-            color: #c0c0c0;
-            line-height: 1.6;
-            font-size: 0.9rem;
-        }
-
-        /* Testimonial Styles */
         .testimonial-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -344,7 +321,27 @@
             color: #e0a0a0;
             font-size: 0.8rem;
             font-weight: 600;
-            letter-spacing: 0.5px;
+        }
+
+        .faq-item {
+            background: rgba(30, 20, 20, 0.5);
+            padding: 18px 20px;
+            border-radius: 14px;
+            margin-bottom: 12px;
+            border-left: 3px solid #800000;
+        }
+
+        .faq-question {
+            font-weight: 700;
+            color: #e0a0a0;
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        .faq-answer {
+            color: #c0c0c0;
+            line-height: 1.6;
+            font-size: 0.9rem;
         }
 
         .featured-grid {
@@ -570,17 +567,6 @@
             margin-top: 15px;
         }
 
-        .client-work-box h3 {
-            color: #e0a0a0;
-            margin-bottom: 10px;
-            font-size: 1.1rem;
-        }
-
-        .client-work-box ul {
-            margin-left: 20px;
-            line-height: 1.7;
-        }
-
         .contact-wrapper {
             max-width: 650px;
             margin: 0 auto;
@@ -783,7 +769,7 @@
             </ul>
         </nav>
 
-        <!-- HOME PAGE -->
+        <!-- HOME PAGE (With Testimonials) -->
         <div id="home-page" class="page active-page">
             <div class="hero">
                 <div class="hero-content">
@@ -832,6 +818,21 @@
                     <div class="why-card"><div class="why-icon">💬</div><h3>24/7 Support</h3><p>Always available</p></div>
                     <div class="why-card"><div class="why-icon">📈</div><h3>Monthly Reporting</h3><p>Detailed reports</p></div>
                     <div class="why-card"><div class="why-icon">🏆</div><h3>Proven Track</h3><p>50+ satisfied clients</p></div>
+                </div>
+            </div>
+
+            <!-- TESTIMONIALS - Only on Home Page -->
+            <div class="section-card">
+                <h2>Client Testimonials</h2>
+                <div class="testimonial-grid">
+                    <div class="testimonial-box">
+                        <div class="testimonial-text">"Successfully completed an SEO project for my small business. Delivered 5 high-quality guest posts on DA 50+ websites with dofollow backlinks. Professional work, clear communication, and delivered on time. Will definitely work again."</div>
+                        <div class="testimonial-author">— SEO & Link Building Project, Fiverr Client (2025)</div>
+                    </div>
+                    <div class="testimonial-box">
+                        <div class="testimonial-text">"Professional digital marketing services. The guest posts provided were on relevant, high-authority sites. Good value for money. Client was satisfied with the results and the impact on search rankings."</div>
+                        <div class="testimonial-author">— Digital Marketing Campaign, Anonymous Client</div>
+                    </div>
                 </div>
             </div>
 
@@ -985,7 +986,7 @@
             </div>
         </div>
 
-        <!-- SERVICES PAGE -->
+        <!-- SERVICES PAGE (Removed $50,000 line) -->
         <div id="services-page" class="page">
             <div class="section-card">
                 <h2>Services I Offer</h2>
@@ -994,7 +995,7 @@
                     <div class="service-image"><img src="SEO.jpg" alt="SEO" loading="lazy"></div>
                     <div class="service-content">
                         <h3>Search Engine Optimization</h3>
-                        <p>I provide complete SEO solutions to help businesses rank higher on Google. Services include website audit, on-page optimization, technical SEO, mobile-friendly optimization, schema markup, content optimization, and Core Web Vitals improvement. I have helped 50+ clients achieve top 3 rankings.</p>
+                        <p>I provide complete SEO solutions to help businesses rank higher on Google. Services include website audit, on-page optimization, technical SEO, mobile-friendly optimization, schema markup, content optimization, and Core Web Vitals improvement. I focus on sustainable white-hat SEO strategies that deliver long-term results.</p>
                     </div>
                 </div>
 
@@ -1004,7 +1005,7 @@
                         <h3>Link Building and Guest Posting</h3>
                         <p>Link building is essential for increasing website authority. I specialize in guest posting on websites with DA 50+ and strong Domain Rating (DR), HARO link building, broken link building, competitor analysis, niche edits, and local link building.</p>
                         <p><strong>Industries:</strong> Health, SaaS, Technology, E-commerce, Crypto</p>
-                        <p>I have successfully published over 500 guest posts on high-quality, relevant websites that drive real traffic and improve rankings. All placements are on sites with good domain rating (DR 50+).</p>
+                        <p>I have successfully published over 500 guest posts on high-quality, relevant websites that drive real traffic and improve rankings. All placements are on sites with good domain rating (DR 50+) and genuine organic traffic. I do not use black hat techniques or PBNs.</p>
                     </div>
                 </div>
 
@@ -1028,7 +1029,7 @@
                     <div class="service-image"><img src="adds.jpg" alt="SMM" loading="lazy"></div>
                     <div class="service-content">
                         <h3>Social Media Marketing</h3>
-                        <p>Generate leads and sales through paid ads. Services include paid ads strategy, lead generation, sales funnel management, retargeting, conversion tracking and ROAS optimization, audience targeting, A/B testing, and scaling winning campaigns. I have managed over $50,000 in ad spend with 3x-5x ROAS.</p>
+                        <p>Generate leads and sales through paid ads. Services include paid ads strategy, lead generation, sales funnel management, retargeting, conversion tracking and ROAS optimization, audience targeting, A/B testing, and scaling winning campaigns.</p>
                     </div>
                 </div>
 
@@ -1042,7 +1043,7 @@
             </div>
         </div>
 
-        <!-- CONTACT PAGE -->
+        <!-- CONTACT PAGE (With FAQ Section - Only Here) -->
         <div id="contact-page" class="page">
             <div class="section-card">
                 <h2>Contact Me</h2>
@@ -1066,64 +1067,54 @@
                     <div class="email-box"><a href="mailto:marham2772@gmail.com">marham2772@gmail.com</a></div>
                 </div>
             </div>
-        </div>
 
-        <!-- FAQ SECTION - Professional -->
-        <div class="section-card">
-            <h2>Frequently Asked Questions</h2>
-            
-            <div class="faq-item">
-                <div class="faq-question">How long does a typical SEO project take?</div>
-                <div class="faq-answer">SEO is a long-term process. Initial results can be seen within 2-3 months, but significant improvements in rankings and traffic typically take 4-6 months. Guest posting and link building projects are usually completed within 1-2 weeks.</div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">What are your payment terms?</div>
-                <div class="faq-answer">I require 50% advance payment before starting any project. The remaining 50% is due upon project completion. For larger projects, milestone-based payment plans can be arranged.</div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">Do you offer free revisions?</div>
-                <div class="faq-answer">Yes, two rounds of revisions are included free of charge for every project. Additional revisions may incur extra charges depending on the scope of changes requested.</div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">Can you sign a Non-Disclosure Agreement (NDA)?</div>
-                <div class="faq-answer">Absolutely. I respect client confidentiality and am happy to sign an NDA before starting any project. Client data and project details are never shared without permission.</div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">What kind of reporting do you provide?</div>
-                <div class="faq-answer">I provide detailed monthly reports including keyword rankings, organic traffic analysis, backlink profiles, conversion data, and ROI analysis. All reports are customized based on your specific goals and KPIs.</div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">Do you take urgent or rush orders?</div>
-                <div class="faq-answer">Yes, depending on my current workload. Rush orders may incur an additional fee of 25-50% depending on the urgency and complexity of the project.</div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">Which platforms do you specialize in for ads?</div>
-                <div class="faq-answer">I specialize in Google Ads (Search, Display, Shopping, YouTube) and Meta Ads Manager (Facebook & Instagram). I also have experience with LinkedIn and TikTok ads.</div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">What is your refund policy?</div>
-                <div class="faq-answer">Once work has commenced, refunds are not available. However, I am committed to client satisfaction and will work with you until the agreed-upon deliverables are met.</div>
-            </div>
-        </div>
-
-        <!-- TESTIMONIALS SECTION - Based on Fiverr Order -->
-        <div class="section-card">
-            <h2>Client Testimonials</h2>
-            <div class="testimonial-grid">
-                <div class="testimonial-box">
-                    <div class="testimonial-text">"Successfully completed an SEO project for my small business. Delivered 5 high-quality guest posts on DA 50+ websites with dofollow backlinks. Professional work, clear communication, and delivered on time. Will definitely work again."</div>
-                    <div class="testimonial-author">— SEO & Link Building Project, Fiverr Client (2025)</div>
+            <!-- FAQ SECTION - Only on Contact Page -->
+            <div class="section-card">
+                <h2>Frequently Asked Questions</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">How long does SEO take to show results?</div>
+                    <div class="faq-answer">Domain Rating (DR) can increase within 2-3 months through quality backlinks and guest posting. However, significant ranking improvements and organic traffic growth typically take 4-6 months. I focus on sustainable white-hat SEO strategies that deliver long-term results, not quick shortcuts that risk Google penalties.</div>
                 </div>
-                <div class="testimonial-box">
-                    <div class="testimonial-text">"Professional digital marketing services. The guest posts provided were on relevant, high-authority sites. Good value for money. Client was satisfied with the results and the impact on search rankings."</div>
-                    <div class="testimonial-author">— Digital Marketing Campaign, Anonymous Client</div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Do you use black hat SEO techniques?</div>
+                    <div class="faq-answer">No, absolutely not. I strictly follow white hat SEO practices recommended by Google. I do not use PBNs, link farms, keyword stuffing, or any other black hat techniques. All my strategies are sustainable and risk-free.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">How does Local SEO work for my business?</div>
+                    <div class="faq-answer">Local SEO helps your business appear in Google's Local Pack and Maps results. I optimize your Google Business Profile, manage NAP consistency across directories like Yellow Pages and Justdial, build local citations, and track metrics like calls, direction requests, and CTR to improve local visibility.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">What social media platforms do you specialize in?</div>
+                    <div class="faq-answer">For organic growth (SMO), I specialize in Facebook, Instagram, LinkedIn, Twitter, and TikTok. For paid ads (SMM), I focus on Facebook, Instagram, LinkedIn, and TikTok. Each platform strategy is tailored to your specific audience and business goals.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Do you offer free revisions?</div>
+                    <div class="faq-answer">Yes, two rounds of revisions are included free of charge for every project. Additional revisions may incur extra charges depending on the scope of changes requested.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Can you sign a Non-Disclosure Agreement (NDA)?</div>
+                    <div class="faq-answer">Absolutely. I respect client confidentiality and am happy to sign an NDA before starting any project. Client data and project details are never shared without permission.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">What kind of reporting do you provide?</div>
+                    <div class="faq-answer">I provide detailed monthly reports including keyword rankings, organic traffic analysis, backlink profiles, conversion data, and ROI analysis. All reports are customized based on your specific goals and KPIs.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Do you take urgent or rush orders?</div>
+                    <div class="faq-answer">Yes, depending on my current workload. Rush orders may incur an additional fee of 25-50% depending on the urgency and complexity of the project.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">What is your refund policy?</div>
+                    <div class="faq-answer">Once work has commenced, refunds are not available. However, I am committed to client satisfaction and will work with you until the agreed-upon deliverables are met.</div>
                 </div>
             </div>
         </div>
