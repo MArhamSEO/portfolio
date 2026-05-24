@@ -2,22 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://marhamseo.github.io/portfolio/</loc>
-    <lastmod>2026-05-24</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <priority>1.00</priority>
   </url>
   <url>
-    <loc>https://marhamseo.github.io/portfolio/about.html</loc>
-    <lastmod>2026-05-24</lastmod>
+    <loc>https://marhamseo.github.io/portfolio/about/</loc>
+    <lastmod>2026-05-25</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://marhamseo.github.io/portfolio/services.html</loc>
-    <lastmod>2026-05-24</lastmod>
+    <loc>https://marhamseo.github.io/portfolio/services/</loc>
+    <lastmod>2026-05-25</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://marhamseo.github.io/portfolio/contact.html</loc>
-    <lastmod>2026-05-24</lastmod>
+    <loc>https://marhamseo.github.io/portfolio/contact/</loc>
+    <lastmod>2026-05-25</lastmod>
     <priority>0.70</priority>
   </url>
 </urlset>
