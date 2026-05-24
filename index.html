@@ -17,1049 +17,32 @@
     <meta property="og:image" content="https://marhamseo.github.io/portfolio/profile2.jpg.png">
     <meta property="og:url" content="https://marhamseo.github.io/portfolio/">
     
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Preload hero image for faster LCP -->
+    <link rel="preload" as="image" href="profile2.jpg.png" fetchpriority="high">
     
+    <!-- Font Awesome with defer (render-blocking fix) -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
+    
+    <!-- Minified Critical CSS Inline (for faster rendering) -->
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #2a2a2a;
-            background-image: radial-gradient(circle at 25% 0%, #4a3535 0%, #2a2a2a 100%);
-            color: #f5f5f5;
-            line-height: 1.5;
-        }
-
-        .container {
-            max-width: 100%;
-            margin: 0 auto;
-            padding: 12px;
-            width: 100%;
-        }
-
-        @media (min-width: 768px) {
-            .container {
-                max-width: 1200px;
-                padding: 20px;
-            }
-        }
-
-        .hero {
-            text-align: center;
-            padding: 40px 15px;
-            background: rgba(50, 45, 45, 0.85);
-            backdrop-filter: blur(10px);
-            border-radius: 24px;
-            margin-bottom: 25px;
-            border: 1px solid rgba(139, 0, 0, 0.4);
-        }
-
-        @media (min-width: 768px) {
-            .hero {
-                padding: 60px 20px;
-                margin-bottom: 40px;
-                border-radius: 40px;
-            }
-        }
-
-        .typing-wrapper {
-            margin: 20px 0;
-        }
-
-        .typing-container {
-            display: inline-block;
-            background: #8B0000;
-            padding: 8px 20px;
-            border-radius: 40px;
-            box-shadow: 0 0 15px rgba(139,0,0,0.4);
-        }
-
-        .typing-text {
-            font-size: 1rem;
-            color: white;
-            font-weight: 500;
-        }
-
-        @media (min-width: 768px) {
-            .typing-text {
-                font-size: 1.3rem;
-            }
-            .typing-container {
-                padding: 10px 30px;
-            }
-        }
-
-        .typed-cursor {
-            font-size: 1rem;
-            color: white;
-            animation: blink 0.7s infinite;
-        }
-
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
-        }
-
-        .navbar {
-            background: rgba(30, 30, 30, 0.95);
-            border-radius: 50px;
-            padding: 10px 15px;
-            margin-bottom: 20px;
-            border: 1px solid rgba(139, 0, 0, 0.4);
-            position: sticky;
-            top: 10px;
-            z-index: 1000;
-            backdrop-filter: blur(10px);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        @media (min-width: 768px) {
-            .navbar {
-                padding: 12px 25px;
-                margin-bottom: 30px;
-                border-radius: 60px;
-            }
-        }
-
-        .nav-logo {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            cursor: pointer;
-        }
-
-        .logo-img {
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid #8B0000;
-        }
-
-        @media (min-width: 768px) {
-            .logo-img {
-                width: 45px;
-                height: 45px;
-            }
-        }
-
-        .logo-text {
-            font-size: 1rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #fff, #c0a0a0);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        @media (min-width: 768px) {
-            .logo-text {
-                font-size: 1.3rem;
-            }
-        }
-
-        .nav-menu {
-            display: flex;
-            gap: 5px;
-            list-style: none;
-            flex-wrap: wrap;
-        }
-
-        @media (min-width: 768px) {
-            .nav-menu {
-                gap: 8px;
-            }
-        }
-
-        .nav-menu a {
-            color: #e0e0e0;
-            text-decoration: none;
-            font-weight: 500;
-            padding: 6px 12px;
-            border-radius: 30px;
-            transition: all 0.2s ease;
-            cursor: pointer;
-            font-size: 0.75rem;
-        }
-
-        @media (min-width: 768px) {
-            .nav-menu a {
-                padding: 8px 18px;
-                font-size: 0.9rem;
-            }
-        }
-
-        .nav-menu a:hover, .nav-menu a.active {
-            background: #8B0000;
-            color: white;
-        }
-
-        .footer-section p a, .footer-section a {
-            cursor: pointer;
-        }
-
-        .page {
-            display: none;
-            animation: fadeIn 0.25s ease;
-        }
-
-        .page.active-page {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(5px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .profile-img {
-            width: 110px;
-            height: 110px;
-            border-radius: 50%;
-            margin: 0 auto 15px;
-            overflow: hidden;
-            cursor: pointer;
-            border: 3px solid #8B0000;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
-
-        @media (min-width: 768px) {
-            .profile-img {
-                width: 140px;
-                height: 140px;
-                margin: 0 auto 25px;
-            }
-        }
-
-        .profile-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        h1 {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 0;
-            background: linear-gradient(135deg, #ffffff, #c0a0a0);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        @media (min-width: 768px) {
-            h1 {
-                font-size: 2.8rem;
-            }
-        }
-
-        h2 {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            border-left: 4px solid #8B0000;
-            padding-left: 12px;
-            font-weight: 600;
-            color: #f0f0f0;
-        }
-
-        @media (min-width: 768px) {
-            h2 {
-                font-size: 1.6rem;
-                margin-bottom: 20px;
-                padding-left: 15px;
-            }
-        }
-
-        .btn {
-            display: inline-block;
-            background: #8B0000;
-            color: white;
-            padding: 8px 20px;
-            border-radius: 40px;
-            font-weight: 600;
-            margin: 5px;
-            transition: all 0.25s ease;
-            border: none;
-            cursor: pointer;
-            text-decoration: none;
-            font-size: 0.85rem;
-        }
-
-        @media (min-width: 768px) {
-            .btn {
-                padding: 10px 28px;
-                margin: 6px;
-                font-size: 1rem;
-            }
-        }
-
-        .btn:hover {
-            background: #a01010;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(139,0,0,0.3);
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid #8B0000;
-            color: #c0a0a0;
-        }
-
-        .btn-outline:hover {
-            background: #8B0000;
-            color: white;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-            margin-bottom: 25px;
-        }
-
-        @media (min-width: 500px) {
-            .stats-grid {
-                grid-template-columns: repeat(4, 1fr);
-                gap: 12px;
-            }
-        }
-
-        .stat-card {
-            background: rgba(60, 55, 55, 0.85);
-            backdrop-filter: blur(8px);
-            text-align: center;
-            padding: 12px 8px;
-            border-radius: 16px;
-            border: 1px solid rgba(139, 0, 0, 0.3);
-            transition: all 0.25s ease;
-            cursor: pointer;
-        }
-
-        .stat-card:hover {
-            background: #8B0000;
-            transform: translateY(-5px) scale(1.02);
-            border-color: #8B0000;
-            box-shadow: 0 8px 20px rgba(139,0,0,0.3);
-        }
-
-        .stat-number {
-            font-size: 1.4rem;
-            font-weight: 800;
-            color: #c0a0a0;
-        }
-
-        .stat-card:hover .stat-number {
-            color: white;
-        }
-
-        @media (min-width: 768px) {
-            .stat-number {
-                font-size: 2rem;
-            }
-        }
-
-        .section-card {
-            background: rgba(60, 55, 55, 0.85);
-            backdrop-filter: blur(8px);
-            border-radius: 20px;
-            padding: 20px 15px;
-            margin-bottom: 20px;
-            border: 1px solid rgba(139, 0, 0, 0.3);
-            transition: all 0.2s ease;
-        }
-
-        .section-card:hover {
-            border-color: rgba(139, 0, 0, 0.5);
-        }
-
-        @media (min-width: 768px) {
-            .section-card {
-                padding: 30px 25px;
-                margin-bottom: 25px;
-                border-radius: 24px;
-            }
-        }
-
-        .featured-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 12px;
-            margin-top: 10px;
-        }
-
-        @media (min-width: 500px) {
-            .featured-grid {
-                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-                gap: 15px;
-            }
-        }
-
-        .featured-card {
-            background: rgba(70, 60, 60, 0.7);
-            padding: 15px 12px;
-            border-radius: 16px;
-            text-align: center;
-            border: 1px solid rgba(139, 0, 0, 0.3);
-            transition: all 0.25s ease;
-            cursor: pointer;
-        }
-
-        .featured-card:hover {
-            background: #8B0000;
-            transform: translateY(-5px) scale(1.02);
-            border-color: #8B0000;
-            box-shadow: 0 8px 20px rgba(139,0,0,0.3);
-        }
-
-        .featured-card:hover h3, .featured-card:hover p {
-            color: white;
-        }
-
-        .featured-icon {
-            font-size: 1.8rem;
-            margin-bottom: 8px;
-        }
-
-        @media (min-width: 768px) {
-            .featured-icon {
-                font-size: 2.2rem;
-                margin-bottom: 12px;
-            }
-        }
-
-        .why-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-        }
-
-        @media (min-width: 500px) {
-            .why-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
-
-        .why-card {
-            background: rgba(70, 60, 60, 0.7);
-            padding: 12px;
-            border-radius: 16px;
-            text-align: center;
-            transition: all 0.25s ease;
-            cursor: pointer;
-        }
-
-        .why-card:hover {
-            background: #8B0000;
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 8px 20px rgba(139,0,0,0.3);
-        }
-
-        .why-card:hover h3, .why-card:hover p {
-            color: white;
-        }
-
-        .why-icon {
-            font-size: 1.5rem;
-            margin-bottom: 8px;
-        }
-
-        @media (min-width: 768px) {
-            .why-icon {
-                font-size: 2rem;
-                margin-bottom: 12px;
-            }
-        }
-
-        .why-card h3 {
-            font-size: 0.85rem;
-            margin-bottom: 4px;
-        }
-
-        .why-card p {
-            font-size: 0.7rem;
-            color: #c0c0c0;
-        }
-
-        @media (min-width: 768px) {
-            .why-card h3 {
-                font-size: 1rem;
-                margin-bottom: 8px;
-            }
-            .why-card p {
-                font-size: 0.8rem;
-            }
-        }
-
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 15px;
-        }
-
-        @media (min-width: 600px) {
-            .testimonial-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        .testimonial-box {
-            background: rgba(70, 60, 60, 0.7);
-            padding: 15px;
-            border-radius: 14px;
-            border: 1px solid rgba(139, 0, 0, 0.3);
-            transition: all 0.25s ease;
-        }
-
-        .testimonial-box:hover {
-            border-color: #8B0000;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(139,0,0,0.2);
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            color: #e0e0e0;
-            line-height: 1.5;
-            margin-bottom: 8px;
-            font-size: 0.8rem;
-        }
-
-        @media (min-width: 768px) {
-            .testimonial-text {
-                font-size: 0.9rem;
-                margin-bottom: 12px;
-            }
-        }
-
-        .testimonial-author {
-            color: #c0a0a0;
-            font-size: 0.7rem;
-            font-weight: 600;
-        }
-
-        .faq-item {
-            background: rgba(70, 60, 60, 0.7);
-            padding: 12px;
-            border-radius: 12px;
-            margin-bottom: 10px;
-            border-left: 3px solid #8B0000;
-            transition: all 0.2s ease;
-        }
-
-        .faq-item:hover {
-            background: rgba(90, 70, 70, 0.8);
-            border-left-color: #a01010;
-        }
-
-        @media (min-width: 768px) {
-            .faq-item {
-                padding: 15px 18px;
-                margin-bottom: 12px;
-            }
-        }
-
-        .faq-question {
-            font-weight: 700;
-            color: #c0a0a0;
-            margin-bottom: 5px;
-            font-size: 0.85rem;
-        }
-
-        @media (min-width: 768px) {
-            .faq-question {
-                font-size: 1rem;
-                margin-bottom: 8px;
-            }
-        }
-
-        .faq-answer {
-            color: #d0d0d0;
-            line-height: 1.5;
-            font-size: 0.75rem;
-        }
-
-        @media (min-width: 768px) {
-            .faq-answer {
-                font-size: 0.85rem;
-            }
-        }
-
-        .whatido-item {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-bottom: 30px;
-        }
-
-        @media (min-width: 768px) {
-            .whatido-item {
-                flex-direction: row;
-                align-items: center;
-                gap: 30px;
-                margin-bottom: 40px;
-            }
-            .whatido-item.reverse {
-                flex-direction: row-reverse;
-            }
-        }
-
-        .whatido-image {
-            width: 100%;
-            border-radius: 16px;
-            overflow: hidden;
-        }
-
-        @media (min-width: 768px) {
-            .whatido-image {
-                flex: 1;
-                min-width: 280px;
-            }
-        }
-
-        .whatido-image img {
-            width: 100%;
-            height: auto;
-            max-height: 380px;
-            object-fit: cover;
-            border-radius: 16px;
-        }
-
-        @media (min-width: 768px) {
-            .whatido-image img {
-                height: 480px;
-            }
-        }
-
-        .whatido-content {
-            width: 100%;
-        }
-
-        @media (min-width: 768px) {
-            .whatido-content {
-                flex: 1;
-            }
-        }
-
-        .whatido-content h3 {
-            font-size: 1.1rem;
-            margin-bottom: 10px;
-            color: #f0f0f0;
-        }
-
-        @media (min-width: 768px) {
-            .whatido-content h3 {
-                font-size: 1.3rem;
-                margin-bottom: 12px;
-            }
-        }
-
-        .whatido-content ul {
-            margin-left: 18px;
-            line-height: 1.5;
-        }
-
-        .whatido-content li {
-            margin-bottom: 5px;
-            color: #c0c0c0;
-            font-size: 0.8rem;
-        }
-
-        @media (min-width: 768px) {
-            .whatido-content li {
-                font-size: 0.9rem;
-                margin-bottom: 6px;
-            }
-        }
-
-        .niches-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-top: 10px;
-            padding-top: 10px;
-            border-top: 1px solid rgba(139, 0, 0, 0.3);
-        }
-
-        .niche-tag {
-            background: rgba(139, 0, 0, 0.2);
-            padding: 3px 8px;
-            border-radius: 20px;
-            font-size: 0.65rem;
-            color: #c0a0a0;
-            transition: all 0.2s ease;
-        }
-
-        .niche-tag:hover {
-            background: #8B0000;
-            color: white;
-            transform: scale(1.05);
-        }
-
-        .exp-list {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .exp-single-item {
-            background: rgba(70, 60, 60, 0.7);
-            padding: 12px;
-            border-left: 4px solid #8B0000;
-            border-radius: 12px;
-            transition: all 0.25s ease;
-            cursor: pointer;
-        }
-
-        .exp-single-item:hover {
-            background: #8B0000;
-            transform: translateX(5px) scale(1.01);
-            box-shadow: 0 5px 15px rgba(139,0,0,0.2);
-        }
-
-        @media (min-width: 768px) {
-            .exp-single-item {
-                padding: 15px 20px;
-            }
-        }
-
-        .exp-single-title {
-            font-size: 0.85rem;
-            font-weight: 700;
-            margin-bottom: 4px;
-            color: #f0f0f0;
-        }
-
-        @media (min-width: 768px) {
-            .exp-single-title {
-                font-size: 1rem;
-            }
-        }
-
-        .exp-single-desc {
-            color: #c0c0c0;
-            font-size: 0.7rem;
-        }
-
-        .exp-single-item:hover .exp-single-desc {
-            color: white;
-        }
-
-        @media (min-width: 768px) {
-            .exp-single-desc {
-                font-size: 0.8rem;
-            }
-        }
-
-        .achievements-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-        }
-
-        @media (min-width: 500px) {
-            .achievements-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
-
-        .achievement-card {
-            background: rgba(70, 60, 60, 0.7);
-            padding: 10px;
-            border-radius: 12px;
-            text-align: center;
-            font-size: 0.7rem;
-            border: 1px solid rgba(139, 0, 0, 0.3);
-            transition: all 0.25s ease;
-            cursor: pointer;
-        }
-
-        .achievement-card:hover {
-            background: #8B0000;
-            transform: translateY(-4px) scale(1.02);
-            box-shadow: 0 5px 15px rgba(139,0,0,0.2);
-            color: white;
-        }
-
-        @media (min-width: 768px) {
-            .achievement-card {
-                padding: 12px;
-                font-size: 0.85rem;
-            }
-        }
-
-        .service-item {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-bottom: 30px;
-        }
-
-        @media (min-width: 768px) {
-            .service-item {
-                flex-direction: row;
-                align-items: center;
-                gap: 30px;
-                margin-bottom: 40px;
-            }
-            .service-item.reverse {
-                flex-direction: row-reverse;
-            }
-        }
-
-        .service-image {
-            width: 100%;
-            border-radius: 16px;
-            overflow: hidden;
-        }
-
-        @media (min-width: 768px) {
-            .service-image {
-                flex: 1;
-                min-width: 280px;
-            }
-        }
-
-        .service-image img {
-            width: 100%;
-            height: auto;
-            max-height: 380px;
-            object-fit: cover;
-            border-radius: 16px;
-        }
-
-        @media (min-width: 768px) {
-            .service-image img {
-                height: 480px;
-            }
-        }
-
-        .service-content {
-            width: 100%;
-        }
-
-        @media (min-width: 768px) {
-            .service-content {
-                flex: 1;
-            }
-        }
-
-        .service-content h3 {
-            font-size: 1.1rem;
-            margin-bottom: 8px;
-            color: #f0f0f0;
-        }
-
-        @media (min-width: 768px) {
-            .service-content h3 {
-                font-size: 1.3rem;
-                margin-bottom: 10px;
-            }
-        }
-
-        .service-content p {
-            color: #c0c0c0;
-            line-height: 1.5;
-            font-size: 0.8rem;
-        }
-
-        @media (min-width: 768px) {
-            .service-content p {
-                font-size: 0.9rem;
-            }
-        }
-
-        .client-work-box {
-            background: linear-gradient(135deg, rgba(70,60,60,0.85), rgba(60,55,55,0.85));
-            border: 1px solid rgba(139, 0, 0, 0.4);
-            border-radius: 16px;
-            padding: 15px;
-        }
-
-        .client-work-box ul {
-            margin-left: 18px;
-            line-height: 1.5;
-        }
-
-        .client-work-box li {
-            margin-bottom: 5px;
-            font-size: 0.8rem;
-            color: #c0c0c0;
-        }
-
-        .contact-wrapper {
-            max-width: 100%;
-        }
-
-        @media (min-width: 768px) {
-            .contact-wrapper {
-                max-width: 650px;
-                margin: 0 auto;
-            }
-        }
-
-        .contact-top p {
-            text-align: center;
-            margin-bottom: 15px;
-            line-height: 1.5;
-            font-size: 0.85rem;
-            color: #d0d0d0;
-        }
-
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 8px 0;
-            border-radius: 10px;
-            border: 1px solid #8B0000;
-            background: rgba(70, 60, 60, 0.8);
-            color: white;
-            font-family: inherit;
-            font-size: 0.85rem;
-        }
-
-        .contact-form input:focus, .contact-form textarea:focus {
-            outline: none;
-            border-color: #a01010;
-            box-shadow: 0 0 10px rgba(139,0,0,0.3);
-        }
-
-        .email-section {
-            text-align: center;
-            margin-top: 15px;
-        }
-
-        .email-box {
-            display: inline-block;
-            background: rgba(70, 60, 60, 0.8);
-            padding: 5px 15px;
-            border-radius: 40px;
-            border: 1px solid #8B0000;
-            font-size: 0.75rem;
-        }
-
-        .email-box a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .email-box a:hover {
-            color: #c0a0a0;
-        }
-
-        .footer {
-            background: rgba(30, 30, 30, 0.95);
-            border-radius: 20px;
-            padding: 20px;
-            margin-top: 25px;
-        }
-
-        @media (min-width: 768px) {
-            .footer {
-                padding: 30px;
-                margin-top: 35px;
-                border-radius: 30px;
-            }
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-            text-align: center;
-        }
-
-        @media (min-width: 600px) {
-            .footer-grid {
-                grid-template-columns: repeat(3, 1fr);
-                text-align: left;
-                gap: 30px;
-            }
-        }
-
-        .footer-section h4 {
-            font-size: 0.9rem;
-            margin-bottom: 8px;
-            color: #c0a0a0;
-        }
-
-        .footer-section p, .footer-section a {
-            color: #999;
-            text-decoration: none;
-            line-height: 1.5;
-            font-size: 0.75rem;
-        }
-
-        .footer-section a:hover {
-            color: #c0a0a0;
-        }
-
-        .social-links-footer {
-            display: flex;
-            gap: 10px;
-            margin-top: 10px;
-            justify-content: center;
-        }
-
-        @media (min-width: 600px) {
-            .social-links-footer {
-                justify-content: flex-start;
-            }
-        }
-
-        .social-links-footer a {
-            width: 30px;
-            height: 30px;
-            background: rgba(70, 60, 60, 0.8);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.25s ease;
-        }
-
-        .social-links-footer a:hover {
-            background: #8B0000;
-            transform: translateY(-3px) scale(1.1);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 15px;
-            border-top: 1px solid rgba(139, 0, 0, 0.2);
-            color: #777;
-            font-size: 0.7rem;
-        }
-
-        .hashtag {
-            color: #c0a0a0;
-            margin-top: 6px;
-        }
+        *{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#2a2a2a;background-image:radial-gradient(circle at 25% 0%,#4a3535 0%,#2a2a2a 100%);color:#f5f5f5;line-height:1.5}.container{max-width:100%;margin:0 auto;padding:12px;width:100%}@media(min-width:768px){.container{max-width:1200px;padding:20px}}.hero{text-align:center;padding:40px 15px;background:rgba(50,45,45,0.85);backdrop-filter:blur(10px);border-radius:24px;margin-bottom:25px;border:1px solid rgba(139,0,0,0.4)}@media(min-width:768px){.hero{padding:60px 20px;margin-bottom:40px;border-radius:40px}}.typing-wrapper{margin:20px 0}.typing-container{display:inline-block;background:#8B0000;padding:8px 20px;border-radius:40px;box-shadow:0 0 15px rgba(139,0,0,0.4)}.typing-text{font-size:1rem;color:#fff;font-weight:500}@media(min-width:768px){.typing-text{font-size:1.3rem}.typing-container{padding:10px 30px}}.typed-cursor{font-size:1rem;color:#fff;animation:blink .7s infinite}@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}.navbar{background:rgba(30,30,30,0.95);border-radius:50px;padding:10px 15px;margin-bottom:20px;border:1px solid rgba(139,0,0,0.4);position:sticky;top:10px;z-index:1000;backdrop-filter:blur(10px);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}@media(min-width:768px){.navbar{padding:12px 25px;margin-bottom:30px;border-radius:60px}}.nav-logo{display:flex;align-items:center;gap:8px;cursor:pointer}.logo-img{width:35px;height:35px;border-radius:50%;object-fit:cover;border:2px solid #8B0000}@media(min-width:768px){.logo-img{width:45px;height:45px}}.logo-text{font-size:1rem;font-weight:700;background:linear-gradient(135deg,#fff,#c0a0a0);-webkit-background-clip:text;background-clip:text;color:transparent}@media(min-width:768px){.logo-text{font-size:1.3rem}}.nav-menu{display:flex;gap:5px;list-style:none;flex-wrap:wrap}@media(min-width:768px){.nav-menu{gap:8px}}.nav-menu a{color:#e0e0e0;text-decoration:none;font-weight:500;padding:6px 12px;border-radius:30px;transition:all .2s ease;cursor:pointer;font-size:.75rem}@media(min-width:768px){.nav-menu a{padding:8px 18px;font-size:.9rem}}.nav-menu a:hover,.nav-menu a.active{background:#8B0000;color:#fff}.page{display:none;animation:fadeIn .25s ease}.page.active-page{display:block}@keyframes fadeIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}.profile-img{width:110px;height:110px;border-radius:50%;margin:0 auto 15px;overflow:hidden;cursor:pointer;border:3px solid #8B0000;box-shadow:0 5px 15px rgba(0,0,0,0.3)}@media(min-width:768px){.profile-img{width:140px;height:140px;margin:0 auto 25px}}.profile-img img{width:100%;height:100%;object-fit:cover}h1{font-size:2rem;font-weight:700;margin-bottom:0;background:linear-gradient(135deg,#fff,#c0a0a0);-webkit-background-clip:text;background-clip:text;color:transparent}@media(min-width:768px){h1{font-size:2.8rem}}h2{font-size:1.3rem;margin-bottom:15px;border-left:4px solid #8B0000;padding-left:12px;font-weight:600;color:#f0f0f0}@media(min-width:768px){h2{font-size:1.6rem;margin-bottom:20px;padding-left:15px}}.btn{display:inline-block;background:#8B0000;color:#fff;padding:8px 20px;border-radius:40px;font-weight:600;margin:5px;transition:all .25s ease;border:none;cursor:pointer;text-decoration:none;font-size:.85rem}@media(min-width:768px){.btn{padding:10px 28px;margin:6px;font-size:1rem}}.btn:hover{background:#a01010;transform:translateY(-2px);box-shadow:0 5px 15px rgba(139,0,0,0.3)}.btn-outline{background:transparent;border:2px solid #8B0000;color:#c0a0a0}.btn-outline:hover{background:#8B0000;color:#fff}.stats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:25px}@media(min-width:500px){.stats-grid{grid-template-columns:repeat(4,1fr);gap:12px}}.stat-card{background:rgba(60,55,55,0.85);backdrop-filter:blur(8px);text-align:center;padding:12px 8px;border-radius:16px;border:1px solid rgba(139,0,0,0.3);transition:all .25s ease;cursor:pointer}.stat-card:hover{background:#8B0000;transform:translateY(-5px) scale(1.02);border-color:#8B0000;box-shadow:0 8px 20px rgba(139,0,0,0.3)}.stat-number{font-size:1.4rem;font-weight:800;color:#c0a0a0}.stat-card:hover .stat-number{color:#fff}@media(min-width:768px){.stat-number{font-size:2rem}}.section-card{background:rgba(60,55,55,0.85);backdrop-filter:blur(8px);border-radius:20px;padding:20px 15px;margin-bottom:20px;border:1px solid rgba(139,0,0,0.3)}@media(min-width:768px){.section-card{padding:30px 25px;margin-bottom:25px;border-radius:24px}}.featured-grid{display:grid;grid-template-columns:1fr;gap:12px;margin-top:10px}@media(min-width:500px){.featured-grid{grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:15px}}.featured-card{background:rgba(70,60,60,0.7);padding:15px 12px;border-radius:16px;text-align:center;border:1px solid rgba(139,0,0,0.3);transition:all .25s ease;cursor:pointer}.featured-card:hover{background:#8B0000;transform:translateY(-5px) scale(1.02);border-color:#8B0000;box-shadow:0 8px 20px rgba(139,0,0,0.3)}.featured-card:hover h3,.featured-card:hover p{color:#fff}.featured-icon{font-size:1.8rem;margin-bottom:8px}@media(min-width:768px){.featured-icon{font-size:2.2rem;margin-bottom:12px}}.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}@media(min-width:500px){.why-grid{grid-template-columns:repeat(4,1fr)}}.why-card{background:rgba(70,60,60,0.7);padding:12px;border-radius:16px;text-align:center;transition:all .25s ease;cursor:pointer}.why-card:hover{background:#8B0000;transform:translateY(-5px) scale(1.02);box-shadow:0 8px 20px rgba(139,0,0,0.3)}.why-card:hover h3,.why-card:hover p{color:#fff}.why-icon{font-size:1.5rem;margin-bottom:8px}@media(min-width:768px){.why-icon{font-size:2rem;margin-bottom:12px}}.why-card h3{font-size:.85rem;margin-bottom:4px}.why-card p{font-size:.7rem;color:#c0c0c0}@media(min-width:768px){.why-card h3{font-size:1rem;margin-bottom:8px}.why-card p{font-size:.8rem}}.testimonial-grid{display:grid;grid-template-columns:1fr;gap:15px}@media(min-width:600px){.testimonial-grid{grid-template-columns:repeat(2,1fr)}}.testimonial-box{background:rgba(70,60,60,0.7);padding:15px;border-radius:14px;border:1px solid rgba(139,0,0,0.3);transition:all .25s ease}.testimonial-box:hover{border-color:#8B0000;transform:translateY(-3px);box-shadow:0 5px 15px rgba(139,0,0,0.2)}.testimonial-text{font-style:italic;color:#e0e0e0;line-height:1.5;margin-bottom:8px;font-size:.8rem}@media(min-width:768px){.testimonial-text{font-size:.9rem;margin-bottom:12px}}.testimonial-author{color:#c0a0a0;font-size:.7rem;font-weight:600}.faq-item{background:rgba(70,60,60,0.7);padding:12px;border-radius:12px;margin-bottom:10px;border-left:3px solid #8B0000;transition:all .2s ease}.faq-item:hover{background:rgba(90,70,70,0.8);border-left-color:#a01010}@media(min-width:768px){.faq-item{padding:15px 18px;margin-bottom:12px}}.faq-question{font-weight:700;color:#c0a0a0;margin-bottom:5px;font-size:.85rem}@media(min-width:768px){.faq-question{font-size:1rem;margin-bottom:8px}}.faq-answer{color:#d0d0d0;line-height:1.5;font-size:.75rem}@media(min-width:768px){.faq-answer{font-size:.85rem}}.whatido-item{display:flex;flex-direction:column;gap:15px;margin-bottom:30px}@media(min-width:768px){.whatido-item{flex-direction:row;align-items:center;gap:30px;margin-bottom:40px}.whatido-item.reverse{flex-direction:row-reverse}}.whatido-image{width:100%;border-radius:16px;overflow:hidden}@media(min-width:768px){.whatido-image{flex:1;min-width:280px}}.whatido-image img{width:100%;height:auto;max-height:380px;object-fit:cover;border-radius:16px}@media(min-width:768px){.whatido-image img{height:480px}}.whatido-content{width:100%}@media(min-width:768px){.whatido-content{flex:1}}.whatido-content h3{font-size:1.1rem;margin-bottom:10px;color:#f0f0f0}@media(min-width:768px){.whatido-content h3{font-size:1.3rem;margin-bottom:12px}}.whatido-content ul{margin-left:18px;line-height:1.5}.whatido-content li{margin-bottom:5px;color:#c0c0c0;font-size:.8rem}@media(min-width:768px){.whatido-content li{font-size:.9rem;margin-bottom:6px}}.niches-list{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;padding-top:10px;border-top:1px solid rgba(139,0,0,0.3)}.niche-tag{background:rgba(139,0,0,0.2);padding:3px 8px;border-radius:20px;font-size:.65rem;color:#c0a0a0;transition:all .2s ease}.niche-tag:hover{background:#8B0000;color:#fff;transform:scale(1.05)}.exp-list{display:flex;flex-direction:column;gap:10px}.exp-single-item{background:rgba(70,60,60,0.7);padding:12px;border-left:4px solid #8B0000;border-radius:12px;transition:all .25s ease;cursor:pointer}.exp-single-item:hover{background:#8B0000;transform:translateX(5px) scale(1.01);box-shadow:0 5px 15px rgba(139,0,0,0.2)}@media(min-width:768px){.exp-single-item{padding:15px 20px}}.exp-single-title{font-size:.85rem;font-weight:700;margin-bottom:4px;color:#f0f0f0}@media(min-width:768px){.exp-single-title{font-size:1rem}}.exp-single-desc{color:#c0c0c0;font-size:.7rem}.exp-single-item:hover .exp-single-desc{color:#fff}@media(min-width:768px){.exp-single-desc{font-size:.8rem}}.achievements-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}@media(min-width:500px){.achievements-grid{grid-template-columns:repeat(4,1fr)}}.achievement-card{background:rgba(70,60,60,0.7);padding:10px;border-radius:12px;text-align:center;font-size:.7rem;border:1px solid rgba(139,0,0,0.3);transition:all .25s ease;cursor:pointer}.achievement-card:hover{background:#8B0000;transform:translateY(-4px) scale(1.02);box-shadow:0 5px 15px rgba(139,0,0,0.2);color:#fff}@media(min-width:768px){.achievement-card{padding:12px;font-size:.85rem}}.service-item{display:flex;flex-direction:column;gap:15px;margin-bottom:30px}@media(min-width:768px){.service-item{flex-direction:row;align-items:center;gap:30px;margin-bottom:40px}.service-item.reverse{flex-direction:row-reverse}}.service-image{width:100%;border-radius:16px;overflow:hidden}@media(min-width:768px){.service-image{flex:1;min-width:280px}}.service-image img{width:100%;height:auto;max-height:380px;object-fit:cover;border-radius:16px}@media(min-width:768px){.service-image img{height:480px}}.service-content{width:100%}@media(min-width:768px){.service-content{flex:1}}.service-content h3{font-size:1.1rem;margin-bottom:8px;color:#f0f0f0}@media(min-width:768px){.service-content h3{font-size:1.3rem;margin-bottom:10px}}.service-content p{color:#c0c0c0;line-height:1.5;font-size:.8rem}@media(min-width:768px){.service-content p{font-size:.9rem}}.client-work-box{background:linear-gradient(135deg,rgba(70,60,60,0.85),rgba(60,55,55,0.85));border:1px solid rgba(139,0,0,0.4);border-radius:16px;padding:15px}.client-work-box ul{margin-left:18px;line-height:1.5}.client-work-box li{margin-bottom:5px;font-size:.8rem;color:#c0c0c0}.contact-wrapper{max-width:100%}@media(min-width:768px){.contact-wrapper{max-width:650px;margin:0 auto}}.contact-top p{text-align:center;margin-bottom:15px;line-height:1.5;font-size:.85rem;color:#d0d0d0}.contact-form input,.contact-form textarea{width:100%;padding:10px;margin:8px 0;border-radius:10px;border:1px solid #8B0000;background:rgba(70,60,60,0.8);color:#fff;font-family:inherit;font-size:.85rem}.contact-form input:focus,.contact-form textarea:focus{outline:none;border-color:#a01010;box-shadow:0 0 10px rgba(139,0,0,0.3)}.email-section{text-align:center;margin-top:15px}.email-box{display:inline-block;background:rgba(70,60,60,0.8);padding:5px 15px;border-radius:40px;border:1px solid #8B0000;font-size:.75rem}.email-box a{color:#fff;text-decoration:none;font-weight:700}.email-box a:hover{color:#c0a0a0}.footer{background:rgba(30,30,30,0.95);border-radius:20px;padding:20px;margin-top:25px}@media(min-width:768px){.footer{padding:30px;margin-top:35px;border-radius:30px}}.footer-grid{display:grid;grid-template-columns:1fr;gap:20px;text-align:center}@media(min-width:600px){.footer-grid{grid-template-columns:repeat(3,1fr);text-align:left;gap:30px}}.footer-section h4{font-size:.9rem;margin-bottom:8px;color:#c0a0a0}.footer-section p,.footer-section a{color:#999;text-decoration:none;line-height:1.5;font-size:.75rem}.footer-section a:hover{color:#c0a0a0;cursor:pointer}.social-links-footer{display:flex;gap:10px;margin-top:10px;justify-content:center}@media(min-width:600px){.social-links-footer{justify-content:flex-start}}.social-links-footer a{width:30px;height:30px;background:rgba(70,60,60,0.8);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .25s ease}.social-links-footer a:hover{background:#8B0000;transform:translateY(-3px) scale(1.1)}.footer-bottom{text-align:center;padding-top:15px;border-top:1px solid rgba(139,0,0,0.2);color:#777;font-size:.7rem}.hashtag{color:#c0a0a0;margin-top:6px}
     </style>
-    <script src="https://www.google.com/recaptcha/api.js?render=6LfB3vEsAAAAAMkBL2ir6WAmuh_pptslwle0MteR"></script>
 </head>
 <body>
 
     <div class="container">
         <nav class="navbar" id="navbar">
             <div class="nav-logo" onclick="showPage('home')">
-                <img src="profile1.png" alt="Logo" class="logo-img" loading="lazy">
+                <img src="profile1.png" alt="M Arham Logo" class="logo-img" width="45" height="45" loading="lazy">
                 <span class="logo-text">M Arham</span>
             </div>
             <ul class="nav-menu">
-                <li><a onclick="showPage('home')" class="active" id="home-link">Home</a></li>
-                <li><a onclick="showPage('about')" id="about-link">About</a></li>
-                <li><a onclick="showPage('services')" id="services-link">Services</a></li>
-                <li><a onclick="showPage('contact')" id="contact-link">Contact</a></li>
+                <li><a href="#" onclick="showPage('home'); return false;" class="active" id="home-link">Home</a></li>
+                <li><a href="#" onclick="showPage('about'); return false;" id="about-link">About</a></li>
+                <li><a href="#" onclick="showPage('services'); return false;" id="services-link">Services</a></li>
+                <li><a href="#" onclick="showPage('contact'); return false;" id="contact-link">Contact</a></li>
             </ul>
         </nav>
 
@@ -1067,7 +50,7 @@
         <div id="home-page" class="page active-page">
             <div class="hero">
                 <div class="hero-content">
-                    <div class="profile-img"><img src="profile2.jpg.png" alt="M Arham" loading="lazy"></div>
+                    <div class="profile-img"><img src="profile2.jpg.png" alt="M Arham - SEO Expert" width="140" height="140" fetchpriority="high"></div>
                     <h1>M Arham</h1>
                     <div class="typing-wrapper">
                         <div class="typing-container">
@@ -1077,8 +60,8 @@
                         </div>
                     </div>
                     <div>
-                        <a onclick="showPage('contact')" class="btn btn-large">Hire Me</a>
-                        <a onclick="showPage('services')" class="btn btn-outline btn-large">View Services →</a>
+                        <a href="#" onclick="showPage('contact'); return false;" class="btn btn-large">Hire Me</a>
+                        <a href="#" onclick="showPage('services'); return false;" class="btn btn-outline btn-large">View Services →</a>
                     </div>
                 </div>
             </div>
@@ -1102,7 +85,7 @@
                     <div class="featured-card"><div class="featured-icon">🔗</div><h3>Off-Page SEO</h3><p>Link Building | Guest Posting | HARO</p></div>
                     <div class="featured-card"><div class="featured-icon">📱</div><h3>SMM & SMO</h3><p>Organic Growth | Paid Ads | ROAS</p></div>
                 </div>
-                <div style="text-align: center; margin-top: 12px;"><a onclick="showPage('services')" class="btn btn-outline">View All →</a></div>
+                <div style="text-align: center; margin-top: 12px;"><a href="#" onclick="showPage('services'); return false;" class="btn btn-outline">View All →</a></div>
             </div>
 
             <div class="section-card">
@@ -1132,7 +115,7 @@
             <div class="section-card" style="text-align: center; background: linear-gradient(135deg, #3a3030, #353030);">
                 <h2>Ready to Grow Your Business?</h2>
                 <p style="margin-bottom: 12px; font-size: 0.85rem;">Let's discuss your digital marketing goals.</p>
-                <a onclick="showPage('contact')" class="btn">Free Consultation</a>
+                <a href="#" onclick="showPage('contact'); return false;" class="btn">Free Consultation</a>
             </div>
         </div>
 
@@ -1147,7 +130,7 @@
                 <h2>What I Do</h2>
                 
                 <div class="whatido-item">
-                    <div class="whatido-image"><img src="SEO1.jpg" alt="SEO Services" loading="lazy"></div>
+                    <div class="whatido-image"><img src="SEO1.jpg" alt="SEO Services" width="400" height="480" loading="lazy"></div>
                     <div class="whatido-content">
                         <h3>Search Engine Optimization</h3>
                         <ul>
@@ -1161,7 +144,7 @@
                 </div>
 
                 <div class="whatido-item reverse">
-                    <div class="whatido-image"><img src="Linkbuilding1.jpg" alt="Link Building" loading="lazy"></div>
+                    <div class="whatido-image"><img src="Linkbuilding1.jpg" alt="Link Building" width="400" height="480" loading="lazy"></div>
                     <div class="whatido-content">
                         <h3>Link Building and Guest Posting</h3>
                         <ul>
@@ -1182,7 +165,7 @@
                 </div>
 
                 <div class="whatido-item">
-                    <div class="whatido-image"><img src="LocalSEO1.jpg" alt="Local SEO" loading="lazy"></div>
+                    <div class="whatido-image"><img src="LocalSEO1.jpg" alt="Local SEO" width="400" height="480" loading="lazy"></div>
                     <div class="whatido-content">
                         <h3>Local SEO and Google Business Profile</h3>
                         <ul>
@@ -1196,7 +179,7 @@
                 </div>
 
                 <div class="whatido-item reverse">
-                    <div class="whatido-image"><img src="SMO1.jpg" alt="Social Media Optimization" loading="lazy"></div>
+                    <div class="whatido-image"><img src="SMO1.jpg" alt="Social Media Optimization" width="400" height="480" loading="lazy"></div>
                     <div class="whatido-content">
                         <h3>Social Media Optimization</h3>
                         <ul>
@@ -1210,7 +193,7 @@
                 </div>
 
                 <div class="whatido-item">
-                    <div class="whatido-image"><img src="SMM1.jpg" alt="Social Media Marketing" loading="lazy"></div>
+                    <div class="whatido-image"><img src="SMM1.jpg" alt="Social Media Marketing" width="400" height="480" loading="lazy"></div>
                     <div class="whatido-content">
                         <h3>Social Media Marketing</h3>
                         <ul>
@@ -1224,7 +207,7 @@
                 </div>
 
                 <div class="whatido-item reverse">
-                    <div class="whatido-image"><img src="ads.jpg" alt="Ads Management" loading="lazy"></div>
+                    <div class="whatido-image"><img src="ads.jpg" alt="Ads Management" width="400" height="480" loading="lazy"></div>
                     <div class="whatido-content">
                         <h3>Ads Campaign Management</h3>
                         <ul>
@@ -1277,7 +260,7 @@
                 <h2>Services I Offer</h2>
 
                 <div class="service-item">
-                    <div class="service-image"><img src="SEO1.jpg" alt="SEO Services" loading="lazy"></div>
+                    <div class="service-image"><img src="SEO1.jpg" alt="SEO Services" width="400" height="480" loading="lazy"></div>
                     <div class="service-content">
                         <h3>Search Engine Optimization</h3>
                         <p>I provide complete SEO solutions to help businesses rank higher on Google. My services include comprehensive website audit, on-page optimization (meta tags, headings, keyword optimization, internal linking, URL structure), technical SEO (site speed optimization, crawlability, indexation, XML sitemaps, robots.txt), mobile-friendly optimization, Core Web Vitals improvement (LCP, FID, CLS), schema markup implementation for rich snippets, content optimization with keyword mapping and topic clusters, and site structure improvement with breadcrumbs and silo structure. I focus on sustainable white-hat SEO strategies that deliver long-term results without risking Google penalties.</p>
@@ -1285,7 +268,7 @@
                 </div>
 
                 <div class="service-item reverse">
-                    <div class="service-image"><img src="Linkbuilding1.jpg" alt="Link Building" loading="lazy"></div>
+                    <div class="service-image"><img src="Linkbuilding1.jpg" alt="Link Building" width="400" height="480" loading="lazy"></div>
                     <div class="service-content">
                         <h3>Link Building and Guest Posting</h3>
                         <p>Link building is essential for increasing website authority and search rankings. I specialize in guest posting on DA 50+ websites with strong Domain Rating (DR), HARO (Help a Reporter Out) link building to earn backlinks from Forbes, Entrepreneur, and other major publications, broken link building, competitor backlink analysis, niche edits, profile backlinks creation, and local link building. I have successfully published over 500 guest posts across multiple industries including SaaS, Health and Medical, Technology and IT, General Business, E-commerce, and Cryptocurrency / Blockchain / Web3. All placements are on high-quality, relevant sites with genuine organic traffic. I do not use black hat techniques or PBNs.</p>
@@ -1294,7 +277,7 @@
                 </div>
 
                 <div class="service-item">
-                    <div class="service-image"><img src="LocalSEO1.jpg" alt="Local SEO" loading="lazy"></div>
+                    <div class="service-image"><img src="LocalSEO1.jpg" alt="Local SEO" width="400" height="480" loading="lazy"></div>
                     <div class="service-content">
                         <h3>Local SEO and Google Business Profile</h3>
                         <p>Local SEO helps businesses appear in Google's Local Pack and Maps results. I optimize your Google Business Profile (GBP) with primary and secondary category selection, services optimization, geo-tagged images, business description, and product/service sections. I manage Q&A section, post weekly updates, ensure NAP consistency (Name, Address, Phone) across Yellow Pages, Justdial, Yelp, and other directories. I handle review velocity and response management, build local citations, and optimize for proximity vs authority. I track local metrics including CTR, calls, direction requests, dwell time, branded searches, and engagement to improve local visibility.</p>
@@ -1302,7 +285,7 @@
                 </div>
 
                 <div class="service-item reverse">
-                    <div class="service-image"><img src="SMO1.jpg" alt="SMO" loading="lazy"></div>
+                    <div class="service-image"><img src="SMO1.jpg" alt="SMO" width="400" height="480" loading="lazy"></div>
                     <div class="service-content">
                         <h3>Social Media Optimization</h3>
                         <p>Social Media Optimization helps grow your brand organically without paid ads. I optimize your social media profiles (bio, images, links, username), increase organic reach through algorithm-friendly content strategies, improve engagement rate (likes, comments, shares, saves), build consistent brand identity and tone of voice, develop content strategy with 3-5 main content pillars, understand audience psychology for better engagement, implement retention and loyalty tactics, and use organic growth strategies including hashtag research, trending audio, collaborations, and user-generated content. I specialize in Facebook, Instagram, LinkedIn, Twitter, and TikTok.</p>
@@ -1310,7 +293,7 @@
                 </div>
 
                 <div class="service-item">
-                    <div class="service-image"><img src="SMM1.jpg" alt="SMM" loading="lazy"></div>
+                    <div class="service-image"><img src="SMM1.jpg" alt="SMM" width="400" height="480" loading="lazy"></div>
                     <div class="service-content">
                         <h3>Social Media Marketing</h3>
                         <p>Social Media Marketing is the fastest way to generate leads, sales, and brand awareness. I create and manage high-performing ad campaigns on Facebook, Instagram, LinkedIn, and TikTok. My services include paid ads strategy, lead generation campaigns, sales funnel management (top, middle, bottom of funnel), retargeting campaigns to convert warm audiences, conversion tracking and ROAS optimization using Facebook Pixel and Google Tag Manager, advanced audience targeting (lookalike audiences at 1%, 2%, 3%, custom audiences based on website visitors and email lists, interest-based targeting), A/B testing of ad copy, images, videos, headlines, and CTAs, and scaling winning campaigns with proper bid strategies without losing profitability.</p>
@@ -1318,7 +301,7 @@
                 </div>
 
                 <div class="service-item reverse">
-                    <div class="service-image"><img src="ads.jpg" alt="Ads Management" loading="lazy"></div>
+                    <div class="service-image"><img src="ads.jpg" alt="Ads Management" width="400" height="480" loading="lazy"></div>
                     <div class="service-content">
                         <h3>Ads Campaign Management</h3>
                         <p>As a professional Ads Campaign Manager, I build complete campaign architectures on Google Ads (Search, Display, Shopping, YouTube, Performance Max) and Meta Ads Manager (Facebook & Instagram). Services include campaign structure setup with proper hierarchy of campaigns, ad groups, ads, and keywords, advanced audience targeting using in-market segments, affinity audiences, custom segments, and lookalike audiences, A/B testing of headlines, descriptions, CTAs, display paths, and landing pages, CTR optimization through compelling ad copy and creative design, CPC control and bid strategy management (maximize clicks, target CPA, maximize conversions, target ROAS), retargeting campaign setup for website visitors and engaged users, conversion tracking via Google Tag Manager and Facebook Pixel, ad fatigue management by refreshing creatives, and scaling strategies that increase budget profitably while maintaining CPA and ROAS.</p>
@@ -1404,17 +387,17 @@
                     <h4>M Arham</h4>
                     <p>Digital Marketing Expert helping businesses grow online.</p>
                     <div class="social-links-footer">
-                        <a href="https://www.linkedin.com/in/m-arham-link-builder/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://www.instagram.com/marhamseo/" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.facebook.com/arhamblogger" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.linkedin.com/in/m-arham-link-builder/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/marhamseo/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/arhamblogger" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
                     </div>
                 </div>
                 <div class="footer-section">
                     <h4>Quick Links</h4>
-                    <p><a onclick="showPage('home')">Home</a></p>
-                    <p><a onclick="showPage('about')">About</a></p>
-                    <p><a onclick="showPage('services')">Services</a></p>
-                    <p><a onclick="showPage('contact')">Contact</a></p>
+                    <p><a href="#" onclick="showPage('home'); return false;">Home</a></p>
+                    <p><a href="#" onclick="showPage('about'); return false;">About</a></p>
+                    <p><a href="#" onclick="showPage('services'); return false;">Services</a></p>
+                    <p><a href="#" onclick="showPage('contact'); return false;">Contact</a></p>
                 </div>
                 <div class="footer-section">
                     <h4>Contact</h4>
@@ -1430,6 +413,7 @@
     </div>
 
     <script>
+        // Typing effect
         const words = ["SEO Expert", "Social Media Marketer", "Ads Specialist", "Digital Marketing Consultant"];
         let wordIndex = 0;
         let charIndex = 0;
@@ -1465,19 +449,24 @@
 
         setTimeout(typeEffect, 100);
 
+        // Page navigation
         function showPage(pageName) {
+            // Hide all pages
             document.getElementById('home-page').classList.remove('active-page');
             document.getElementById('about-page').classList.remove('active-page');
             document.getElementById('services-page').classList.remove('active-page');
             document.getElementById('contact-page').classList.remove('active-page');
+            // Show selected page
             document.getElementById(pageName + '-page').classList.add('active-page');
             
+            // Update active nav link
             const links = ['home', 'about', 'services', 'contact'];
             links.forEach(link => { 
                 const el = document.getElementById(link + '-link'); 
                 if (el) el.classList.remove('active'); 
             });
             document.getElementById(pageName + '-link').classList.add('active');
+            
             window.location.hash = pageName;
             window.scrollTo({top: 0, behavior: 'smooth'});
         }
@@ -1489,32 +478,38 @@
             else showPage('home');
         }
 
+        // Navbar scroll effect
         function navbarScrollEffect() {
             const navbar = document.getElementById('navbar');
             if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
+                navbar.style.background = "rgba(20, 20, 20, 0.98)";
             } else {
-                navbar.classList.remove('scrolled');
+                navbar.style.background = "rgba(30, 30, 30, 0.95)";
             }
         }
 
         window.addEventListener('scroll', navbarScrollEffect);
         window.addEventListener('load', loadPageFromHash);
 
+        // Form submission with recaptcha
         const form = document.getElementById('contactForm');
         if (form) {
             form.addEventListener('submit', function(e) {
                 e.preventDefault();
-                grecaptcha.ready(function() {
-                    grecaptcha.execute('6LfB3vEsAAAAAMkBL2ir6WAmuh_pptslwle0MteR', {action: 'submit'}).then(function(token) {
-                        document.getElementById('recaptchaResponse').value = token;
-                        form.submit();
+                if (typeof grecaptcha !== 'undefined') {
+                    grecaptcha.ready(function() {
+                        grecaptcha.execute('6LfB3vEsAAAAAMkBL2ir6WAmuh_pptslwle0MteR', {action: 'submit'}).then(function(token) {
+                            document.getElementById('recaptchaResponse').value = token;
+                            form.submit();
+                        });
                     });
-                });
+                } else {
+                    form.submit();
+                }
             });
         }
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
-    <script src="//code.tidio.co/ndwq0nxyuk73fkqborgmyzzmjrtckfjw.js" async></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js" defer></script>
+    <script src="//code.tidio.co/ndwq0nxyuk73fkqborgmyzzmjrtckfjw.js" async defer></script>
 </body>
 </html>
