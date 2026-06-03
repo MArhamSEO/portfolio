@@ -18,63 +18,66 @@
         *{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#2a2a2a;background-image:radial-gradient(circle at 25% 0%,#4a3535 0%,#2a2a2a 100%);color:#f5f5f5;line-height:1.5}.container{max-width:100%;margin:0 auto;padding:12px;width:100%}@media(min-width:768px){.container{max-width:1200px;padding:20px}}
         
         @keyframes slideInNav{from{opacity:0;transform:translateX(-40px)}to{opacity:1;transform:translateX(0)}}
-        @keyframes fastFadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+        @keyframes slideInLeft{from{opacity:0;transform:translateX(-30px)}to{opacity:1;transform:translateX(0)}}
+        @keyframes fadeUpFast{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
         
         .navbar{animation:slideInNav 0.3s ease-out;background:rgba(30,30,30,0.95);border-radius:50px;padding:10px 15px;margin-bottom:20px;border:1px solid rgba(139,0,0,0.4);position:sticky;top:10px;z-index:1000;backdrop-filter:blur(10px);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}@media(min-width:768px){.navbar{padding:12px 25px;margin-bottom:30px;border-radius:60px}}
-        .nav-logo{display:flex;align-items:center;gap:8px;cursor:pointer}.logo-img{width:35px;height:35px;border-radius:50%;object-fit:cover;border:2px solid #8B0000;transition:transform 0.15s ease}.logo-img:hover{transform:rotate(3deg) scale(1.03)}@media(min-width:768px){.logo-img{width:45px;height:45px}}
+        .nav-logo{display:flex;align-items:center;gap:8px;cursor:pointer}.logo-img{width:35px;height:35px;border-radius:50%;object-fit:cover;border:2px solid #8B0000;transition:transform 0.1s ease}.logo-img:hover{transform:rotate(2deg) scale(1.02)}@media(min-width:768px){.logo-img{width:45px;height:45px}}
         .logo-text{font-size:1rem;font-weight:700;background:linear-gradient(135deg,#fff,#c0a0a0);-webkit-background-clip:text;background-clip:text;color:transparent}@media(min-width:768px){.logo-text{font-size:1.3rem}}
         .nav-menu{display:flex;gap:5px;list-style:none;flex-wrap:wrap}@media(min-width:768px){.nav-menu{gap:8px}}.nav-menu a{color:#e0e0e0;text-decoration:none;font-weight:500;padding:6px 12px;border-radius:30px;transition:all 0.1s ease;font-size:.75rem}@media(min-width:768px){.nav-menu a{padding:8px 18px;font-size:.9rem}}.nav-menu a:hover,.nav-menu a.active{background:#8B0000;color:#fff}
         
-        .section-card{background:rgba(60,55,55,0.85);backdrop-filter:blur(8px);border-radius:20px;padding:20px 15px;margin-bottom:20px;border:1px solid rgba(139,0,0,0.3);transition:transform 0.15s ease, box-shadow 0.15s ease;opacity:0;transform:translateY(15px);transition:opacity 0.2s ease, transform 0.2s ease}@media(min-width:768px){.section-card{padding:30px 25px;margin-bottom:25px;border-radius:24px}}
+        .section-card{background:rgba(60,55,55,0.85);backdrop-filter:blur(8px);border-radius:20px;padding:18px 15px;margin-bottom:18px;border:1px solid rgba(139,0,0,0.3);transition:transform 0.1s ease, box-shadow 0.1s ease;opacity:0;transform:translateY(10px);transition:opacity 0.15s ease, transform 0.15s ease}@media(min-width:768px){.section-card{padding:25px 25px;margin-bottom:22px;border-radius:24px}}
         .section-card.visible{opacity:1;transform:translateY(0)}
-        .section-card:hover{transform:translateY(-2px);box-shadow:0 5px 15px rgba(139,0,0,0.15)}
+        .section-card:hover{transform:translateY(-2px);box-shadow:0 3px 12px rgba(139,0,0,0.12)}
         
-        h2{font-size:1.3rem;margin-bottom:15px;border-left:4px solid #8B0000;padding-left:12px;font-weight:600;color:#f0f0f0}@media(min-width:768px){h2{font-size:1.6rem;margin-bottom:20px;padding-left:15px}}
+        h2{font-size:1.3rem;margin-bottom:12px;border-left:4px solid #8B0000;padding-left:12px;font-weight:600;color:#f0f0f0}@media(min-width:768px){h2{font-size:1.5rem;margin-bottom:15px;padding-left:15px}}
         
-        .whatido-item{display:flex;flex-direction:column;gap:15px;margin-bottom:30px;opacity:0;transform:translateY(15px);transition:opacity 0.2s ease, transform 0.2s ease}@media(min-width:768px){.whatido-item{flex-direction:row;align-items:center;gap:30px;margin-bottom:40px}.whatido-item.reverse{flex-direction:row-reverse}}
-        .whatido-item.visible{opacity:1;transform:translateY(0)}
+        .whatido-item{display:flex;flex-direction:column;gap:12px;margin-bottom:25px;opacity:0;transform:translateX(-25px);transition:opacity 0.18s ease, transform 0.18s ease}@media(min-width:768px){.whatido-item{flex-direction:row;align-items:center;gap:25px;margin-bottom:35px}.whatido-item.reverse{flex-direction:row-reverse}}
+        .whatido-item.visible{opacity:1;transform:translateX(0)}
         
-        .whatido-image{width:100%;border-radius:16px;overflow:hidden;transition:transform 0.15s ease}@media(min-width:768px){.whatido-image{flex:1;min-width:280px}}
+        .whatido-image{width:100%;border-radius:16px;overflow:hidden;transition:transform 0.1s ease}@media(min-width:768px){.whatido-image{flex:1;min-width:280px}}
         .whatido-image:hover{transform:scale(1.01)}
-        .whatido-image img{width:100%;height:auto;max-height:380px;object-fit:cover;border-radius:16px;transition:transform 0.15s ease}@media(min-width:768px){.whatido-image img{height:480px}}
-        .whatido-image img:hover{transform:scale(1.02)}
+        .whatido-image img{width:100%;height:auto;max-height:380px;object-fit:cover;border-radius:16px;transition:transform 0.12s ease}@media(min-width:768px){.whatido-image img{height:480px}}
+        .whatido-image img:hover{transform:scale(1.01)}
         
         .whatido-content{width:100%}@media(min-width:768px){.whatido-content{flex:1}}
-        .whatido-content h3{font-size:1.1rem;margin-bottom:10px;color:#f0f0f0}@media(min-width:768px){.whatido-content h3{font-size:1.3rem;margin-bottom:12px}}
+        .whatido-content h3{font-size:1.1rem;margin-bottom:8px;color:#f0f0f0}@media(min-width:768px){.whatido-content h3{font-size:1.3rem;margin-bottom:10px}}
         .whatido-content ul{margin-left:18px;line-height:1.5}
-        .whatido-content li{margin-bottom:5px;color:#c0c0c0;font-size:.8rem}@media(min-width:768px){.whatido-content li{font-size:.9rem;margin-bottom:6px}}
+        .whatido-content li{margin-bottom:4px;color:#c0c0c0;font-size:.8rem}@media(min-width:768px){.whatido-content li{font-size:.9rem;margin-bottom:5px}}
         
-        .niches-list{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;padding-top:10px;border-top:1px solid rgba(139,0,0,0.3)}
-        .niche-tag{background:rgba(139,0,0,0.2);padding:3px 8px;border-radius:20px;font-size:.65rem;color:#c0a0a0;transition:all 0.1s ease}
-        .niche-tag:hover{background:#8B0000;color:#fff;transform:scale(1.02)}
+        .niches-list{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px;padding-top:8px;border-top:1px solid rgba(139,0,0,0.3)}
+        .niche-tag{background:rgba(139,0,0,0.2);padding:2px 8px;border-radius:20px;font-size:.65rem;color:#c0a0a0;transition:all 0.1s ease}
+        .niche-tag:hover{background:#8B0000;color:#fff;transform:scale(1.01)}
         
-        .exp-list{display:flex;flex-direction:column;gap:10px}
-        .exp-single-item{background:rgba(70,60,60,0.7);padding:12px;border-left:4px solid #8B0000;border-radius:12px;transition:all 0.1s ease;cursor:pointer;opacity:0;transform:translateX(-10px);transition:opacity 0.15s ease, transform 0.15s ease}.exp-single-item.visible{opacity:1;transform:translateX(0)}
-        .exp-single-item:hover{background:#8B0000;transform:translateX(3px)}@media(min-width:768px){.exp-single-item{padding:15px 20px}}
-        .exp-single-title{font-size:.85rem;font-weight:700;margin-bottom:4px;color:#f0f0f0}@media(min-width:768px){.exp-single-title{font-size:1rem}}
+        .exp-list{display:flex;flex-direction:column;gap:8px}
+        .exp-single-item{background:rgba(70,60,60,0.7);padding:10px;border-left:4px solid #8B0000;border-radius:12px;transition:all 0.1s ease;cursor:pointer;opacity:0;transform:translateX(-15px);transition:opacity 0.12s ease, transform 0.12s ease}.exp-single-item.visible{opacity:1;transform:translateX(0)}
+        .exp-single-item:hover{background:#8B0000;transform:translateX(2px)}@media(min-width:768px){.exp-single-item{padding:12px 18px}}
+        .exp-single-title{font-size:.85rem;font-weight:700;margin-bottom:3px;color:#f0f0f0}@media(min-width:768px){.exp-single-title{font-size:1rem}}
         .exp-single-desc{color:#c0c0c0;font-size:.7rem}
         .exp-single-item:hover .exp-single-desc{color:#fff}
         
-        .client-box{background:rgba(70,60,60,0.7);padding:15px;border-radius:16px;margin-bottom:15px;transition:transform 0.1s ease;opacity:0;transform:translateY(10px);transition:opacity 0.15s ease, transform 0.15s ease}
+        .client-box{background:rgba(70,60,60,0.7);padding:12px;border-radius:16px;margin-bottom:12px;transition:transform 0.1s ease;opacity:0;transform:translateY(8px);transition:opacity 0.12s ease, transform 0.12s ease}
         .client-box.visible{opacity:1;transform:translateY(0)}
-        .client-box:hover{transform:translateY(-2px);background:#8B0000}
+        .client-box:hover{transform:translateY(-1px);background:#8B0000}
         
-        .achievements-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}@media(min-width:500px){.achievements-grid{grid-template-columns:repeat(4,1fr)}}
-        .achievement-card{background:rgba(70,60,60,0.7);padding:10px;border-radius:12px;text-align:center;font-size:.7rem;border:1px solid rgba(139,0,0,0.3);transition:all 0.1s ease;cursor:pointer;opacity:0;transform:translateY(8px);transition:opacity 0.15s ease, transform 0.15s ease}
+        .achievements-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}@media(min-width:500px){.achievements-grid{grid-template-columns:repeat(4,1fr);gap:10px}}
+        .achievement-card{background:rgba(70,60,60,0.7);padding:8px;border-radius:12px;text-align:center;font-size:.7rem;border:1px solid rgba(139,0,0,0.3);transition:all 0.1s ease;cursor:pointer;opacity:0;transform:translateY(6px);transition:opacity 0.12s ease, transform 0.12s ease}
         .achievement-card.visible{opacity:1;transform:translateY(0)}
-        .achievement-card:hover{background:#8B0000;transform:translateY(-2px) scale(1.01);color:#fff}
+        .achievement-card:hover{background:#8B0000;transform:translateY(-1px) scale(1.01);color:#fff}
         
-        .footer{background:rgba(30,30,30,0.95);border-radius:20px;padding:20px;margin-top:25px;opacity:0;transform:translateY(10px);transition:opacity 0.2s ease, transform 0.2s ease}@media(min-width:768px){.footer{padding:30px;margin-top:35px;border-radius:30px}}
+        .footer{background:rgba(30,30,30,0.95);border-radius:20px;padding:18px;margin-top:20px;opacity:0;transform:translateY(10px);transition:opacity 0.15s ease, transform 0.15s ease}@media(min-width:768px){.footer{padding:25px;margin-top:30px;border-radius:30px}}
         .footer.visible{opacity:1;transform:translateY(0)}
         
-        .footer-grid{display:grid;grid-template-columns:1fr;gap:20px;text-align:center}@media(min-width:600px){.footer-grid{grid-template-columns:repeat(3,1fr);text-align:left;gap:30px}}
-        .footer-section h4{font-size:.9rem;margin-bottom:8px;color:#c0a0a0}
-        .footer-section p,.footer-section a{color:#999;text-decoration:none;line-height:1.5;font-size:.75rem}
+        .footer-grid{display:grid;grid-template-columns:1fr;gap:15px;text-align:center}@media(min-width:600px){.footer-grid{grid-template-columns:repeat(3,1fr);text-align:left;gap:25px}}
+        .footer-section h4{font-size:.9rem;margin-bottom:6px;color:#c0a0a0}
+        .footer-section p,.footer-section a{color:#999;text-decoration:none;line-height:1.4;font-size:.75rem}
         .footer-section a:hover{color:#c0a0a0}
-        .social-links-footer{display:flex;gap:10px;margin-top:10px;justify-content:center}@media(min-width:600px){.social-links-footer{justify-content:flex-start}}
-        .social-links-footer a{width:30px;height:30px;background:rgba(70,60,60,0.8);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all 0.1s ease}
-        .social-links-footer a:hover{background:#8B0000;transform:translateY(-2px) scale(1.05)}
-        .footer-bottom{text-align:center;padding-top:15px;border-top:1px solid rgba(139,0,0,0.2);color:#777;font-size:.7rem}.hashtag{color:#c0a0a0;margin-top:6px}
+        .social-links-footer{display:flex;gap:8px;margin-top:8px;justify-content:center}@media(min-width:600px){.social-links-footer{justify-content:flex-start}}
+        .social-links-footer a{width:28px;height:28px;background:rgba(70,60,60,0.8);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all 0.1s ease}
+        .social-links-footer a:hover{background:#8B0000;transform:translateY(-2px) scale(1.03)}
+        .footer-bottom{text-align:center;padding-top:12px;border-top:1px solid rgba(139,0,0,0.2);color:#777;font-size:.7rem}.hashtag{color:#c0a0a0;margin-top:4px}
+        
+        .no-space{margin-bottom:0}
     </style>
 </head>
 <body>
@@ -96,7 +99,7 @@
 
     <div class="section-card">
         <h2>About Me</h2>
-        <p style="text-align: center; font-size: 0.95rem; line-height: 1.7;">I am a passionate Digital Marketing Expert with 4+ years of experience helping businesses grow online. I specialize in SEO, SMM, SMO, Ads Campaigns.<br>I have helped 50+ clients achieve their business goals through data-driven digital marketing strategies.</p>
+        <p style="text-align: center; font-size: 0.9rem; line-height: 1.6;">I am a passionate Digital Marketing Expert with 4+ years of experience helping businesses grow online. I specialize in SEO, SMM, SMO, Ads Campaigns. I have helped 50+ clients achieve their business goals through data-driven digital marketing strategies.</p>
     </div>
 
     <div class="section-card">
@@ -114,7 +117,7 @@
             <div class="whatido-image"><img src="../Linkbuilding1.jpg" alt="Link Building" width="400" height="480" loading="lazy"></div>
             <div class="whatido-content">
                 <h3>Link Building and Guest Posting</h3>
-                <ul><li>Guest Posting on DA 50+ Sites</li><li>HARO Link Building (Forbes, Entrepreneur)</li><li>Broken Link Building</li><li>Profile Backlinks Creation</li><li>Competitor Backlink Analysis</li></ul>
+                <ul><li>Guest Posting on DA 50+ Sites</li><li>HARO Link Building</li><li>Broken Link Building</li><li>Profile Backlinks Creation</li><li>Competitor Backlink Analysis</li></ul>
                 <div class="niches-list"><span class="niche-tag">SaaS</span><span class="niche-tag">Health</span><span class="niche-tag">Tech</span><span class="niche-tag">E-com</span><span class="niche-tag">Crypto</span></div>
             </div>
         </div>
@@ -147,7 +150,7 @@
             <div class="whatido-image"><img src="../ads.jpg" alt="Ads Management" width="400" height="480" loading="lazy"></div>
             <div class="whatido-content">
                 <h3>Ads Campaign Management</h3>
-                <ul><li>Google Ads (Search, Display, Shopping, YouTube, Performance Max)</li><li>Meta Ads Manager (Facebook & Instagram)</li><li>Campaign Structure and Targeting</li><li>CTR Optimization and Bid Strategy</li><li>Conversion Tracking via GTM and Pixel</li><li>Retargeting / Remarketing Campaigns</li><li>Budget Management & Cost Control</li><li>Audience Targeting (Demographic, Interest, Lookalike)</li><li>A/B Testing (Headlines, Images, CTAs)</li><li>Weekly & Monthly Performance Reporting</li></ul>
+                <ul><li>Google Ads (Search, Display, Shopping, YouTube, PMax)</li><li>Meta Ads Manager</li><li>Campaign Structure and Targeting</li><li>CTR Optimization and Bid Strategy</li><li>Conversion Tracking via GTM and Pixel</li><li>Retargeting Campaigns</li><li>Budget Management</li><li>Audience Targeting</li><li>A/B Testing</li><li>Monthly Performance Reporting</li></ul>
             </div>
         </div>
     </div>
@@ -164,8 +167,8 @@
 
     <div class="section-card">
         <h2>Client Work</h2>
-        <div class="client-box"><h3 style="color:#c0a0a0;margin-bottom:10px;">SEO and Link Building Project (2025)</h3><ul style="margin-left:20px;line-height:1.6;"><li>Completed SEO project for a small business client</li><li>Delivered 5 guest posts on DA 50+ websites</li><li>Provided quality dofollow backlinks</li></ul></div>
-        <div class="client-box"><h3 style="color:#c0a0a0;margin-bottom:10px;">Social Media Marketing Project (2024)</h3><ul style="margin-left:20px;line-height:1.6;"><li>Best SMM expert I've worked with</li><li>Instagram reach increased 3x</li><li>Website traffic from social media doubled</li></ul></div>
+        <div class="client-box"><h3 style="color:#c0a0a0;margin-bottom:8px;">SEO and Link Building Project (2025)</h3><ul style="margin-left:20px;"><li>Completed SEO project for a small business client</li><li>Delivered 5 guest posts on DA 50+ websites</li><li>Provided quality dofollow backlinks</li></ul></div>
+        <div class="client-box"><h3 style="color:#c0a0a0;margin-bottom:8px;">Social Media Marketing Project (2024)</h3><ul style="margin-left:20px;"><li>Best SMM expert I've worked with</li><li>Instagram reach increased 3x</li><li>Website traffic from social media doubled</li></ul></div>
     </div>
 
     <div class="section-card">
@@ -180,9 +183,9 @@
 
     <div class="footer">
         <div class="footer-grid">
-            <div class="footer-section"><h4>M Arham</h4><p>Digital Marketing Expert helping businesses grow online.</p><div class="social-links-footer"><a href="https://www.linkedin.com/in/m-arham-link-builder/" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a><a href="https://www.instagram.com/marhamseo/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a><a href="https://www.facebook.com/arhamblogger" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a></div></div>
+            <div class="footer-section"><h4>M Arham</h4><p>Digital Marketing Expert</p><div class="social-links-footer"><a href="https://www.linkedin.com/in/m-arham-link-builder/" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a><a href="https://www.instagram.com/marhamseo/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a><a href="https://www.facebook.com/arhamblogger" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a></div></div>
             <div class="footer-section"><h4>Quick Links</h4><p><a href="../index.html">Home</a></p><p><a href="../about/">About</a></p><p><a href="../services/">Services</a></p><p><a href="../contact/">Contact</a></p><p><a href="../blog/">Blog</a></p></div>
-            <div class="footer-section"><h4>Contact</h4><p><a href="mailto:marham2772@gmail.com">marham2772@gmail.com</a></p><p>Available for freelance projects</p></div>
+            <div class="footer-section"><h4>Contact</h4><p><a href="mailto:marham2772@gmail.com">marham2772@gmail.com</a></p><p>Freelance projects</p></div>
         </div>
         <div class="footer-bottom"><p>© 2026 M Arham — Digital Marketing Expert</p><div class="hashtag">#ArhamSEO</div></div>
     </div>
@@ -192,7 +195,7 @@
     function navbarScrollEffect(){var n=document.querySelector('.navbar');window.scrollY>50?n.style.background="rgba(20,20,20,0.98)":n.style.background="rgba(30,30,30,0.95)"}
     window.addEventListener('scroll',navbarScrollEffect);
     
-    var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}})},{threshold:0.1,rootMargin:"0px 0px -10px 0px"});
+    var observer=new IntersectionObserver(function(e){e.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}})},{threshold:0.1});
     
     document.querySelectorAll('.section-card, .whatido-item, .exp-single-item, .client-box, .achievement-card, .footer').forEach(function(el){observer.observe(el)});
 </script>
