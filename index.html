@@ -44,7 +44,6 @@
     <style>
         *{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#2a2a2a;background-image:radial-gradient(circle at 25% 0%,#4a3535 0%,#2a2a2a 100%);color:#f5f5f5;line-height:1.5}.container{max-width:100%;margin:0 auto;padding:12px;width:100%}@media(min-width:768px){.container{max-width:1200px;padding:20px}}
         
-        /* ===== PROFESSIONAL ANIMATIONS ===== */
         @keyframes slideInNav {
             from { opacity: 0; transform: translateX(-50px); }
             to { opacity: 1; transform: translateX(0); }
@@ -80,7 +79,6 @@
             100% { background-position: 200% 0; }
         }
         
-        /* Navbar Animation */
         .navbar{animation:slideInNav 0.6s ease-out;background:rgba(30,30,30,0.95);border-radius:50px;padding:10px 15px;margin-bottom:20px;border:1px solid rgba(139,0,0,0.4);position:sticky;top:10px;z-index:1000;backdrop-filter:blur(10px);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}@media(min-width:768px){.navbar{padding:12px 25px;margin-bottom:30px;border-radius:60px}}
         
         .nav-logo{display:flex;align-items:center;gap:8px;cursor:pointer}.logo-img{width:35px;height:35px;border-radius:50%;object-fit:cover;border:2px solid #8B0000;transition:transform 0.3s ease}.logo-img:hover{transform:rotate(5deg) scale(1.05)}@media(min-width:768px){.logo-img{width:45px;height:45px}}
@@ -88,7 +86,6 @@
         
         .nav-menu{display:flex;gap:5px;list-style:none;flex-wrap:wrap}@media(min-width:768px){.nav-menu{gap:8px}}.nav-menu a{color:#e0e0e0;text-decoration:none;font-weight:500;padding:6px 12px;border-radius:30px;transition:all .2s ease;font-size:.75rem}@media(min-width:768px){.nav-menu a{padding:8px 18px;font-size:.9rem}}.nav-menu a:hover,.nav-menu a.active{background:#8B0000;color:#fff;transform:translateY(-2px)}
         
-        /* Hero Section Animation */
         .hero{text-align:center;padding:40px 15px;background:rgba(50,45,45,0.85);backdrop-filter:blur(10px);border-radius:24px;margin-bottom:25px;border:1px solid rgba(139,0,0,0.4);animation:zoomIn 0.8s ease-out}@media(min-width:768px){.hero{padding:60px 20px;margin-bottom:40px;border-radius:40px}}
         
         .profile-img{width:110px;height:110px;border-radius:50%;margin:0 auto 15px;overflow:hidden;border:3px solid #8B0000;box-shadow:0 5px 15px rgba(0,0,0,0.3);transition:all 0.3s ease;animation:float 3s ease-in-out infinite}@media(min-width:768px){.profile-img{width:140px;height:140px;margin:0 auto 25px}}.profile-img:hover{transform:scale(1.05);border-color:#a01010}
@@ -98,40 +95,32 @@
         
         .typing-wrapper{margin:20px 0}.typing-container{display:inline-block;background:#8B0000;padding:8px 20px;border-radius:40px;box-shadow:0 0 15px rgba(139,0,0,0.4);transition:all 0.3s ease}.typing-container:hover{transform:scale(1.02);box-shadow:0 0 25px rgba(139,0,0,0.6)}.typing-text{font-size:1rem;color:#fff;font-weight:500}@media(min-width:768px){.typing-text{font-size:1.3rem}.typing-container{padding:10px 30px}}.typed-cursor{font-size:1rem;color:#fff;animation:blink .7s infinite}@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
         
-        /* Buttons Animation */
         .btn{display:inline-block;background:#8B0000;color:#fff;padding:8px 20px;border-radius:40px;font-weight:600;margin:5px;transition:all .25s ease;border:none;cursor:pointer;text-decoration:none;font-size:.85rem}@media(min-width:768px){.btn{padding:10px 28px;margin:6px;font-size:1rem}}.btn:hover{background:#a01010;transform:translateY(-3px) scale(1.02);box-shadow:0 8px 20px rgba(139,0,0,0.4)}.btn-outline{background:transparent;border:2px solid #8B0000;color:#c0a0a0}.btn-outline:hover{background:#8B0000;color:#fff}
         
-        /* Stats Grid Animation */
         .stats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:25px}@media(min-width:500px){.stats-grid{grid-template-columns:repeat(4,1fr);gap:12px}}
         .stat-card{background:rgba(60,55,55,0.85);backdrop-filter:blur(8px);text-align:center;padding:12px 8px;border-radius:16px;border:1px solid rgba(139,0,0,0.3);transition:all .25s ease;cursor:pointer;animation:fadeInUp 0.5s ease-out;animation-fill-mode:both}.stat-card:nth-child(1){animation-delay:0.1s}.stat-card:nth-child(2){animation-delay:0.2s}.stat-card:nth-child(3){animation-delay:0.3s}.stat-card:nth-child(4){animation-delay:0.4s}
         .stat-card:hover{background:#8B0000;transform:translateY(-8px) scale(1.03)}.stat-number{font-size:1.4rem;font-weight:800;color:#c0a0a0}.stat-card:hover .stat-number{color:#fff}@media(min-width:768px){.stat-number{font-size:2rem}}
         
-        /* Section Cards Animation */
         .section-card{background:rgba(60,55,55,0.85);backdrop-filter:blur(8px);border-radius:20px;padding:20px 15px;margin-bottom:20px;border:1px solid rgba(139,0,0,0.3);transition:transform 0.3s ease, box-shadow 0.3s ease;opacity:0;transform:translateY(40px);transition:opacity 0.7s ease, transform 0.7s ease}@media(min-width:768px){.section-card{padding:30px 25px;margin-bottom:25px;border-radius:24px}}
         .section-card.visible{opacity:1;transform:translateY(0)}
         .section-card:hover{transform:translateY(-5px);box-shadow:0 15px 35px rgba(139,0,0,0.25)}
         
         h2{font-size:1.3rem;margin-bottom:15px;border-left:4px solid #8B0000;padding-left:12px;font-weight:600;color:#f0f0f0}@media(min-width:768px){h2{font-size:1.6rem;margin-bottom:20px;padding-left:15px}}
         
-        /* Featured Grid Animation */
         .featured-grid{display:grid;grid-template-columns:1fr;gap:12px;margin-top:10px}@media(min-width:500px){.featured-grid{grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:15px}}
         .featured-card{background:rgba(70,60,60,0.7);padding:15px 12px;border-radius:16px;text-align:center;border:1px solid rgba(139,0,0,0.3);transition:all .25s ease;cursor:pointer;opacity:0;transform:translateY(30px);transition:opacity 0.5s ease, transform 0.5s ease}.featured-card.visible{opacity:1;transform:translateY(0)}
         .featured-card:hover{background:#8B0000;transform:translateY(-5px) scale(1.03)}.featured-card:hover h3,.featured-card:hover p{color:#fff}.featured-icon{font-size:1.8rem;margin-bottom:8px}@media(min-width:768px){.featured-icon{font-size:2.2rem;margin-bottom:12px}}
         
-        /* Why Grid Animation */
         .why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}@media(min-width:500px){.why-grid{grid-template-columns:repeat(4,1fr)}}
         .why-card{background:rgba(70,60,60,0.7);padding:12px;border-radius:16px;text-align:center;transition:all .25s ease;cursor:pointer;opacity:0;transform:translateY(30px);transition:opacity 0.5s ease, transform 0.5s ease}.why-card.visible{opacity:1;transform:translateY(0)}
         .why-card:hover{background:#8B0000;transform:translateY(-5px) scale(1.03)}.why-card:hover h3,.why-card:hover p{color:#fff}.why-icon{font-size:1.5rem;margin-bottom:8px}@media(min-width:768px){.why-icon{font-size:2rem;margin-bottom:12px}}.why-card h3{font-size:.85rem;margin-bottom:4px}.why-card p{font-size:.7rem;color:#c0c0c0}@media(min-width:768px){.why-card h3{font-size:1rem;margin-bottom:8px}.why-card p{font-size:.8rem}}
         
-        /* Testimonial Grid Animation */
         .testimonial-grid{display:grid;grid-template-columns:1fr;gap:15px}@media(min-width:600px){.testimonial-grid{grid-template-columns:repeat(2,1fr)}}
         .testimonial-box{background:rgba(70,60,60,0.7);padding:15px;border-radius:14px;border:1px solid rgba(139,0,0,0.3);transition:all .3s ease;opacity:0;transform:translateX(-30px);transition:opacity 0.5s ease, transform 0.5s ease}.testimonial-box.visible{opacity:1;transform:translateX(0)}.testimonial-box:nth-child(2){transition-delay:0.1s}
         .testimonial-box:hover{transform:translateY(-5px) scale(1.02);background:#8B0000}.testimonial-text{font-style:italic;color:#e0e0e0;line-height:1.5;margin-bottom:8px;font-size:.8rem}@media(min-width:768px){.testimonial-text{font-size:.9rem;margin-bottom:12px}}.testimonial-author{color:#c0a0a0;font-size:.7rem;font-weight:600}
         
-        /* CTA Section */
         .section-card[style*="linear-gradient"]{background:linear-gradient(135deg, #3a3030, #353030)!important}
         
-        /* Footer Animation */
         .footer{background:rgba(30,30,30,0.95);border-radius:20px;padding:20px;margin-top:25px;opacity:0;transform:translateY(30px);transition:opacity 0.6s ease, transform 0.6s ease}@media(min-width:768px){.footer{padding:30px;margin-top:35px;border-radius:30px}}
         .footer.visible{opacity:1;transform:translateY(0)}
         
@@ -219,7 +208,6 @@
         <a href="contact/" class="btn">Free Consultation</a>
     </div>
 
-    <!-- Internal Linking -->
     <div class="section-card" style="text-align: center;">
         <h2>Learn More About Me</h2>
         <p><a href="about/" style="color: #c0a0a0;">About Me</a> | <a href="services/" style="color: #c0a0a0;">My Services</a> | <a href="contact/" style="color: #c0a0a0;">Contact Now</a></p>
@@ -258,7 +246,6 @@
 </div>
 
 <script>
-    // Typing Effect
     const words = ["SEO Expert", "Social Media Marketer", "Ads Specialist", "Digital Marketing Consultant"];
     let wordIndex = 0, charIndex = 0, isDeleting = false;
     const typedTextElement = document.getElementById('typed-text');
@@ -273,7 +260,6 @@
     }
     setTimeout(typeEffect, 100);
     
-    // Navbar Scroll Effect
     function navbarScrollEffect() {
         const navbar = document.querySelector('.navbar');
         if (window.scrollY > 50) navbar.style.background = "rgba(20, 20, 20, 0.98)";
@@ -281,7 +267,6 @@
     }
     window.addEventListener('scroll', navbarScrollEffect);
     
-    // Scroll Reveal Animation
     const observerOptions = { threshold: 0.1, rootMargin: "0px 0px -30px 0px" };
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -292,12 +277,10 @@
         });
     }, observerOptions);
     
-    // Observe all elements with animation
     document.querySelectorAll('.section-card, .featured-card, .why-card, .testimonial-box, .footer').forEach(el => {
         observer.observe(el);
     });
     
-    // Also observe stat cards (already have animation delay)
     document.querySelectorAll('.stat-card').forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
