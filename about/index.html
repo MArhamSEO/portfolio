@@ -24,6 +24,7 @@
       "mainEntity": {
         "@type": "Person",
         "name": "M Arham",
+        "image": "https://marhamseo.github.io/portfolio/profile2.png",
         "description": "Digital Marketing Expert with 4+ years experience. Specialized in SEO, SMM, SMO, and Ads Campaigns.",
         "knowsAbout": ["SEO", "Link Building", "Local SEO", "SMM", "SMO", "Google Ads"],
         "email": "marham2772@gmail.com",
@@ -52,6 +53,11 @@
             0% { transform: scale(1); }
             100% { transform: scale(1.02); }
         }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0px); }
+        }
         
         /* Navbar Animation */
         .navbar{animation:slideInNav 0.5s ease-out;background:rgba(30,30,30,0.95);border-radius:50px;padding:10px 15px;margin-bottom:20px;border:1px solid rgba(139,0,0,0.4);position:sticky;top:10px;z-index:1000;backdrop-filter:blur(10px);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}@media(min-width:768px){.navbar{padding:12px 25px;margin-bottom:30px;border-radius:60px}}
@@ -59,6 +65,12 @@
         .nav-logo{display:flex;align-items:center;gap:8px;cursor:pointer}.logo-img{width:35px;height:35px;border-radius:50%;object-fit:cover;border:2px solid #8B0000}@media(min-width:768px){.logo-img{width:45px;height:45px}}.logo-text{font-size:1rem;font-weight:700;background:linear-gradient(135deg,#fff,#c0a0a0);-webkit-background-clip:text;background-clip:text;color:transparent}@media(min-width:768px){.logo-text{font-size:1.3rem}}
         
         .nav-menu{display:flex;gap:5px;list-style:none;flex-wrap:wrap}@media(min-width:768px){.nav-menu{gap:8px}}.nav-menu a{color:#e0e0e0;text-decoration:none;font-weight:500;padding:6px 12px;border-radius:30px;transition:all .2s ease;font-size:.75rem}@media(min-width:768px){.nav-menu a{padding:8px 18px;font-size:.9rem}}.nav-menu a:hover,.nav-menu a.active{background:#8B0000;color:#fff}
+        
+        /* Hero Section with Profile Picture */
+        .about-hero{text-align:center;padding:30px 15px;background:rgba(50,45,45,0.85);backdrop-filter:blur(10px);border-radius:24px;margin-bottom:25px;border:1px solid rgba(139,0,0,0.4)}@media(min-width:768px){.about-hero{padding:40px 20px;margin-bottom:30px;border-radius:40px}}
+        
+        .about-profile-img{width:120px;height:120px;border-radius:50%;margin:0 auto 20px;overflow:hidden;border:3px solid #8B0000;box-shadow:0 5px 15px rgba(0,0,0,0.3);transition:all 0.3s ease;animation:float 3s ease-in-out infinite}@media(min-width:768px){.about-profile-img{width:150px;height:150px;margin:0 auto 25px}}.about-profile-img:hover{transform:scale(1.05);border-color:#a01010}
+        .about-profile-img img{width:100%;height:100%;object-fit:cover}
         
         /* Section Cards Animation */
         .section-card{background:rgba(60,55,55,0.85);backdrop-filter:blur(8px);border-radius:20px;padding:20px 15px;margin-bottom:20px;border:1px solid rgba(139,0,0,0.3);animation:fadeInUp 0.6s ease-out;animation-fill-mode:both;transition:transform 0.3s ease, box-shadow 0.3s ease}@media(min-width:768px){.section-card{padding:30px 25px;margin-bottom:25px;border-radius:24px}}
@@ -143,6 +155,13 @@
             <li><a href="../blog/">Blog</a></li>
         </ul>
     </nav>
+
+    <!-- About Hero with Profile Picture -->
+    <div class="about-hero">
+        <div class="about-profile-img"><img src="../profile2.png" alt="M Arham" width="150" height="150"></div>
+        <h1 style="font-size: 2rem; margin-bottom: 10px;">M Arham</h1>
+        <p style="font-size: 1rem; color: #c0a0a0;">Digital Marketing Expert | SEO Specialist | Ads Manager</p>
+    </div>
 
     <!-- About Me -->
     <div class="section-card">
