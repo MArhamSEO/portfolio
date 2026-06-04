@@ -75,9 +75,6 @@
         
         .footer-bottom{text-align:center;padding-top:15px;border-top:1px solid rgba(139,0,0,0.2);color:#777;font-size:.7rem}
         .hashtag{color:#c0a0a0;margin-top:6px}
-        
-        .last-updated{text-align:center;font-size:0.7rem;color:#888;margin-top:20px;padding-top:15px;border-top:1px solid rgba(139,0,0,0.2);opacity:0;transform:translateY(20px);transition:opacity 0.5s ease, transform 0.5s ease}
-        .last-updated.visible{opacity:1;transform:translateY(0)}
     </style>
 </head>
 <body>
@@ -137,7 +134,13 @@
 
         <h3>Technical SEO Services</h3>
         <p>Technical SEO is about making sure search engines can properly crawl and understand your site. If Google cannot access your content easily, you will not rank well.</p>
-        <p>Key technical areas I focus on include improving <a href="https://pagespeed.web.dev/" target="_blank" rel="noopener noreferrer">page speed</a> and Core Web Vitals, fixing crawl errors and <a href="https://search.google.com/search-console/about" target="_blank" rel="noopener noreferrer">indexing issues</a>, setting up XML sitemaps and robots.txt correctly, and adding structured data for rich snippets.</p>
+        <p>Key technical areas I focus on:</p>
+        <ul>
+            <li>Improving <a href="https://pagespeed.web.dev/" target="_blank" rel="noopener noreferrer">page speed</a> and Core Web Vitals</li>
+            <li>Fixing crawl errors and <a href="https://search.google.com/search-console/about" target="_blank" rel="noopener noreferrer">indexing issues</a></li>
+            <li>Setting up XML sitemaps and robots.txt correctly</li>
+            <li>Adding structured data for rich snippets</li>
+        </ul>
         <div class="result-badge"><strong> Real example:</strong> An ecommerce site was loading in 5 seconds. After compressing images and minifying code, load time dropped to 1.8 seconds. Organic traffic increased by 25% in two months.</div>
 
         <h3>Local SEO Services</h3>
@@ -216,6 +219,7 @@
         </div>
     </div>
 </div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
 <script>
     function navbarScrollEffect() {
@@ -238,7 +242,7 @@
     const sectionCard = document.querySelector('.section-card');
     if (sectionCard) observer.observe(sectionCard);
     
-    document.querySelectorAll('h2, h3, p, ul, ol, .result-badge, .last-updated').forEach(el => observer.observe(el));
+    document.querySelectorAll('h2, h3, p, ul, ol, .result-badge').forEach(el => observer.observe(el));
     
     const footer = document.querySelector('.footer');
     if (footer) observer.observe(footer);
