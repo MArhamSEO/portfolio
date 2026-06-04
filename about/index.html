@@ -17,7 +17,6 @@
     <style>
         *{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#2a2a2a;background-image:radial-gradient(circle at 25% 0%,#4a3535 0%,#2a2a2a 100%);color:#f5f5f5;line-height:1.5}.container{max-width:100%;margin:0 auto;padding:12px;width:100%}@media(min-width:768px){.container{max-width:1200px;padding:20px}}
         
-        /* ===== SERVICE PAGE STYLE ANIMATIONS (EXACT COPY) ===== */
         @keyframes slideInNav {
             from { opacity: 0; transform: translateX(-50px); }
             to { opacity: 1; transform: translateX(0); }
@@ -36,7 +35,6 @@
             100% { transform: scale(1); }
         }
         
-        /* Navbar Animation */
         .navbar{animation:slideInNav 0.6s ease-out;background:rgba(30,30,30,0.95);border-radius:50px;padding:10px 15px;margin-bottom:20px;border:1px solid rgba(139,0,0,0.4);position:sticky;top:10px;z-index:1000;backdrop-filter:blur(10px);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}@media(min-width:768px){.navbar{padding:12px 25px;margin-bottom:30px;border-radius:60px}}
         
         .nav-logo{display:flex;align-items:center;gap:8px;cursor:pointer}.logo-img{width:35px;height:35px;border-radius:50%;object-fit:cover;border:2px solid #8B0000;transition:transform 0.3s ease}.logo-img:hover{transform:rotate(5deg) scale(1.05)}@media(min-width:768px){.logo-img{width:45px;height:45px}}
@@ -44,7 +42,6 @@
         
         .nav-menu{display:flex;gap:5px;list-style:none;flex-wrap:wrap}@media(min-width:768px){.nav-menu{gap:8px}}.nav-menu a{color:#e0e0e0;text-decoration:none;font-weight:500;padding:6px 12px;border-radius:30px;transition:all .2s ease;font-size:.75rem}@media(min-width:768px){.nav-menu a{padding:8px 18px;font-size:.9rem}}.nav-menu a:hover,.nav-menu a.active{background:#8B0000;color:#fff;transform:translateY(-2px)}
         
-        /* Section Cards - Scroll Reveal (Service Page Style) */
         .section-card{background:rgba(60,55,55,0.85);backdrop-filter:blur(8px);border-radius:20px;padding:20px 15px;margin-bottom:20px;border:1px solid rgba(139,0,0,0.3);transition:transform 0.3s ease, box-shadow 0.3s ease;position:relative;overflow:hidden;opacity:0;transform:translateY(50px);transition:opacity 0.7s ease, transform 0.7s ease}@media(min-width:768px){.section-card{padding:30px 25px;margin-bottom:25px;border-radius:24px}}
         .section-card.revealed{opacity:1;transform:translateY(0)}
         .section-card:hover{transform:translateY(-5px);box-shadow:0 15px 35px rgba(139,0,0,0.25)}
@@ -53,11 +50,9 @@
         
         h2{font-size:1.3rem;margin-bottom:15px;border-left:4px solid #8B0000;padding-left:12px;font-weight:600;color:#f0f0f0}@media(min-width:768px){h2{font-size:1.6rem;margin-bottom:20px;padding-left:15px}}
         
-        /* What I Do Items - Scroll Reveal (Service Page Style) */
         .whatido-item{display:flex;flex-direction:column;gap:15px;margin-bottom:30px;opacity:0;transform:translateY(40px);transition:opacity 0.6s ease, transform 0.6s ease}@media(min-width:768px){.whatido-item{flex-direction:row;align-items:center;gap:30px;margin-bottom:40px}.whatido-item.reverse{flex-direction:row-reverse}}
         .whatido-item.revealed{opacity:1;transform:translateY(0)}
         
-        /* Image Hover Animation */
         .whatido-image{width:100%;border-radius:16px;overflow:hidden;transition:transform 0.4s ease}@media(min-width:768px){.whatido-image{flex:1;min-width:280px}}
         .whatido-image:hover{transform:scale(1.02)}
         .whatido-image img{width:100%;height:auto;max-height:380px;object-fit:cover;border-radius:16px;transition:transform 0.5s ease}@media(min-width:768px){.whatido-image img{height:480px}}
@@ -133,7 +128,7 @@
         <h2>What I Do</h2>
         
         <div class="whatido-item">
-            <div class="whatido-image"><img src="../SEO1.jpg" alt="SEO Services" width="400" height="480" loading="lazy"></div>
+            <div class="whatido-image"><img src="../SEO1.avif" alt="SEO Services" width="400" height="480" loading="lazy"></div>
             <div class="whatido-content">
                 <h3>Search Engine Optimization</h3>
                 <ul><li>Complete SEO Audit and Analysis</li><li>On-Page and Off-Page SEO</li><li>Technical SEO and Core Web Vitals</li><li>Mobile Friendly and Schema Markup</li><li>Keyword Research and Content Strategy</li></ul>
@@ -141,7 +136,7 @@
         </div>
 
         <div class="whatido-item reverse">
-            <div class="whatido-image"><img src="../Linkbuilding1.jpg" alt="Link Building" width="400" height="480" loading="lazy"></div>
+            <div class="whatido-image"><img src="../Linkbuilding1.avif" alt="Link Building" width="400" height="480" loading="lazy"></div>
             <div class="whatido-content">
                 <h3>Link Building and Guest Posting</h3>
                 <ul><li>Guest Posting on DA 50+ Sites</li><li>HARO Link Building (Forbes, Entrepreneur)</li><li>Broken Link Building</li><li>Profile Backlinks Creation</li><li>Competitor Backlink Analysis</li></ul>
@@ -158,7 +153,7 @@
         </div>
 
         <div class="whatido-item reverse">
-            <div class="whatido-image"><img src="../SMO1.jpg" alt="Social Media Optimization" width="400" height="480" loading="lazy"></div>
+            <div class="whatido-image"><img src="../SMO1.avif" alt="Social Media Optimization" width="400" height="480" loading="lazy"></div>
             <div class="whatido-content">
                 <h3>Social Media Optimization</h3>
                 <ul><li>Profile Optimization and Branding</li><li>Organic Reach and Engagement Growth</li><li>Content Strategy and Pillars</li><li>Audience Psychology and Retention</li><li>Hashtag Strategy and Collaborations</li></ul>
@@ -166,7 +161,7 @@
         </div>
 
         <div class="whatido-item">
-            <div class="whatido-image"><img src="../SMM1.jpg" alt="Social Media Marketing" width="400" height="480" loading="lazy"></div>
+            <div class="whatido-image"><img src="../SMM1.avif" alt="Social Media Marketing" width="400" height="480" loading="lazy"></div>
             <div class="whatido-content">
                 <h3>Social Media Marketing</h3>
                 <ul><li>Paid Ads Strategy</li><li>Lead Generation Campaigns</li><li>Sales Funnel Management</li><li>Retargeting and Conversion Tracking</li><li>Lookalike and Custom Audiences</li></ul>
