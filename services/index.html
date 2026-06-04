@@ -18,88 +18,53 @@
     <style>
         *{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#2a2a2a;background-image:radial-gradient(circle at 25% 0%,#4a3535 0%,#2a2a2a 100%);color:#f5f5f5;line-height:1.5}.container{max-width:100%;margin:0 auto;padding:12px;width:100%}@media(min-width:768px){.container{max-width:1200px;padding:20px}}
         
-        /* ===== ANIMATIONS ===== */
-        @keyframes slideInNav {
-            from { opacity: 0; transform: translateX(-50px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(60px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeInLeft {
-            from { opacity: 0; transform: translateX(-40px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-        @keyframes fadeInRight {
-            from { opacity: 0; transform: translateX(40px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-        @keyframes zoomIn {
-            from { opacity: 0; transform: scale(0.95); }
-            to { opacity: 1; transform: scale(1); }
-        }
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.03); }
-            100% { transform: scale(1); }
-        }
+        @keyframes slideInNav{from{opacity:0;transform:translateX(-40px)}to{opacity:1;transform:translateX(0)}}
+        @keyframes fastFadeUp{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
         
-        /* Navbar Animation */
-        .navbar{animation:slideInNav 0.6s ease-out;background:rgba(30,30,30,0.95);border-radius:50px;padding:10px 15px;margin-bottom:20px;border:1px solid rgba(139,0,0,0.4);position:sticky;top:10px;z-index:1000;backdrop-filter:blur(10px);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}@media(min-width:768px){.navbar{padding:12px 25px;margin-bottom:30px;border-radius:60px}}
-        
-        .nav-logo{display:flex;align-items:center;gap:8px;cursor:pointer}.logo-img{width:35px;height:35px;border-radius:50%;object-fit:cover;border:2px solid #8B0000;transition:transform 0.3s ease}.logo-img:hover{transform:rotate(5deg) scale(1.05)}@media(min-width:768px){.logo-img{width:45px;height:45px}}
+        .navbar{animation:slideInNav 0.3s ease-out;background:rgba(30,30,30,0.95);border-radius:50px;padding:10px 15px;margin-bottom:20px;border:1px solid rgba(139,0,0,0.4);position:sticky;top:10px;z-index:1000;backdrop-filter:blur(10px);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}@media(min-width:768px){.navbar{padding:12px 25px;margin-bottom:30px;border-radius:60px}}
+        .nav-logo{display:flex;align-items:center;gap:8px;cursor:pointer}.logo-img{width:35px;height:35px;border-radius:50%;object-fit:cover;border:2px solid #8B0000;transition:transform 0.15s ease}.logo-img:hover{transform:rotate(3deg) scale(1.02)}@media(min-width:768px){.logo-img{width:45px;height:45px}}
         .logo-text{font-size:1rem;font-weight:700;background:linear-gradient(135deg,#fff,#c0a0a0);-webkit-background-clip:text;background-clip:text;color:transparent}@media(min-width:768px){.logo-text{font-size:1.3rem}}
+        .nav-menu{display:flex;gap:5px;list-style:none;flex-wrap:wrap}@media(min-width:768px){.nav-menu{gap:8px}}.nav-menu a{color:#e0e0e0;text-decoration:none;font-weight:500;padding:6px 12px;border-radius:30px;transition:all 0.1s ease;font-size:.75rem}@media(min-width:768px){.nav-menu a{padding:8px 18px;font-size:.9rem}}.nav-menu a:hover,.nav-menu a.active{background:#8B0000;color:#fff}
         
-        .nav-menu{display:flex;gap:5px;list-style:none;flex-wrap:wrap}@media(min-width:768px){.nav-menu{gap:8px}}.nav-menu a{color:#e0e0e0;text-decoration:none;font-weight:500;padding:6px 12px;border-radius:30px;transition:all .2s ease;font-size:.75rem}@media(min-width:768px){.nav-menu a{padding:8px 18px;font-size:.9rem}}.nav-menu a:hover,.nav-menu a.active{background:#8B0000;color:#fff;transform:translateY(-2px)}
-        
-        /* Section Cards - Scroll Reveal Ready */
-        .section-card{background:rgba(60,55,55,0.85);backdrop-filter:blur(8px);border-radius:20px;padding:20px 15px;margin-bottom:20px;border:1px solid rgba(139,0,0,0.3);transition:transform 0.3s ease, box-shadow 0.3s ease;position:relative;overflow:hidden;opacity:0;transform:translateY(50px);transition:opacity 0.7s ease, transform 0.7s ease}@media(min-width:768px){.section-card{padding:30px 25px;margin-bottom:25px;border-radius:24px}}
+        .section-card{background:rgba(60,55,55,0.85);backdrop-filter:blur(8px);border-radius:20px;padding:20px 15px;margin-bottom:20px;border:1px solid rgba(139,0,0,0.3);opacity:0;transform:translateY(15px);transition:opacity 0.2s ease, transform 0.2s ease}@media(min-width:768px){.section-card{padding:30px 25px;margin-bottom:25px;border-radius:24px}}
         .section-card.revealed{opacity:1;transform:translateY(0)}
-        .section-card:hover{transform:translateY(-5px);box-shadow:0 15px 35px rgba(139,0,0,0.25)}
-        .section-card::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.05),transparent);transition:left 0.5s ease}
-        .section-card:hover::before{left:100%}
+        .section-card:hover{transform:translateY(-2px);box-shadow:0 5px 15px rgba(139,0,0,0.15)}
         
         h2{font-size:1.3rem;margin-bottom:15px;border-left:4px solid #8B0000;padding-left:12px;font-weight:600;color:#f0f0f0}@media(min-width:768px){h2{font-size:1.6rem;margin-bottom:20px;padding-left:15px}}
         
-        /* Service Items - Scroll Reveal Ready */
-        .service-item{display:flex;flex-direction:column;gap:15px;margin-bottom:30px;opacity:0;transform:translateY(40px);transition:opacity 0.6s ease, transform 0.6s ease}@media(min-width:768px){.service-item{flex-direction:row;align-items:center;gap:30px;margin-bottom:40px}.service-item.reverse{flex-direction:row-reverse}}
+        .service-item{display:flex;flex-direction:column;gap:12px;margin-bottom:25px;opacity:0;transform:translateY(12px);transition:opacity 0.18s ease, transform 0.18s ease}@media(min-width:768px){.service-item{flex-direction:row;align-items:center;gap:25px;margin-bottom:35px}.service-item.reverse{flex-direction:row-reverse}}
         .service-item.revealed{opacity:1;transform:translateY(0)}
         
-        /* Image Hover Animation */
-        .service-image{width:100%;border-radius:16px;overflow:hidden;transition:transform 0.4s ease}@media(min-width:768px){.service-image{flex:1;min-width:280px}}
-        .service-image:hover{transform:scale(1.02)}
-        .service-image img{width:100%;height:auto;max-height:380px;object-fit:cover;border-radius:16px;transition:transform 0.5s ease}@media(min-width:768px){.service-image img{height:480px}}
-        .service-image img:hover{transform:scale(1.05)}
+        .service-image{width:100%;border-radius:16px;overflow:hidden;transition:transform 0.12s ease}@media(min-width:768px){.service-image{flex:1;min-width:260px}}
+        .service-image:hover{transform:scale(1.01)}
+        .service-image img{width:100%;height:auto;max-height:350px;object-fit:cover;border-radius:16px}@media(min-width:768px){.service-image img{height:420px}}
         
-        .service-content{width:100%}@media(min-width:768px){.service-content{flex:1}}.service-content h3{font-size:1.1rem;margin-bottom:8px;color:#f0f0f0}@media(min-width:768px){.service-content h3{font-size:1.3rem;margin-bottom:10px}}.service-content p{color:#c0c0c0;line-height:1.5;font-size:.8rem}@media(min-width:768px){.service-content p{font-size:.9rem}}
+        .service-content{width:100%}@media(min-width:768px){.service-content{flex:1}}
+        .service-content h3{font-size:1.1rem;margin-bottom:6px;color:#f0f0f0}@media(min-width:768px){.service-content h3{font-size:1.3rem;margin-bottom:8px}}
+        .service-content p{color:#c0c0c0;line-height:1.45;font-size:.8rem;margin-bottom:8px}@media(min-width:768px){.service-content p{font-size:.85rem}}
         
-        .result-badge{background:rgba(139,0,0,0.2);border-left:3px solid #8B0000;padding:10px 12px;border-radius:8px;margin-top:12px;font-size:0.75rem}
+        .result-badge{background:rgba(139,0,0,0.15);border-left:3px solid #8B0000;padding:6px 10px;border-radius:6px;margin-top:8px;font-size:0.7rem}
         .result-badge strong{color:#c0a0a0}
         
-        .unique-section{background:rgba(139,0,0,0.1);border-left:4px solid #8B0000;padding:18px;border-radius:16px;margin-top:20px}
+        .unique-section{background:rgba(139,0,0,0.08);border-left:4px solid #8B0000;padding:15px;border-radius:14px;margin-top:15px}
         
-        /* Footer Animation */
-        .footer{background:rgba(30,30,30,0.95);border-radius:20px;padding:20px;margin-top:25px;opacity:0;transform:translateY(30px);transition:opacity 0.6s ease, transform 0.6s ease}@media(min-width:768px){.footer{padding:30px;margin-top:35px;border-radius:30px}}
+        .footer{background:rgba(30,30,30,0.95);border-radius:20px;padding:18px;margin-top:20px;opacity:0;transform:translateY(12px);transition:opacity 0.2s ease, transform 0.2s ease}@media(min-width:768px){.footer{padding:25px;margin-top:30px;border-radius:30px}}
         .footer.revealed{opacity:1;transform:translateY(0)}
         
-        .footer-grid{display:grid;grid-template-columns:1fr;gap:20px;text-align:center}@media(min-width:600px){.footer-grid{grid-template-columns:repeat(3,1fr);text-align:left;gap:30px}}
-        .footer-section h4{font-size:.9rem;margin-bottom:8px;color:#c0a0a0}
-        .footer-section p,.footer-section a{color:#999;text-decoration:none;line-height:1.5;font-size:.75rem}
+        .footer-grid{display:grid;grid-template-columns:1fr;gap:15px;text-align:center}@media(min-width:600px){.footer-grid{grid-template-columns:repeat(3,1fr);text-align:left;gap:25px}}
+        .footer-section h4{font-size:.85rem;margin-bottom:6px;color:#c0a0a0}
+        .footer-section p,.footer-section a{color:#999;text-decoration:none;line-height:1.4;font-size:.7rem}
         .footer-section a:hover{color:#c0a0a0}
+        .social-links-footer{display:flex;gap:8px;margin-top:8px;justify-content:center}@media(min-width:600px){.social-links-footer{justify-content:flex-start}}
+        .social-links-footer a{width:28px;height:28px;background:rgba(70,60,60,0.8);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all 0.1s ease}
+        .social-links-footer a:hover{background:#8B0000;transform:translateY(-2px) scale(1.03)}
+        .footer-bottom{text-align:center;padding-top:10px;border-top:1px solid rgba(139,0,0,0.2);color:#777;font-size:.65rem}.hashtag{color:#c0a0a0;margin-top:4px}
         
-        .social-links-footer{display:flex;gap:10px;margin-top:10px;justify-content:center}@media(min-width:600px){.social-links-footer{justify-content:flex-start}}
-        .social-links-footer a{width:30px;height:30px;background:rgba(70,60,60,0.8);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .25s ease}
-        .social-links-footer a:hover{background:#8B0000;transform:translateY(-5px) scale(1.1)}
+        .btn-pulse{display:inline-block;background:#8B0000;color:#fff;padding:8px 24px;border-radius:40px;font-weight:600;text-decoration:none;transition:all 0.2s ease;margin-top:12px}
+        .btn-pulse:hover{background:#a01010;transform:scale(1.02)}
         
-        .footer-bottom{text-align:center;padding-top:15px;border-top:1px solid rgba(139,0,0,0.2);color:#777;font-size:.7rem}
-        .hashtag{color:#c0a0a0;margin-top:6px}
-        
-        .last-updated{text-align:center;font-size:0.7rem;color:#888;margin-top:20px;padding-top:15px;border-top:1px solid rgba(139,0,0,0.2);opacity:0;transform:translateY(20px);transition:opacity 0.5s ease, transform 0.5s ease}
+        .last-updated{text-align:center;font-size:0.65rem;color:#888;margin-top:15px;padding-top:10px;border-top:1px solid rgba(139,0,0,0.15);opacity:0;transform:translateY(8px);transition:opacity 0.15s ease, transform 0.15s ease}
         .last-updated.revealed{opacity:1;transform:translateY(0)}
-        
-        .btn-pulse{display:inline-block;background:#8B0000;color:#fff;padding:10px 28px;border-radius:40px;font-weight:600;text-decoration:none;transition:all 0.3s ease;animation:pulse 2s infinite}
-        .btn-pulse:hover{background:#a01010;transform:scale(1.05)}
     </style>
 </head>
 <body>
@@ -107,7 +72,7 @@
 <div class="container">
     <nav class="navbar">
         <a href="../index.html" class="nav-logo" style="text-decoration: none; display: flex; align-items: center; gap: 8px;">
-            <img src="../profile1.jpg" alt="Logo" class="logo-img" width="45" height="45">
+            <img src="../profile1.png" alt="Logo" class="logo-img" width="45" height="45" loading="lazy">
             <span class="logo-text">M Arham</span>
         </a>
         <ul class="nav-menu">
@@ -119,7 +84,6 @@
         </ul>
     </nav>
 
-    <!-- Unique Intro Section - Why This Page -->
     <div class="section-card unique-section">
         <h2>Why Work With Me?</h2>
         <p>After 4+ years in digital marketing and 50+ successful client projects, I've learned one thing. Generic services don't work. Every business needs a custom approach. This page lists exactly what I offer based on real client needs. No fluff. Just proven strategies that work in 2026.</p>
@@ -128,137 +92,88 @@
     <div class="section-card">
         <h2>Services I Offer</h2>
 
-        <!-- SEO Service -->
         <div class="service-item">
             <div class="service-image"><img src="../SEO1.jpg" alt="SEO Services" width="400" height="480" loading="lazy"></div>
             <div class="service-content">
                 <h3>Search Engine Optimization</h3>
-                <p>I provide complete SEO solutions to help businesses rank higher on Google. My services include comprehensive website audit, on-page optimization (meta tags, headings, keyword optimization, internal linking, URL structure), technical SEO (site speed optimization, crawlability, indexation, XML sitemaps, robots.txt), mobile-friendly optimization, Core Web Vitals improvement (LCP, FID, CLS), schema markup implementation for rich snippets, content optimization with keyword mapping and topic clusters, and site structure improvement with breadcrumbs and silo structure. I focus on sustainable white-hat SEO strategies that deliver long-term results without risking Google penalties.</p>
-                <div class="result-badge"><strong> Real result from my work:</strong> A SaaS client moved from page 3 to page 1 for 12 keywords in 4 months after technical fixes and content optimization.</div>
+                <p>Complete SEO solutions including website audit, on-page optimization, technical SEO, Core Web Vitals, schema markup, and content optimization. White-hat strategies only.</p>
+                <div class="result-badge"><strong> Result:</strong> SaaS client moved from page 3 to page 1 for 12 keywords in 4 months.</div>
             </div>
         </div>
 
-        <!-- Link Building Service -->
         <div class="service-item reverse">
             <div class="service-image"><img src="../Linkbuilding1.jpg" alt="Link Building Services" width="400" height="480" loading="lazy"></div>
             <div class="service-content">
                 <h3>Link Building and Guest Posting</h3>
-                <p>Link building is essential for increasing website authority and search rankings. I specialize in guest posting on DA 50+ websites with strong Domain Rating (DR), HARO (Help a Reporter Out) link building to earn backlinks from Forbes, Entrepreneur, and other major publications, broken link building, competitor backlink analysis, niche edits, profile backlinks creation, and local link building. I have successfully published over 500 guest posts across multiple industries including SaaS, Health and Medical, Technology and IT, General Business, E-commerce, and Cryptocurrency / Blockchain / Web3. All placements are on high-quality, relevant sites with genuine organic traffic. I do not use black hat techniques or PBNs.</p>
-                <p><strong>Industries I specialize in:</strong> Health, SaaS, Technology, E-commerce, Crypto.</p>
-                <div class="result-badge"><strong> Real result from my work:</strong> Secured a guest post on a DR 65 crypto site that brought 500+ referral visits and improved domain authority by 12 points in 2 months.</div>
+                <p>Guest posting on DA 50+ sites, HARO link building, broken link building, competitor analysis. 500+ guest posts published. Niches: Health, SaaS, Tech, E-commerce, Crypto.</p>
+                <div class="result-badge"><strong> Result:</strong> DR 65 crypto site guest post brought 500+ referral visits, DA up by 12 points.</div>
             </div>
         </div>
 
-        <!-- Local SEO Service -->
         <div class="service-item">
             <div class="service-image"><img src="../LocalSEO1.jpg" alt="Local SEO Services" width="400" height="480" loading="lazy"></div>
             <div class="service-content">
                 <h3>Local SEO and Google Business Profile</h3>
-                <p>Local SEO helps businesses appear in Google's Local Pack and Maps results. I optimize your Google Business Profile (GBP) with primary and secondary category selection, services optimization, geo-tagged images, business description, and product/service sections. I manage Q&A section, post weekly updates, ensure NAP consistency (Name, Address, Phone) across Yellow Pages, Justdial, Yelp, and other directories. I handle review velocity and response management, build local citations, and optimize for proximity vs authority. I track local metrics including CTR, calls, direction requests, dwell time, branded searches, and engagement to improve local visibility.</p>
-                <div class="result-badge"><strong> Real result from my work:</strong> Helped a local dental clinic appear in Google's Local Pack at position #2. Phone calls increased by 200% and direction requests by 150% in 3 months.</div>
+                <p>GBP optimization, NAP consistency, local citations, review management, local metrics tracking including CTR, calls, and direction requests.</p>
+                <div class="result-badge"><strong> Result:</strong> Dental clinic Local Pack #2. Calls +200%, direction requests +150% in 3 months.</div>
             </div>
         </div>
 
-        <!-- SMO Service -->
         <div class="service-item reverse">
-            <div class="service-image"><img src="../SMO1.jpg" alt="Social Media Optimization Services" width="400" height="480" loading="lazy"></div>
+            <div class="service-image"><img src="../SMO1.jpg" alt="Social Media Optimization" width="400" height="480" loading="lazy"></div>
             <div class="service-content">
                 <h3>Social Media Optimization</h3>
-                <p>Social Media Optimization helps grow your brand organically without paid ads. I optimize your social media profiles (bio, images, links, username), increase organic reach through algorithm-friendly content strategies, improve engagement rate (likes, comments, shares, saves), build consistent brand identity and tone of voice, develop content strategy with 3-5 main content pillars, understand audience psychology for better engagement, implement retention and loyalty tactics, and use organic growth strategies including hashtag research, trending audio, collaborations, and user-generated content. I specialize in Facebook, Instagram, LinkedIn, Twitter, and TikTok.</p>
-                <div class="result-badge"><strong> Real result from my work:</strong> Increased Instagram engagement rate from 1.2% to 4.8% in 2 months for a fashion brand. Organic reach grew by 300%.</div>
+                <p>Profile optimization, organic reach growth, content strategy, hashtag research, engagement tactics. Specialized in Facebook, Instagram, LinkedIn, Twitter, TikTok.</p>
+                <div class="result-badge"><strong> Result:</strong> Instagram engagement from 1.2% to 4.8% in 2 months. Organic reach +300%.</div>
             </div>
         </div>
 
-        <!-- SMM Service -->
         <div class="service-item">
-            <div class="service-image"><img src="../SMM1.jpg" alt="Social Media Marketing Services" width="400" height="480" loading="lazy"></div>
+            <div class="service-image"><img src="../SMM1.jpg" alt="Social Media Marketing" width="400" height="480" loading="lazy"></div>
             <div class="service-content">
                 <h3>Social Media Marketing</h3>
-                <p>Social Media Marketing is the fastest way to generate leads, sales, and brand awareness. I create and manage high-performing ad campaigns on Facebook, Instagram, LinkedIn, and TikTok. My services include paid ads strategy, lead generation campaigns, sales funnel management (top, middle, bottom of funnel), retargeting campaigns to convert warm audiences, conversion tracking and ROAS optimization using Facebook Pixel and Google Tag Manager, advanced audience targeting (lookalike audiences at 1%, 2%, 3%, custom audiences based on website visitors and email lists, interest-based targeting), A/B testing of ad copy, images, videos, headlines, and CTAs, and scaling winning campaigns with proper bid strategies without losing profitability.</p>
-                <div class="result-badge"><strong> Real result from my work:</strong> Generated 450+ leads at $3.2 per lead for a B2B SaaS company using LinkedIn and Facebook ads. ROAS improved from 2x to 5.5x.</div>
+                <p>Paid ads strategy, lead generation, sales funnel management, retargeting, conversion tracking, A/B testing, lookalike audiences.</p>
+                <div class="result-badge"><strong> Result:</strong> 450+ leads at $3.2/lead for B2B SaaS. ROAS from 2x to 5.5x.</div>
             </div>
         </div>
 
-        <!-- Ads Service -->
         <div class="service-item reverse">
-            <div class="service-image"><img src="../ads.jpg" alt="Ads Campaign Management Services" width="400" height="480" loading="lazy"></div>
+            <div class="service-image"><img src="../ads.jpg" alt="Ads Campaign Management" width="400" height="480" loading="lazy"></div>
             <div class="service-content">
                 <h3>Ads Campaign Management</h3>
-                <p>As a professional Ads Campaign Manager, I build complete campaign architectures on Google Ads (Search, Display, Shopping, YouTube, Performance Max) and Meta Ads Manager (Facebook & Instagram). Services include campaign structure setup with proper hierarchy of campaigns, ad groups, ads, and keywords, advanced audience targeting using in-market segments, affinity audiences, custom segments, and lookalike audiences, A/B testing of headlines, descriptions, CTAs, display paths, and landing pages, CTR optimization through compelling ad copy and creative design, CPC control and bid strategy management (maximize clicks, target CPA, maximize conversions, target ROAS), retargeting campaign setup for website visitors and engaged users, conversion tracking via Google Tag Manager and Facebook Pixel, ad fatigue management by refreshing creatives, and scaling strategies that increase budget profitably while maintaining CPA and ROAS.</p>
-                <div class="result-badge"><strong> Real result from my work:</strong> Scaled Google Ads budget while maintaining CPA under $25 for an e-commerce store. ROAS increased from 3x to 6x.</div>
+                <p>Google Ads (Search, Display, Shopping, YouTube, PMax) and Meta Ads. Campaign structure, targeting, CTR optimization, bid strategy, conversion tracking.</p>
+                <div class="result-badge"><strong> Result:</strong> E-commerce store ROAS from 3x to 6x, CPA under $25.</div>
             </div>
         </div>
     </div>
 
-    <!-- Call to Action Section -->
     <div class="section-card" style="text-align: center;">
         <h2>Ready to Grow Your Business?</h2>
-        <p style="margin-bottom: 15px;">Every project starts with a conversation. No pressure. Just a clear plan.</p>
+        <p style="margin-bottom: 10px;">Every project starts with a conversation. No pressure. Just a clear plan.</p>
         <a href="../contact/" class="btn-pulse">Get a Free Consultation →</a>
     </div>
 
-    <!-- Internal Linking -->
     <div class="section-card" style="text-align: center;">
-        <h2>Learn More About SEO</h2>
-        <p>Read my <a href="../blog/what-is-seo-beginners-guide/" style="color: #c0a0a0;">complete SEO guide for beginners</a> or check out <a href="../blog/professional-seo-services-guide/" style="color: #c0a0a0;">what professional SEO services include</a>.</p>
+        <h2>Learn More About Me</h2>
+        <p>Read my <a href="../about/" style="color: #c0a0a0;">about page</a> to know my experience or check out my <a href="../blog/" style="color: #c0a0a0;">blog</a> for digital marketing insights.</p>
     </div>
 
-    <!-- Footer -->
     <div class="footer">
         <div class="footer-grid">
-            <div class="footer-section">
-                <h4>M Arham</h4>
-                <p>Digital Marketing Expert helping businesses grow online.</p>
-                <div class="social-links-footer">
-                    <a href="https://www.linkedin.com/in/m-arham-link-builder/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://www.instagram.com/marhamseo/" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.facebook.com/arhamblogger" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                </div>
-            </div>
-            <div class="footer-section">
-                <h4>Quick Links</h4>
-                <p><a href="../index.html">Home</a></p>
-                <p><a href="../about/">About</a></p>
-                <p><a href="../services/">Services</a></p>
-                <p><a href="../contact/">Contact</a></p>
-                <p><a href="../blog/">Blog</a></p>
-            </div>
-            <div class="footer-section">
-                <h4>Contact</h4>
-                <p><a href="mailto:marham2772@gmail.com">marham2772@gmail.com</a></p>
-                <p>Available for freelance projects</p>
-            </div>
+            <div class="footer-section"><h4>M Arham</h4><p>Digital Marketing Expert helping businesses grow online.</p><div class="social-links-footer"><a href="https://www.linkedin.com/in/m-arham-link-builder/" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a><a href="https://www.instagram.com/marhamseo/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a><a href="https://www.facebook.com/arhamblogger" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a></div></div>
+            <div class="footer-section"><h4>Quick Links</h4><p><a href="../index.html">Home</a></p><p><a href="../about/">About</a></p><p><a href="../services/">Services</a></p><p><a href="../contact/">Contact</a></p><p><a href="../blog/">Blog</a></p></div>
+            <div class="footer-section"><h4>Contact</h4><p><a href="mailto:marham2772@gmail.com">marham2772@gmail.com</a></p><p>Available for freelance projects</p></div>
         </div>
-        <div class="footer-bottom">
-            <p>© 2026 M Arham — Digital Marketing Expert</p>
-            <div class="hashtag">#ArhamSEO</div>
-        </div>
+        <div class="footer-bottom"><p>© 2026 M Arham — Digital Marketing Expert</p><div class="hashtag">#ArhamSEO</div></div>
     </div>
 </div>
 <script>
-    // Navbar Scroll Effect
-    function navbarScrollEffect() {
-        const navbar = document.querySelector('.navbar');
-        if (window.scrollY > 50) navbar.style.background = "rgba(20, 20, 20, 0.98)";
-        else navbar.style.background = "rgba(30, 30, 30, 0.95)";
-    }
-    window.addEventListener('scroll', navbarScrollEffect);
+    function navbarScrollEffect(){var n=document.querySelector('.navbar');window.scrollY>50?n.style.background="rgba(20,20,20,0.98)":n.style.background="rgba(30,30,30,0.95)"}
+    window.addEventListener('scroll',navbarScrollEffect);
     
-    // Scroll Reveal Animation - Elements fade in when scrolled into view
-    const observerOptions = { threshold: 0.1, rootMargin: "0px 0px -30px 0px" };
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('revealed');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
+    var observer=new IntersectionObserver(function(e){e.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('revealed');observer.unobserve(entry.target)}})},{threshold:0.1,rootMargin:"0px 0px -10px 0px"});
     
-    // Observe all elements with scroll reveal
-    document.querySelectorAll('.section-card, .service-item, .footer, .last-updated').forEach(el => {
-        observer.observe(el);
-    });
+    document.querySelectorAll('.section-card, .service-item, .footer, .last-updated').forEach(function(el){observer.observe(el)});
 </script>
 </body>
 </html>
