@@ -49,8 +49,10 @@
         ul,ol{margin:15px 0 20px 30px;color:#d0d0d0;opacity:0;transform:translateY(20px);transition:opacity 0.5s ease, transform 0.5s ease}
         ul.visible,ol.visible{opacity:1;transform:translateY(0)}
         li{margin-bottom:8px}
-        a{color:#c0a0a0;text-decoration:none;transition:color 0.2s ease}
-        a:hover{color:#8B0000}
+        
+        /* Links - Dark Red Color */
+        a{color:#8B0000;text-decoration:none;transition:color 0.2s ease}
+        a:hover{color:#a01010;text-decoration:underline}
         
         .meta{color:#888;font-size:0.85rem;margin-bottom:20px;padding-bottom:15px;border-bottom:1px solid rgba(139,0,0,0.3);animation:fadeIn 0.6s ease-out}
         
@@ -58,7 +60,6 @@
         .result-badge:hover{background:#8B0000;transform:scale(1.02);border-left-color:#a01010}
         .result-badge strong{color:#c0a0a0}
         .result-badge:hover strong{color:#fff}
-        .result-badge:hover .result-badge{color:#fff}
         
         .footer{background:rgba(30,30,30,0.95);border-radius:20px;padding:20px;margin-top:25px;opacity:0;transform:translateY(30px);transition:opacity 0.6s ease, transform 0.6s ease}@media(min-width:768px){.footer{padding:30px;margin-top:35px;border-radius:30px}}
         .footer.visible{opacity:1;transform:translateY(0)}
@@ -68,7 +69,7 @@
         .footer-section p,.footer-section a{color:#999;text-decoration:none;line-height:1.5;font-size:.75rem}
         .footer-section a:hover{color:#c0a0a0}
         
-        .social-links-footer{display:flex;gap:10px;justify-content:center}@media(min-width:600px){.social-links-footer{justify-content:flex-start}}
+        .social-links-footer{display:flex;gap:10px;margin-top:10px;justify-content:center}@media(min-width:600px){.social-links-footer{justify-content:flex-start}}
         .social-links-footer a{width:30px;height:30px;background:rgba(70,60,60,0.8);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .25s ease}
         .social-links-footer a:hover{background:#8B0000;transform:translateY(-5px) scale(1.1)}
         
@@ -106,7 +107,7 @@
 
         <p>In my years of doing SEO, I have noticed that businesses who invest in proper SEO services see results in 4 to 6 months. One of my clients in the SaaS space saw their organic traffic go up by 40% after three months of consistent on-page and technical SEO work.</p>
 
-        <p>If you are completely new to this space, check out my beginner's guide on <a href="../../blog/what-is-seo-beginners-guide/" style="color:#8B0000; font-weight:500;">SEO basics</a> where I break down how search engines actually work.</p>
+        <p>If you are completely new to this space, check out my beginner's guide on <a href="../../blog/what-is-seo-beginners-guide/">SEO basics</a> where I break down how search engines actually work.</p>
 
         <h2>Types of SEO Services</h2>
         <p>SEO is not one size fits all. Depending on your website, budget, and goals, you may need different types of support. Here are the main categories based on what I actually do for clients.</p>
@@ -136,13 +137,7 @@
 
         <h3>Technical SEO Services</h3>
         <p>Technical SEO is about making sure search engines can properly crawl and understand your site. If Google cannot access your content easily, you will not rank well.</p>
-        <p>Key technical areas I focus on:</p>
-        <ul>
-            <li>Improving page speed and Core Web Vitals</li>
-            <li>Fixing crawl errors and indexing issues</li>
-            <li>Setting up XML sitemaps and robots.txt correctly</li>
-            <li>Adding structured data for rich snippets</li>
-        </ul>
+        <p>Key technical areas I focus on include improving <a href="https://pagespeed.web.dev/" target="_blank" rel="noopener noreferrer">page speed</a> and Core Web Vitals, fixing crawl errors and <a href="https://search.google.com/search-console/about" target="_blank" rel="noopener noreferrer">indexing issues</a>, setting up XML sitemaps and robots.txt correctly, and adding structured data for rich snippets.</p>
         <div class="result-badge"><strong> Real example:</strong> An ecommerce site was loading in 5 seconds. After compressing images and minifying code, load time dropped to 1.8 seconds. Organic traffic increased by 25% in two months.</div>
 
         <h3>Local SEO Services</h3>
@@ -185,7 +180,7 @@
             <li><strong>Promises of quick results.</strong> SEO takes time. Anyone promising overnight rankings is likely using automation that can get your site penalized.</li>
         </ul>
 
-        <p>Once you start working with SEO services, you will need to track your progress. Using <a href="../../blog/5-best-seo-rank-tracking-tools-2026/" style="color:#8B0000; font-weight:500;">rank tracking</a> tools helps you see what is actually working and where you need to improve.</p>
+        <p>Once you start working with SEO services, you will need to track your progress. Using <a href="../../blog/5-best-seo-rank-tracking-tools-2026/">rank tracking</a> tools helps you see what is actually working and where you need to improve.</p>
         
         <div class="result-badge"><strong> Summary:</strong> Professional SEO services can transform your website's traffic and revenue, but only if you work with someone who uses white hat methods and focuses on real results. I have been doing this for 4+ years, and I only take on clients where I know I can add real value.</div>
     </div>
@@ -221,6 +216,11 @@
         </div>
     </div>
 </div>
+
+<div class="last-updated">
+    <p>📅 Last updated: June 4, 2026 | Based on real client work across SaaS, crypto, health, and tech niches</p>
+</div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
 <script>
     function navbarScrollEffect() {
