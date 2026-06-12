@@ -15,7 +15,6 @@
     <style>
         *{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#2a2a2a;background-image:radial-gradient(circle at 25% 0%,#4a3535 0%,#2a2a2a 100%);color:#f5f5f5;line-height:1.5}.container{max-width:100%;margin:0 auto;padding:12px;width:100%}@media(min-width:768px){.container{max-width:1200px;padding:20px}}
         
-        /* ===== PURE CSS ANIMATIONS ===== */
         @keyframes slideInNav {
             from { opacity: 0; transform: translateX(-40px); }
             to { opacity: 1; transform: translateX(0); }
@@ -29,18 +28,15 @@
             to { opacity: 1; }
         }
         
-        /* Navbar Animation */
         .navbar{animation:slideInNav 0.5s ease-out;background:rgba(30,30,30,0.95);border-radius:50px;padding:10px 15px;margin-bottom:20px;border:1px solid rgba(139,0,0,0.4);position:sticky;top:10px;z-index:1000;backdrop-filter:blur(10px);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}@media(min-width:768px){.navbar{padding:12px 25px;margin-bottom:30px;border-radius:60px}}
         
         .nav-logo{display:flex;align-items:center;gap:8px;cursor:pointer}.logo-img{width:35px;height:35px;border-radius:50%;object-fit:cover;border:2px solid #8B0000}@media(min-width:768px){.logo-img{width:45px;height:45px}}.logo-text{font-size:1rem;font-weight:700;background:linear-gradient(135deg,#fff,#c0a0a0);-webkit-background-clip:text;background-clip:text;color:transparent}@media(min-width:768px){.logo-text{font-size:1.3rem}}
         
         .nav-menu{display:flex;gap:5px;list-style:none;flex-wrap:wrap}@media(min-width:768px){.nav-menu{gap:8px}}.nav-menu a{color:#e0e0e0;text-decoration:none;font-weight:500;padding:6px 12px;border-radius:30px;transition:all .2s ease;font-size:.75rem}@media(min-width:768px){.nav-menu a{padding:8px 18px;font-size:.9rem}}.nav-menu a:hover,.nav-menu a.active{background:#8B0000;color:#fff}
         
-        /* Section Cards Animation */
         .section-card{background:rgba(60,55,55,0.85);backdrop-filter:blur(8px);border-radius:20px;padding:20px 15px;margin-bottom:20px;border:1px solid rgba(139,0,0,0.3);animation:fadeInUp 0.6s ease-out;animation-fill-mode:both;transition:transform 0.3s ease, box-shadow 0.3s ease}@media(min-width:768px){.section-card{padding:30px 25px}}
         .section-card:hover{transform:translateY(-5px);box-shadow:0 10px 30px rgba(139,0,0,0.2)}
         
-        /* Staggered delays for cards */
         .section-card:nth-child(1){animation-delay:0.1s}
         .section-card:nth-child(2){animation-delay:0.2s}
         .section-card:nth-child(3){animation-delay:0.3s}
@@ -56,12 +52,12 @@
         
         .h2{font-size:1.3rem;margin-bottom:15px;border-left:4px solid #8B0000;padding-left:12px;font-weight:600;color:#f0f0f0}@media(min-width:768px){.h2{font-size:1.6rem}}
         
-        /* Blog Posts Animation */
         .blog-post{margin-bottom:20px;padding:15px;background:rgba(70,60,60,0.7);border-radius:16px;transition:all .3s ease;animation:fadeInUp 0.5s ease-out;animation-fill-mode:both}
         .blog-post:hover{transform:translateY(-3px);background:#8B0000}
         .blog-post:nth-child(1){animation-delay:0.1s}
         .blog-post:nth-child(2){animation-delay:0.2s}
         .blog-post:nth-child(3){animation-delay:0.3s}
+        .blog-post:nth-child(4){animation-delay:0.4s}
         
         .blog-post h3{margin-bottom:10px;font-size:1.1rem}
         .blog-post h3 a{color:#c0a0a0;text-decoration:none;transition:color 0.2s ease}
@@ -70,20 +66,24 @@
         .blog-post a{color:#8B0000;text-decoration:none;transition:color 0.2s ease}
         .blog-post a:hover{color:#fff}
         
-        /* Footer Animation */
         .footer{background:rgba(30,30,30,0.95);border-radius:20px;padding:20px;margin-top:25px;animation:fadeInUp 0.6s ease-out;animation-delay:0.4s;animation-fill-mode:both}@media(min-width:768px){.footer{padding:30px;margin-top:35px;border-radius:30px}}
         
-        .footer-grid{display:grid;grid-template-columns:1fr;gap:20px;text-align:center}@media(min-width:600px){.footer-grid{grid-template-columns:repeat(3,1fr);text-align:left;gap:30px}}.footer-section h4{font-size:.9rem;margin-bottom:8px;color:#c0a0a0}.footer-section p,.footer-section a{color:#999;text-decoration:none;line-height:1.5;font-size:.75rem}.footer-section a:hover{color:#c0a0a0}
+        .footer-grid{display:grid;grid-template-columns:1fr;gap:20px;text-align:center}@media(min-width:600px){.footer-grid{grid-template-columns:repeat(3,1fr);text-align:left;gap:30px}}
+        .footer-section h4{font-size:.9rem;margin-bottom:8px;color:#c0a0a0}
+        .footer-section p,.footer-section a{color:#999;text-decoration:none;line-height:1.5;font-size:.75rem}
+        .footer-section a:hover{color:#c0a0a0}
         
-        .social-links-footer{display:flex;gap:10px;margin-top:10px;justify-content:center}@media(min-width:600px){.social-links-footer{justify-content:flex-start}}.social-links-footer a{width:30px;height:30px;background:rgba(70,60,60,0.8);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .25s ease}.social-links-footer a:hover{background:#8B0000;transform:translateY(-3px) scale(1.1)}
+        .social-links-footer{display:flex;gap:10px;margin-top:10px;justify-content:center}@media(min-width:600px){.social-links-footer{justify-content:flex-start}}
+        .social-links-footer a{width:30px;height:30px;background:rgba(70,60,60,0.8);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .25s ease}
+        .social-links-footer a:hover{background:#8B0000;transform:translateY(-3px) scale(1.1)}
         
-        .footer-bottom{text-align:center;padding-top:15px;border-top:1px solid rgba(139,0,0,0.2);color:#777;font-size:.7rem}.hashtag{color:#c0a0a0;margin-top:6px}
+        .footer-bottom{text-align:center;padding-top:15px;border-top:1px solid rgba(139,0,0,0.2);color:#777;font-size:.7rem}
+        .hashtag{color:#c0a0a0;margin-top:6px}
     </style>
 </head>
 <body>
 
 <div class="container">
-    <!-- Navbar -->
     <nav class="navbar">
         <a href="../index.html" class="nav-logo" style="text-decoration: none; display: flex; align-items: center; gap: 8px;">
             <img src="../profile1.jpg" alt="Logo" class="logo-img" width="45" height="45">
@@ -98,7 +98,6 @@
         </ul>
     </nav>
 
-    <!-- Blog Header with Search Box -->
     <div class="section-card">
         <div class="blog-header">
             <h2>Blog</h2>
@@ -110,9 +109,14 @@
         <p style="text-align: center;">Digital marketing tips by M Arham. Practical advice on SEO, SMM, SMO, guest posting, link building, and ad campaigns.</p>
     </div>
 
-    <!-- Blog Posts List (3 articles only - no duplicate) -->
     <div class="section-card" id="blogPosts">
         
+        <div class="blog-post">
+            <h3><a href="5-Best-SEO-Rank-Tracking-Tools-to-Outrank-Your-Competitors-2026/">5 Best SEO Rank Tracking Tools to Outrank Your Competitors 2026</a></h3>
+            <p>SEO rank tracking tools like SEMrush, Ahrefs, Mangools, SE Ranking, and SEO Powersuite help monitor keyword positions and improve search performance.</p>
+            <a href="5-Best-SEO-Rank-Tracking-Tools-to-Outrank-Your-Competitors-2026/">Read more →</a>
+        </div>
+
         <div class="blog-post">
             <h3><a href="professional-seo-services-guide/">Professional SEO Services A Complete Guide</a></h3>
             <p>Learn about on-page, off-page, technical, local, and ecommerce SEO services. What to expect and red flags to avoid when hiring SEO help.</p>
@@ -125,14 +129,18 @@
             <a href="what-is-seo-beginners-guide/">Read more →</a>
         </div>
 
+        <div class="blog-post">
+            <h3><a href="off-page-seo-beginners-guide-in-2026/">Off-Page SEO: The Beginner's Guide to Basics</a></h3>
+            <p>Off-page SEO grows your website's visibility through backlinks, local listings, reviews, and brand mentions. Learn how to get started.</p>
+            <a href="off-page-seo-beginners-guide-in-2026/">Read more →</a>
+        </div>
+
     </div>
 
-    <!-- Internal Linking -->
     <div class="section-card" style="text-align: center;">
         <p>Check my <a href="../services/" style="color: #c0a0a0;">SEO services</a> or <a href="../contact/" style="color: #c0a0a0;">contact me</a> for a free consultation.</p>
     </div>
 
-    <!-- Footer -->
     <div class="footer">
         <div class="footer-grid">
             <div class="footer-section">
