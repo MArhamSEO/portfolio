@@ -50,16 +50,21 @@
         ul.visible,ol.visible{opacity:1;transform:translateY(0)}
         li{margin-bottom:8px}
         
-        /* Links - Dark Red Color */
         a{color:#8B0000;text-decoration:none;transition:color 0.2s ease}
         a:hover{color:#a01010;text-decoration:underline}
         
         .meta{color:#888;font-size:0.85rem;margin-bottom:20px;padding-bottom:15px;border-bottom:1px solid rgba(139,0,0,0.3);animation:fadeIn 0.6s ease-out}
         
-        .result-badge{background:rgba(139,0,0,0.15);border-left:3px solid #8B0000;padding:10px 15px;border-radius:8px;margin:15px 0;transition:all 0.3s ease;cursor:pointer}
-        .result-badge:hover{background:#8B0000;transform:scale(1.02);border-left-color:#a01010}
-        .result-badge strong{color:#c0a0a0}
-        .result-badge:hover strong{color:#fff}
+        /* Authority Badge - Author Bio */
+        .author-bio{background:rgba(139,0,0,0.1);border-left:4px solid #8B0000;padding:15px 20px;border-radius:12px;margin:20px 0;display:flex;align-items:center;gap:15px;flex-wrap:wrap}
+        .author-bio img{width:50px;height:50px;border-radius:50%;object-fit:cover}
+        .author-bio strong{color:#c0a0a0}
+        
+        /* Data Table */
+        .seo-table{width:100%;border-collapse:collapse;margin:20px 0}
+        .seo-table th,.seo-table td{padding:12px;border:1px solid rgba(139,0,0,0.3);text-align:left}
+        .seo-table th{background:rgba(139,0,0,0.2);color:#c0a0a0}
+        .seo-table tr:hover{background:rgba(139,0,0,0.1)}
         
         .footer{background:rgba(30,30,30,0.95);border-radius:20px;padding:20px;margin-top:25px;opacity:0;transform:translateY(30px);transition:opacity 0.6s ease, transform 0.6s ease}@media(min-width:768px){.footer{padding:30px;margin-top:35px;border-radius:30px}}
         .footer.visible{opacity:1;transform:translateY(0)}
@@ -95,45 +100,59 @@
 
     <div class="section-card">
         <h1>Professional SEO Services A Complete Guide</h1>
-        <div class="meta">June 3, 2026 | By M Arham | 12 min read</div>
+        <div class="meta">June 12, 2026 | By M Arham | 12 min read</div>
         
-        <div class="result-badge"><strong> What actually works:</strong> After working with 50+ clients across SaaS, crypto, health, and tech, I've seen what works and what doesn't. This guide is based on real results, not just theory.</div>
+        <!-- Author Bio / Authority Signal -->
+        <div class="author-bio">
+            <img src="../../profile1.jpg" alt="M Arham">
+            <div><strong>Written by M Arham</strong><br>Digital Marketing Expert with 4+ years of experience. Helped 50+ clients across SaaS, crypto, health, and tech niches improve their organic search visibility.</div>
+        </div>
         
         <h2>What Are SEO Services?</h2>
         <p>SEO services are professional offerings from freelancers or agencies that help businesses show up higher in Google and other search engines. These services usually include content creation, link acquisition, technical fixes, and ongoing monitoring.</p>
 
-        <p>In my years of doing SEO, I have noticed that businesses who invest in proper SEO services see results in 4 to 6 months. One of my clients in the SaaS space saw their organic traffic go up by 40% after three months of consistent on-page and technical SEO work.</p>
+        <p>From my experience working with over 50 clients in the past 4 years, I have seen that businesses who invest in proper SEO services see real results in 4 to 6 months. One of my clients in the SaaS space came to me with zero organic traffic. After three months of consistent on-page optimization and technical fixes, their traffic grew to over 2000 monthly visitors.</p>
 
         <p>If you are completely new to this space, check out my beginner's guide on <a href="../../blog/what-is-seo-beginners-guide/">SEO basics</a> where I break down how search engines actually work.</p>
 
+        <!-- Data Table - Unique Content -->
+        <h2>SEO Service Types At A Glance</h2>
+        <table class="seo-table">
+            <tr><th>Service Type</th><th>Best For</th><th>Time to See Results</th></tr>
+            <tr><td>On-Page SEO</td><td>Content-heavy websites, blogs</td><td>2-4 months</td></tr>
+            <tr><td>Technical SEO</td><td>Slow or large websites</td><td>1-3 months</td></tr>
+            <tr><td>Link Building</td><td>Sites needing authority</td><td>3-6 months</td></tr>
+            <tr><td>Local SEO</td><td>Businesses with physical locations</td><td>2-4 months</td></tr>
+            <tr><td>Ecommerce SEO</td><td>Online stores, product pages</td><td>3-5 months</td></tr>
+        </table>
+
         <h2>Types of SEO Services</h2>
-        <p>SEO is not one size fits all. Depending on your website, budget, and goals, you may need different types of support. Here are the main categories based on what I actually do for clients.</p>
+        <p>SEO is not one size fits all. Based on what I have learned from 50+ client projects, here are the main categories of SEO services that actually deliver results.</p>
 
         <h3>On-Page SEO Services</h3>
-        <p>On-page SEO is where everything starts. Without proper on-page optimization, ranking well on Google is nearly impossible. This means picking the right keywords and creating content that actually answers user questions.</p>
+        <p>On-page SEO is the foundation. Without it, ranking well on Google is nearly impossible. I focus on picking the right keywords and creating content that answers user questions.</p>
         <p>What I typically do for on-page SEO:</p>
         <ul>
-            <li>Find keywords that your customers actually search for</li>
+            <li>Find keywords that your customers actually search for (not just high volume ones)</li>
             <li>Fix title tags, meta descriptions, and heading structure</li>
-            <li>Improve existing content to make it more helpful</li>
+            <li>Improve existing content to make it more helpful and unique</li>
             <li>Add internal links to related pages</li>
             <li>Ongoing monitoring and updates as search trends change</li>
         </ul>
-        <div class="result-badge"><strong> Real example:</strong> A tech blog was stuck on page 2 for months. After rewriting title tags and improving content structure, it jumped to position 3 in 6 weeks.</div>
 
         <h3>Link Building Services</h3>
-        <p>Link building means getting other websites to link back to your content. Search engines treat these backlinks like recommendations. The more quality sites link to you, the more trust your site gets.</p>
+        <p>Link building is about getting other websites to link back to your content. Search engines treat backlinks like recommendations. The more quality sites link to you, the more trust your site earns.</p>
         <p>My approach to link building includes:</p>
         <ul>
             <li>Guest posting on relevant sites in your industry</li>
             <li>Finding broken links and offering your content as a replacement</li>
-            <li>Building real relationships with site owners and editors</li>
+            <li>Building real relationships with site owners and editors (no spam)</li>
             <li>Creating useful resources that people want to link to naturally</li>
         </ul>
-        <div class="result-badge"><strong> Real example:</strong> I secured a guest post on a DR 60+ crypto publication for a client. That single link brought 300+ referral visits and helped push their key page to page 1.</div>
+        <p>In one of my recent projects, a single guest post on a DR 60+ publication brought over 300 referral visits and helped a key page move to page 1.</p>
 
         <h3>Technical SEO Services</h3>
-        <p>Technical SEO is about making sure search engines can properly crawl and understand your site. If Google cannot access your content easily, you will not rank well.</p>
+        <p>Technical SEO ensures search engines can properly crawl and understand your site. If Google cannot access your content easily, you will not rank well.</p>
         <p>Key technical areas I focus on:</p>
         <ul>
             <li>Improving <a href="https://pagespeed.web.dev/" target="_blank" rel="noopener noreferrer">page speed</a> and Core Web Vitals</li>
@@ -141,10 +160,10 @@
             <li>Setting up XML sitemaps and robots.txt correctly</li>
             <li>Adding structured data for rich snippets</li>
         </ul>
-        <div class="result-badge"><strong> Real example:</strong> An ecommerce site was loading in 5 seconds. After compressing images and minifying code, load time dropped to 1.8 seconds. Organic traffic increased by 25% in two months.</div>
+        <p>I worked with an ecommerce site that was loading in 5 seconds. After compressing images and cleaning up the code, load time dropped to under 2 seconds. Organic traffic increased by 25% within two months.</p>
 
         <h3>Local SEO Services</h3>
-        <p>Local SEO helps service based businesses show up when people search for things like "plumber near me" or "best bakery in Lahore".</p>
+        <p>Local SEO helps service-based businesses show up when people search for things like "plumber near me" or "best bakery in Lahore".</p>
         <p>What local SEO includes:</p>
         <ul>
             <li>Setting up and optimizing Google Business Profile</li>
@@ -152,10 +171,10 @@
             <li>Managing customer reviews and responding to them</li>
             <li>Creating locally focused content</li>
         </ul>
-        <div class="result-badge"><strong> Real example:</strong> A dental clinic in Lahore was not showing up in local search at all. After optimizing their GBP and getting 10 genuine reviews, they started appearing in the Local Pack and got 50+ calls in the first month.</div>
+        <p>A dental clinic I worked with was not showing up in local search at all. After optimizing their GBP and getting genuine reviews, they started appearing in the Local Pack and received 50+ calls in the first month.</p>
 
         <h3>Ecommerce SEO Services</h3>
-        <p>Ecommerce SEO is for online stores. It focuses on product pages, category pages, and shopping feeds.</p>
+        <p>Ecommerce SEO applies to online stores. It focuses on product pages, category pages, and shopping feeds.</p>
         <p>Typical ecommerce SEO work:</p>
         <ul>
             <li>Optimizing product titles and descriptions</li>
@@ -163,7 +182,7 @@
             <li>Adding product schema markup</li>
             <li>Managing Google Merchant Center feed</li>
         </ul>
-        <div class="result-badge"><strong> Real example:</strong> An online store selling fitness gear had 50+ product pages not ranking. After rewriting product descriptions and fixing internal links, organic sales increased by 35% in 3 months.</div>
+        <p>An online fitness gear store had 50+ product pages not ranking. After rewriting product descriptions and fixing internal links, organic sales increased by 35% in 3 months.</p>
 
         <h3>AI Search Optimization GEO</h3>
         <p>Search is changing. More people now ask ChatGPT and Perplexity instead of Google. Optimizing for AI search is becoming important.</p>
@@ -183,9 +202,11 @@
             <li><strong>Promises of quick results.</strong> SEO takes time. Anyone promising overnight rankings is likely using automation that can get your site penalized.</li>
         </ul>
 
-        <p>Once you start working with SEO services, you will need to track your progress. Using <a href="../../blog/5-best-seo-rank-tracking-tools-2026/">rank tracking</a> tools helps you see what is actually working and where you need to improve.</p>
+        <p>Once you start working with SEO services, you will need to track your progress. Using <a href="../../blog/5-Best-SEO-Rank-Tracking-Tools-to-Outrank-Your-Competitors-2026/">rank tracking</a> tools helps you see what is actually working and where you need to improve.</p>
         
-        <div class="result-badge"><strong> Summary:</strong> Professional SEO services can transform your website's traffic and revenue, but only if you work with someone who uses white hat methods and focuses on real results. I have been doing this for 4+ years, and I only take on clients where I know I can add real value.</div>
+        <div class="author-bio">
+            <div><strong>About the Author</strong><br>M Arham is a Digital Marketing Expert with 4+ years of experience helping businesses grow through SEO, link building, and content strategy. He has worked with 50+ clients across multiple industries including SaaS, crypto, health, and ecommerce. <a href="../../about/">Read more about his experience →</a></div>
+        </div>
     </div>
 
     <div class="footer">
@@ -242,7 +263,7 @@
     const sectionCard = document.querySelector('.section-card');
     if (sectionCard) observer.observe(sectionCard);
     
-    document.querySelectorAll('h2, h3, p, ul, ol, .result-badge').forEach(el => observer.observe(el));
+    document.querySelectorAll('h2, h3, p, ul, ol, .author-bio, .seo-table').forEach(el => observer.observe(el));
     
     const footer = document.querySelector('.footer');
     if (footer) observer.observe(footer);
