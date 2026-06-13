@@ -4,49 +4,54 @@
   <!-- Main Pages -->
   <url>
     <loc>https://marhamseo.github.io/portfolio/</loc>
-    <lastmod>2026-06-12</lastmod>
+    <lastmod>2026-06-13</lastmod>
     <priority>1.00</priority>
   </url>
   <url>
     <loc>https://marhamseo.github.io/portfolio/about/</loc>
-    <lastmod>2026-06-12</lastmod>
+    <lastmod>2026-06-13</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://marhamseo.github.io/portfolio/services/</loc>
-    <lastmod>2026-06-12</lastmod>
+    <lastmod>2026-06-13</lastmod>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://marhamseo.github.io/portfolio/contact/</loc>
-    <lastmod>2026-06-12</lastmod>
+    <lastmod>2026-06-13</lastmod>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://marhamseo.github.io/portfolio/blog/</loc>
-    <lastmod>2026-06-12</lastmod>
+    <lastmod>2026-06-13</lastmod>
     <priority>0.85</priority>
   </url>
 
-  <!-- 4 Blog Articles -->
+  <!-- 5 Blog Articles -->
+  <url>
+    <loc>https://marhamseo.github.io/portfolio/blog/social-media-marketing-strategy-7-steps/</loc>
+    <lastmod>2026-06-13</lastmod>
+    <priority>0.70</priority>
+  </url>
   <url>
     <loc>https://marhamseo.github.io/portfolio/blog/what-is-seo-beginners-guide/</loc>
-    <lastmod>2026-06-12</lastmod>
+    <lastmod>2026-06-13</lastmod>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://marhamseo.github.io/portfolio/blog/professional-seo-services-guide/</loc>
-    <lastmod>2026-06-12</lastmod>
+    <lastmod>2026-06-13</lastmod>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://marhamseo.github.io/portfolio/blog/off-page-seo-beginners-guide-in-2026/</loc>
-    <lastmod>2026-06-12</lastmod>
+    <lastmod>2026-06-13</lastmod>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://marhamseo.github.io/portfolio/blog/5-Best-SEO-Rank-Tracking-Tools-to-Outrank-Your-Competitors-2026/</loc>
-    <lastmod>2026-06-12</lastmod>
+    <lastmod>2026-06-13</lastmod>
     <priority>0.70</priority>
   </url>
 
